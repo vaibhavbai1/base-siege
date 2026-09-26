@@ -49,3 +49,35 @@ artifacts/
 *.pickle
 *.sqlite3
 *.sqlite3-*
+
+# Include completed experiment evidence and recovery files
+!/runs/
+!/runs/**
+!/artifacts/
+!/artifacts/**
+!/bases/
+!/bases/**
+!/experiments/
+!/experiments/**
+!/tb_logs/
+!/tb_logs/**
+!/figures/
+!/figures/**
+!/demo_assets/
+!/demo_assets/**
+
+# Continue excluding temporary files, environments and secrets
+**/*.lock
+**/__pycache__/
+**/*.pyc
+**/.ipynb_checkpoints/
+**/.pytest_cache/
+**/.venv/
+**/.venv-*/
+**/venv/
+**/.env
+**/.env.*
+!**/.env.example
+**/.streamlit/secrets.toml
+**/.aws/
+**/.ssh/

@@ -1,0 +1,11 @@
+{
+  "ci95_high": null,
+  "ci95_low": null,
+  "learner_differences": {
+    "100": -0.054538875103391234
+  },
+  "mean_paired_difference": -0.054538875103391234,
+  "metric": "destruction",
+  "n_independent_learners": 1,
+  "note": "Confidence interval uses learner seeds, not individual games."
+}

@@ -1,0 +1,6096 @@
+{
+  "baseline_note": "Random uses ten action seeds per base/view. Baseline game counts are not independent PPO learners.",
+  "comparisons": {
+    "motif/closed_ring": {
+      "destruction": {
+        "ci95_high": 0.05096427246460323,
+        "ci95_low": -0.05116258023826795,
+        "learner_differences": {
+          "0": -0.004362771020624008,
+          "1": 0.0356292966684294,
+          "2": 0.013418826017979904,
+          "3": -0.008064516129032256,
+          "4": -0.15388683236382866,
+          "5": 0.07826546800634585,
+          "6": -0.09108937070333158,
+          "7": 0.06035166578529878,
+          "8": 0.04475145425700688,
+          "9": 0.023995240613432046
+        },
+        "mean_paired_difference": -9.915388683236527e-05,
+        "metric": "destruction",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": 0.022071533816160824,
+        "ci95_low": -0.03559612398009525,
+        "learner_differences": {
+          "0": -0.045081967213114756,
+          "1": 0.028688524590163935,
+          "2": -0.01639344262295082,
+          "3": 0.006147540983606557,
+          "4": -0.0860655737704918,
+          "5": 0.030737704918032786,
+          "6": -0.045081967213114756,
+          "7": 0.03278688524590164,
+          "8": 0.020491803278688523,
+          "9": 0.006147540983606557
+        },
+        "mean_paired_difference": -0.006762295081967212,
+        "metric": "full_clear",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": 0.07932089735481705,
+        "ci95_low": -0.07924973791536703,
+        "learner_differences": {
+          "0": -0.01314453331570597,
+          "1": 0.05390183765203596,
+          "2": 0.025285629296668433,
+          "3": -0.01277353252247488,
+          "4": -0.2313048651507139,
+          "5": 0.12109128767847699,
+          "6": -0.15038650185087254,
+          "7": 0.1007420346377578,
+          "8": 0.05712542966684294,
+          "9": 0.049819011105235324
+        },
+        "mean_paired_difference": 3.557971972501378e-05,
+        "metric": "return",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": 0.047080140005736404,
+        "ci95_low": -0.014293254759834766,
+        "learner_differences": {
+          "0": 0.00819672131147541,
+          "1": 0.022540983606557378,
+          "2": 0.055327868852459015,
+          "3": -0.010245901639344262,
+          "4": -0.03483606557377049,
+          "5": 0.08196721311475409,
+          "6": -0.055327868852459015,
+          "7": 0.05942622950819672,
+          "8": 0.006147540983606557,
+          "9": 0.030737704918032786
+        },
+        "mean_paired_difference": 0.01639344262295082,
+        "metric": "town_hall",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "motif/ew_gates": {
+      "destruction": {
+        "ci95_high": 0.07893464389550484,
+        "ci95_low": -0.044677981903919986,
+        "learner_differences": {
+          "0": -0.007363253856942497,
+          "1": 0.07442145862552595,
+          "2": 0.029803646563814866,
+          "3": 0.01393758765778401,
+          "4": -0.15953716690042077,
+          "5": 0.11334151472650772,
+          "6": -0.09282959326788219,
+          "7": 0.09019985974754559,
+          "8": 0.0894109396914446,
+          "9": 0.019898316970546982
+        },
+        "mean_paired_difference": 0.017128330995792425,
+        "metric": "destruction",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": 0.05103212674594878,
+        "ci95_low": -0.04940169196334009,
+        "learner_differences": {
+          "0": -0.03804347826086957,
+          "1": 0.043478260869565216,
+          "2": -0.010869565217391304,
+          "3": 0.008152173913043478,
+          "4": -0.12771739130434784,
+          "5": 0.08967391304347826,
+          "6": -0.07608695652173914,
+          "7": 0.059782608695652176,
+          "8": 0.08152173913043478,
+          "9": -0.021739130434782608
+        },
+        "mean_paired_difference": 0.0008152173913043459,
+        "metric": "full_clear",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": 0.13203391549263777,
+        "ci95_low": -0.06794410132713988,
+        "learner_differences": {
+          "0": -0.007660808204768588,
+          "1": 0.13615107819074335,
+          "2": 0.0526609835203366,
+          "3": 0.023487859396914456,
+          "4": -0.24573281907433378,
+          "5": 0.19010102559607292,
+          "6": -0.15157008239831696,
+          "7": 0.15470665322580646,
+          "8": 0.14154409186535763,
+          "9": 0.02676108870967743
+        },
+        "mean_paired_difference": 0.03204490708274895,
+        "metric": "return",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": 0.07180943367377765,
+        "ci95_low": -0.006592042369429819,
+        "learner_differences": {
+          "0": 0.02717391304347826,
+          "1": 0.11956521739130435,
+          "2": 0.03260869565217391,
+          "3": 0.01358695652173913,
+          "4": -0.04891304347826087,
+          "5": 0.08967391304347826,
+          "6": -0.04619565217391304,
+          "7": 0.08423913043478261,
+          "8": 0.03804347826086957,
+          "9": 0.016304347826086956
+        },
+        "mean_paired_difference": 0.03260869565217391,
+        "metric": "town_hall",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "motif/ns_gates": {
+      "destruction": {
+        "ci95_high": 0.05884896785992628,
+        "ci95_low": -0.059951667004100075,
+        "learner_differences": {
+          "0": -0.03497366688610928,
+          "1": 0.02435813034891376,
+          "2": 0.04295589203423305,
+          "3": -0.015141540487162607,
+          "4": -0.15717577353522053,
+          "5": 0.1162771560236998,
+          "6": -0.11611257406188281,
+          "7": 0.05348913759052008,
+          "8": 0.05332455562870309,
+          "9": 0.02748518762343647
+        },
+        "mean_paired_difference": -0.0005513495720868969,
+        "metric": "destruction",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": 0.029446865493158603,
+        "ci95_low": -0.05189584508499534,
+        "learner_differences": {
+          "0": -0.03571428571428571,
+          "1": 0.02040816326530612,
+          "2": 0.0,
+          "3": -0.00510204081632653,
+          "4": -0.11479591836734694,
+          "5": 0.061224489795918366,
+          "6": -0.09693877551020408,
+          "7": 0.03826530612244898,
+          "8": 0.02806122448979592,
+          "9": -0.007653061224489796
+        },
+        "mean_paired_difference": -0.011224489795918367,
+        "metric": "full_clear",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": 0.0949787446832673,
+        "ci95_low": -0.08730083158254313,
+        "learner_differences": {
+          "0": -0.05136397300855825,
+          "1": 0.03829945687952599,
+          "2": 0.08251966754443714,
+          "3": -0.025836693548387104,
+          "4": -0.23052143680052667,
+          "5": 0.18102460500329162,
+          "6": -0.17820696181698484,
+          "7": 0.08652740289664253,
+          "8": 0.07931180052666227,
+          "9": 0.0566356978275181
+        },
+        "mean_paired_difference": 0.0038389565503620764,
+        "metric": "return",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": 0.04543154300752873,
+        "ci95_low": -0.010737665456508328,
+        "learner_differences": {
+          "0": -0.01020408163265306,
+          "1": 0.02040816326530612,
+          "2": 0.07653061224489796,
+          "3": -0.002551020408163265,
+          "4": -0.03571428571428571,
+          "5": 0.061224489795918366,
+          "6": -0.03826530612244898,
+          "7": 0.04591836734693878,
+          "8": 0.015306122448979591,
+          "9": 0.04081632653061224
+        },
+        "mean_paired_difference": 0.0173469387755102,
+        "metric": "town_hall",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "overall": {
+      "destruction": {
+        "ci95_high": 0.06122071423138801,
+        "ci95_low": -0.0515432948765493,
+        "learner_differences": {
+          "0": -0.014862489660876757,
+          "1": 0.0435277088502895,
+          "2": 0.02752791563275434,
+          "3": -0.0037996277915632757,
+          "4": -0.15658602150537634,
+          "5": 0.1005479735318445,
+          "6": -0.09946236559139784,
+          "7": 0.06699751861042183,
+          "8": 0.0606131100082713,
+          "9": 0.023883374689826303
+        },
+        "mean_paired_difference": 0.004838709677419355,
+        "metric": "destruction",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": 0.032243112400451746,
+        "ci95_low": -0.044102086759426104,
+        "learner_differences": {
+          "0": -0.04006410256410257,
+          "1": 0.030448717948717948,
+          "2": -0.009615384615384616,
+          "3": 0.003205128205128205,
+          "4": -0.10737179487179487,
+          "5": 0.057692307692307696,
+          "6": -0.07051282051282051,
+          "7": 0.04246794871794872,
+          "8": 0.040865384615384616,
+          "9": -0.00641025641025641
+        },
+        "mean_paired_difference": -0.005929487179487179,
+        "metric": "full_clear",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": 0.09876377582435877,
+        "ci95_low": -0.07742601993105852,
+        "learner_differences": {
+          "0": -0.023532361455748548,
+          "1": 0.07325407102977667,
+          "2": 0.051335207299421017,
+          "3": -0.006184243176178658,
+          "4": -0.23531318496691478,
+          "5": 0.16026552160876756,
+          "6": -0.15947398418114142,
+          "7": 0.11218982630272954,
+          "8": 0.08898690808519437,
+          "9": 0.045161018920595535
+        },
+        "mean_paired_difference": 0.01066887794665013,
+        "metric": "return",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": 0.05163738401577163,
+        "ci95_low": -0.00868866606705368,
+        "learner_differences": {
+          "0": 0.008012820512820512,
+          "1": 0.05048076923076923,
+          "2": 0.055288461538461536,
+          "3": -0.0008012820512820513,
+          "4": -0.03926282051282051,
+          "5": 0.07772435897435898,
+          "6": -0.047275641025641024,
+          "7": 0.0625,
+          "8": 0.01842948717948718,
+          "9": 0.029647435897435896
+        },
+        "mean_paired_difference": 0.021474358974358974,
+        "metric": "town_hall",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "seen_structures": {
+      "destruction": {
+        "ci95_high": 0.06122071423138801,
+        "ci95_low": -0.0515432948765493,
+        "learner_differences": {
+          "0": -0.014862489660876757,
+          "1": 0.0435277088502895,
+          "2": 0.02752791563275434,
+          "3": -0.0037996277915632757,
+          "4": -0.15658602150537634,
+          "5": 0.1005479735318445,
+          "6": -0.09946236559139784,
+          "7": 0.06699751861042183,
+          "8": 0.0606131100082713,
+          "9": 0.023883374689826303
+        },
+        "mean_paired_difference": 0.004838709677419355,
+        "metric": "destruction",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": 0.032243112400451746,
+        "ci95_low": -0.044102086759426104,
+        "learner_differences": {
+          "0": -0.04006410256410257,
+          "1": 0.030448717948717948,
+          "2": -0.009615384615384616,
+          "3": 0.003205128205128205,
+          "4": -0.10737179487179487,
+          "5": 0.057692307692307696,
+          "6": -0.07051282051282051,
+          "7": 0.04246794871794872,
+          "8": 0.040865384615384616,
+          "9": -0.00641025641025641
+        },
+        "mean_paired_difference": -0.005929487179487179,
+        "metric": "full_clear",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": 0.09876377582435877,
+        "ci95_low": -0.07742601993105852,
+        "learner_differences": {
+          "0": -0.023532361455748548,
+          "1": 0.07325407102977667,
+          "2": 0.051335207299421017,
+          "3": -0.006184243176178658,
+          "4": -0.23531318496691478,
+          "5": 0.16026552160876756,
+          "6": -0.15947398418114142,
+          "7": 0.11218982630272954,
+          "8": 0.08898690808519437,
+          "9": 0.045161018920595535
+        },
+        "mean_paired_difference": 0.01066887794665013,
+        "metric": "return",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": 0.05163738401577163,
+        "ci95_low": -0.00868866606705368,
+        "learner_differences": {
+          "0": 0.008012820512820512,
+          "1": 0.05048076923076923,
+          "2": 0.055288461538461536,
+          "3": -0.0008012820512820513,
+          "4": -0.03926282051282051,
+          "5": 0.07772435897435898,
+          "6": -0.047275641025641024,
+          "7": 0.0625,
+          "8": 0.01842948717948718,
+          "9": 0.029647435897435896
+        },
+        "mean_paired_difference": 0.021474358974358974,
+        "metric": "town_hall",
+        "n_independent_learners": 10,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    }
+  },
+  "means": [
+    {
+      "condition": "P",
+      "destruction": 0.4833421470121629,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.4842683765203596,
+      "town_hall": 0.6065573770491803,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3918561607615018,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.31054468535166574,
+      "town_hall": 0.4918032786885246,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4526705446853517,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3960475938656795,
+      "town_hall": 0.4918032786885246,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4257006874669487,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3526351136964569,
+      "town_hall": 0.4426229508196721,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.36065573770491804,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.2548524590163934,
+      "town_hall": 0.39344262295081966,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4627181385510312,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.4265378106821787,
+      "town_hall": 0.47540983606557374,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46536224219989425,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.42574748810153357,
+      "town_hall": 0.5081967213114754,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38815441565309355,
+      "full_clear": 0.11475409836065574,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3154331041776837,
+      "town_hall": 0.4098360655737705,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4249649368863955,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.3542692847124825,
+      "town_hall": 0.5,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5070126227208976,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.49174088359046286,
+      "town_hall": 0.5217391304347826,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4319775596072931,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.3673036465638148,
+      "town_hall": 0.43478260869565216,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43057503506311356,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.3385641654978962,
+      "town_hall": 0.391304347826087,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39481065918653574,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.30332152875175317,
+      "town_hall": 0.391304347826087,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.379382889200561,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.2765024544179523,
+      "town_hall": 0.3695652173913043,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45722300140252453,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.4422121318373071,
+      "town_hall": 0.5217391304347826,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47124824684431976,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.43967215988779806,
+      "town_hall": 0.45652173913043476,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4621461487820935,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.4084216589861751,
+      "town_hall": 0.4897959183673469,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.37327188940092165,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.2782718894009216,
+      "town_hall": 0.42857142857142855,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3778801843317972,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.2642781435154707,
+      "town_hall": 0.40816326530612246,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.35418038183015144,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.22413956550362082,
+      "town_hall": 0.3469387755102041,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4588545095457538,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.42074226464779463,
+      "town_hall": 0.46938775510204084,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45161290322580644,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.42920473996050035,
+      "town_hall": 0.5714285714285714,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4305464121132324,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.34150559578670175,
+      "town_hall": 0.40816326530612246,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39828834759710335,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.28318630678077683,
+      "town_hall": 0.30612244897959184,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4405076679005817,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.3704666842940243,
+      "town_hall": 0.4262295081967213,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4383923849814913,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.3744579587519831,
+      "town_hall": 0.45901639344262296,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5055526176626124,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.48726573241671073,
+      "town_hall": 0.5409836065573771,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4077207826546801,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.3388355367530407,
+      "town_hall": 0.4262295081967213,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47276573241671077,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.45302802749867793,
+      "town_hall": 0.5573770491803278,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4997355896351137,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.4853995240613432,
+      "town_hall": 0.5409836065573771,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.49338974087784243,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.4917667900581703,
+      "town_hall": 0.5737704918032787,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3897408778424114,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.31233923849814915,
+      "town_hall": 0.39344262295081966,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.47353260869565217,
+      "town_hall": 0.43478260869565216,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4943899018232819,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4790203366058906,
+      "town_hall": 0.5434782608695652,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4789621318373071,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4582556100981768,
+      "town_hall": 0.5,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45792426367461425,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.39920687237026653,
+      "town_hall": 0.45652173913043476,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43057503506311356,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.36508590462833096,
+      "town_hall": 0.5,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5189340813464236,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.47684712482468444,
+      "town_hall": 0.3695652173913043,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47755960729312763,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4191356942496494,
+      "town_hall": 0.43478260869565216,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.379382889200561,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.24418723702664796,
+      "town_hall": 0.2608695652173913,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4588545095457538,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.40540552995391704,
+      "town_hall": 0.40816326530612246,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38314680710994076,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.28891211323238974,
+      "town_hall": 0.40816326530612246,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46148782093482554,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.3769674127715602,
+      "town_hall": 0.3673469387755102,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45951283739302173,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.41104344963791967,
+      "town_hall": 0.4489795918367347,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4878209348255431,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.45038215931533904,
+      "town_hall": 0.4489795918367347,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4634628044766294,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.40509545753785386,
+      "town_hall": 0.42857142857142855,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44239631336405527,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.38390651744568793,
+      "town_hall": 0.42857142857142855,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4535878867676103,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.4049960500329164,
+      "town_hall": 0.5102040816326531,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3548387096774194,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.2450846113167636,
+      "town_hall": 0.4098360655737705,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47382337387625595,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.42255288207297725,
+      "town_hall": 0.5081967213114754,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4045478582760444,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.3104494976203067,
+      "town_hall": 0.4098360655737705,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4664198836594395,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.43117398202009516,
+      "town_hall": 0.45901639344262296,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39978847170809095,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.31425568482284505,
+      "town_hall": 0.4098360655737705,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3950290851401375,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.31766842940243256,
+      "town_hall": 0.47540983606557374,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41142252776308835,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.32314383923849815,
+      "town_hall": 0.4098360655737705,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45584346906398726,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.41936805922792175,
+      "town_hall": 0.5573770491803278,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4018232819074334,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.2982906732117812,
+      "town_hall": 0.3695652173913043,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4761570827489481,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.4381679523141655,
+      "town_hall": 0.5,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39901823281907434,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.33418127629733524,
+      "town_hall": 0.43478260869565216,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4431977559607293,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.36716514726507715,
+      "town_hall": 0.41304347826086957,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3962131837307153,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.3093110098176718,
+      "town_hall": 0.43478260869565216,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41164095371669,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.33544530154277696,
+      "town_hall": 0.391304347826087,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5434782608695652,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.5868804347826088,
+      "town_hall": 0.717391304347826,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4193548387096774,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.37114831697054695,
+      "town_hall": 0.5217391304347826,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.36010533245556287,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.2601563528637261,
+      "town_hall": 0.46938775510204084,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43317972350230416,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.364302172481896,
+      "town_hall": 0.4489795918367347,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3857801184990125,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.2807290980908492,
+      "town_hall": 0.3877551020408163,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41803818301514156,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.32829328505595784,
+      "town_hall": 0.40816326530612246,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3706385780118499,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.25043449637919685,
+      "town_hall": 0.3877551020408163,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3772218564845293,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.272170836076366,
+      "town_hall": 0.42857142857142855,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38643844634628044,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.2710302830809743,
+      "town_hall": 0.3877551020408163,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4252797893350889,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.350687952600395,
+      "town_hall": 0.4897959183673469,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4711792702273929,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.4311710735060814,
+      "town_hall": 0.5409836065573771,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4161819143310418,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.33936224219989425,
+      "town_hall": 0.45901639344262296,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.33738762559492336,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.22439582231623478,
+      "town_hall": 0.3442622950819672,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.36065573770491804,
+      "full_clear": 0.0,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.21072950819672132,
+      "town_hall": 0.3114754098360656,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40401903754627183,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.3197403490216817,
+      "town_hall": 0.4262295081967213,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5023796932839767,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.49957641459545216,
+      "town_hall": 0.5573770491803278,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45584346906398726,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.42346641988365946,
+      "town_hall": 0.5737704918032787,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40031729243786357,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.33964516129032263,
+      "town_hall": 0.4918032786885246,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.453015427769986,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.39927629733520337,
+      "town_hall": 0.4782608695652174,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3870967741935484,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.3074554698457223,
+      "town_hall": 0.45652173913043476,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3534361851332398,
+      "full_clear": 0.0,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.2456100981767181,
+      "town_hall": 0.41304347826086957,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4509116409537167,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.38210729312762975,
+      "town_hall": 0.43478260869565216,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46143057503506313,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.42425666199158485,
+      "town_hall": 0.5217391304347826,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41304347826086957,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.3595,
+      "town_hall": 0.4782608695652174,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3899018232819074,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.27664095371669,
+      "town_hall": 0.34782608695652173,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4319775596072931,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.3911623422159888,
+      "town_hall": 0.5434782608695652,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4338380513495721,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.3832972350230415,
+      "town_hall": 0.4897959183673469,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.391705069124424,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.3133887425938117,
+      "town_hall": 0.40816326530612246,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3686635944700461,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.26756155365371953,
+      "town_hall": 0.40816326530612246,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4206714944042133,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.3469980250164582,
+      "town_hall": 0.40816326530612246,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3890717577353522,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.3052554312047399,
+      "town_hall": 0.40816326530612246,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44239631336405527,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.41076366030283085,
+      "town_hall": 0.5714285714285714,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.48123765635286375,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.4383907175773535,
+      "town_hall": 0.4897959183673469,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.35549703752468725,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.2470888742593812,
+      "town_hall": 0.42857142857142855,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5309360126916975,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5290671602326811,
+      "town_hall": 0.5245901639344263,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5319936541512428,
+      "full_clear": 0.14754098360655737,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5013870967741936,
+      "town_hall": 0.4262295081967213,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5473294553146484,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5421737176097303,
+      "town_hall": 0.4918032786885246,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5515600211528292,
+      "full_clear": 0.14754098360655737,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5576419883659439,
+      "town_hall": 0.4918032786885246,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5452141723955579,
+      "full_clear": 0.14754098360655737,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5636404019037546,
+      "town_hall": 0.4918032786885246,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5933368588048652,
+      "full_clear": 0.16393442622950818,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.6286237440507667,
+      "town_hall": 0.5409836065573771,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5922792173453199,
+      "full_clear": 0.18032786885245902,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.6393939714436806,
+      "town_hall": 0.5901639344262295,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5753569539925965,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.5900782654680063,
+      "town_hall": 0.5409836065573771,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5946704067321178,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.6515182328190743,
+      "town_hall": 0.6086956521739131,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5596072931276297,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.550389901823282,
+      "town_hall": 0.4782608695652174,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5792426367461431,
+      "full_clear": 0.17391304347826086,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.6466339410939692,
+      "town_hall": 0.6521739130434783,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5196353436185133,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.4837005610098177,
+      "town_hall": 0.45652173913043476,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.6164095371669004,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.6841595371669004,
+      "town_hall": 0.6304347826086957,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5553997194950911,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.5474866760168303,
+      "town_hall": 0.43478260869565216,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.546984572230014,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.5489954417952314,
+      "town_hall": 0.5,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5624123422159888,
+      "full_clear": 0.21739130434782608,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.5855753856942496,
+      "town_hall": 0.5,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5154707044107966,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.45848090849242923,
+      "town_hall": 0.40816326530612246,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5727452271231073,
+      "full_clear": 0.20408163265306123,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.5872452271231073,
+      "town_hall": 0.5102040816326531,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5582620144832127,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.5576089532587227,
+      "town_hall": 0.46938775510204084,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.6287030941408821,
+      "full_clear": 0.20408163265306123,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.704060236998025,
+      "town_hall": 0.6122448979591837,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5055957867017775,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.4792182356813693,
+      "town_hall": 0.4489795918367347,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.6109282422646478,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.6609588545095457,
+      "town_hall": 0.5918367346938775,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5266622778143515,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.5151010533245557,
+      "town_hall": 0.4897959183673469,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.586570111915734,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.5911721527320606,
+      "town_hall": 0.5306122448979592,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4093072448439979,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.33584822845055523,
+      "town_hall": 0.47540983606557374,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.36700158646218933,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.27263273400317295,
+      "town_hall": 0.39344262295081966,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44209413008989956,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.37285642517186673,
+      "town_hall": 0.47540983606557374,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3897408778424114,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.30786382866208356,
+      "town_hall": 0.4426229508196721,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38233738762559494,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.3004357482813326,
+      "town_hall": 0.4262295081967213,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3865679534637758,
+      "full_clear": 0.0,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.2882728714965627,
+      "town_hall": 0.4426229508196721,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3759915388683236,
+      "full_clear": 0.0,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.2607128503437335,
+      "town_hall": 0.39344262295081966,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3707033315705976,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.2730230037017451,
+      "town_hall": 0.39344262295081966,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4102384291725105,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.36717321178120615,
+      "town_hall": 0.5217391304347826,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.42075736325385693,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.36102910238429176,
+      "town_hall": 0.45652173913043476,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4691444600280505,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.43131837307152876,
+      "town_hall": 0.5217391304347826,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3702664796633941,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.26146213183730715,
+      "town_hall": 0.41304347826086957,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.37868162692847124,
+      "full_clear": 0.0,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.26529032258064517,
+      "town_hall": 0.391304347826087,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41234221598877985,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.3028856942496494,
+      "town_hall": 0.41304347826086957,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3576437587657784,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.21095897615708276,
+      "town_hall": 0.32608695652173914,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4495091164095371,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.41776998597475457,
+      "town_hall": 0.5434782608695652,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.35023041474654376,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.22999572086899275,
+      "town_hall": 0.3673469387755102,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3811718235681369,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.30166161948650433,
+      "town_hall": 0.42857142857142855,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41803818301514156,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.35890552995391706,
+      "town_hall": 0.4489795918367347,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38512179065174457,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.28508097432521395,
+      "town_hall": 0.46938775510204084,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4048716260697828,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.31033080974325217,
+      "town_hall": 0.42857142857142855,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3469387755102041,
+      "full_clear": 0.0,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.2315612244897959,
+      "town_hall": 0.40816326530612246,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3726135615536537,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.26230743910467413,
+      "town_hall": 0.3877551020408163,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3568136932192232,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.2363034891375905,
+      "town_hall": 0.3877551020408163,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.48757271285034376,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4730645161290323,
+      "town_hall": 0.5081967213114754,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.452141723955579,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4085515600211528,
+      "town_hall": 0.5081967213114754,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5156002115282918,
+      "full_clear": 0.11475409836065574,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4845756213643575,
+      "town_hall": 0.47540983606557374,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.476467477525119,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4495658381808567,
+      "town_hall": 0.5081967213114754,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4717080909571655,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4204621893178212,
+      "town_hall": 0.47540983606557374,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4357482813326283,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.375518773135907,
+      "town_hall": 0.4426229508196721,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4378635642517187,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.3579537281861449,
+      "town_hall": 0.45901639344262296,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44368059227921736,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.4045822316234796,
+      "town_hall": 0.5081967213114754,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4985974754558205,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.47877138849929873,
+      "town_hall": 0.5217391304347826,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5091164095371669,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.4784859747545582,
+      "town_hall": 0.4782608695652174,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4600280504908836,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.41231065918653576,
+      "town_hall": 0.4782608695652174,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5750350631136045,
+      "full_clear": 0.17391304347826086,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.6250459326788219,
+      "town_hall": 0.5869565217391305,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5799438990182327,
+      "full_clear": 0.21739130434782608,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.6310960729312763,
+      "town_hall": 0.5869565217391305,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46563814866760167,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.4186055399719495,
+      "town_hall": 0.45652173913043476,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.48106591865357645,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.45027244039270686,
+      "town_hall": 0.45652173913043476,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5427769985974755,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.5492443899018233,
+      "town_hall": 0.5217391304347826,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47136273864384465,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.40881171823568135,
+      "town_hall": 0.3877551020408163,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5009874917709018,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.49446708360763664,
+      "town_hall": 0.5306122448979592,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5674786043449638,
+      "full_clear": 0.20408163265306123,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.607121461487821,
+      "town_hall": 0.5510204081632653,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5174456879526004,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.4950987491770902,
+      "town_hall": 0.42857142857142855,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5154707044107966,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.5093482554312048,
+      "town_hall": 0.5306122448979592,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.42857142857142855,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.33479591836734696,
+      "town_hall": 0.40816326530612246,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5286372613561553,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.5126780776826859,
+      "town_hall": 0.5306122448979592,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.48518762343647137,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.4634529295589203,
+      "town_hall": 0.4897959183673469,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46694870438921204,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.43535854045478584,
+      "town_hall": 0.5081967213114754,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4717080909571655,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.4435523532522475,
+      "town_hall": 0.4918032786885246,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4399788471708091,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.379355896351137,
+      "town_hall": 0.4098360655737705,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45584346906398726,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.39195822316234796,
+      "town_hall": 0.47540983606557374,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4378635642517187,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.3741504494976203,
+      "town_hall": 0.39344262295081966,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4986779481755685,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.49994843997884714,
+      "town_hall": 0.5737704918032787,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4717080909571655,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.44765071390798516,
+      "town_hall": 0.5573770491803278,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4574299312533051,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.41874960338445266,
+      "town_hall": 0.5573770491803278,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5448807854137447,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5462720897615708,
+      "town_hall": 0.5652173913043478,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.423562412342216,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.337312412342216,
+      "town_hall": 0.3695652173913043,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43057503506311356,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.3666511220196354,
+      "town_hall": 0.391304347826087,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4740532959326788,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.40954242636746147,
+      "town_hall": 0.43478260869565216,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5273492286115007,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5230448807854138,
+      "town_hall": 0.5217391304347826,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44109396914446003,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.3765830995792426,
+      "town_hall": 0.43478260869565216,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5603085553997195,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5830802945301542,
+      "town_hall": 0.6086956521739131,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.46353436185133245,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.4375561009817672,
+      "town_hall": 0.4782608695652174,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3528637261356155,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.2229759710335747,
+      "town_hall": 0.32653061224489793,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.47662936142198814,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.4238538512179066,
+      "town_hall": 0.42857142857142855,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5075707702435813,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.5203870967741936,
+      "town_hall": 0.5306122448979592,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.49637919684002635,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.4741853192890059,
+      "town_hall": 0.4897959183673469,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.48452929558920343,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.4731517445687952,
+      "town_hall": 0.4897959183673469,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4970375246872943,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.4589252797893351,
+      "town_hall": 0.46938775510204084,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5003291639236339,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.483298551678736,
+      "town_hall": 0.5510204081632653,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.489137590520079,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.4572600394996708,
+      "town_hall": 0.5102040816326531,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44949762030671603,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.40870253833950293,
+      "town_hall": 0.5081967213114754,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.37757800105764144,
+      "full_clear": 0.0,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.2797747223691169,
+      "town_hall": 0.4098360655737705,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.41459545214172394,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.34957905869910105,
+      "town_hall": 0.5081967213114754,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4177683765203596,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.35677657324167106,
+      "town_hall": 0.5081967213114754,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3696456901110523,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.2676210999471179,
+      "town_hall": 0.4426229508196721,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4151242728714966,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.3497882072977261,
+      "town_hall": 0.5081967213114754,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3590692755156002,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.27469222633527235,
+      "town_hall": 0.4098360655737705,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.42517186673717605,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.3928685880486515,
+      "town_hall": 0.5573770491803278,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4312762973352034,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.36018934081346426,
+      "town_hall": 0.391304347826087,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45231416549789616,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.40862938288920064,
+      "town_hall": 0.5434782608695652,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40112201963534366,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.33045897615708275,
+      "town_hall": 0.5,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3863955119214586,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.32061290322580643,
+      "town_hall": 0.4782608695652174,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.42286115007012626,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.3360894109396914,
+      "town_hall": 0.43478260869565216,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.34782608695652173,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.24244565217391303,
+      "town_hall": 0.391304347826087,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4074333800841515,
+      "full_clear": 0.0,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.30667251051893407,
+      "town_hall": 0.391304347826087,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4431977559607293,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.39954558204768587,
+      "town_hall": 0.5217391304347826,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3996050032916393,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.31975806451612904,
+      "town_hall": 0.42857142857142855,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4107965766951942,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.35148025016458195,
+      "town_hall": 0.4897959183673469,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.34825543120474,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.24800032916392364,
+      "town_hall": 0.40816326530612246,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4226464779460171,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.35340157998683347,
+      "town_hall": 0.4897959183673469,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43120473996050035,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.3923884134298881,
+      "town_hall": 0.5306122448979592,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3745885450954575,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.2746089532587228,
+      "town_hall": 0.3469387755102041,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4470046082949309,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.40259644502962477,
+      "town_hall": 0.4897959183673469,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4154048716260698,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.3406599736668861,
+      "town_hall": 0.46938775510204084,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.452141723955579,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.39988762559492336,
+      "town_hall": 0.5245901639344263,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4510840824960338,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.3904119513484928,
+      "town_hall": 0.45901639344262296,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39978847170809095,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.2982065044949762,
+      "town_hall": 0.4262295081967213,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.37652035959809627,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.2781269169751454,
+      "town_hall": 0.4098360655737705,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4859862506610259,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.4746911686938128,
+      "town_hall": 0.6229508196721312,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4331041776837652,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.3892681121099947,
+      "town_hall": 0.5245901639344263,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40507667900581706,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.32837995769434164,
+      "town_hall": 0.47540983606557374,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4267583289264939,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.34593865679534636,
+      "town_hall": 0.47540983606557374,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44600280504908835,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.38201367461430574,
+      "town_hall": 0.43478260869565216,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5497896213183731,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.5731157082748948,
+      "town_hall": 0.5869565217391305,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4796633941093969,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.4475981767180926,
+      "town_hall": 0.5434782608695652,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44109396914446003,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.37674614305750354,
+      "town_hall": 0.3695652173913043,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.426367461430575,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.3404435483870968,
+      "town_hall": 0.391304347826087,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.49859747545582045,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.49416269284712483,
+      "town_hall": 0.5217391304347826,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4803646563814867,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.46434291725105187,
+      "town_hall": 0.5652173913043478,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.5035063113604488,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.49959326788218794,
+      "town_hall": 0.5652173913043478,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40223831468071103,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.29844239631336406,
+      "town_hall": 0.42857142857142855,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40026333113890716,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3114368005266623,
+      "town_hall": 0.42857142857142855,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.42330480579328505,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3544272547728769,
+      "town_hall": 0.46938775510204084,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4338380513495721,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.385429888084266,
+      "town_hall": 0.4897959183673469,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.445029624753127,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3766112574061883,
+      "town_hall": 0.46938775510204084,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3377221856484529,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.20313034891375906,
+      "town_hall": 0.3469387755102041,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.45161290322580644,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.388480250164582,
+      "town_hall": 0.4489795918367347,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3759052007899934,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.26618071099407503,
+      "town_hall": 0.3877551020408163,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41459545214172394,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3501938127974617,
+      "town_hall": 0.45901639344262296,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37334743521946057,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.26310153358011634,
+      "town_hall": 0.39344262295081966,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43680592279217345,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.36872395557905874,
+      "town_hall": 0.5245901639344263,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4436805922792173,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3914756742464305,
+      "town_hall": 0.5081967213114754,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3833950290851401,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.31062453728186146,
+      "town_hall": 0.4918032786885246,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46430460074034907,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.4163455843469064,
+      "town_hall": 0.5245901639344263,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4706504494976203,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.44014225277630886,
+      "town_hall": 0.5409836065573771,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40877842411422527,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "return": 0.3203030142781597,
+      "town_hall": 0.4426229508196721,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4158485273492286,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.3568376577840112,
+      "town_hall": 0.5217391304347826,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3899018232819074,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.31399964936886393,
+      "town_hall": 0.45652173913043476,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.49298737727910236,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.4325743338008415,
+      "town_hall": 0.45652173913043476,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4102384291725105,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.32346669004207573,
+      "town_hall": 0.4782608695652174,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3485273492286115,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.24037517531556804,
+      "town_hall": 0.391304347826087,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.423562412342216,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.35843197755960726,
+      "town_hall": 0.45652173913043476,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.48737727910238426,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.4940729312762973,
+      "town_hall": 0.5652173913043478,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46984572230014027,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "return": 0.4325413744740533,
+      "town_hall": 0.4782608695652174,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.44305464121132326,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.4250444371296906,
+      "town_hall": 0.5918367346938775,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.35418038183015144,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.2080375246872943,
+      "town_hall": 0.3469387755102041,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4252797893350889,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.35615734035549707,
+      "town_hall": 0.4897959183673469,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3495720868992758,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.24718433179723504,
+      "town_hall": 0.4489795918367347,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.358130348913759,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.2637732060566162,
+      "town_hall": 0.40816326530612246,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.337063857801185,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.20296181698485846,
+      "town_hall": 0.32653061224489793,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43647136273864384,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.3733387096774194,
+      "town_hall": 0.4489795918367347,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.32323897300855825,
+      "full_clear": 0.0,
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "return": 0.1623410138248848,
+      "town_hall": 0.2857142857142857,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4595452141723955,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.4163730830248546,
+      "town_hall": 0.45901639344262296,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5013220518244316,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.48715811739820203,
+      "town_hall": 0.5409836065573771,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5298783712321523,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.5282062400846114,
+      "town_hall": 0.5573770491803278,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4881015335801163,
+      "full_clear": 0.14754098360655737,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.47788841882601796,
+      "town_hall": 0.5245901639344263,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45637228979375993,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.3929542570068747,
+      "town_hall": 0.45901639344262296,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5002644103648863,
+      "full_clear": 0.11475409836065574,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.4577316234796404,
+      "town_hall": 0.45901639344262296,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5187731359069275,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.5290764145954521,
+      "town_hall": 0.5409836065573771,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4785827604442094,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "return": 0.455386039132734,
+      "town_hall": 0.5573770491803278,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5091164095371669,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4834642356241234,
+      "town_hall": 0.5,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5350631136044881,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.5262044179523142,
+      "town_hall": 0.5217391304347826,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5049088359046283,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4682240532959327,
+      "town_hall": 0.5,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5582047685834501,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.5765199859747545,
+      "town_hall": 0.6086956521739131,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5715287517531557,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.5957352734922862,
+      "town_hall": 0.5434782608695652,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.511921458625526,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.4933345021037869,
+      "town_hall": 0.5217391304347826,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5715287517531557,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.6122352734922861,
+      "town_hall": 0.6086956521739131,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5708274894810659,
+      "full_clear": 0.2391304347826087,
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "return": 0.6487622720897616,
+      "town_hall": 0.6521739130434783,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5207373271889401,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.5092067149440421,
+      "town_hall": 0.5102040816326531,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5279789335088875,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.5368564845292956,
+      "town_hall": 0.5510204081632653,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47070441079657666,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.41872481895984204,
+      "town_hall": 0.42857142857142855,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45292955892034237,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.3704295589203423,
+      "town_hall": 0.3877551020408163,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4226464779460171,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.3392281105990783,
+      "town_hall": 0.3877551020408163,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.587228439763002,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.6321263989466754,
+      "town_hall": 0.6326530612244898,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4687294272547729,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.4369437129690586,
+      "town_hall": 0.4489795918367347,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.35418038183015144,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "return": 0.18958854509545753,
+      "town_hall": 0.2653061224489796,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4410364886303543,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.39636435748281335,
+      "town_hall": 0.5409836065573771,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4288736118455843,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.387488365943945,
+      "town_hall": 0.5409836065573771,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46113167636171337,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.42391856160761504,
+      "town_hall": 0.5737704918032787,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.36382866208355363,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.2574352194606029,
+      "town_hall": 0.4098360655737705,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43046007403490216,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.3688289264939186,
+      "town_hall": 0.47540983606557374,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.48175568482284503,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.43342781597038604,
+      "town_hall": 0.5573770491803278,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4262295081967213,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.3442786885245902,
+      "town_hall": 0.47540983606557374,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4357482813326282,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "return": 0.37424008461131675,
+      "town_hall": 0.5081967213114754,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4880785413744741,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.47153506311360455,
+      "town_hall": 0.4782608695652174,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4726507713884993,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.4235638148667602,
+      "town_hall": 0.45652173913043476,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5182328190743338,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.5288958625525947,
+      "town_hall": 0.5869565217391305,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41654978962131833,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.3564954417952314,
+      "town_hall": 0.4782608695652174,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45021037868162694,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.40688429172510515,
+      "town_hall": 0.5217391304347826,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.49228611500701264,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.4873622019635344,
+      "town_hall": 0.5652173913043478,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4803646563814867,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.45819074333800847,
+      "town_hall": 0.5217391304347826,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41093969144460024,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "return": 0.3289505610098177,
+      "town_hall": 0.43478260869565216,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3890717577353522,
+      "full_clear": 0.0,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.2943472679394339,
+      "town_hall": 0.5102040816326531,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47662936142198814,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.46851711652402894,
+      "town_hall": 0.5510204081632653,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.44305464121132326,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.38975872284397634,
+      "town_hall": 0.5306122448979592,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3765635286372614,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.26130842659644504,
+      "town_hall": 0.3877551020408163,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4298880842659645,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.3757962475312706,
+      "town_hall": 0.46938775510204084,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45687952600395,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.4125938117182357,
+      "town_hall": 0.5714285714285714,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.42132982225148125,
+      "full_clear": 0.0,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.33677880184331793,
+      "town_hall": 0.4489795918367347,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5069124423963134,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "return": 0.4988614219881501,
+      "town_hall": 0.5510204081632653,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4394500264410365,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.38773691168693813,
+      "town_hall": 0.4918032786885246,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43046007403490216,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.3705502379693284,
+      "town_hall": 0.5081967213114754,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40507667900581706,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.3204291380222105,
+      "town_hall": 0.4098360655737705,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3749338974087784,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.2857453728186145,
+      "town_hall": 0.4098360655737705,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37546271813855103,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.29022501322051825,
+      "town_hall": 0.4426229508196721,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.402432575356954,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.3174407720782655,
+      "town_hall": 0.4426229508196721,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4235854045478583,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.33792966684294024,
+      "town_hall": 0.45901639344262296,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43204653622422,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "return": 0.37584161819143314,
+      "town_hall": 0.45901639344262296,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40673211781206176,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.3425147265077139,
+      "town_hall": 0.45652173913043476,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43618513323983166,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.3552068723702665,
+      "town_hall": 0.43478260869565216,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.42005610098176716,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.33950175315568026,
+      "town_hall": 0.45652173913043476,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4684431977559607,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.4526497194950912,
+      "town_hall": 0.5652173913043478,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3906030855539972,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.2989835203366059,
+      "town_hall": 0.41304347826086957,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4488078541374474,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.39467741935483874,
+      "town_hall": 0.5,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4102384291725105,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.35090147265077143,
+      "town_hall": 0.45652173913043476,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47124824684431976,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "return": 0.439476507713885,
+      "town_hall": 0.5,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3568136932192232,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.2372218564845293,
+      "town_hall": 0.3673469387755102,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3574720210664911,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.24771691902567478,
+      "town_hall": 0.40816326530612246,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4549045424621461,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.4276392363396972,
+      "town_hall": 0.5510204081632653,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.35615536537195525,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.2515329163923634,
+      "town_hall": 0.46938775510204084,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.44173798551678733,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.39837063857801186,
+      "town_hall": 0.5306122448979592,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43778801843317977,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.3794512837393022,
+      "town_hall": 0.4897959183673469,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3660302830809743,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.26180579328505593,
+      "town_hall": 0.3673469387755102,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.391046741277156,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "return": 0.302312047399605,
+      "town_hall": 0.40816326530612246,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.36488630354309887,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.27513220518244313,
+      "town_hall": 0.4426229508196721,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4658910629296668,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.4549648334214701,
+      "town_hall": 0.6065573770491803,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40507667900581706,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.3276422527763088,
+      "town_hall": 0.4918032786885246,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4056054997355896,
+      "full_clear": 0.11475409836065574,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.3368841882601798,
+      "town_hall": 0.4262295081967213,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37123215230037016,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.28216657852987836,
+      "town_hall": 0.4262295081967213,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4272871496562665,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.3785412480169223,
+      "town_hall": 0.5573770491803278,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37757800105764144,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.2917009518773136,
+      "town_hall": 0.4262295081967213,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41935483870967744,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "return": 0.3545351665785299,
+      "town_hall": 0.4426229508196721,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.33660589060308554,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.24410589060308555,
+      "town_hall": 0.45652173913043476,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4831697054698457,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.4621370967741935,
+      "town_hall": 0.5652173913043478,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47124824684431976,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.4655417251051893,
+      "town_hall": 0.5652173913043478,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41725105189340816,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.31977279102384293,
+      "town_hall": 0.41304347826086957,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3709677419354838,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.27908730715287516,
+      "town_hall": 0.41304347826086957,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.43618513323983166,
+      "full_clear": 0.0,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.3934133941093969,
+      "town_hall": 0.5434782608695652,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3527349228611501,
+      "full_clear": 0.0,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.25427840112201966,
+      "town_hall": 0.45652173913043476,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3899018232819074,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "return": 0.31426051893408136,
+      "town_hall": 0.45652173913043476,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.42001316655694537,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.3616458196181699,
+      "town_hall": 0.4489795918367347,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41342988808426595,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.36935845951283736,
+      "town_hall": 0.5306122448979592,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.44305464121132326,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.3840750493745885,
+      "town_hall": 0.5306122448979592,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4088215931533904,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.34968894009216595,
+      "town_hall": 0.4897959183673469,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41013824884792627,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.3460260039499671,
+      "town_hall": 0.46938775510204084,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40421329822251484,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.32470309414088216,
+      "town_hall": 0.4489795918367347,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3298222514812376,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.21444470046082947,
+      "town_hall": 0.3877551020408163,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41803818301514156,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "return": 0.35973206056616197,
+      "town_hall": 0.46938775510204084,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4156530936012692,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.31812030671602326,
+      "town_hall": 0.39344262295081966,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46218931782125855,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.39714833421470125,
+      "town_hall": 0.47540983606557374,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.48281332628239026,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.46285430988894766,
+      "town_hall": 0.5737704918032787,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5034373347435219,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.48806848228450556,
+      "town_hall": 0.5245901639344263,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4574299312533051,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.38468402961396087,
+      "town_hall": 0.4918032786885246,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45372818614489685,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.4011052353252248,
+      "town_hall": 0.5245901639344263,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46430460074034896,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.42488656795346375,
+      "town_hall": 0.5245901639344263,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5103120042305659,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "return": 0.5035087255420413,
+      "town_hall": 0.5901639344262295,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5287517531556801,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.5628821879382889,
+      "town_hall": 0.6086956521739131,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5182328190743338,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.5086241234221599,
+      "town_hall": 0.4782608695652174,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4943899018232819,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.4672703366058906,
+      "town_hall": 0.5869565217391305,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5427769985974755,
+      "full_clear": 0.17391304347826086,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.5281574333800841,
+      "town_hall": 0.45652173913043476,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.44179523141654975,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.3766321879382889,
+      "town_hall": 0.4782608695652174,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5224403927068724,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.5121143057503506,
+      "town_hall": 0.4782608695652174,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4894810659186536,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.4684484572230014,
+      "town_hall": 0.5652173913043478,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.6374474053295932,
+      "full_clear": 0.2391304347826087,
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "return": 0.7145669705469845,
+      "town_hall": 0.6521739130434783,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5227123107307439,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.5053143515470704,
+      "town_hall": 0.4897959183673469,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46609611586570115,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.40757570770243584,
+      "town_hall": 0.46938775510204084,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5161290322580645,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.4781698485845951,
+      "town_hall": 0.46938775510204084,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4739960500329164,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.44639400921658984,
+      "town_hall": 0.4489795918367347,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5727452271231073,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.592286043449638,
+      "town_hall": 0.5714285714285714,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4601711652402896,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.4067527978933509,
+      "town_hall": 0.4897959183673469,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46938775510204084,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.4062857142857143,
+      "town_hall": 0.42857142857142855,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4647794601711652,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "return": 0.4215651744568795,
+      "town_hall": 0.4489795918367347,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37440507667900585,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.2932411422527763,
+      "town_hall": 0.4918032786885246,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3617133791644632,
+      "full_clear": 0.0,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.24704944473823376,
+      "town_hall": 0.4098360655737705,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.34796404019037547,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.23774272871496566,
+      "town_hall": 0.4262295081967213,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3664727657324167,
+      "full_clear": 0.0,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.24724325753569543,
+      "town_hall": 0.39344262295081966,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3654151242728715,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.2468495505023797,
+      "town_hall": 0.4262295081967213,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37810682178741406,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.25603305129561077,
+      "town_hall": 0.39344262295081966,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.422527763088313,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.3659294024325753,
+      "town_hall": 0.5081967213114754,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.37546271813855103,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "return": 0.27709386567953465,
+      "town_hall": 0.39344262295081966,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3667601683029453,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.2801514726507714,
+      "town_hall": 0.45652173913043476,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4214586255259467,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.361078190743338,
+      "town_hall": 0.43478260869565216,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3927068723702664,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.31075035063113604,
+      "town_hall": 0.43478260869565216,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4600280504908836,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.4218758765778401,
+      "town_hall": 0.5217391304347826,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4551192145862553,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.41726051893408134,
+      "town_hall": 0.5,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4179523141654979,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.3362240532959327,
+      "town_hall": 0.43478260869565216,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4424964936886396,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.36122475455820474,
+      "town_hall": 0.43478260869565216,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.41304347826086957,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "return": 0.3427065217391304,
+      "town_hall": 0.5,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3712969058591179,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.28717445687952603,
+      "town_hall": 0.46938775510204084,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3344305464121132,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.21917544437129688,
+      "town_hall": 0.3877551020408163,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3778801843317972,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.29339038841342985,
+      "town_hall": 0.40816326530612246,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.33113890717577354,
+      "full_clear": 0.0,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.1800164581961817,
+      "town_hall": 0.3469387755102041,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46938775510204084,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.43087755102040814,
+      "town_hall": 0.5102040816326531,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3857801184990125,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.2966168531928901,
+      "town_hall": 0.46938775510204084,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.445029624753127,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.4214581961816985,
+      "town_hall": 0.5306122448979592,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3712969058591179,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "return": 0.271409150757077,
+      "town_hall": 0.42857142857142855,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5214172395557906,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.498269698572184,
+      "town_hall": 0.4918032786885246,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5351665785298784,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.5576665785298783,
+      "town_hall": 0.6557377049180327,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5018508725542041,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.4961049709148599,
+      "town_hall": 0.5409836065573771,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.523532522474881,
+      "full_clear": 0.16393442622950818,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.5381554732945532,
+      "town_hall": 0.5573770491803278,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5742993125330513,
+      "full_clear": 0.11475409836065574,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.601414066631412,
+      "town_hall": 0.5573770491803278,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4262295081967213,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.35108196721311474,
+      "town_hall": 0.4918032786885246,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5425700687466948,
+      "full_clear": 0.16393442622950818,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.5571438392384982,
+      "town_hall": 0.5245901639344263,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5579058699101005,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "return": 0.5968239026969857,
+      "town_hall": 0.6229508196721312,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.6100981767180925,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.6824351332398316,
+      "town_hall": 0.6521739130434783,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5280504908835905,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5025613604488078,
+      "town_hall": 0.5,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5659186535764376,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5840056100981768,
+      "town_hall": 0.5652173913043478,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5329593267882188,
+      "full_clear": 0.17391304347826086,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5505897615708275,
+      "town_hall": 0.5434782608695652,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5799438990182327,
+      "full_clear": 0.17391304347826086,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.6255960729312763,
+      "town_hall": 0.5434782608695652,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5960729312762973,
+      "full_clear": 0.2391304347826087,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.6578338008415148,
+      "town_hall": 0.5869565217391305,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5596072931276297,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.5499333800841515,
+      "town_hall": 0.5,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.6143057503506312,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "return": 0.6647405329593268,
+      "town_hall": 0.5869565217391305,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5687952600394997,
+      "full_clear": 0.2653061224489796,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.5982952600394996,
+      "town_hall": 0.5510204081632653,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5240289664252797,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.48099835418038184,
+      "town_hall": 0.5102040816326531,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.6122448979591837,
+      "full_clear": 0.20408163265306123,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.693438775510204,
+      "town_hall": 0.6530612244897959,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5681369321922317,
+      "full_clear": 0.20408163265306123,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.622626728110599,
+      "town_hall": 0.6326530612244898,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.467412771560237,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.38436175115207377,
+      "town_hall": 0.3469387755102041,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47926267281105994,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.44775246872942726,
+      "town_hall": 0.5306122448979592,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5082290980908493,
+      "full_clear": 0.1836734693877551,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.48655562870309416,
+      "town_hall": 0.46938775510204084,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5042791310072416,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "return": 0.49222811059907834,
+      "town_hall": 0.46938775510204084,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.42305658381808564,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.36667953463775776,
+      "town_hall": 0.4918032786885246,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4045478582760444,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.2907937599153887,
+      "town_hall": 0.39344262295081966,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4685351665785299,
+      "full_clear": 0.06557377049180328,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.4177810682178741,
+      "town_hall": 0.5081967213114754,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47540983606557374,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.4472540983606557,
+      "town_hall": 0.5573770491803278,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4341618191433104,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.3864978847170809,
+      "town_hall": 0.5245901639344263,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4463246959280804,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.38354600740349026,
+      "town_hall": 0.45901639344262296,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47276573241671077,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.4253722897937599,
+      "town_hall": 0.4918032786885246,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.461660497091486,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "return": 0.41888180856689583,
+      "town_hall": 0.47540983606557374,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4957924263674614,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.48729242636746145,
+      "town_hall": 0.4782608695652174,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5007012622720898,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.497179523141655,
+      "town_hall": 0.5434782608695652,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.49298737727910236,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.4615091164095372,
+      "town_hall": 0.5434782608695652,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5631136044880786,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.5688636044880785,
+      "town_hall": 0.5,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.55890603085554,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.5824929873772791,
+      "town_hall": 0.5434782608695652,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.46984572230014027,
+      "full_clear": 0.13043478260869565,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.42811746143057505,
+      "town_hall": 0.45652173913043476,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4768583450210379,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.43571704067321176,
+      "town_hall": 0.4782608695652174,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4495091164095371,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "return": 0.3758243338008415,
+      "town_hall": 0.41304347826086957,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4838709677419355,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.44050362080316,
+      "town_hall": 0.42857142857142855,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4799210006583278,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.45907406188281763,
+      "town_hall": 0.5306122448979592,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40816326530612246,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.3103265306122449,
+      "town_hall": 0.3877551020408163,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.47926267281105994,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.46803818301514155,
+      "town_hall": 0.5510204081632653,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4588545095457538,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.39618104015799865,
+      "town_hall": 0.46938775510204084,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4641211323238973,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.4267741935483871,
+      "town_hall": 0.46938775510204084,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4911125740618828,
+      "full_clear": 0.12244897959183673,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.46919420671494405,
+      "town_hall": 0.5102040816326531,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4107965766951942,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "return": 0.3472965766951942,
+      "town_hall": 0.42857142857142855,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4262295081967213,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.3660491803278689,
+      "town_hall": 0.4918032786885246,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4722369116869381,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.46928609201480703,
+      "town_hall": 0.6065573770491803,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4457958751983078,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.4097876784769963,
+      "town_hall": 0.5573770491803278,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4833421470121629,
+      "full_clear": 0.04918032786885246,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.4554323109465891,
+      "town_hall": 0.5409836065573771,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.422527763088313,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.3619539925965098,
+      "town_hall": 0.47540983606557374,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45690111052353255,
+      "full_clear": 0.03278688524590164,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.4253109465891063,
+      "town_hall": 0.5081967213114754,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.45161290322580644,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.3915309360126917,
+      "town_hall": 0.47540983606557374,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4637757800105764,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "return": 0.4241118455843469,
+      "town_hall": 0.5081967213114754,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.49158485273492286,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.4819109396914446,
+      "town_hall": 0.5217391304347826,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4453015427769986,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.3699211079943899,
+      "town_hall": 0.43478260869565216,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.52945301542777,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.5092356241234222,
+      "town_hall": 0.5434782608695652,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5196353436185133,
+      "full_clear": 0.0,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.4941462131837307,
+      "town_hall": 0.5217391304347826,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.5701262272089762,
+      "full_clear": 0.1956521739130435,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.6367023141654979,
+      "town_hall": 0.6304347826086957,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.49228611500701264,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.4493839410939692,
+      "town_hall": 0.4782608695652174,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.453015427769986,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.37301542776998603,
+      "town_hall": 0.391304347826087,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4831697054698457,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "return": 0.4777892706872371,
+      "town_hall": 0.5869565217391305,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4871626069782752,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.45073403554970376,
+      "town_hall": 0.4897959183673469,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4305464121132324,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.4086586570111916,
+      "town_hall": 0.5306122448979592,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4976958525345622,
+      "full_clear": 0.08163265306122448,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.4901958525345622,
+      "town_hall": 0.5714285714285714,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4252797893350889,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3613512179065175,
+      "town_hall": 0.5102040816326531,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.40026333113890716,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.30605924950625407,
+      "town_hall": 0.40816326530612246,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.39828834759710335,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3304822251481238,
+      "town_hall": 0.4489795918367347,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.42330480579328505,
+      "full_clear": 0.061224489795918366,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.340039499670836,
+      "town_hall": 0.42857142857142855,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4272547728768927,
+      "full_clear": 0.04081632653061224,
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "return": 0.3497037524687294,
+      "town_hall": 0.40816326530612246,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5399259650978319,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5283112109994712,
+      "town_hall": 0.5737704918032787,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5351665785298784,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5112567424643045,
+      "town_hall": 0.5573770491803278,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.550502379693284,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5511827075621364,
+      "town_hall": 0.6229508196721312,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5436277102062401,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5361113167636171,
+      "town_hall": 0.5901639344262295,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6314119513484928,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7263545742993125,
+      "town_hall": 0.7540983606557377,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.644632469592808,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7149849286092015,
+      "town_hall": 0.6885245901639344,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.656795346377578,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7681314119513485,
+      "town_hall": 0.7540983606557377,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6589106292966684,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7743450555261766,
+      "town_hall": 0.7540983606557377,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5553997194950911,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.5340736325385694,
+      "town_hall": 0.5434782608695652,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5652173913043478,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.560195652173913,
+      "town_hall": 0.5434782608695652,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5624123422159888,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.5736949509116409,
+      "town_hall": 0.5869565217391305,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5876577840112202,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6043751753155681,
+      "town_hall": 0.5869565217391305,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6016830294530154,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6618786816269285,
+      "town_hall": 0.6739130434782609,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6402524544179523,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.7167524544179523,
+      "town_hall": 0.717391304347826,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6746143057503506,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.8054621318373071,
+      "town_hall": 0.782608695652174,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5995792426367462,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6760792426367461,
+      "town_hall": 0.6956521739130435,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5595786701777485,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5467929558920342,
+      "town_hall": 0.5714285714285714,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5477287689269257,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5196369321922317,
+      "town_hall": 0.5510204081632653,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5714285714285714,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5841530612244898,
+      "town_hall": 0.673469387755102,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.532587228439763,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.4993933508887426,
+      "town_hall": 0.5306122448979592,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6800526662277814,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.81012409479921,
+      "town_hall": 0.8163265306122449,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6596445029624752,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.7540016458196181,
+      "town_hall": 0.7551020408163265,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6840026333113891,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.8242781435154707,
+      "town_hall": 0.8163265306122449,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6570111915734036,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.7717764976958525,
+      "town_hall": 0.7755102040816326,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06652564780539397,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06926663141195136,
+      "town_hall": 0.07377049180327869,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0706504494976203,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07830946589106293,
+      "town_hall": 0.08688524590163935,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06768905341089371,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.0728890534108937,
+      "town_hall": 0.08196721311475409,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06282390269698572,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06515505023796933,
+      "town_hall": 0.07540983606557378,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06911686938127976,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07595621364357483,
+      "town_hall": 0.08524590163934426,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07154944473823374,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07961829719725014,
+      "town_hall": 0.08524590163934426,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0641988365943945,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06489063987308302,
+      "town_hall": 0.07377049180327869,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06160761501850872,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06147974616604971,
+      "town_hall": 0.06393442622950819,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06633941093969144,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.06882201963534362,
+      "town_hall": 0.08043478260869565,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07244039270687237,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07818387096774193,
+      "town_hall": 0.07608695652173914,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06690042075736326,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07046998597475457,
+      "town_hall": 0.06956521739130435,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06157082748948106,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.0645969144460028,
+      "town_hall": 0.07173913043478261,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06928471248246844,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07448471248246845,
+      "town_hall": 0.07608695652173914,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07047685834502104,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07513338008415146,
+      "town_hall": 0.07173913043478261,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06276297335203367,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.06089775596072931,
+      "town_hall": 0.06521739130434782,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06697054698457222,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.0727140252454418,
+      "town_hall": 0.0782608695652174,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0608953258722844,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06405450954575378,
+      "town_hall": 0.07959183673469387,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.061553653719552334,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06522304147465438,
+      "town_hall": 0.07551020408163266,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06431863067807768,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06645740618828176,
+      "town_hall": 0.07755102040816327,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.05957867017774852,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06477867017774852,
+      "town_hall": 0.07959183673469387,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06339697169190256,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.07114799210006584,
+      "town_hall": 0.08979591836734693,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06754443712969058,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.0747852534562212,
+      "town_hall": 0.08775510204081632,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.062080315997366686,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.0626884792626728,
+      "town_hall": 0.07142857142857142,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.05714285714285714,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.05724081632653061,
+      "town_hall": 0.06326530612244897,
+      "view": 7
+    }
+  ],
+  "orientation_gap": [
+    {
+      "condition": "P",
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "orientation_gap": 0.12268640930724484
+    },
+    {
+      "condition": "P",
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "orientation_gap": 0.12762973352033663
+    },
+    {
+      "condition": "P",
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "orientation_gap": 0.10796576695194204
+    },
+    {
+      "condition": "P",
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.11581173982020099
+    },
+    {
+      "condition": "P",
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.1395511921458626
+    },
+    {
+      "condition": "P",
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.10467412771560236
+    },
+    {
+      "condition": "P",
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "orientation_gap": 0.11898466419883658
+    },
+    {
+      "condition": "P",
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "orientation_gap": 0.1472650771388499
+    },
+    {
+      "condition": "P",
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "orientation_gap": 0.0730743910467413
+    },
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "orientation_gap": 0.16499206768905333
+    },
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "orientation_gap": 0.1079943899018233
+    },
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "orientation_gap": 0.1257406188281765
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "orientation_gap": 0.06240084611316765
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "orientation_gap": 0.09677419354838712
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "orientation_gap": 0.12310730743910459
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "orientation_gap": 0.07509254362771023
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "orientation_gap": 0.11150070126227207
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "orientation_gap": 0.07109940750493748
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "orientation_gap": 0.07985193019566356
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "orientation_gap": 0.11991584852734916
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "orientation_gap": 0.13890717577353523
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "orientation_gap": 0.0608143839238498
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "orientation_gap": 0.1367461430575035
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "orientation_gap": 0.15470704410796582
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "orientation_gap": 0.09042834479111583
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "orientation_gap": 0.10448807854137443
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "orientation_gap": 0.09874917709019088
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "orientation_gap": 0.10946589106292964
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "orientation_gap": 0.12342215988779803
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "orientation_gap": 0.11389071757735353
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 0,
+      "motif": "closed_ring",
+      "orientation_gap": 0.09730301427815974
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 0,
+      "motif": "ew_gates",
+      "orientation_gap": 0.14446002805049085
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 0,
+      "motif": "ns_gates",
+      "orientation_gap": 0.11981566820276501
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.07350608143839238
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.06661991584852733
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.23304805793285055
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 2,
+      "motif": "closed_ring",
+      "orientation_gap": 0.1179270227392914
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 2,
+      "motif": "ew_gates",
+      "orientation_gap": 0.10729312762973359
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 2,
+      "motif": "ns_gates",
+      "orientation_gap": 0.130348913759052
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "motif": "closed_ring",
+      "orientation_gap": 0.06451612903225806
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "motif": "ew_gates",
+      "orientation_gap": 0.08064516129032256
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "motif": "ns_gates",
+      "orientation_gap": 0.09874917709019088
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "motif": "closed_ring",
+      "orientation_gap": 0.10100475938656794
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "motif": "ew_gates",
+      "orientation_gap": 0.14656381486676018
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "motif": "ns_gates",
+      "orientation_gap": 0.11323238973008565
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "motif": "closed_ring",
+      "orientation_gap": 0.09465891062929671
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "motif": "ew_gates",
+      "orientation_gap": 0.19565217391304346
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "motif": "ns_gates",
+      "orientation_gap": 0.11257406188281766
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "motif": "closed_ring",
+      "orientation_gap": 0.07456372289793756
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "motif": "ew_gates",
+      "orientation_gap": 0.0932678821879383
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "motif": "ns_gates",
+      "orientation_gap": 0.1382488479262673
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "motif": "closed_ring",
+      "orientation_gap": 0.14806980433633005
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "motif": "ew_gates",
+      "orientation_gap": 0.08625525946704071
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "motif": "ns_gates",
+      "orientation_gap": 0.14483212639894671
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "motif": "closed_ring",
+      "orientation_gap": 0.07086197778952935
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "motif": "ew_gates",
+      "orientation_gap": 0.11360448807854145
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "motif": "ns_gates",
+      "orientation_gap": 0.08294930875576034
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "motif": "closed_ring",
+      "orientation_gap": 0.06081438392384986
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "motif": "ew_gates",
+      "orientation_gap": 0.12482468443197758
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "motif": "ns_gates",
+      "orientation_gap": 0.09940750493745887
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.12374405076679007
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.11921458625525949
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.15141540487162608
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.009941829719725022
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.010869565217391311
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.010401579986833435
+    }
+  ],
+  "orientation_note": "Max minus min mean destruction across tested views; informative only when all eight views were evaluated."
+}

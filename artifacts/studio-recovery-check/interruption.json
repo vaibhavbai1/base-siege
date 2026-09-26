@@ -1,0 +1,6 @@
+{
+  "checkpoint": "checkpoint-000000000032-placement-2fd7fa6eb7",
+  "recovered_steps": 32,
+  "rejected": [],
+  "signal": "SIGKILL"
+}

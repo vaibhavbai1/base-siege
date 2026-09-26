@@ -1,0 +1,698 @@
+{
+  "next_step": 275000,
+  "records": [
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.0,
+      "mean_return": -0.2499375,
+      "mean_spent": 166.625,
+      "timesteps": 0,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.07258064516129033,
+      "mean_return": -0.14546102150537632,
+      "mean_spent": 169.66666666666666,
+      "timesteps": 32768,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.37701612903225806,
+      "mean_return": 0.18673487903225808,
+      "mean_spent": 199.77083333333334,
+      "timesteps": 57344,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.38776881720430106,
+      "mean_return": 0.2649459005376344,
+      "mean_spent": 199.9375,
+      "timesteps": 81920,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.37768817204301075,
+      "mean_return": 0.2812819220430108,
+      "mean_spent": 199.6875,
+      "timesteps": 106496,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.41465053763440857,
+      "mean_return": 0.34949428763440865,
+      "mean_spent": 199.6875,
+      "timesteps": 131072,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.36626344086021506,
+      "mean_return": 0.2695446908602151,
+      "mean_spent": 199.89583333333334,
+      "timesteps": 155648,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.37231182795698925,
+      "mean_return": 0.27574932795698925,
+      "mean_spent": 199.79166666666666,
+      "timesteps": 180224,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.4213709677419355,
+      "mean_return": 0.3767043010752688,
+      "mean_spent": 199.91666666666666,
+      "timesteps": 204800,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.48319892473118276,
+      "mean_return": 0.48612600806451617,
+      "mean_spent": 199.4375,
+      "timesteps": 229376,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "episodes": 48,
+      "layouts": [
+        {
+          "motif": "closed_ring",
+          "seed": 10200
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10263
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10326
+        },
+        {
+          "motif": "closed_ring",
+          "seed": 10394
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10204
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10326
+        },
+        {
+          "motif": "ns_gates",
+          "seed": 10394
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10200
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10263
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10329
+        },
+        {
+          "motif": "ew_gates",
+          "seed": 10393
+        }
+      ],
+      "mean_destruction": 0.44422043010752693,
+      "mean_return": 0.44303293010752687,
+      "mean_spent": 198.70833333333334,
+      "timesteps": 253952,
+      "views": [
+        0,
+        1,
+        4,
+        5
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "actual_steps": 262144,
+  "checkpoint": "checkpoint-000000262144-joint-c123232ddc",
+  "checkpoint_sha256": "963cbc9b1942d0c2129a70b01a1a546adf54958e3313035b96333fd66dfd86a0",
+  "schema_version": 3
+}

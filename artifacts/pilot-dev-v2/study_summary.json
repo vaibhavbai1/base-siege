@@ -1,0 +1,1272 @@
+{
+  "baseline_note": "Random uses ten action seeds per base/view. Baseline game counts are not independent PPO learners.",
+  "comparisons": {
+    "motif/closed_ring": {
+      "destruction": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.0411158117398202
+        },
+        "mean_paired_difference": -0.0411158117398202,
+        "metric": "destruction",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.010245901639344262
+        },
+        "mean_paired_difference": 0.010245901639344262,
+        "metric": "full_clear",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.02495590957165521
+        },
+        "mean_paired_difference": 0.02495590957165521,
+        "metric": "return",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.24385245901639344
+        },
+        "mean_paired_difference": 0.24385245901639344,
+        "metric": "town_hall",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "motif/ew_gates": {
+      "destruction": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.03409887798036465
+        },
+        "mean_paired_difference": -0.03409887798036465,
+        "metric": "destruction",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.019021739130434784
+        },
+        "mean_paired_difference": 0.019021739130434784,
+        "metric": "full_clear",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.04547313288920056
+        },
+        "mean_paired_difference": 0.04547313288920056,
+        "metric": "return",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.22554347826086957
+        },
+        "mean_paired_difference": 0.22554347826086957,
+        "metric": "town_hall",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "motif/ns_gates": {
+      "destruction": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.09043778801843318
+        },
+        "mean_paired_difference": -0.09043778801843318,
+        "metric": "destruction",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.007653061224489796
+        },
+        "mean_paired_difference": 0.007653061224489796,
+        "metric": "full_clear",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.050213298222514816
+        },
+        "mean_paired_difference": -0.050213298222514816,
+        "metric": "return",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.18112244897959184
+        },
+        "mean_paired_difference": 0.18112244897959184,
+        "metric": "town_hall",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "overall": {
+      "destruction": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.054538875103391234
+        },
+        "mean_paired_difference": -0.054538875103391234,
+        "metric": "destruction",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.01201923076923077
+        },
+        "mean_paired_difference": 0.01201923076923077,
+        "metric": "full_clear",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.007395019127378
+        },
+        "mean_paired_difference": 0.007395019127378,
+        "metric": "return",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.21875
+        },
+        "mean_paired_difference": 0.21875,
+        "metric": "town_hall",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    },
+    "seen_structures": {
+      "destruction": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": -0.054538875103391234
+        },
+        "mean_paired_difference": -0.054538875103391234,
+        "metric": "destruction",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "full_clear": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.01201923076923077
+        },
+        "mean_paired_difference": 0.01201923076923077,
+        "metric": "full_clear",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "return": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.007395019127378
+        },
+        "mean_paired_difference": 0.007395019127378,
+        "metric": "return",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      },
+      "town_hall": {
+        "ci95_high": null,
+        "ci95_low": null,
+        "learner_differences": {
+          "100": 0.21875
+        },
+        "mean_paired_difference": 0.21875,
+        "metric": "town_hall",
+        "n_independent_learners": 1,
+        "note": "Confidence interval uses learner seeds, not individual games."
+      }
+    }
+  },
+  "means": [
+    {
+      "condition": "P",
+      "destruction": 0.37757800105764144,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.1596681649920677,
+      "town_hall": 0.09836065573770492,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38656795346377576,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.1704613960867266,
+      "town_hall": 0.06557377049180328,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.358011634056055,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.12440507667900583,
+      "town_hall": 0.03278688524590164,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.372818614489688,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.14343336858804867,
+      "town_hall": 0.09836065573770492,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3791644632469593,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.16641856160761503,
+      "town_hall": 0.04918032786885246,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3971443680592279,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.171283712321523,
+      "town_hall": 0.06557377049180328,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40613432046536224,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.19610973030142784,
+      "town_hall": 0.03278688524590164,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3770491803278688,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.1714344262295082,
+      "town_hall": 0.08196721311475409,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3927068723702664,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.19085904628330996,
+      "town_hall": 0.15217391304347827,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.394109396914446,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.16829417952314166,
+      "town_hall": 0.021739130434782608,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.33590462833099577,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.08639375876577841,
+      "town_hall": 0.021739130434782608,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3863955119214586,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.1323194249649369,
+      "town_hall": 0.043478260869565216,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4095371669004208,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.20209151472650771,
+      "town_hall": 0.08695652173913043,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.38218793828892006,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.15409011220196356,
+      "town_hall": 0.021739130434782608,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3632538569424965,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.1379821178120617,
+      "town_hall": 0.06521739130434782,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4081346423562412,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.18683029453015426,
+      "town_hall": 0.06521739130434782,
+      "view": 7
+    },
+    {
+      "condition": "P",
+      "destruction": 0.39368005266622774,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.16194535878867677,
+      "town_hall": 0.061224489795918366,
+      "view": 0
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3897300855826202,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.19080151415404872,
+      "town_hall": 0.12244897959183673,
+      "view": 1
+    },
+    {
+      "condition": "P",
+      "destruction": 0.3798551678736011,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.1352123107307439,
+      "town_hall": 0.0,
+      "view": 2
+    },
+    {
+      "condition": "P",
+      "destruction": 0.43252139565503617,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.2600724160631995,
+      "town_hall": 0.1836734693877551,
+      "view": 3
+    },
+    {
+      "condition": "P",
+      "destruction": 0.4206714944042133,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.2187837393021725,
+      "town_hall": 0.061224489795918366,
+      "view": 4
+    },
+    {
+      "condition": "P",
+      "destruction": 0.44832126398946676,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.2913314680710994,
+      "town_hall": 0.1836734693877551,
+      "view": 5
+    },
+    {
+      "condition": "P",
+      "destruction": 0.412771560236998,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.22884298880842663,
+      "town_hall": 0.04081632653061224,
+      "view": 6
+    },
+    {
+      "condition": "P",
+      "destruction": 0.40816326530612246,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.18985714285714286,
+      "town_hall": 0.10204081632653061,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3654151242728715,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.22174299312533052,
+      "town_hall": 0.2786885245901639,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3442622950819672,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.1840983606557377,
+      "town_hall": 0.29508196721311475,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.31253305129561076,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.13634452670544686,
+      "town_hall": 0.26229508196721313,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3950290851401375,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.2881438392384982,
+      "town_hall": 0.4098360655737705,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3289264939185616,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.19362321523003703,
+      "town_hall": 0.32786885245901637,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.36329984135378107,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.22735721840296141,
+      "town_hall": 0.39344262295081966,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.31464833421470123,
+      "full_clear": 0.01639344262295082,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.13860735060814383,
+      "town_hall": 0.2459016393442623,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.30142781597038604,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "return": 0.112944209413009,
+      "town_hall": 0.26229508196721313,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.4481065918653577,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.33337833099579245,
+      "town_hall": 0.2608695652173913,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.32748948106591863,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.21381556802244042,
+      "town_hall": 0.3695652173913043,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.31977559607293127,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.09635168302945303,
+      "town_hall": 0.17391304347826086,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.33520336605890605,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.21455119214586255,
+      "town_hall": 0.34782608695652173,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3590462833099579,
+      "full_clear": 0.06521739130434782,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.20168758765778402,
+      "town_hall": 0.2391304347826087,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3267882187938289,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.19657082748948107,
+      "town_hall": 0.32608695652173914,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.34081346423562414,
+      "full_clear": 0.043478260869565216,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.15543302945301543,
+      "town_hall": 0.1956521739130435,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.34221598877980364,
+      "full_clear": 0.021739130434782608,
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "return": 0.21085729312762974,
+      "town_hall": 0.3695652173913043,
+      "view": 7
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.22448979591836735,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.025510204081632654,
+      "town_hall": 0.22448979591836735,
+      "view": 0
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3857801184990125,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.22399440421329825,
+      "town_hall": 0.20408163265306123,
+      "view": 1
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.30480579328505597,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.1629690585911784,
+      "town_hall": 0.3673469387755102,
+      "view": 2
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3344305464121132,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.15718564845292957,
+      "town_hall": 0.22448979591836735,
+      "view": 3
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.26793943383805136,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.11979657669519421,
+      "town_hall": 0.3673469387755102,
+      "view": 4
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.38643844634628044,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.2559078341013825,
+      "town_hall": 0.2857142857142857,
+      "view": 5
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.293614219881501,
+      "full_clear": 0.0,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.1264203423304806,
+      "town_hall": 0.2653061224489796,
+      "view": 6
+    },
+    {
+      "condition": "PA",
+      "destruction": 0.3647136273864384,
+      "full_clear": 0.02040816326530612,
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "return": 0.2033564845292956,
+      "town_hall": 0.2653061224489796,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5399259650978319,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5283112109994712,
+      "town_hall": 0.5737704918032787,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5351665785298784,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5112567424643045,
+      "town_hall": 0.5573770491803278,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.550502379693284,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5511827075621364,
+      "town_hall": 0.6229508196721312,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5436277102062401,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.5361113167636171,
+      "town_hall": 0.5901639344262295,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6314119513484928,
+      "full_clear": 0.09836065573770492,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7263545742993125,
+      "town_hall": 0.7540983606557377,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.644632469592808,
+      "full_clear": 0.08196721311475409,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7149849286092015,
+      "town_hall": 0.6885245901639344,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.656795346377578,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7681314119513485,
+      "town_hall": 0.7540983606557377,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6589106292966684,
+      "full_clear": 0.13114754098360656,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.7743450555261766,
+      "town_hall": 0.7540983606557377,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5553997194950911,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.5340736325385694,
+      "town_hall": 0.5434782608695652,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5652173913043478,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.560195652173913,
+      "town_hall": 0.5434782608695652,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5624123422159888,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.5736949509116409,
+      "town_hall": 0.5869565217391305,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5876577840112202,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6043751753155681,
+      "town_hall": 0.5869565217391305,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6016830294530154,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6618786816269285,
+      "town_hall": 0.6739130434782609,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6402524544179523,
+      "full_clear": 0.08695652173913043,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.7167524544179523,
+      "town_hall": 0.717391304347826,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6746143057503506,
+      "full_clear": 0.15217391304347827,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.8054621318373071,
+      "town_hall": 0.782608695652174,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5995792426367462,
+      "full_clear": 0.10869565217391304,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.6760792426367461,
+      "town_hall": 0.6956521739130435,
+      "view": 7
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5595786701777485,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5467929558920342,
+      "town_hall": 0.5714285714285714,
+      "view": 0
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5477287689269257,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5196369321922317,
+      "town_hall": 0.5510204081632653,
+      "view": 1
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.5714285714285714,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.5841530612244898,
+      "town_hall": 0.673469387755102,
+      "view": 2
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.532587228439763,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.4993933508887426,
+      "town_hall": 0.5306122448979592,
+      "view": 3
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6800526662277814,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.81012409479921,
+      "town_hall": 0.8163265306122449,
+      "view": 4
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6596445029624752,
+      "full_clear": 0.10204081632653061,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.7540016458196181,
+      "town_hall": 0.7551020408163265,
+      "view": 5
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6840026333113891,
+      "full_clear": 0.14285714285714285,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.8242781435154707,
+      "town_hall": 0.8163265306122449,
+      "view": 6
+    },
+    {
+      "condition": "heuristic",
+      "destruction": 0.6570111915734036,
+      "full_clear": 0.16326530612244897,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.7717764976958525,
+      "town_hall": 0.7755102040816326,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06652564780539397,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06926663141195136,
+      "town_hall": 0.07377049180327869,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0706504494976203,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07830946589106293,
+      "town_hall": 0.08688524590163935,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06768905341089371,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.0728890534108937,
+      "town_hall": 0.08196721311475409,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06282390269698572,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06515505023796933,
+      "town_hall": 0.07540983606557378,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06911686938127976,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07595621364357483,
+      "town_hall": 0.08524590163934426,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07154944473823374,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.07961829719725014,
+      "town_hall": 0.08524590163934426,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0641988365943945,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06489063987308302,
+      "town_hall": 0.07377049180327869,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06160761501850872,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "return": 0.06147974616604971,
+      "town_hall": 0.06393442622950819,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06633941093969144,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.06882201963534362,
+      "town_hall": 0.08043478260869565,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07244039270687237,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07818387096774193,
+      "town_hall": 0.07608695652173914,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06690042075736326,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07046998597475457,
+      "town_hall": 0.06956521739130435,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06157082748948106,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.0645969144460028,
+      "town_hall": 0.07173913043478261,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06928471248246844,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07448471248246845,
+      "town_hall": 0.07608695652173914,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.07047685834502104,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.07513338008415146,
+      "town_hall": 0.07173913043478261,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06276297335203367,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.06089775596072931,
+      "town_hall": 0.06521739130434782,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06697054698457222,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "return": 0.0727140252454418,
+      "town_hall": 0.0782608695652174,
+      "view": 7
+    },
+    {
+      "condition": "random",
+      "destruction": 0.0608953258722844,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06405450954575378,
+      "town_hall": 0.07959183673469387,
+      "view": 0
+    },
+    {
+      "condition": "random",
+      "destruction": 0.061553653719552334,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06522304147465438,
+      "town_hall": 0.07551020408163266,
+      "view": 1
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06431863067807768,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06645740618828176,
+      "town_hall": 0.07755102040816327,
+      "view": 2
+    },
+    {
+      "condition": "random",
+      "destruction": 0.05957867017774852,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.06477867017774852,
+      "town_hall": 0.07959183673469387,
+      "view": 3
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06339697169190256,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.07114799210006584,
+      "town_hall": 0.08979591836734693,
+      "view": 4
+    },
+    {
+      "condition": "random",
+      "destruction": 0.06754443712969058,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.0747852534562212,
+      "town_hall": 0.08775510204081632,
+      "view": 5
+    },
+    {
+      "condition": "random",
+      "destruction": 0.062080315997366686,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.0626884792626728,
+      "town_hall": 0.07142857142857142,
+      "view": 6
+    },
+    {
+      "condition": "random",
+      "destruction": 0.05714285714285714,
+      "full_clear": 0.0,
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "return": 0.05724081632653061,
+      "town_hall": 0.06326530612244897,
+      "view": 7
+    }
+  ],
+  "orientation_gap": [
+    {
+      "condition": "P",
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "orientation_gap": 0.048122686409307225
+    },
+    {
+      "condition": "P",
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "orientation_gap": 0.07363253856942503
+    },
+    {
+      "condition": "P",
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "orientation_gap": 0.06846609611586568
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 100,
+      "motif": "closed_ring",
+      "orientation_gap": 0.09360126916975148
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 100,
+      "motif": "ew_gates",
+      "orientation_gap": 0.1283309957924264
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 100,
+      "motif": "ns_gates",
+      "orientation_gap": 0.1619486504279131
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.12374405076679007
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.11921458625525949
+    },
+    {
+      "condition": "heuristic",
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.15141540487162608
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "closed_ring",
+      "orientation_gap": 0.009941829719725022
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "ew_gates",
+      "orientation_gap": 0.010869565217391311
+    },
+    {
+      "condition": "random",
+      "learner_seed": -1,
+      "motif": "ns_gates",
+      "orientation_gap": 0.010401579986833435
+    }
+  ],
+  "orientation_note": "Max minus min mean destruction across tested views; informative only when all eight views were evaluated."
+}

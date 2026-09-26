@@ -1,0 +1,26 @@
+{
+  "accepted_layouts": 156,
+  "action_seeds": [
+    0,
+    1,
+    2
+  ],
+  "contract_sha256": "f90ed51a47d81fa0500cd7f5eb0d2e7a003d28410e9f5580c56a095688e55e86",
+  "diagnostic_reference_matches": 2880,
+  "episodes": 74880,
+  "episodes_sha256": "1dcbf5d64191213c48699a9b47682295a7958f209fbc043c9817ed98569f2724",
+  "evidence_scope": "supplemental development evaluation, specified after the sampling diagnostic; not final-test evidence",
+  "original_evaluation_episodes_sha256": "64e57395a11d9c5c4d090106b91c49a4fb8f608d86d3445168653df5658fec34",
+  "status": "completed",
+  "summary_sha256": "98ff37173ce708606f6a14952f9c77f441820a1be53e59db3cd96a23a719943e",
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

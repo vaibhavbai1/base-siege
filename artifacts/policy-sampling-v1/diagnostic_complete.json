@@ -1,0 +1,8 @@
+{
+  "contract_sha256": "0ea75eb23d0107b5654fac4e2793a5e42445074a65b959a9b506f951178775c4",
+  "deterministic_dev_reference_matches": 960,
+  "episodes": 7680,
+  "episodes_sha256": "ed3922a5b904262caa44b460f25c0b04d3aa7a7a0543ff5cf136db58116d3715",
+  "evidence_scope": "exploratory diagnostic; not registered final evaluation",
+  "status": "completed"
+}

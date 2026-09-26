@@ -1,0 +1,9 @@
+{"timesteps": 30, "destruction": 0.8064516129032258, "return": 1.0079516129032258, "spent": 199, "finish_reason": "tick_limit"}
+{"timesteps": 59, "destruction": 0.1935483870967742, "return": -0.1049516129032258, "spent": 199, "finish_reason": "army_eliminated"}
+{"timesteps": 97, "destruction": 0.3870967741935484, "return": 0.5845967741935483, "spent": 35, "finish_reason": "tick_limit"}
+{"timesteps": 100, "destruction": 0.0, "return": -0.018, "spent": 12, "finish_reason": "army_eliminated"}
+{"timesteps": 133, "destruction": 0.45161290322580644, "return": 0.5561129032258065, "spent": 97, "finish_reason": "army_eliminated"}
+{"timesteps": 176, "destruction": 0.5161290322580645, "return": 0.7956290322580646, "spent": 147, "finish_reason": "tick_limit"}
+{"timesteps": 177, "destruction": 0.0, "return": 0.0, "spent": 0, "finish_reason": "army_eliminated"}
+{"timesteps": 181, "destruction": 0.0, "return": -0.012, "spent": 8, "finish_reason": "army_eliminated"}
+{"timesteps": 218, "destruction": 0.22580645161290322, "return": 0.07130645161290322, "spent": 103, "finish_reason": "tick_limit"}

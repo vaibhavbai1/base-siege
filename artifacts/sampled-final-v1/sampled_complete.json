@@ -1,0 +1,12 @@
+{
+  "accepted_layouts": 213,
+  "amendment_sha256": "5008557e986f0a5b164f117ab438830d0bdbfade89c1d1afb6bc2b723cb3720b",
+  "contract_sha256": "b4e88a96629bf533145ac127d7294d23c8a8251802676a13b5383a0309325cf7",
+  "episodes": 102240,
+  "episodes_sha256": "c6eed9a557ec5cd8d2b34410f04b392d9f98d94421f98112dfabed2727777534",
+  "evidence_scope": "Final-test extension specified after development but before final access; preserve original registered results.",
+  "freeze_sha256": "d0b59c081890de6467ce7f01ba05eb89c49699553c7adccd8e5dda3af9077b91",
+  "reserve_seeds_used": false,
+  "status": "completed",
+  "summary_sha256": "fdc164da8148f6eda0afa0de057a99de1b09a7aaf1b082111d0148671bccb36b"
+}

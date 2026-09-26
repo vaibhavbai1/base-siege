@@ -1,0 +1,2 @@
+{"timesteps": 30, "destruction": 0.8064516129032258, "return": 1.0079516129032258, "spent": 199, "finish_reason": "tick_limit"}
+{"timesteps": 59, "destruction": 0.1935483870967742, "return": -0.1049516129032258, "spent": 199, "finish_reason": "army_eliminated"}

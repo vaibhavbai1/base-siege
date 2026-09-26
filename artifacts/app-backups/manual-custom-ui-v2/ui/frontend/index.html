@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Base Siege</title><link rel="stylesheet" href="theme.css"><link rel="stylesheet" href="playback.css"></head>
+<body><main class="wrap">
+  <div class="hud" aria-live="off">
+    <div class="stat"><div class="k">Phase</div><div class="v" id="s-phase">Connecting</div></div>
+    <div class="stat"><div class="k">Budget left</div><div class="v" id="s-budget">200</div></div>
+    <div class="stat"><div class="k">Destroyed</div><div class="v" id="s-dest">0%</div><div class="bar"><i id="s-bar"></i></div></div>
+    <div class="stat"><div class="k">Ticks left</div><div class="v" id="s-tick">300</div></div>
+  </div>
+  <div class="layout">
+    <div class="boardwrap">
+      <div class="canvas-shell"><canvas id="cv" width="544" height="544" role="img" aria-label="Base Siege battlefield. Keyboard deployment controls are in the army panel."></canvas><div id="result-banner" class="result-banner" hidden></div></div>
+      <div id="playback" class="playback" hidden>
+        <div class="row"><button class="go" id="btn-play" aria-label="Play replay">▶ Play</button><button id="btn-step" aria-label="Next decision">Next decision</button><button id="btn-restart" aria-label="Restart replay">↺ Restart</button><span id="playback-status" class="hint"></span></div>
+        <input id="timeline" aria-label="Replay timeline" type="range" min="0" max="1000" value="0" step="1">
+        <div class="timeline-label"><span id="replay-label">Recorded attack</span><span id="replay-clock">0:00 / 0:00</span></div>
+      </div>
+      <p class="hint legend">Purple: Town Hall · pink: cannon · orange: mortar · grey: storage</p>
+    </div>
+    <div class="side">
+      <section class="card"><h2 id="paneltitle">Buy your army</h2><div id="troops"></div><div id="badges" class="badges"></div>
+        <div id="manual-controls"><div class="row" style="margin-top:12px"><button class="go" id="btn-main">Start battle</button><button id="btn-reset">New base</button></div>
+        <label class="check hint"><input id="stepmode" type="checkbox" checked> Pause every decision</label>
+        <details><summary>Keyboard deployment</summary><div class="row"><label for="tile">Perimeter tile</label><input id="tile" type="number" min="0" max="59" value="7"><button id="btn-deploy">Deploy selected</button></div></details></div>
+        <p id="hint" class="hint"></p><p id="error" class="hint error" role="alert"></p>
+      </section>
+      <section class="card"><h2>Playback &amp; view</h2>
+        <div class="row"><label for="speed">Speed</label><select id="speed"><option value="0.2">0.2×</option><option value="0.4">0.4×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="5">5×</option></select><button id="btn-fullscreen" aria-label="Fullscreen battlefield">⛶ Fullscreen</button></div>
+        <div class="row overlays"><label><input id="ranges" type="checkbox"> Ranges</label><label><input id="paths" type="checkbox"> Paths</label><label><input id="damage" type="checkbox" checked> Damage</label></div>
+        <p id="recording-note" class="hint"></p>
+      </section>
+      <section class="card"><h2>Event log</h2><div id="log" class="log" aria-live="off"></div></section>
+      <details class="card evidence"><summary>Episode details</summary><table class="sc"><tbody id="reward"></tbody></table><p class="hint" id="last-action"></p></details>
+    </div>
+  </div>
+</main><script src="glyphs.js"></script><script src="app.js"></script></body></html>

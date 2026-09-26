@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "pause_resume": {
+      "episode_history_equal": true,
+      "optimizer_equal": true,
+      "timesteps_equal": true,
+      "updates_equal": true,
+      "weights_equal": true
+    },
+    "process_kill_resume": {
+      "episode_history_equal": true,
+      "optimizer_equal": true,
+      "timesteps_equal": true,
+      "updates_equal": true,
+      "weights_equal": true
+    }
+  },
+  "passed": true,
+  "scope": "short CPU software recovery check; not a trained-policy result"
+}
