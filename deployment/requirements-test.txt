@@ -1,0 +1,2 @@
+# Minimal checks used in the standalone demo bundle.
+pytest==9.1.1

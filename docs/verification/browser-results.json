@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "Play, pause, restart and next decision",
+    "5x playback advances timeline faster",
+    "Recorded movement yields fractional visual positions",
+    "Final HUD matches Python: 67.7%, tick 249, 199 spent",
+    "390px viewport has no horizontal overflow",
+    "Streamlit manual buy/start/deploy animation",
+    "Manual reset",
+    "Streamlit policy replay loads and plays"
+  ],
+  "browser_errors": []
+}

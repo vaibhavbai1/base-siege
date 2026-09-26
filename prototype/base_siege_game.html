@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Base Siege — playable prototype</title>
+<style>
+  :root{
+    --ink:#1d2530; --ink2:#5a6675; --line:#d9d5cb; --panel:#fbfaf7;
+    --grass:#7fa65c; --grass2:#74994f; --dirt:#cdbb96; --dirt2:#c3b089;
+    --stone:#6b6560; --stone-top:#8a837c;
+    --th:#6C63C8; --cannon:#C74E77; --mortar:#CE5A2E; --storage:#7A8B8E;
+    --tank:#1E8F6E; --melee:#3179C6; --ranged:#5E8F22; --breaker:#D99425;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#eeeae0;color:var(--ink);
+       font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:1080px;margin:0 auto;padding:18px}
+  h1{font-size:20px;font-weight:600;margin:0 0 2px}
+  .sub{color:var(--ink2);font-size:13px;margin:0 0 16px}
+  .layout{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+  .boardwrap{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
+  canvas{display:block;border-radius:8px;cursor:crosshair}
+  .side{flex:1;min-width:290px;display:flex;flex-direction:column;gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .card h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+           color:var(--ink2);margin:0 0 10px}
+  .hud{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+  .stat .k{font-size:11px;color:var(--ink2);text-transform:uppercase;letter-spacing:.05em}
+  .stat .v{font-size:19px;font-weight:600;font-variant-numeric:tabular-nums}
+  .bar{height:7px;background:#e3ded2;border-radius:4px;overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;background:var(--ranged);width:0;transition:width .18s}
+  .troop{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid transparent;
+         border-radius:9px;cursor:pointer;user-select:none}
+  .troop:hover{background:#f2efe7}
+  .troop.sel{border-color:var(--ink);background:#f2efe7}
+  .troop.off{opacity:.4;cursor:not-allowed}
+  .swatch{width:24px;height:24px;border-radius:7px;flex:none}
+  .troop .nm{font-weight:600;font-size:14px}
+  .troop .ds{font-size:11.5px;color:var(--ink2);font-variant-numeric:tabular-nums}
+  .troop .ct{margin-left:auto;display:flex;align-items:center;gap:9px;
+             font-variant-numeric:tabular-nums}
+  .troop .cost{font-size:12.5px;color:var(--ink2)}
+  .troop .own{font-size:15px;font-weight:700;min-width:30px;text-align:right}
+  .troop .own.zero{color:#bdb8ac;font-weight:600}
+  button{font:inherit;border:1px solid var(--line);background:#fff;color:var(--ink);
+         border-radius:8px;padding:8px 13px;cursor:pointer}
+  button:hover:not(:disabled){background:#f2efe7}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  button.go{background:var(--ink);color:#fff;border-color:var(--ink);font-weight:600}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  select,input[type=number]{font:inherit;padding:6px 8px;border:1px solid var(--line);
+         border-radius:8px;background:#fff;color:var(--ink)}
+  input[type=number]{width:88px}
+  .log{height:132px;overflow-y:auto;font-size:12.5px;line-height:1.6;
+       font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink2)}
+  .log b{color:var(--ink);font-weight:600}
+  .hint{font-size:12.5px;color:var(--ink2);margin-top:8px}
+  .badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;min-height:24px}
+  .badge{font-size:11.5px;padding:3px 9px;border-radius:20px;background:#e6efe0;
+         color:#3B6D11;font-weight:600}
+  table.sc{width:100%;font-size:13.5px;border-collapse:collapse}
+  table.sc td{padding:5px 0}
+  table.sc td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+  table.sc tr.tot td{border-top:1px solid var(--line);padding-top:9px;font-size:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Base Siege</h1>
+  <p class="sub">Playable prototype. Same stat table, grid, budget and reward formula as
+     <code>env/config.py</code> — a design and balance tool, not the trained environment.</p>
+
+  <div class="hud">
+    <div class="stat"><div class="k">Phase</div><div class="v" id="s-phase">Shopping</div></div>
+    <div class="stat"><div class="k">Budget left</div><div class="v" id="s-budget">200</div></div>
+    <div class="stat"><div class="k">Destroyed</div><div class="v" id="s-dest">0%</div>
+      <div class="bar"><i id="s-bar"></i></div></div>
+    <div class="stat"><div class="k">Ticks left</div><div class="v" id="s-tick">300</div></div>
+  </div>
+
+  <div class="layout">
+    <div class="boardwrap"><canvas id="cv" width="544" height="544"></canvas></div>
+
+    <div class="side">
+      <div class="card">
+        <h2 id="paneltitle">Buy your army</h2>
+        <div id="troops"></div>
+        <div class="badges" id="badges"></div>
+        <div class="row" style="margin-top:12px">
+          <button class="go" id="btn-main">Start battle</button>
+          <button id="btn-reset">New base</button>
+        </div>
+        <div class="row" style="margin-top:9px">
+          <label style="font-size:13px;display:flex;align-items:center;gap:6px">
+            <input type="checkbox" id="stepmode" checked> Pause every decision
+          </label>
+        </div>
+        <p class="hint" id="hint">Spend up to 200. Max 25 troops.</p>
+      </div>
+
+      <div class="card">
+        <h2>Base</h2>
+        <div class="row">
+          <select id="motif">
+            <option value="closed_ring">Closed ring</option>
+            <option value="ns_gates">North–south gates</option>
+            <option value="ew_gates">East–west gates</option>
+            <option value="layered_core">Layered core</option>
+          </select>
+          <input type="number" id="seed" value="42" min="0" max="99999">
+        </div>
+        <div class="row" style="margin-top:9px">
+          <label style="font-size:13px;color:var(--ink2)">Speed</label>
+          <select id="speed">
+            <option value="220">0.2x</option>
+            <option value="120">0.4x</option>
+            <option value="60" selected>1x</option>
+            <option value="26">2x</option>
+            <option value="10">5x</option>
+          </select>
+          <label style="font-size:13px;display:flex;align-items:center;gap:5px">
+            <input type="checkbox" id="ranges"> Ranges
+          </label>
+          <label style="font-size:13px;display:flex;align-items:center;gap:5px">
+            <input type="checkbox" id="paths"> Paths
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Event log</h2>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==== BEGIN GENERATED FROM env/config.py — python tools/sync_prototype.py ====
+const GRID=16, BUDGET=200, MAX_ARMY=25, TICK_LIMIT=300;
+
+const TROOPS={
+  tank    :{hp:900,dmg:8,rng:1,spd:0.1,cost:25,tgt:'defence',col:'#1E8F6E',
+           desc:'900 hp · 8 dmg · rng 1 · slow'},
+  melee   :{hp:120,dmg:15,rng:1,spd:0.16,cost:8,tgt:'building',col:'#3179C6',
+           desc:'120 hp · 15 dmg · rng 1'},
+  ranged  :{hp:90,dmg:12,rng:4,spd:0.14,cost:10,tgt:'building',col:'#5E8F22',
+           desc:'90 hp · 12 dmg · rng 4 · shoots over walls'},
+  breaker :{hp:60,dmg:350,rng:1,spd:0.22,cost:12,tgt:'wall',col:'#D99425',
+           desc:'60 hp · 350 dmg · rng 1 · one wall, then dies · fast'},
+};
+
+// `dmg` is damage per SHOT; `cd` is ticks between shots (1 = every tick).
+const BUILDINGS={
+  town_hall :{hp:1500,dmg:0,rng:0,min:0,cd:1,val:30,col:'#6C63C8'},
+  cannon    :{hp:600,dmg:5,rng:3,min:0,cd:1,val:15,col:'#C74E77'},
+  mortar    :{hp:500,dmg:45,rng:5,min:2,cd:5,val:20,col:'#CE5A2E',splash:1.5},
+  storage   :{hp:800,dmg:0,rng:0,min:0,cd:1,val:10,col:'#7A8B8E'},
+  wall      :{hp:300,dmg:0,rng:0,min:0,cd:1,val:0,col:'#6b6560'},
+};
+
+const COUNTS={town_hall:1,cannon:3,mortar:2,storage:4};
+const SPLASH_FALLOFF=0.4;
+// Derived, never typed: a hardcoded total silently mis-scales the
+// destruction percentage the moment a value or count changes.
+const TOTAL_VALUE=Object.entries(COUNTS)
+  .reduce((s,[k,n])=>s+BUILDINGS[k].val*n,0);
+const RING=[3,3,12,12], CORE=[6,6,10,10];
+const CORE_CONTENTS=['town_hall','mortar','storage'];
+// ==== END GENERATED ====
+
+const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
+const CELL=cv.width/GRID;
+let G=null, selected='melee', timer=null, nextId=1;
+let stepMode=true, chunk=0, tickMs=60, lastTickAt=0, lastFrame=0;
+const TICKS_PER_DECISION=10;
+
+function rng32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+const dist=(a,b,c,d)=>Math.hypot(a-c,b-d);
+const key=(r,c)=>r*GRID+c;
+
+function deployTiles(){
+  const t=[];
+  for(let c=0;c<GRID;c++)t.push([0,c]);
+  for(let r=1;r<GRID;r++)t.push([r,GRID-1]);
+  for(let c=GRID-2;c>=0;c--)t.push([GRID-1,c]);
+  for(let r=GRID-2;r>=1;r--)t.push([r,0]);
+  return t;
+}
+const DEPLOY=deployTiles(), DEPLOY_SET=new Set(DEPLOY.map(t=>key(t[0],t[1])));
+
+function ringTiles(b){const[r0,c0,r1,c1]=b,s=new Set();
+  for(let r=r0;r<=r1;r++){s.add(key(r,c0));s.add(key(r,c1));}
+  for(let c=c0;c<=c1;c++){s.add(key(r0,c));s.add(key(r1,c));}
+  return s;}
+
+function buildWalls(motif){
+  if(motif==='layered_core'){
+    const[r0,c0,r1,c1]=RING,s=new Set();
+    for(let c=c0;c<=c1;c++)s.add(key(r0,c));
+    for(let r=r0;r<=r1;r++)s.add(key(r,c0));
+    ringTiles(CORE).forEach(k=>s.add(k));
+    return s;
+  }
+  const s=ringTiles(RING),[r0,c0,r1,c1]=RING;
+  if(motif==='ns_gates')for(const c of[7,8]){s.delete(key(r0,c));s.delete(key(r1,c));}
+  if(motif==='ew_gates')for(const r of[7,8]){s.delete(key(r,c0));s.delete(key(r,c1));}
+  return s;
+}
+
+function placementRegion(motif,walls){
+  const out=[];
+  if(motif==='layered_core'){
+    const[r0,c0,r1,c1]=RING,[k0,l0,k1,l1]=CORE;
+    for(let r=r0+1;r<=r1;r++)for(let c=c0+1;c<=c1;c++){
+      if(r>=k0&&r<=k1&&c>=l0&&c<=l1)continue;
+      if(!walls.has(key(r,c)))out.push([r,c]);
+    }
+    return out;
+  }
+  const[r0,c0,r1,c1]=RING;
+  for(let r=r0+1;r<r1;r++)for(let c=c0+1;c<c1;c++)
+    if(!walls.has(key(r,c)))out.push([r,c]);
+  return out;
+}
+
+function coreInterior(){const[r0,c0,r1,c1]=CORE,o=[];
+  for(let r=r0+1;r<r1;r++)for(let c=c0+1;c<c1;c++)o.push([r,c]);return o;}
+
+function generate(seed,motif){
+  const rand=rng32(seed), walls=buildWalls(motif), buildings=[];
+  walls.forEach(k=>buildings.push({type:'wall',r:(k/GRID)|0,c:k%GRID,
+    hp:300,max:300,id:nextId++}));
+
+  const pool=placementRegion(motif,walls);
+  const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){
+    const j=(rand()*(i+1))|0;[a[i],a[j]]=[a[j],a[i]];}return a;};
+
+  const place=(type,t)=>buildings.push({type,r:t[0],c:t[1],
+    hp:BUILDINGS[type].hp,max:BUILDINGS[type].hp,id:nextId++});
+  const outstanding=Object.assign({},COUNTS);
+  const used=new Set();
+
+  if(motif==='layered_core'){
+    const core=shuffle(coreInterior());
+    CORE_CONTENTS.forEach((type,i)=>{
+      place(type,core[i]); outstanding[type]--; used.add(key(core[i][0],core[i][1]));
+    });
+  } else {
+    const t=shuffle(pool)[0];
+    place('town_hall',t); outstanding.town_hall--; used.add(key(t[0],t[1]));
+  }
+
+  const rest=shuffle(pool).filter(t=>!used.has(key(t[0],t[1])));
+  let i=0;
+  for(const[type,n]of Object.entries(outstanding))
+    for(let k=0;k<n;k++)place(type,rest[i++]);
+  return buildings;
+}
+
+function newGame(){
+  if(timer)clearInterval(timer); timer=null;
+  const seed=+document.getElementById('seed').value||0;
+  const motif=document.getElementById('motif').value;
+  nextId=1;
+  G={phase:'shop',tick:0,spent:0,buildings:generate(seed,motif),troops:[],
+     reserve:{tank:0,melee:0,ranged:0,breaker:0},destroyed:0,
+     milestones:{half:false,th:false,clear:false},shots:[],pops:[],
+     wallVer:0,log:[],over:false,
+     fx:{proj:[],parts:[],rings:[]}};
+  logMsg('Base generated · seed '+seed+' · '+motif.replace(/_/g,' '));
+  syncUI(); draw();
+}
+
+function logMsg(t){G.log.unshift(t); if(G.log.length>60)G.log.pop();
+  document.getElementById('log').innerHTML=G.log.map(l=>'<div>'+l+'</div>').join('');}
+
+function occupied(r,c){
+  for(const b of G.buildings)
+    if(b.hp>0&&b.r===r&&b.c===c&&b.type!=='wall')return true;
+  return false;
+}
+function wallAt(r,c){
+  for(const b of G.buildings)if(b.hp>0&&b.type==='wall'&&b.r===r&&b.c===c)return b;
+  return null;
+}
+
+function findPath(troop,goal){
+  const t=TROOPS[troop.type], open=1/t.spd;
+  const start=key(troop.r,troop.c), goalK=key(goal.r,goal.c);
+  const gs=new Map([[start,0]]), prev=new Map(), seen=new Set();
+  const h=k=>{const r=(k/GRID)|0,c=k%GRID;
+    return (Math.abs(r-goal.r)+Math.abs(c-goal.c))*open;};
+  const q=[[h(start),start]];
+  while(q.length){
+    q.sort((a,b)=>a[0]-b[0]);
+    const[,cur]=q.shift();
+    if(cur===goalK)break;
+    if(seen.has(cur))continue; seen.add(cur);
+    const r=(cur/GRID)|0,c=cur%GRID;
+    for(const[dr,dc]of[[1,0],[-1,0],[0,1],[0,-1]]){
+      const nr=r+dr,nc=c+dc;
+      if(nr<0||nc<0||nr>=GRID||nc>=GRID)continue;
+      const nk=key(nr,nc);
+      if(nk!==goalK&&occupied(nr,nc))continue;
+      const w=wallAt(nr,nc);
+      const step=open+(w?w.hp/t.dmg:0);
+      const ng=gs.get(cur)+step;
+      if(!gs.has(nk)||ng<gs.get(nk)){gs.set(nk,ng);prev.set(nk,cur);
+        q.push([ng+h(nk),nk]);}
+    }
+  }
+  if(!prev.has(goalK)&&goalK!==start)return null;
+  const path=[]; let cur=goalK;
+  while(cur!==start){path.unshift(cur);cur=prev.get(cur);if(cur===undefined)return null;}
+  return path;
+}
+
+function pickTarget(t){
+  const spec=TROOPS[t.type];
+  const live=G.buildings.filter(b=>b.hp>0);
+  let pool;
+  if(spec.tgt==='wall'){
+    // Breakers are walls-only by design. No walls left means nothing to do,
+    // and standing idle is the honest cost of overbuying them.
+    pool=live.filter(b=>b.type==='wall');
+  } else if(spec.tgt==='defence'){
+    pool=live.filter(b=>b.type==='cannon'||b.type==='mortar');
+    // FALLBACK: a tank prefers defences, but once they are all destroyed it
+    // attacks the nearest other building rather than standing idle.
+    if(!pool.length)pool=live.filter(b=>b.type!=='wall');
+  } else {
+    pool=live.filter(b=>b.type!=='wall');
+  }
+  if(!pool.length)return null;
+  pool.sort((a,b)=>{const d=dist(t.r,t.c,a.r,a.c)-dist(t.r,t.c,b.r,b.c);
+    return d!==0?d:a.id-b.id;});
+  return pool[0];
+}
+
+function stepTick(){
+  if(G.over)return;
+  const deadWall=G.buildings.some(b=>b.type==='wall'&&b.hp<=0&&!b.counted);
+  G.buildings.forEach(b=>{if(b.hp<=0&&!b.counted){b.counted=true;
+    if(b.type==='wall')G.wallVer++;}});
+  if(deadWall)G.troops.forEach(t=>t.path=null);
+
+  const buf=new Map();
+  const hit=(e,d)=>buf.set(e.id,(buf.get(e.id)||0)+d);
+
+  for(const t of G.troops){
+    if(t.hp<=0)continue;
+    if(!t.target||t.target.hp<=0){t.target=pickTarget(t);t.path=null;}
+    if(!t.target)continue;
+    const spec=TROOPS[t.type];
+    if(dist(t.r,t.c,t.target.r,t.target.c)<=spec.rng){
+      hit(t.target,spec.dmg);
+      addShot(t,t.target,'t',spec.col,spec.rng>1,false);
+      if(t.type==='breaker')t.dying=true;
+      continue;
+    }
+    if(!t.path)t.path=findPath(t,t.target);
+    if(!t.path||!t.path.length)continue;
+    const nk=t.path[0], nr=(nk/GRID)|0, nc=nk%GRID;
+    const w=wallAt(nr,nc);
+    if(w){
+      hit(w,spec.dmg);
+      addShot(t,w,'t',spec.col,spec.rng>1,false);
+      if(t.type==='breaker')t.dying=true;
+      continue;
+    }
+    t.credit+=spec.spd;
+    if(t.credit>=1){t.credit-=1;t.pr=t.r;t.pc=t.c;t.r=nr;t.c=nc;t.path.shift();}
+  }
+
+  for(const b of G.buildings){
+    if(b.hp<=0)continue;
+    const spec=BUILDINGS[b.type];
+    if(!spec.dmg)continue;
+    // Fire rate. The cooldown ticks down even with nothing to shoot, so an
+    // idle mortar is ready the instant a troop walks into its band.
+    if(b.cool>0){b.cool--;continue;}
+    const live=G.troops.filter(t=>t.hp>0);
+    const inr=live.filter(t=>{const d=dist(b.r,b.c,t.r,t.c);
+      return d>=spec.min&&d<=spec.rng;});
+    if(!inr.length)continue;
+    inr.sort((x,y)=>{const d=dist(b.r,b.c,x.r,x.c)-dist(b.r,b.c,y.r,y.c);
+      return d!==0?d:x.id-y.id;});
+    const tgt=inr[0];
+    addShot(b,tgt,'d',spec.col,true,b.type==='mortar');
+    b.recoil=1;
+    if(spec.splash){
+      // The tile the shell lands on takes the full shot; the eight around it
+      // take SPLASH_FALLOFF of it. Splash radiates from the impact, not the
+      // gun, so it reaches past the mortar's own range.
+      for(const t of live){
+        const d=dist(tgt.r,tgt.c,t.r,t.c);
+        if(d<=spec.splash)
+          hit(t, d===0?spec.dmg:Math.max(1,Math.round(spec.dmg*SPLASH_FALLOFF)));
+      }
+    } else hit(tgt,spec.dmg);
+    b.cool=spec.cd-1;
+  }
+
+  for(const b of G.buildings)if(buf.has(b.id)){
+    b.hp-=buf.get(b.id); b.flash=1;
+    if(b.hp<=0){b.hp=0;
+      burst(b.r,b.c,b.type==='wall'?'#8a837c':BUILDINGS[b.type].col,
+            b.type==='wall'?9:16,CELL*2.2,CELL*4);
+      if(b.type!=='wall'){G.destroyed+=BUILDINGS[b.type].val;
+        logMsg('<b>'+b.type.replace('_',' ')+'</b> destroyed');}}
+  }
+  for(const t of G.troops)if(buf.has(t.id)){
+    t.hp-=buf.get(t.id); t.flash=1;
+    if(t.hp<=0){t.hp=0;burst(t.r,t.c,TROOPS[t.type].col,10,CELL*1.6,CELL*4);}
+  }
+  for(const t of G.troops)if(t.dying&&t.hp>0){t.hp=0;
+    burst(t.r,t.c,'#FFB03A',14,CELL*2.4,CELL*3);
+    ring(t.r,t.c,0.2,1.0,'#FFB03A',0.32);}
+  G.troops=G.troops.filter(t=>t.hp>0);
+
+  const frac=G.destroyed/TOTAL_VALUE;
+  if(!G.milestones.half&&frac>=0.5){G.milestones.half=true;logMsg('<b>50% destroyed</b>');}
+  const th=G.buildings.find(b=>b.type==='town_hall');
+  if(!G.milestones.th&&th.hp<=0){G.milestones.th=true;logMsg('<b>Town hall down</b>');}
+  const anyLeft=G.buildings.some(b=>b.type!=='wall'&&b.hp>0);
+  if(!G.milestones.clear&&!anyLeft){G.milestones.clear=true;logMsg('<b>Base cleared</b>');}
+
+  G.tick++;
+  const reserveLeft=Object.values(G.reserve).reduce((a,b)=>a+b,0);
+  if(!anyLeft)finish('Base cleared');
+  else if(G.tick>=TICK_LIMIT)finish('Out of time');
+  else if(!G.troops.length&&!reserveLeft)finish('Army exhausted');
+}
+
+function finish(reason){
+  G.over=true; clearInterval(timer); timer=null;
+  const frac=G.destroyed/TOTAL_VALUE;
+  const m=(G.milestones.half?0.25:0)+(G.milestones.th?0.25:0)+(G.milestones.clear?0.25:0);
+  const pen=0.30*(G.spent/BUDGET);
+  logMsg('<b>'+reason+'</b> · '+Math.round(frac*100)+'%');
+  document.getElementById('paneltitle').textContent='Result — '+reason;
+  document.getElementById('troops').innerHTML=
+    '<table class="sc">'+
+    '<tr><td>Destruction '+G.destroyed+'/'+TOTAL_VALUE+'</td><td>'+frac.toFixed(3)+'</td></tr>'+
+    '<tr><td>Milestones</td><td>+'+m.toFixed(2)+'</td></tr>'+
+    '<tr><td>Cost penalty '+G.spent+'/200</td><td>&minus;'+pen.toFixed(3)+'</td></tr>'+
+    '<tr class="tot"><td>Episode return</td><td>'+(frac+m-pen).toFixed(3)+'</td></tr></table>';
+  document.getElementById('btn-main').textContent='Play again';
+  document.getElementById('hint').textContent=
+    'This is the reward the RL agent optimises, from plan §7.6.';
+}
+
+function syncUI(){
+  document.getElementById('s-phase').textContent=
+    G.over?'Over':(G.phase==='shop'?'Shopping':'Battle');
+  document.getElementById('s-budget').textContent=BUDGET-G.spent;
+  const pct=Math.round(G.destroyed/TOTAL_VALUE*100);
+  document.getElementById('s-dest').textContent=pct+'%';
+  document.getElementById('s-bar').style.width=pct+'%';
+  document.getElementById('s-tick').textContent=Math.max(0,TICK_LIMIT-G.tick);
+
+  const b=[];
+  if(G.milestones.half)b.push('50% reached');
+  if(G.milestones.th)b.push('Town hall');
+  if(G.milestones.clear)b.push('Full clear');
+  document.getElementById('badges').innerHTML=
+    b.map(x=>'<span class="badge">'+x+'</span>').join('');
+
+  if(G.over)return;
+  const army=Object.values(G.reserve).reduce((a,x)=>a+x,0)+G.troops.length;
+  document.getElementById('troops').innerHTML=Object.entries(TROOPS).map(([k,t])=>{
+    const afford=G.spent+t.cost<=BUDGET&&army<MAX_ARMY;
+    const off=G.phase==='shop'?!afford:G.reserve[k]===0;
+    return '<div class="troop'+(selected===k?' sel':'')+(off?' off':'')+
+      '" data-t="'+k+'"><div class="swatch" style="background:'+t.col+'"></div>'+
+      '<div><div class="nm">'+k+'</div><div class="ds">'+t.desc+'</div></div>'+
+      '<div class="ct">'+(G.phase==='shop'
+        ? '<span class="cost">'+t.cost+'r</span><span class="own'+
+          (G.reserve[k]?'':' zero')+'">&times;'+G.reserve[k]+'</span>'
+        : '<span class="own">&times;'+G.reserve[k]+'</span>')+'</div></div>';
+  }).join('');
+  document.querySelectorAll('.troop').forEach(el=>el.onclick=()=>{
+    const k=el.dataset.t;
+    if(G.phase==='shop'){
+      const t=TROOPS[k], a=Object.values(G.reserve).reduce((x,y)=>x+y,0);
+      if(window.event&&window.event.shiftKey){
+        if(G.reserve[k]>0){G.reserve[k]--; G.spent-=t.cost;}
+        selected=k; syncUI(); return;
+      }
+      if(G.spent+t.cost>BUDGET||a>=MAX_ARMY)return;
+      G.reserve[k]++; G.spent+=t.cost; selected=k;
+    } else { if(G.reserve[k]>0)selected=k; }
+    syncUI();
+  });
+
+  document.getElementById('paneltitle').textContent=
+    G.phase==='shop'?'Buy your army':'Deploy — click the grass edge';
+  document.getElementById('btn-main').textContent=
+    G.phase==='shop' ? 'Start battle'
+    : timer ? 'Pause'
+    : G.tick===0 ? 'Run the clock' : 'Continue';
+  document.getElementById('btn-main').disabled=
+    G.phase==='shop'&&Object.values(G.reserve).reduce((a,x)=>a+x,0)===0;
+  const dec=Math.floor(G.tick/TICKS_PER_DECISION)+1;
+  document.getElementById('hint').innerHTML=G.phase==='shop'
+    ? '<b>'+army+'</b> of 25 troops bought &middot; '+(BUDGET-G.spent)+
+      'r left. Shift-click a row to remove one.'
+    : (timer ? 'Running &mdash; space to pause.'
+       : 'Decision <b>'+Math.min(dec,30)+'</b> of 30. Click grass to deploy '+
+         '(shift-click for 5), then space to advance 10 ticks. Keys 1&ndash;4 pick a troop.');
+}
+
+
+function ring(r,c,r0,r1,col,dur){
+  G.fx.rings.push({x:(c+.5)*CELL,y:(r+.5)*CELL,r0,r1,col,t:0,dur:dur||0.42});
+}
+function burst(r,c,col,n,spread,grav){
+  for(let i=0;i<n;i++){
+    const a=Math.random()*Math.PI*2, v=spread*(0.35+Math.random());
+    G.fx.parts.push({x:(c+.5)*CELL,y:(r+.5)*CELL,
+      vx:Math.cos(a)*v,vy:Math.sin(a)*v-spread*.4,
+      life:0.45+Math.random()*0.45,max:0.9,col,
+      size:CELL*(0.05+Math.random()*0.09),grav:grav});
+  }
+}
+function addShot(from,to,kind,col,flies,arc){
+  const fx0=(from.c+.5)*CELL, fy0=(from.r+.5)*CELL;
+  const tx=(to.c+.5)*CELL,   ty=(to.r+.5)*CELL;
+  from.aimT=Math.atan2(ty-fy0,tx-fx0);
+  if(from.aim===undefined)from.aim=from.aimT;
+  if(!flies){
+    burst(to.r,to.c,col,4,CELL*1.1,CELL*3);
+    G.fx.parts.push({x:tx,y:ty,vx:0,vy:0,life:.12,max:.12,
+      col:'#ffffff',size:CELL*.22,grav:0});
+    return;
+  }
+  G.fx.proj.push({x0:fx0,y0:fy0,x1:tx,y1:ty,t:0,
+    dur:arc?0.55:0.16,col,kind,arc:!!arc,
+    tr:to.r,tc:to.c});
+  G.fx.parts.push({x:fx0+Math.cos(from.aimT)*CELL*.34,
+    y:fy0+Math.sin(from.aimT)*CELL*.34,vx:0,vy:0,
+    life:.10,max:.10,col:'#FFE08A',size:CELL*.26,grav:0});
+  from.recoil=1;
+}
+function advanceFx(dt){
+  for(const q of G.fx.proj)q.t+=dt/q.dur;
+  G.fx.proj=G.fx.proj.filter(q=>{
+    if(q.t<1)return true;
+    burst(q.tr,q.tc,q.col,q.arc?10:4,CELL*(q.arc?2.0:1.1),CELL*3);
+    // A mortar's ring is drawn at its ACTUAL splash radius, so an area hit is
+    // unmistakably a mortar and never mistaken for a cannon hitting several.
+    if(q.arc)ring(q.tr,q.tc,0.25,BUILDINGS.mortar.splash,q.col,0.45);
+    return false;
+  });
+  for(const q of G.fx.rings)q.t+=dt/q.dur;
+  G.fx.rings=G.fx.rings.filter(q=>q.t<1);
+  for(const q of G.fx.parts){
+    q.life-=dt; q.x+=q.vx*dt; q.y+=q.vy*dt; q.vy+=q.grav*dt;
+  }
+  G.fx.parts=G.fx.parts.filter(q=>q.life>0);
+  const all=G.buildings.concat(G.troops);
+  for(const e of all){
+    if(e.flash)e.flash=Math.max(0,e.flash-dt*3.6);
+    if(e.recoil)e.recoil=Math.max(0,e.recoil-dt*6);
+    if(e.disp===undefined)e.disp=e.hp;
+    e.disp+=(e.hp-e.disp)*Math.min(1,dt*7);
+    if(e.aim===undefined&&e.aimT!==undefined)e.aim=e.aimT;
+    if(e.aimT!==undefined){
+      let d=e.aimT-e.aim;
+      while(d>Math.PI)d-=Math.PI*2; while(d<-Math.PI)d+=Math.PI*2;
+      e.aim+=d*Math.min(1,dt*9);
+    }
+  }
+}
+
+function shade(hex,f){
+  const n=parseInt(hex.slice(1),16);
+  const ch=v=>Math.min(255,Math.max(0,Math.round(v*f)));
+  return '#'+(((ch(n>>16)<<16)|(ch((n>>8)&255)<<8)|ch(n&255))>>>0)
+    .toString(16).padStart(6,'0');
+}
+function roundRect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+
+
+function gTownHall(x,y,S,c){
+  const d=shade(c,.68), l=shade(c,1.24);
+  ctx.fillStyle=c; ctx.beginPath();
+  ctx.moveTo(x+.20*S,y+.90*S); ctx.lineTo(x+.27*S,y+.40*S);
+  ctx.lineTo(x+.73*S,y+.40*S); ctx.lineTo(x+.80*S,y+.90*S);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle=l; ctx.fillRect(x+.22*S,y+.32*S,.56*S,.10*S);
+  for(const o of[.22,.44,.66])ctx.fillRect(x+o*S,y+.24*S,.12*S,.10*S);
+  ctx.fillStyle=d; ctx.beginPath();
+  ctx.moveTo(x+.42*S,y+.90*S); ctx.lineTo(x+.42*S,y+.66*S);
+  ctx.quadraticCurveTo(x+.5*S,y+.56*S,x+.58*S,y+.66*S);
+  ctx.lineTo(x+.58*S,y+.90*S); ctx.closePath(); ctx.fill();
+  ctx.fillStyle=d; ctx.fillRect(x+.47*S,y+.03*S,.045*S,.22*S);
+  ctx.beginPath(); ctx.moveTo(x+.515*S,y+.05*S);
+  ctx.lineTo(x+.76*S,y+.11*S); ctx.lineTo(x+.515*S,y+.17*S);
+  ctx.closePath(); ctx.fill();
+}
+function gCannon(x,y,S,c,aim,recoil){
+  const d=shade(c,.66), l=shade(c,1.26);
+  ctx.save(); ctx.translate(x+.5*S,y+.62*S);
+  ctx.rotate((aim===undefined?-Math.PI/4:aim)+Math.PI/2);
+  ctx.translate(0,(recoil||0)*S*.14);
+  ctx.fillStyle=d; roundRect(-.10*S,-.56*S,.20*S,.56*S,.05*S); ctx.fill();
+  ctx.fillStyle=shade(c,.5); roundRect(-.13*S,-.60*S,.26*S,.10*S,.04*S); ctx.fill();
+  ctx.restore();
+  ctx.fillStyle=c; ctx.beginPath();
+  ctx.arc(x+.5*S,y+.66*S,.30*S,Math.PI,0); ctx.fill();
+  ctx.fillRect(x+.20*S,y+.66*S,.60*S,.20*S);
+  ctx.fillStyle=l; ctx.beginPath();
+  ctx.arc(x+.5*S,y+.66*S,.13*S,Math.PI,0); ctx.fill();
+}
+function gMortar(x,y,S,c,aim,recoil){
+  const d=shade(c,.60), l=shade(c,1.26);
+  ctx.save(); ctx.translate(0,(recoil||0)*S*.10);
+  ctx.fillStyle=c; ctx.beginPath();
+  ctx.moveTo(x+.22*S,y+.24*S); ctx.lineTo(x+.78*S,y+.24*S);
+  ctx.lineTo(x+.65*S,y+.74*S); ctx.lineTo(x+.35*S,y+.74*S);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle=d; ctx.beginPath();
+  ctx.ellipse(x+.5*S,y+.25*S,.28*S,.09*S,0,0,7); ctx.fill();
+  ctx.fillStyle=l; roundRect(x+.18*S,y+.72*S,.64*S,.18*S,.06*S); ctx.fill();
+  ctx.restore();
+}
+function gStorage(x,y,S,c){
+  const d=shade(c,.62), l=shade(c,1.28);
+  ctx.fillStyle=c; roundRect(x+.14*S,y+.30*S,.72*S,.58*S,.06*S); ctx.fill();
+  ctx.strokeStyle=d; ctx.lineWidth=Math.max(1.4,.06*S);
+  ctx.beginPath();
+  ctx.moveTo(x+.19*S,y+.34*S); ctx.lineTo(x+.81*S,y+.84*S);
+  ctx.moveTo(x+.81*S,y+.34*S); ctx.lineTo(x+.19*S,y+.84*S);
+  ctx.stroke();
+  ctx.fillStyle=l; roundRect(x+.09*S,y+.22*S,.82*S,.14*S,.05*S); ctx.fill();
+}
+function gWall(x,y,S){
+  ctx.fillStyle='#5f5952'; ctx.fillRect(x,y+.22*S,S,.78*S);
+  ctx.fillStyle='#8a837c'; ctx.fillRect(x,y+.22*S,S,.15*S);
+  ctx.fillStyle='#5f5952';
+  for(const o of[.03,.39,.75])ctx.fillRect(x+o*S,y+.02*S,.22*S,.23*S);
+  ctx.strokeStyle='#4b4640'; ctx.lineWidth=1; ctx.beginPath();
+  ctx.moveTo(x,y+.60*S); ctx.lineTo(x+S,y+.60*S);
+  ctx.moveTo(x+.5*S,y+.37*S); ctx.lineTo(x+.5*S,y+.60*S);
+  ctx.moveTo(x+.25*S,y+.60*S); ctx.lineTo(x+.25*S,y+S);
+  ctx.moveTo(x+.75*S,y+.60*S); ctx.lineTo(x+.75*S,y+S);
+  ctx.stroke();
+}
+function tTank(x,y,r,c){
+  const d=shade(c,.60), l=shade(c,1.32);
+  ctx.fillStyle=d;
+  roundRect(x-r*1.02,y-r*.82,r*2.04,r*.44,r*.2); ctx.fill();
+  roundRect(x-r*1.02,y+r*.38,r*2.04,r*.44,r*.2); ctx.fill();
+  ctx.fillStyle=c; roundRect(x-r*.86,y-r*.58,r*1.72,r*1.16,r*.26); ctx.fill();
+  ctx.fillStyle=d; ctx.fillRect(x,y-r*.13,r*1.3,r*.26);
+  ctx.fillStyle=l; ctx.beginPath(); ctx.arc(x,y,r*.44,0,7); ctx.fill();
+}
+function tMelee(x,y,r,c){
+  const d=shade(c,.55), l=shade(c,1.35);
+  ctx.fillStyle=d; ctx.fillRect(x+r*.34,y-r*1.0,r*.17,r*1.5);
+  ctx.fillRect(x+r*.14,y+r*.3,r*.57,r*.16);
+  ctx.fillStyle=c; ctx.beginPath();
+  ctx.moveTo(x-r*.82,y-r*.85); ctx.lineTo(x+r*.22,y-r*.85);
+  ctx.lineTo(x+r*.22,y+r*.18);
+  ctx.quadraticCurveTo(x-r*.3,y+r*1.0,x-r*.82,y+r*.18);
+  ctx.closePath(); ctx.fill();
+  ctx.fillStyle=l; ctx.fillRect(x-r*.62,y-r*.52,r*.62,r*.15);
+}
+function tRanged(x,y,r,c){
+  const d=shade(c,.52);
+  ctx.lineCap='round';
+  ctx.strokeStyle=c; ctx.lineWidth=r*.34;
+  ctx.beginPath(); ctx.arc(x-r*.2,y,r*.82,-Math.PI*.44,Math.PI*.44); ctx.stroke();
+  ctx.strokeStyle=d; ctx.lineWidth=r*.11;
+  const a=Math.PI*.44, cx=x-r*.2;
+  ctx.beginPath();
+  ctx.moveTo(cx+r*.82*Math.cos(-a),y+r*.82*Math.sin(-a));
+  ctx.lineTo(cx+r*.82*Math.cos(a),y+r*.82*Math.sin(a)); ctx.stroke();
+  ctx.lineWidth=r*.17;
+  ctx.beginPath(); ctx.moveTo(x-r*.75,y); ctx.lineTo(x+r*.8,y); ctx.stroke();
+  ctx.lineCap='butt';
+}
+function tBreaker(x,y,r,c){
+  const d=shade(c,.5), l=shade(c,1.35);
+  ctx.fillStyle=c; ctx.beginPath(); ctx.arc(x,y+r*.18,r*.82,0,7); ctx.fill();
+  ctx.fillStyle=l; ctx.beginPath(); ctx.arc(x-r*.28,y-r*.12,r*.26,0,7); ctx.fill();
+  ctx.fillStyle=d; ctx.fillRect(x-r*.24,y-r*.86,r*.48,r*.3);
+  ctx.strokeStyle=d; ctx.lineWidth=r*.15; ctx.lineCap='round';
+  ctx.beginPath(); ctx.moveTo(x,y-r*.82);
+  ctx.quadraticCurveTo(x+r*.55,y-r*1.3,x+r*.38,y-r*1.55); ctx.stroke();
+  ctx.lineCap='butt';
+  ctx.fillStyle='#FFC94D'; ctx.beginPath();
+  ctx.arc(x+r*.38,y-r*1.62,r*.22,0,7); ctx.fill();
+}
+const BGLYPH={town_hall:gTownHall,cannon:gCannon,mortar:gMortar,storage:gStorage};
+const TGLYPH={tank:tTank,melee:tMelee,ranged:tRanged,breaker:tBreaker};
+
+function drawHP(x,y,w,frac){
+  ctx.fillStyle='#00000030'; roundRect(x,y,w,4,2); ctx.fill();
+  ctx.fillStyle=frac>0.6?'#5E8F22':frac>0.25?'#D99425':'#D6423F';
+  roundRect(x,y,w*Math.max(0,frac),4,2); ctx.fill();
+}
+
+function draw(now,prog){
+  const S=CELL;
+  now=now||0; prog=prog||0;
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.clearRect(0,0,cv.width,cv.height);
+  ctx.save();
+
+  for(let r=-1;r<=GRID;r++)for(let c=-1;c<=GRID;c++){
+    const rr=Math.max(0,Math.min(GRID-1,r)), cc=Math.max(0,Math.min(GRID-1,c));
+    const edge=DEPLOY_SET.has(key(rr,cc));
+    ctx.fillStyle=edge?((rr+cc)%2?'#7fa65c':'#789e55'):((rr+cc)%2?'#cdbb96':'#c7b48d');
+    ctx.fillRect(c*S,r*S,S,S);
+  }
+
+  if(document.getElementById('ranges').checked){
+    for(const b of G.buildings){
+      if(b.hp<=0)continue; const sp=BUILDINGS[b.type]; if(!sp.rng)continue;
+      ctx.strokeStyle='rgba(206,90,48,.5)'; ctx.setLineDash([5,4]); ctx.lineWidth=1.4;
+      ctx.beginPath();ctx.arc((b.c+.5)*S,(b.r+.5)*S,sp.rng*S,0,7);ctx.stroke();
+      ctx.setLineDash([]);
+      if(sp.min){ctx.fillStyle='rgba(206,90,48,.20)';
+        ctx.beginPath();ctx.arc((b.c+.5)*S,(b.r+.5)*S,sp.min*S,0,7);ctx.fill();}
+    }
+  }
+  if(document.getElementById('paths').checked){
+    ctx.strokeStyle='rgba(40,50,65,.42)';ctx.lineWidth=1.5;ctx.setLineDash([4,4]);
+    for(const t of G.troops){ if(!t.path)continue;
+      ctx.beginPath();ctx.moveTo((t.c+.5)*S,(t.r+.5)*S);
+      for(const k of t.path)ctx.lineTo((k%GRID+.5)*S,(((k/GRID)|0)+.5)*S);
+      ctx.stroke(); }
+    ctx.setLineDash([]);
+  }
+
+  const wallSet=new Set();
+  for(const b of G.buildings)
+    if(b.hp>0&&b.type==='wall')wallSet.add(key(b.r,b.c));
+  const nbrs=(r,c)=>({n:wallSet.has(key(r-1,c)),s:wallSet.has(key(r+1,c)),
+                      e:wallSet.has(key(r,c+1)),w:wallSet.has(key(r,c-1))});
+
+  for(const b of G.buildings){
+    if(b.hp<=0)continue;
+    const x=b.c*S, y=b.r*S, sp=BUILDINGS[b.type];
+    if(b.type==='wall'){
+      const nb=nbrs(b.r,b.c);
+      gWall(x,y,S,nb,b.r,b.c);
+      if(b.flash>0){
+        ctx.globalAlpha=b.flash*.5; ctx.fillStyle='#fff';
+        ctx.fillRect(x,nb.n?y:y+.22*S,S,nb.n?S:.78*S);
+        if(!nb.n)for(const o of[.02,.39,.76])ctx.fillRect(x+o*S,y,.22*S,.23*S);
+        ctx.globalAlpha=1;
+      }
+      continue;
+    }
+    ctx.fillStyle='#00000016';
+    ctx.beginPath(); ctx.ellipse(x+S*.5,y+S*.90,S*.34,S*.11,0,0,7); ctx.fill();
+    BGLYPH[b.type](x,y,S,sp.col,b.aim,b.recoil);
+    if(b.flash>0){ctx.globalAlpha=b.flash*.65;
+      BGLYPH[b.type](x,y,S,'#ffffff',b.aim,b.recoil); ctx.globalAlpha=1;}
+    drawHP(x+S*.09,y-S*.03,S*.82,(b.disp===undefined?b.hp:b.disp)/b.max);
+  }
+
+  for(const t of G.troops){
+    const sp=TROOPS[t.type];
+    let rr=t.r, cc=t.c, moving=false;
+    if(t.path&&t.path.length){
+      const nk=t.path[0], nr=(nk/GRID)|0, nc=nk%GRID;
+      const f=Math.min(1,t.credit+sp.spd*prog);
+      rr=t.r+(nr-t.r)*f; cc=t.c+(nc-t.c)*f; moving=true;
+    }
+    const bob=moving?Math.sin(now/95+t.id)*S*.045:0;
+    const x=(cc+.5)*S, y=(rr+.5)*S+bob, rad=S*(t.type==='tank'?.32:.26);
+    ctx.fillStyle='#00000026'; ctx.beginPath();
+    ctx.ellipse(x,(rr+.5)*S+rad*.95,rad*.95,rad*.36,0,0,7); ctx.fill();
+    TGLYPH[t.type](x,y,rad,sp.col);
+    if(t.flash>0){ctx.globalAlpha=t.flash*.7;
+      TGLYPH[t.type](x,y,rad,'#ffffff'); ctx.globalAlpha=1;}
+    drawHP(x-rad,y-rad*1.3-S*.12,rad*2,(t.disp===undefined?t.hp:t.disp)/t.max);
+  }
+
+  for(const q of G.fx.proj){
+    const e=Math.min(1,q.t);
+    let px=q.x0+(q.x1-q.x0)*e, py=q.y0+(q.y1-q.y0)*e;
+    if(q.arc){
+      const lift=Math.hypot(q.x1-q.x0,q.y1-q.y0)*.30;
+      py-=Math.sin(e*Math.PI)*lift;
+      ctx.fillStyle='rgba(0,0,0,.16)';
+      ctx.beginPath();
+      ctx.ellipse(q.x0+(q.x1-q.x0)*e,q.y0+(q.y1-q.y0)*e,
+                  S*.14,S*.06,0,0,7); ctx.fill();
+    }
+    ctx.fillStyle=q.col;
+    ctx.beginPath(); ctx.arc(px,py,S*(q.arc?.13:.085),0,7); ctx.fill();
+    if(!q.arc){
+      ctx.strokeStyle=q.col; ctx.globalAlpha=.45; ctx.lineWidth=S*.07;
+      ctx.beginPath();
+      ctx.moveTo(px-(q.x1-q.x0)*.06,py-(q.y1-q.y0)*.06);
+      ctx.lineTo(px,py); ctx.stroke(); ctx.globalAlpha=1;
+    }
+  }
+
+  for(const q of G.fx.rings){
+    const e=q.t, rad=(q.r0+(q.r1-q.r0)*e)*S;
+    ctx.globalAlpha=(1-e)*.85; ctx.strokeStyle=q.col;
+    ctx.lineWidth=S*.10*(1-e*.5);
+    ctx.beginPath(); ctx.arc(q.x,q.y,rad,0,7); ctx.stroke();
+  }
+  ctx.globalAlpha=1;
+
+  for(const q of G.fx.parts){
+    ctx.globalAlpha=Math.max(0,q.life/q.max);
+    ctx.fillStyle=q.col;
+    ctx.beginPath(); ctx.arc(q.x,q.y,q.size,0,7); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+  ctx.restore();
+}
+
+function frame(now){
+  if(G){
+    const dt=lastFrame?Math.min(0.05,(now-lastFrame)/1000):0;
+    lastFrame=now;
+    advanceFx(dt);
+    draw(now, timer?Math.min(1,(now-lastTickAt)/tickMs):0);
+  }
+  requestAnimationFrame(frame);
+}
+
+cv.onclick=e=>{
+  if(!G||G.phase!=='battle'||G.over)return;
+  const b=cv.getBoundingClientRect();
+  const c=Math.floor((e.clientX-b.left)/(b.width/GRID));
+  const r=Math.floor((e.clientY-b.top)/(b.height/GRID));
+  if(!DEPLOY_SET.has(key(r,c)))return;
+  if(!G.reserve[selected])return;
+  let placed=0;
+  for(let i=0;i<(e.shiftKey?5:1);i++){
+    if(!G.reserve[selected])break;
+    G.reserve[selected]--; placed++;
+    G.troops.push({type:selected,r,c,pr:r,pc:c,hp:TROOPS[selected].hp,
+      max:TROOPS[selected].hp,credit:0,target:null,path:null,id:nextId++});
+  }
+  logMsg(placed+'&times; '+selected+' deployed at '+r+','+c);
+  syncUI(); draw();
+};
+
+function pauseRun(){ if(timer){clearInterval(timer);timer=null;} }
+function startRun(){ pauseRun();
+  tickMs=+document.getElementById('speed').value;
+  lastTickAt=performance.now();
+  timer=setInterval(loop,tickMs); }
+function loop(){
+  lastTickAt=performance.now();
+  stepTick();
+  if(stepMode&&!G.over){ chunk++;
+    if(chunk>=TICKS_PER_DECISION){ chunk=0; pauseRun(); } }
+  syncUI(); draw();
+}
+
+document.getElementById('btn-main').onclick=()=>{
+  if(G.over){newGame();return;}
+  if(G.phase==='shop'){
+    G.phase='battle'; chunk=0;
+    logMsg('Deploy your opening wave, then run the clock');
+    syncUI(); draw(); return;
+  }
+  if(timer)pauseRun(); else startRun();
+  syncUI();
+};
+document.getElementById('stepmode').onchange=e=>{stepMode=e.target.checked;chunk=0;};
+window.addEventListener('keydown',e=>{
+  if(!G)return;
+  if(e.code==='Space'){e.preventDefault();document.getElementById('btn-main').click();return;}
+  const n=['Digit1','Digit2','Digit3','Digit4'].indexOf(e.code);
+  if(n>=0&&!G.over){selected=Object.keys(TROOPS)[n];syncUI();}
+});
+document.getElementById('btn-reset').onclick=newGame;
+document.getElementById('motif').onchange=newGame;
+document.getElementById('seed').onchange=newGame;
+document.getElementById('speed').onchange=()=>{ if(timer)startRun(); };
+document.getElementById('ranges').onchange=draw;
+document.getElementById('paths').onchange=draw;
+
+newGame();
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>

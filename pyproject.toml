@@ -1,0 +1,19 @@
+[project]
+name = "base-siege-assignment3"
+version = "0.1.0"
+description = "UTS 43008 Project 12: army selection and deployment with Maskable PPO"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "gymnasium==1.3.0", "stable-baselines3==2.9.0", "sb3-contrib==2.9.0",
+  "torch==2.13.0", "numpy==2.5.2", "matplotlib==3.11.1",
+  "streamlit>=1.50,<2", "pandas>=2.2,<4", "scipy>=1.15,<2",
+  "tensorboard>=2.19,<3", "nbformat>=5.10,<6", "nbclient>=0.10,<1",
+  "ipykernel>=6.29,<8", "jupyterlab>=4.4,<5", "pytest==9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["smoke: short learner integration checks"]
+
+[tool.ruff]
+line-length = 100

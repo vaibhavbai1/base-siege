@@ -1,0 +1,122 @@
+{
+  "tests/test_browser_manual_parity.py": {
+    "accepted_previous_sha256": [
+      null
+    ],
+    "new_sha256": "c2a9da3a914066c8def26c1ced7d5bc283ceee18dc0d33ab54740865000d5978"
+  },
+  "tests/test_manual_custom_ui.py": {
+    "accepted_previous_sha256": [
+      null,
+      "c0939d7a8bf8d6bc61b6c1ce37dd4d620c0870fe48e49f6e6a91bef47b4db9fc"
+    ],
+    "new_sha256": "c0939d7a8bf8d6bc61b6c1ce37dd4d620c0870fe48e49f6e6a91bef47b4db9fc"
+  },
+  "tests/test_policy_playback.py": {
+    "accepted_previous_sha256": [
+      null,
+      "bec678a8bc68d76c557358f3492cbdea4a34e75763bbdbbb7fd5208e46fb14f6",
+      "0c78c27ef3a0281ed13ded8aa55958b61a5c5d69106d6a7b912fb0d616636fd7"
+    ],
+    "new_sha256": "0c78c27ef3a0281ed13ded8aa55958b61a5c5d69106d6a7b912fb0d616636fd7"
+  },
+  "tools/build_deploy_bundle.py": {
+    "accepted_previous_sha256": [
+      "48a756e327e7c4ace2af2ef9f47a2a213fc09d2fe0a731a5b4d158aecb2f2ad7",
+      "7edd664af27b38149bf5438ac22b7ba3acb6d34be11511af78a313019fd7d49b",
+      "5805448e10f47a2131be0c343aaf13ab72a4f7c7448ddb9200a6613194fce4b2"
+    ],
+    "new_sha256": "ad93d800c7332cacfa768381b7fa9b62198de97eb5615e3684ffaa970a60a240"
+  },
+  "tools/export_replay_html.py": {
+    "accepted_previous_sha256": [
+      "fd88b637ad8ad59df0387b665b189016dbb1ec2d22a276d4c0e639e0c0ea1b25"
+    ],
+    "new_sha256": "da07f5aadec6979be6d540361ba86b23dffdc4f42e10ababcfc762494e79f9e3"
+  },
+  "ui/app.py": {
+    "accepted_previous_sha256": [
+      "72c1bea3ad0b983a2f7f15d72be77c280b16b744d15ea13f6039a217e38e3cf1",
+      "9d3352f1f26de68ebf096a395ae9ba40b733e45351b4d923a2d20501b3452714",
+      "3fcc99a8e57e3220b9b1a54d0b85ea3afcadc8078bbcef0755940f2d206fcb9c"
+    ],
+    "new_sha256": "ab01c34a071c182d1ad1b84bd6fe915fed2b97849b3d44c49498bf4eb49dacd7"
+  },
+  "ui/custom_bases.py": {
+    "accepted_previous_sha256": [
+      null,
+      "1a1cb122b78cf9158ed7d151b58afbb35474dd39e05fa2892fa43a8c8ca84d6c"
+    ],
+    "new_sha256": "1a1cb122b78cf9158ed7d151b58afbb35474dd39e05fa2892fa43a8c8ca84d6c"
+  },
+  "ui/deployment.py": {
+    "accepted_previous_sha256": [
+      "c7bc260c65658dee3fafcf3fbb2f31e3980aeef14571854fbd51541de77758c8",
+      "b8fc1a9fb0bc3bca4551bcb8f04c28a013194b2616ca05806afe1e444deb741f"
+    ],
+    "new_sha256": "b8fc1a9fb0bc3bca4551bcb8f04c28a013194b2616ca05806afe1e444deb741f"
+  },
+  "ui/editor/editor.css": {
+    "accepted_previous_sha256": [
+      null,
+      "ff554f1c69a4df3f5a8e610cba3ecf9c1cf0a3268ac175249e3d3095cd1b5c9a"
+    ],
+    "new_sha256": "ff554f1c69a4df3f5a8e610cba3ecf9c1cf0a3268ac175249e3d3095cd1b5c9a"
+  },
+  "ui/editor/editor.js": {
+    "accepted_previous_sha256": [
+      null,
+      "7be63ccf8ae9739a438713b493cf062bb749d079b61f2b90022cfaa167554266"
+    ],
+    "new_sha256": "7be63ccf8ae9739a438713b493cf062bb749d079b61f2b90022cfaa167554266"
+  },
+  "ui/editor/glyphs.js": {
+    "accepted_previous_sha256": [
+      null,
+      "12cc8fe6bfabe46c75d4134b902adc9a1fb5029d54f6b06f906cbce7050136a5"
+    ],
+    "new_sha256": "12cc8fe6bfabe46c75d4134b902adc9a1fb5029d54f6b06f906cbce7050136a5"
+  },
+  "ui/editor/index.html": {
+    "accepted_previous_sha256": [
+      null,
+      "132785edb76defc0214085e7ed272b5428d899b57f9c429d573e3299658ee2d2"
+    ],
+    "new_sha256": "132785edb76defc0214085e7ed272b5428d899b57f9c429d573e3299658ee2d2"
+  },
+  "ui/frontend/app.js": {
+    "accepted_previous_sha256": [
+      "c29a58b2e019aa35025b6441e411f872696b1d28fd82dc04fb3832f1fb55bd71",
+      "346068c75647d576d30e79e9976c2f7e96b44f6a6754b7abdd30a676f8aceb35"
+    ],
+    "new_sha256": "371e7a87260cbdf657b5dce52b7e4487d703ed8696da443f1459a5b80c0b128e"
+  },
+  "ui/frontend/index.html": {
+    "accepted_previous_sha256": [
+      "79af67ad2d2657ef11162b9793dfff6a6312625a551967f4d820dbae5757aaba",
+      "0f70eeb1636d60aaa4b25caa0728c47a495255fdc5e903436eb0ad1501454689"
+    ],
+    "new_sha256": "665eee06d2d62d5530ee89f2a9f60154b4202a970988c6ae5d36cf4a76cb2920"
+  },
+  "ui/frontend/manual_engine.js": {
+    "accepted_previous_sha256": [
+      null
+    ],
+    "new_sha256": "17402982de6683e84f3b3352f1278a04ffa1b9cc9ad81f34bc36fd1d7d83c6a4"
+  },
+  "ui/manual_game.py": {
+    "accepted_previous_sha256": [
+      null,
+      "90d71a408dc82fd6adbc1131e9e395edf9b6543d5ed7da50d161a8cbdb5bad9d"
+    ],
+    "new_sha256": "90d71a408dc82fd6adbc1131e9e395edf9b6543d5ed7da50d161a8cbdb5bad9d"
+  },
+  "ui/policy_playback.py": {
+    "accepted_previous_sha256": [
+      null,
+      "cec2fba5263fbfed8f628a69c9c656f3592225eb88b2b84ae26f53b0dd6b253d",
+      "c2126bbaaa7737046de06bd30202878ee95ca011f5fc624bd7436c1cafca8d46"
+    ],
+    "new_sha256": "c2126bbaaa7737046de06bd30202878ee95ca011f5fc624bd7436c1cafca8d46"
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "decision": "proceed",
+  "dev_pool_sha256": "79b61544a8314f2d4632aa248f1efdcc25e2f278a89832125a95b671930f3811",
+  "evaluation": "../artifacts/pilot-dev-v2",
+  "evaluation_sha256": "d85ec561a7d9263dc37ecdf5d998637d9f0771a2ee6c16141078da5c1440f07f",
+  "limits": "Pilot-based extrapolation, not a guarantee. Excludes full pool generation and separate evaluations. The team must inspect curves, baselines, failures and storage; this tool does not decide whether learning is good.",
+  "planned_full_learners": 20,
+  "projected_training_hours": 3.0126386576127033,
+  "review_note": "Both pilots completed and improved during joint training. P achieved 39.15% development destruction and PA 33.70%, versus 60.12% for the heuristic and 6.54% for random. PA achieved more Town Hall kills. Results cover one learner seed only. Proceed with the planned matched study, retaining destruction as the primary metric and documenting the weak random baseline and diagnostic limitation.",
+  "runs": [
+    {
+      "development_sha256": "8f9bde5b75d8c48d25f50deb7555e453adcabe8744ec61a2f01626ed5a6998af",
+      "episodes_sha256": "bcee93f5378ea89426f639c9d98b16350ff6c80e9d82ec19401259b4867af917",
+      "manifest_sha256": "43a7d1d91fb51fc9074e384c999947fc9c27043bdad82ab12016dd0d6102de7f",
+      "model_sha256": "ff0a3bcb1095e73e48d32f302e56a214fba5ad679ef58f9561bd148c644a7488",
+      "path": "../runs/pilot-v2/P-100"
+    },
+    {
+      "development_sha256": "ab21505e7d832ac76b23a11608d7878ca41b94677170a2d1b1d1d6c328d32d1c",
+      "episodes_sha256": "5b674904a1681607d862fa995d5617af5a75307a33ec486c4b93478ddaa75273",
+      "manifest_sha256": "c5f74648a91e7f44744209d87d5e7854184f2594a66b2612716f9a513e820498",
+      "model_sha256": "49f859e74623c62b4f31f1597c85c150c9183f571ef09f6ab214254e5500dc33",
+      "path": "../runs/pilot-v2/PA-100"
+    }
+  ],
+  "schema_version": 1,
+  "source_hashes": {
+    "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+    "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+    "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+    "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+    "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+    "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+    "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+    "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+    "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+    "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+    "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+    "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+    "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+    "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+    "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+    "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+    "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+    "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+    "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+    "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+    "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+    "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+    "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+    "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+    "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+    "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+  },
+  "summaries": [
+    {
+      "condition": "P",
+      "empty_army_fraction": 0.08,
+      "initial_development": {
+        "episodes": 48,
+        "layouts": [
+          {
+            "motif": "closed_ring",
+            "seed": 10200
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10263
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10326
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10394
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10204
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10326
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10394
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10200
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10329
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10393
+          }
+        ],
+        "mean_destruction": 0.23118279569892475,
+        "mean_return": 0.03076612903225807,
+        "mean_spent": 199.58333333333334,
+        "timesteps": 0,
+        "views": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "last_100_episodes": 100,
+      "last_development": {
+        "episodes": 48,
+        "layouts": [
+          {
+            "motif": "closed_ring",
+            "seed": 10200
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10263
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10326
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10394
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10204
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10326
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10394
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10200
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10329
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10393
+          }
+        ],
+        "mean_destruction": 0.3487903225806452,
+        "mean_return": 0.1168111559139785,
+        "mean_spent": 199.79166666666666,
+        "timesteps": 57344,
+        "views": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "projected_one_full_run_hours_at_this_rate": 0.1517133034336508,
+      "seed": 100,
+      "steps_per_second": 479.96962777640243,
+      "transitions": 57344,
+      "wall_seconds": 119.47422645400002
+    },
+    {
+      "condition": "PA",
+      "empty_army_fraction": 0.02,
+      "initial_development": {
+        "episodes": 48,
+        "layouts": [
+          {
+            "motif": "closed_ring",
+            "seed": 10200
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10263
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10326
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10394
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10204
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10326
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10394
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10200
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10329
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10393
+          }
+        ],
+        "mean_destruction": 0.23118279569892475,
+        "mean_return": 0.03076612903225807,
+        "mean_spent": 199.58333333333334,
+        "timesteps": 0,
+        "views": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "last_100_episodes": 100,
+      "last_development": {
+        "episodes": 48,
+        "layouts": [
+          {
+            "motif": "closed_ring",
+            "seed": 10200
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10263
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10326
+          },
+          {
+            "motif": "closed_ring",
+            "seed": 10394
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10204
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10326
+          },
+          {
+            "motif": "ns_gates",
+            "seed": 10394
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10200
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10263
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10329
+          },
+          {
+            "motif": "ew_gates",
+            "seed": 10393
+          }
+        ],
+        "mean_destruction": 0.3696236559139785,
+        "mean_return": 0.26261323924731184,
+        "mean_spent": 199.8125,
+        "timesteps": 57344,
+        "views": [
+          0,
+          1,
+          4,
+          5
+        ]
+      },
+      "projected_one_full_run_hours_at_this_rate": 0.14955056232761954,
+      "seed": 100,
+      "steps_per_second": 486.91075877238285,
+      "transitions": 57344,
+      "wall_seconds": 117.77106783300042
+    }
+  ],
+  "train_pool_sha256": "25ee12964e79c757239b6833f4b0405f5af9cee0f70cccadaee32319b2aee7b0"
+}

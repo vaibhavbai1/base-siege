@@ -1,0 +1,541 @@
+{
+  "paths_relative_to": "freeze_parent",
+  "registration": {
+    "actual_budget_rule": "32 complete vector rollouts: 4 placement, 28 joint",
+    "dev_pool": "/home/sagemaker-user/Base_Siege_Smooth_Demo/base-siege-assignment3/bases/dev-v2.json",
+    "dev_sha256": "79b61544a8314f2d4632aa248f1efdcc25e2f278a89832125a95b671930f3811",
+    "filter": "structure-and-difficulty",
+    "final_candidate_seeds": [
+      11000,
+      11199
+    ],
+    "learner_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "pilot_review": {
+      "decision": "proceed",
+      "dev_pool_sha256": "79b61544a8314f2d4632aa248f1efdcc25e2f278a89832125a95b671930f3811",
+      "evaluation": "../artifacts/pilot-dev-v2",
+      "evaluation_sha256": "d85ec561a7d9263dc37ecdf5d998637d9f0771a2ee6c16141078da5c1440f07f",
+      "limits": "Pilot-based extrapolation, not a guarantee. Excludes full pool generation and separate evaluations. The team must inspect curves, baselines, failures and storage; this tool does not decide whether learning is good.",
+      "planned_full_learners": 20,
+      "projected_training_hours": 3.0126386576127033,
+      "review_note": "Both pilots completed and improved during joint training. P achieved 39.15% development destruction and PA 33.70%, versus 60.12% for the heuristic and 6.54% for random. PA achieved more Town Hall kills. Results cover one learner seed only. Proceed with the planned matched study, retaining destruction as the primary metric and documenting the weak random baseline and diagnostic limitation.",
+      "runs": [
+        {
+          "development_sha256": "8f9bde5b75d8c48d25f50deb7555e453adcabe8744ec61a2f01626ed5a6998af",
+          "episodes_sha256": "bcee93f5378ea89426f639c9d98b16350ff6c80e9d82ec19401259b4867af917",
+          "manifest_sha256": "43a7d1d91fb51fc9074e384c999947fc9c27043bdad82ab12016dd0d6102de7f",
+          "model_sha256": "ff0a3bcb1095e73e48d32f302e56a214fba5ad679ef58f9561bd148c644a7488",
+          "path": "../runs/pilot-v2/P-100"
+        },
+        {
+          "development_sha256": "ab21505e7d832ac76b23a11608d7878ca41b94677170a2d1b1d1d6c328d32d1c",
+          "episodes_sha256": "5b674904a1681607d862fa995d5617af5a75307a33ec486c4b93478ddaa75273",
+          "manifest_sha256": "c5f74648a91e7f44744209d87d5e7854184f2594a66b2612716f9a513e820498",
+          "model_sha256": "49f859e74623c62b4f31f1597c85c150c9183f571ef09f6ab214254e5500dc33",
+          "path": "../runs/pilot-v2/PA-100"
+        }
+      ],
+      "schema_version": 1,
+      "source_hashes": {
+        "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+        "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+        "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+        "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+        "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+        "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+        "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+        "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+        "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+        "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+        "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+        "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+        "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+        "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+        "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+        "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+        "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+        "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+        "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+        "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+        "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+        "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+        "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+        "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+        "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+        "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+      },
+      "summaries": [
+        {
+          "condition": "P",
+          "empty_army_fraction": 0.08,
+          "initial_development": {
+            "episodes": 48,
+            "layouts": [
+              {
+                "motif": "closed_ring",
+                "seed": 10200
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10263
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10326
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10394
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10204
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10326
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10394
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10200
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10329
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10393
+              }
+            ],
+            "mean_destruction": 0.23118279569892475,
+            "mean_return": 0.03076612903225807,
+            "mean_spent": 199.58333333333334,
+            "timesteps": 0,
+            "views": [
+              0,
+              1,
+              4,
+              5
+            ]
+          },
+          "last_100_episodes": 100,
+          "last_development": {
+            "episodes": 48,
+            "layouts": [
+              {
+                "motif": "closed_ring",
+                "seed": 10200
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10263
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10326
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10394
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10204
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10326
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10394
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10200
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10329
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10393
+              }
+            ],
+            "mean_destruction": 0.3487903225806452,
+            "mean_return": 0.1168111559139785,
+            "mean_spent": 199.79166666666666,
+            "timesteps": 57344,
+            "views": [
+              0,
+              1,
+              4,
+              5
+            ]
+          },
+          "projected_one_full_run_hours_at_this_rate": 0.1517133034336508,
+          "seed": 100,
+          "steps_per_second": 479.96962777640243,
+          "transitions": 57344,
+          "wall_seconds": 119.47422645400002
+        },
+        {
+          "condition": "PA",
+          "empty_army_fraction": 0.02,
+          "initial_development": {
+            "episodes": 48,
+            "layouts": [
+              {
+                "motif": "closed_ring",
+                "seed": 10200
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10263
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10326
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10394
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10204
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10326
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10394
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10200
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10329
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10393
+              }
+            ],
+            "mean_destruction": 0.23118279569892475,
+            "mean_return": 0.03076612903225807,
+            "mean_spent": 199.58333333333334,
+            "timesteps": 0,
+            "views": [
+              0,
+              1,
+              4,
+              5
+            ]
+          },
+          "last_100_episodes": 100,
+          "last_development": {
+            "episodes": 48,
+            "layouts": [
+              {
+                "motif": "closed_ring",
+                "seed": 10200
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10263
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10326
+              },
+              {
+                "motif": "closed_ring",
+                "seed": 10394
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10204
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10326
+              },
+              {
+                "motif": "ns_gates",
+                "seed": 10394
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10200
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10263
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10329
+              },
+              {
+                "motif": "ew_gates",
+                "seed": 10393
+              }
+            ],
+            "mean_destruction": 0.3696236559139785,
+            "mean_return": 0.26261323924731184,
+            "mean_spent": 199.8125,
+            "timesteps": 57344,
+            "views": [
+              0,
+              1,
+              4,
+              5
+            ]
+          },
+          "projected_one_full_run_hours_at_this_rate": 0.14955056232761954,
+          "seed": 100,
+          "steps_per_second": 486.91075877238285,
+          "transitions": 57344,
+          "wall_seconds": 117.77106783300042
+        }
+      ],
+      "train_pool_sha256": "25ee12964e79c757239b6833f4b0405f5af9cee0f70cccadaee32319b2aee7b0"
+    },
+    "pilot_review_sha256": "d4e4b0033a88ae81382e59a72c9495f163305b9112a3f73be04a1f5883a91615",
+    "primary_comparison": "PA minus P, averaged within learner then across learners",
+    "primary_metric": "destruction",
+    "registered_utc": "2026-09-21T12:59:08.683139+00:00",
+    "requested_budget": 262144,
+    "schema_version": 2,
+    "selection_rule": "Use every registered learner and its fixed-budget endpoint; never select using final scores.",
+    "source_hashes": {
+      "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+      "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+      "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+      "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+      "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+      "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+      "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+      "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+      "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+      "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+      "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+      "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+      "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+      "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+      "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+      "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+      "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+      "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+      "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+      "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+      "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+      "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+      "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+      "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+      "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+      "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+    },
+    "train_pool": "/home/sagemaker-user/Base_Siege_Smooth_Demo/base-siege-assignment3/bases/train-v2.json",
+    "train_sha256": "25ee12964e79c757239b6833f4b0405f5af9cee0f70cccadaee32319b2aee7b0",
+    "transfer_claim": "Held out from training; excluded from current development. Earlier software checks included this structure.",
+    "views": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "registration_sha256": "ddc0d855f61a3fb60d00f77baca8fadda2e00bf114b425276e16ecdae920810a",
+  "runs": [
+    {
+      "manifest_sha256": "8656244e6a91eee8264d0e211380e6f499ef00ace1fff37647a72cb0a7d66ab5",
+      "model_sha256": "9f8827ab04ad1edbbddb7285b14eaa7d533552f02037fd9bb15a231eae50686c",
+      "path": "../runs/study-v2/P-0"
+    },
+    {
+      "manifest_sha256": "92bc25b97b001e0cf7489db1f31a4b7f952b72f01e11a1dc03bb1ed1d6dd5193",
+      "model_sha256": "c33b915568fead5bd03a6ac7916fed0779c6b7dc418f27713424eb4140c45f53",
+      "path": "../runs/study-v2/PA-0"
+    },
+    {
+      "manifest_sha256": "d7b82bf924d3bfea0b05603b97961c78e3f17c617931227ce5069301638dd59d",
+      "model_sha256": "d52c8ba0a4b71e516f0662903b8f09e4d17666fd07f45e6c9376e1b0eff6dbfe",
+      "path": "../runs/study-v2/P-1"
+    },
+    {
+      "manifest_sha256": "115a1c87a2d520d51c2925e587170180f7d3b03b82ae5be8cd50b1af68b528cc",
+      "model_sha256": "22598f072275bea07ff7afd546d67159a548c3241b028b93e1a166d972ef504c",
+      "path": "../runs/study-v2/PA-1"
+    },
+    {
+      "manifest_sha256": "40736916a82ef233fa733374d303f2f5844514048682eab04d0e11c45846f35a",
+      "model_sha256": "ef2be1c45cf6879a29bc3d2ad2f11046250cae11573dae0f6ed06649fa7b7eb3",
+      "path": "../runs/study-v2/P-2"
+    },
+    {
+      "manifest_sha256": "2b62a87a7713bce63a51c79d00dc6043c0be13bc5900dc71c8b594fb5316545a",
+      "model_sha256": "14b098fb912c039ccf3ddbdfc754d5494aa1f6abdf1293e7e2133ef0affe06b6",
+      "path": "../runs/study-v2/PA-2"
+    },
+    {
+      "manifest_sha256": "5c52082178766faeee30e5f4954894e86c851fdf5d18c3c9a1601ef765c5b72c",
+      "model_sha256": "f5eda0097b0998d0ef6b1b71f8d6535cc1997181be70f040230593fee41e21bd",
+      "path": "../runs/study-v2/P-3"
+    },
+    {
+      "manifest_sha256": "f0c0bf89d75c06d20f984000ec7a2d36e4b67cc49a6ea19d87b33daada8c535d",
+      "model_sha256": "90b1f7e65245db2c98503c1e197ffe752b018907963958464de9c29637d74aec",
+      "path": "../runs/study-v2/PA-3"
+    },
+    {
+      "manifest_sha256": "396d8351b5b04b40dac835a3dee294ad1f011578bb9186fbcd5ba44a01d05327",
+      "model_sha256": "fc632d2ea59e948ff6efc3356eaaee83341f41351bbcc344e82eebc8a189eac5",
+      "path": "../runs/study-v2/P-4"
+    },
+    {
+      "manifest_sha256": "20d02e391d8159834ce1ccdc3c1ec5081b93817ddc22318983a030ab26f60a6a",
+      "model_sha256": "45a358b45f3930e0aa3ad1831cb120264c23bc903cb09dffb0997626523ad523",
+      "path": "../runs/study-v2/PA-4"
+    },
+    {
+      "manifest_sha256": "aa867ad1bdbe31f6f6c5f167eee70949ffa981614238d9ac586cf1627e86aecc",
+      "model_sha256": "069e69007e4f578a04d3a8c0aa9efb3b14db38466972bbd4509f793e26f876d9",
+      "path": "../runs/study-v2/P-5"
+    },
+    {
+      "manifest_sha256": "f19f6b58d0f747a61a4654ef6b609cd00c17be4cfca5bff2de6464185cbc2928",
+      "model_sha256": "a0523ad89650761c59552135e5d6b305bf94ec46d6859d9fe486f26645e25989",
+      "path": "../runs/study-v2/PA-5"
+    },
+    {
+      "manifest_sha256": "7d71f6256ec42c65c0ee79506d6317854fc7527d03b70a61ddab23c0e091695e",
+      "model_sha256": "06f112a3378425e51b382646a9bec785e02587327c0f9577abb4af391881ae7f",
+      "path": "../runs/study-v2/P-6"
+    },
+    {
+      "manifest_sha256": "9da8e818497439b2e83434906671386d38a63d636294d47aec4b1c9ba3cbedaf",
+      "model_sha256": "d3f0f890a842008fcfc310c56badb2752f0bdb2feb347ee48e063c45de035044",
+      "path": "../runs/study-v2/PA-6"
+    },
+    {
+      "manifest_sha256": "3a4bafe01b404906980b80357ab63e7dd68ec7007956af8166f25ddfe95f0ffd",
+      "model_sha256": "acf8801eadecd7dc0c0f6c43a2c7a361d0a429e0bddf16c12d0762dadadb4d7d",
+      "path": "../runs/study-v2/P-7"
+    },
+    {
+      "manifest_sha256": "9493618235428935d0d0da7d4797860fb07262e92e60307fd2e622f94666cd8f",
+      "model_sha256": "b3e357bf6e8219e6e2f26d122a16d059f79938223575de67ebd06eafbda72cd1",
+      "path": "../runs/study-v2/PA-7"
+    },
+    {
+      "manifest_sha256": "4220d340e89b94da2cfdceca6cbd0f6167d41080dcf9480695c7f5049fd6bd3f",
+      "model_sha256": "108bdd35e16a4d088b0fe63936eccda4535360777a2c22a258c9d336285ac6c5",
+      "path": "../runs/study-v2/P-8"
+    },
+    {
+      "manifest_sha256": "49c442e819106cf1d9ba7e69ddd1aedf8d625ac04ef9b4a65e5b3b87a59f0f39",
+      "model_sha256": "e6cf5cefd323e8313c2d9991e5f7970ad1a6c666245bf5a4baf0d48fd9d4ad01",
+      "path": "../runs/study-v2/PA-8"
+    },
+    {
+      "manifest_sha256": "7c7caf267e7b0a886043aa6b0f50f58a65aa7c261b931104653fb0be37423e33",
+      "model_sha256": "daaff578b188ef251b1d7d0f67907a2f5949afb7154be3f9f890481bd16f4c8f",
+      "path": "../runs/study-v2/P-9"
+    },
+    {
+      "manifest_sha256": "ddfffc7908e3e6441a7fc568d23c52343c215f7ae157796431c1c88a725393d2",
+      "model_sha256": "3223bff117fbab074a906b4af71d21399e230a2d9b97cbe40ca9c321533c3002",
+      "path": "../runs/study-v2/PA-9"
+    }
+  ],
+  "schema_version": 2,
+  "source_hashes": {
+    "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+    "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+    "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+    "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+    "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+    "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+    "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+    "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+    "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+    "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+    "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+    "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+    "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+    "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+    "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+    "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+    "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+    "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+    "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+    "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+    "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+    "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+    "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+    "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+    "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+    "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+  }
+}
