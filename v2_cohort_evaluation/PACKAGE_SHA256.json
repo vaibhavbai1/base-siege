@@ -1,0 +1,12 @@
+{
+  "v2_cohort_evaluation/README.md": "de9770a7ed9bb926c189a3239c4497467d02797bfae207ed0d875621a51cb517",
+  "v2_cohort_evaluation/VALIDATION.md": "f7aa5f1551b32f00879fe95189136941da9358a6852b799c28b70abf3321b4eb",
+  "v2_cohort_evaluation/__init__.py": "1544ce673c09f29ac95e3e723bcfa9c3a5d821b5e96ca28ad9ff55df8ccf29cf",
+  "v2_cohort_evaluation/__main__.py": "0cfa78a7fb27ba302ff2f5583553a95989d7ed0d41287e9290f85a7826a445ff",
+  "v2_cohort_evaluation/analysis.py": "b51ba01ae1d69e00ee2f83390363b41f911aa8e8cbafe01962ee389dbc8a37af",
+  "v2_cohort_evaluation/baseline_reference.json": "6f0b046fb7683fa36ec64ba501b334393b2ca63bb6c90b714c3090a44ba9beec",
+  "v2_cohort_evaluation/protocol.json": "1503fa190757be3f85a57da5a69d080336bb80578b0141b390f263e71c6d6c6e",
+  "v2_cohort_evaluation/replication_reference.json": "bebd6b686b834518931144923ee219cc05e1fbb879900be4c3316fedcb0aee63",
+  "v2_cohort_evaluation/runner.py": "ba5d778a6421e0b58763b49a30832a22b96cd48684944d3b14911f3caf796ec2",
+  "v2_cohort_evaluation/tests/test_cohort.py": "e252565bcb8fe334fdfff8333e522999a9769ef896e171d4e7df31c3e3f72220"
+}

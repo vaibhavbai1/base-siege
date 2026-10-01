@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 820912791,
+      "base_seed": 10393,
+      "condition": "P",
+      "decisions": 36,
+      "destruction": 1.0,
+      "episode_return": 1.4575,
+      "finish_reason": "full_clear",
+      "full_clear": true,
+      "learner_seed": 1,
+      "mode": "sampled",
+      "monitor_layout": false,
+      "motif": "closed_ring",
+      "sample_seed": 31002,
+      "spent": 195,
+      "tick": 230,
+      "town_hall": true,
+      "transitions": 4194304,
+      "view": 6,
+      "zero_destruction": 0.0
+    },
+    "id": "case-015",
+    "roles": [
+      "full clear with middle-ranked finish time"
+    ]
+  },
+  "files": {
+    "case-015.details.html": "9e0b9e110dbfdb78a5b9f9c5ee882cbbaad673107740c8f5d9f25f470c4d4e12",
+    "case-015.diagnostic.json": "3475ab839299886e0bcca6181c60fb4e32237315740a8399d1381a3921741df3",
+    "case-015.html": "52eb73c7bc4814171388146bda0e57fa782b871c96dbdfa20667cf6e61e7cdc6",
+    "case-015.json": "919e5b0d75922a5ad2ab7a5c3637440c27827746a9a8aa6c0c5b5fd2d3cf425b"
+  }
+}

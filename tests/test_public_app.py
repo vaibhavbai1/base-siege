@@ -27,7 +27,7 @@ def select(app, label, value):
 def test_public_app_renders_without_published_models():
     app = open_app()
     assert app.title[0].value == "Base Siege"
-    assert any("CPU inference only" in caption.value for caption in app.caption)
+    assert "Experiment results" not in next(w for w in app.selectbox if w.label == "Mode").options
     select(app, "Mode", "Policy replay")
     select(app, "Policy", "Saved Maskable PPO")
     if not asset_paths(ROOT, "model", public=True):
@@ -54,7 +54,7 @@ def test_public_baseline_replay_completes(policy):
 
 def test_public_evidence_modes_only_offer_demo_assets():
     app = open_app()
-    for mode in ("Experiment results", "Saved replay"):
+    for mode in ("Saved replay",):
         select(app, "Mode", mode)
         for widget in app.selectbox:
             if widget.label in ("Run manifest", "Evaluation table", "Replay file"):

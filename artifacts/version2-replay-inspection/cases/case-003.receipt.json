@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 564837801,
+      "base_seed": 10204,
+      "condition": "P",
+      "decisions": 48,
+      "destruction": 0.22580645161290322,
+      "episode_return": -0.07269354838709677,
+      "finish_reason": "tick_limit",
+      "full_clear": false,
+      "learner_seed": 0,
+      "mode": "sampled",
+      "monitor_layout": true,
+      "motif": "ns_gates",
+      "sample_seed": 31002,
+      "spent": 199,
+      "tick": 300,
+      "town_hall": false,
+      "transitions": 4194304,
+      "view": 2,
+      "zero_destruction": 0.0
+    },
+    "id": "case-003",
+    "roles": [
+      "lowest time-limit attack"
+    ]
+  },
+  "files": {
+    "case-003.details.html": "4cbe9855e2f2c71664a9f060efed1716456bc3f7a1c8cf8ab704507388dda28a",
+    "case-003.diagnostic.json": "26fce8320f0254ca440d55cbf152d6a14cf7b6619f64f2331ce0a31c25f65c0b",
+    "case-003.html": "9433eadfeaf3f9277a019d36e1f70cc1a73d48803828134cbcac001a3ca9d8a0",
+    "case-003.json": "5453027b898b9c068a65de809e81d47fd96af6ac76d9ecde695c1982ead2024f"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "comparisons": "DS and SD against both SS and DD within each learner; condition means weight the three learners equally. Also report the 144 layouts outside the monitor panel.",
+  "conditions": [
+    "P",
+    "PA"
+  ],
+  "inference_limit": "Comparison of complete action-selection strategies. Purchases can change subsequent deployment states; this is not a controlled same-army deployment experiment. Three trained learners per condition; do not treat attacks as independent learners.",
+  "layouts": "all 156 frozen dev layouts",
+  "learner_seeds": [
+    0,
+    1,
+    2
+  ],
+  "modes": {
+    "DD": "deterministic purchasing / deterministic deployment (reused)",
+    "DS": "deterministic purchasing / sampled deployment (new)",
+    "SD": "sampled purchasing / deterministic deployment (new)",
+    "SS": "sampled purchasing / sampled deployment (reused)"
+  },
+  "new_attack_count": 44928,
+  "phase_rule": "Use vector[6]: 0 shopping, 1 battle. Validate against the Finish shopping action mask. Finish shopping uses the purchasing rule; all battle decisions use the deployment rule.",
+  "prepared_date": "2026-09-28",
+  "primary_metric": "fraction of building VALUE destroyed, reported as a percentage",
+  "reused_attack_count": 29952,
+  "rng_rule": "Reset Python, NumPy and Torch once per episode using version2.evaluation.episode_seed(label, base, view). Do not reseed at the phase boundary. Deterministic decisions consume no sampling draws, so deployment draws are not synchronized across modes with different purchasing rules.",
+  "sample_seed_labels": [
+    31001,
+    31002,
+    31003
+  ],
+  "schema": 1,
+  "scope": "Exploratory development diagnostic specified after the full-development evaluation and replay review; not preregistered before training and not a final test.",
+  "secondary_metrics": [
+    "full clear",
+    "Town Hall destroyed",
+    "zero destruction",
+    "below 50 percent destruction"
+  ],
+  "selection_limit": "Any stronger mode discovered here is development-selected and needs a fixed subsequent final-test protocol. No guaranteed improvement is assumed.",
+  "total_comparison_rows": 74880,
+  "training": "None. No checkpoint, reward, movement or targeting changes.",
+  "transitions": 4194304,
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

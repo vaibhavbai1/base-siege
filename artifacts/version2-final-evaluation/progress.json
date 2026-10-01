@@ -1,0 +1,12 @@
+{
+  "attempt_wall_seconds": 8339.484950951999,
+  "completed_units": 114680,
+  "current_target": "heuristic",
+  "expected_units": 114680,
+  "new_attacks_this_attempt": 113680,
+  "new_pool_candidates_this_attempt": 0,
+  "rough_remaining_seconds": 0.0,
+  "stage": "export",
+  "status": "completed",
+  "updated_utc": "2026-09-30T15:24:04.903475+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "contract_sha256": "9040ccaab0df2010bda94c24dde3cfd0535508aee9d1c3bebb62df78aeecfa3a",
+  "episodes": 121056,
+  "outputs": {
+    "budget_comparison.csv": "4984fe7ee52055b6a6734d3c65cd7782ef705c69a8e619481252fc1a4ac7ed19",
+    "condition_summary.csv": "1892aa6e21f33069305f607fe89e59d3a8ace9604d0ca5f5ba6017ed00286901",
+    "episodes.csv": "66122a08410b110ba99da7207d79751d6dca9c430859ae63b5e5c1c6fd23ceb5",
+    "model_summary.csv": "31b1e4e6d348e09805bc935f16ec628b852bb26ac1c78a766066697e87657f05"
+  },
+  "scope": "Development comparison specified after the four-million diagnostic results; not a final test",
+  "status": "completed"
+}

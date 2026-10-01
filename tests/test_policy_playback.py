@@ -103,6 +103,7 @@ def test_trained_policy_controls_and_stale_replay_clear(tmp_path,monkeypatch,tor
             next(w for w in app.selectbox if w.label==label).set_value(value).run(timeout=30)
             assert not app.exception
         select('Mode','Policy replay')
+        select('Model version','Earlier models')
         assert next(w for w in app.selectbox if w.label=='Action selection').value=='Sampled'
         next(b for b in app.button if b.label=='Generate replay').click().run(timeout=30)
         assert not app.exception and app.session_state['replay']['acting']['mode']=='sampled'

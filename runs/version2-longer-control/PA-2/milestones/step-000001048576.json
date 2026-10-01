@@ -1,0 +1,7 @@
+{
+  "actual_steps": 1048576,
+  "contract_sha256": "9a5cd50483586598d0c805ee06383e511072121cd2f17fc9c20859ac9a5aa0da",
+  "phase": "joint",
+  "purpose": "inference and development comparisons",
+  "sha256": "49b0d883b1e39bb6a330ec3672bc006d9d02745085984b981870d103520e94d2"
+}

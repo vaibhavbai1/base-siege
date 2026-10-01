@@ -1,0 +1,53 @@
+{
+  "experiment": "version2-longer-control",
+  "evidence_scope": "development screening; not final evaluation",
+  "conditions": [
+    "P",
+    "PA"
+  ],
+  "learner_seeds": [
+    0,
+    1,
+    2
+  ],
+  "placement_steps": 32768,
+  "total_steps": 4194304,
+  "screen_steps": 1048576,
+  "n_envs": 4,
+  "rollout_steps": 2048,
+  "batch_size": 256,
+  "epochs": 10,
+  "checkpoint_every_rollouts": 8,
+  "keep_checkpoints": 3,
+  "development_interval": 262144,
+  "sample_seeds": [
+    31001,
+    31002,
+    31003
+  ],
+  "milestones": [
+    32768,
+    262144,
+    524288,
+    1048576,
+    2097152,
+    4194304
+  ],
+  "initialization": "independent from scratch; no original checkpoint loaded",
+  "changes": [
+    "longer joint training",
+    "CPU sampled and deterministic development diagnostics",
+    "bounded recovery checkpoint retention"
+  ],
+  "unchanged": [
+    "simulator and movement including inaccessible-target behaviour",
+    "observation",
+    "reward",
+    "action masks",
+    "network",
+    "PPO hyperparameters",
+    "train/dev pools",
+    "placement-only duration"
+  ],
+  "final_evaluation": "Not included. Define a new held-out protocol before final claims."
+}

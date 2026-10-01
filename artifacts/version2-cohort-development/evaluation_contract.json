@@ -1,0 +1,2212 @@
+{
+  "baseline_reference": {
+    "directory": "artifacts/version2-phase-evaluation",
+    "files": {
+      "combined_episodes.csv": "e74c201f8918eb16716ccda3e2036e714fcec0786ccb10fa322f3e2d8c194647",
+      "complete.json": "3ce257c8eed50e5a54ff036d6b3a6fbb23acb636a835cd1e69ce98053f26efb8",
+      "evaluation_contract.json": "b18284dc911e010a68b619c892f1acd689812c2d24f832f823e6aeafb1d487f1"
+    },
+    "source_archive": "Base_Siege_V2_Phase_Results_20260928_125120_734496.zip"
+  },
+  "development_code_hashes": {
+    "__init__.py": "0dda1f8f9e2e6707c81cf502e090cec23315a6de658b507e3d5a40d7049ab8a0",
+    "__main__.py": "dbacad2fc591f765e65fb076c2ab8a4a517ba4298a4c12bc25c0b672299e237b",
+    "expected.json": "912d03cc36958aa46aff5865eb1019fb1c6e4af5c3dfda83a36591bcb753fbf6",
+    "runner.py": "10ca7343a85d80c9d1c2a34d3ac89ad1179cb4697212f26d704d71caf76e457e",
+    "tests/test_evaluation.py": "5768e808a1167aad378a7df93e2dcb97399f480f0b381718ab058665d821b4b4"
+  },
+  "device": "cpu",
+  "expected_episodes": 122304,
+  "kind": "version2-cohort-development",
+  "layouts": [
+    {
+      "motif": "closed_ring",
+      "seed": 10200
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10200
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10204
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10204
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10208
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10208
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10208
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10209
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10209
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10209
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10212
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10215
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10215
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10215
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10217
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10217
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10217
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10219
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10219
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10219
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10221
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10221
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10222
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10224
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10225
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10225
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10225
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10227
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10231
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10231
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10232
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10232
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10236
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10236
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10237
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10237
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10237
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10245
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10245
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10247
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10252
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10252
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10253
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10253
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10256
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10256
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10260
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10261
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10261
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10261
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10262
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10263
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10263
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10263
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10265
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10265
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10265
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10266
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10266
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10267
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10267
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10272
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10272
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10273
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10273
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10273
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10278
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10282
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10282
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10287
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10287
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10287
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10288
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10288
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10288
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10292
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10295
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10298
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10298
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10298
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10299
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10300
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10303
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10303
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10306
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10306
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10309
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10309
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10309
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10311
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10311
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10311
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10312
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10314
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10314
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10315
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10318
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10318
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10318
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10319
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10319
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10320
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10326
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10326
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10329
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10329
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10329
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10333
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10333
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10333
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10342
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10342
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10345
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10345
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10345
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10346
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10346
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10352
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10352
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10352
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10354
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10357
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10357
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10358
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10358
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10358
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10361
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10361
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10361
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10363
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10364
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10366
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10370
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10370
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10370
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10372
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10372
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10372
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10373
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10373
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10374
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10376
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10376
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10376
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10381
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10383
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10383
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10384
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10387
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10391
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10391
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10393
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10393
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10393
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10394
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10394
+    }
+  ],
+  "models": [
+    {
+      "condition": "P",
+      "learner_seed": 0,
+      "path": "runs/version2-longer-control/P-0/milestones/step-000004194304.zip",
+      "run": "P-0",
+      "sha256": "a3c96421b66b43f31999d19a2da68d4a4744796f49556468b54f3f8f0f22f35a",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 1,
+      "path": "runs/version2-longer-control/P-1/milestones/step-000004194304.zip",
+      "run": "P-1",
+      "sha256": "f90991b1830fa600bbbc70ee85557ff6820bd390742c808dfb51dc92de0bdc2e",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 2,
+      "path": "runs/version2-longer-control/P-2/milestones/step-000004194304.zip",
+      "run": "P-2",
+      "sha256": "092c21466a0e5677a866202a126d7b3e69961d9091205b40d77df47c88681b5b",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 0,
+      "path": "runs/version2-longer-control/PA-0/milestones/step-000004194304.zip",
+      "run": "PA-0",
+      "sha256": "419fd728f1a61d0f8decc9dc92ae23899ead3dc4402ad9ddbfdfab12600ade43",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 1,
+      "path": "runs/version2-longer-control/PA-1/milestones/step-000004194304.zip",
+      "run": "PA-1",
+      "sha256": "127659b56baef2c6c442d593754f9f24a6bbbee8275b86607a0d6e8978b6dc74",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 2,
+      "path": "runs/version2-longer-control/PA-2/milestones/step-000004194304.zip",
+      "run": "PA-2",
+      "sha256": "8a85f9355e20c1cc65aca06e12fabbfa998fb1af7e71e4f9a66b96343b5887b8",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/P-3/model.zip",
+      "run": "P-3",
+      "sha256": "4cb82b667790e50bbdf51adacdf68c338eccf8ca8ba4b03346caa08b7f8586d9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/P-4/model.zip",
+      "run": "P-4",
+      "sha256": "0d6a84de73c9791dd10a2d112fca1b81947ceb17ad5d07e54c5ab603b90c0364",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/P-5/model.zip",
+      "run": "P-5",
+      "sha256": "d2242aaeb9dc9fad247b3bd91f7ac4ae0a6e08aa879e89b240e59becab9279fc",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/P-6/model.zip",
+      "run": "P-6",
+      "sha256": "c40fdc02f3586eaba17bd9c2de59c13944ece842f08af699b8c692d75fa4fe85",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/P-7/model.zip",
+      "run": "P-7",
+      "sha256": "ee5267404a8a52af6fc4bb4e676ec02ee7fef152bdc8a85810a282a28aff38a9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/P-8/model.zip",
+      "run": "P-8",
+      "sha256": "38229cfc43e9f07ef1f41b5be4edefb8ed16fe160ef0b0b4b4ed61b482b62f2b",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/P-9/model.zip",
+      "run": "P-9",
+      "sha256": "e7a658ce4349ddf18e09f2f2f25551d53a31faf84f1926020957622614e6fcb0",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/PA-3/model.zip",
+      "run": "PA-3",
+      "sha256": "0424a4fa6b17dd4d5f783f7e761bffd15b1248fb7687adaa835fa95275191289",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/PA-4/model.zip",
+      "run": "PA-4",
+      "sha256": "1353a701529bf8952a96b759e23e17ad5160a6ae27d3e9c171b2c1c69c595be2",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/PA-5/model.zip",
+      "run": "PA-5",
+      "sha256": "eaf21d07bd873a2fe81d61a3ef856326c21ab5a0fc9b00a4a7d84cd37bd2f7f3",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/PA-6/model.zip",
+      "run": "PA-6",
+      "sha256": "b66f8522c7882ae17e7a09e97bccb17b11275c2e0857705bebe1bb226112e6b6",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/PA-7/model.zip",
+      "run": "PA-7",
+      "sha256": "1cf565ec7b77b3a3be4bc351f357e1a0f99aa9002f69b24bf58ba08aae171e26",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/PA-8/model.zip",
+      "run": "PA-8",
+      "sha256": "ee5eb685eab549cb87e49b5fda5218dfca25fb51b7b44a000810065c8e010fae",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/PA-9/model.zip",
+      "run": "PA-9",
+      "sha256": "aa061b8b9ce31e5b9a2802caa157a796adfee5deab403f26c7d87cfd1fbd435b",
+      "transitions": 4194304
+    }
+  ],
+  "modes": [
+    "DS",
+    "SS",
+    "DD"
+  ],
+  "monitor_panel": [
+    {
+      "motif": "closed_ring",
+      "seed": 10200
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10200
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10204
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10263
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10263
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10263
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10326
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10326
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10329
+    },
+    {
+      "motif": "ew_gates",
+      "seed": 10393
+    },
+    {
+      "motif": "closed_ring",
+      "seed": 10394
+    },
+    {
+      "motif": "ns_gates",
+      "seed": 10394
+    }
+  ],
+  "new_models": [
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/P-3/model.zip",
+      "run": "P-3",
+      "sha256": "4cb82b667790e50bbdf51adacdf68c338eccf8ca8ba4b03346caa08b7f8586d9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/P-4/model.zip",
+      "run": "P-4",
+      "sha256": "0d6a84de73c9791dd10a2d112fca1b81947ceb17ad5d07e54c5ab603b90c0364",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/P-5/model.zip",
+      "run": "P-5",
+      "sha256": "d2242aaeb9dc9fad247b3bd91f7ac4ae0a6e08aa879e89b240e59becab9279fc",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/P-6/model.zip",
+      "run": "P-6",
+      "sha256": "c40fdc02f3586eaba17bd9c2de59c13944ece842f08af699b8c692d75fa4fe85",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/P-7/model.zip",
+      "run": "P-7",
+      "sha256": "ee5267404a8a52af6fc4bb4e676ec02ee7fef152bdc8a85810a282a28aff38a9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/P-8/model.zip",
+      "run": "P-8",
+      "sha256": "38229cfc43e9f07ef1f41b5be4edefb8ed16fe160ef0b0b4b4ed61b482b62f2b",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/P-9/model.zip",
+      "run": "P-9",
+      "sha256": "e7a658ce4349ddf18e09f2f2f25551d53a31faf84f1926020957622614e6fcb0",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/PA-3/model.zip",
+      "run": "PA-3",
+      "sha256": "0424a4fa6b17dd4d5f783f7e761bffd15b1248fb7687adaa835fa95275191289",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/PA-4/model.zip",
+      "run": "PA-4",
+      "sha256": "1353a701529bf8952a96b759e23e17ad5160a6ae27d3e9c171b2c1c69c595be2",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/PA-5/model.zip",
+      "run": "PA-5",
+      "sha256": "eaf21d07bd873a2fe81d61a3ef856326c21ab5a0fc9b00a4a7d84cd37bd2f7f3",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/PA-6/model.zip",
+      "run": "PA-6",
+      "sha256": "b66f8522c7882ae17e7a09e97bccb17b11275c2e0857705bebe1bb226112e6b6",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/PA-7/model.zip",
+      "run": "PA-7",
+      "sha256": "1cf565ec7b77b3a3be4bc351f357e1a0f99aa9002f69b24bf58ba08aae171e26",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/PA-8/model.zip",
+      "run": "PA-8",
+      "sha256": "ee5eb685eab549cb87e49b5fda5218dfca25fb51b7b44a000810065c8e010fae",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/PA-9/model.zip",
+      "run": "PA-9",
+      "sha256": "aa061b8b9ce31e5b9a2802caa157a796adfee5deab403f26c7d87cfd1fbd435b",
+      "transitions": 4194304
+    }
+  ],
+  "package_hashes": {
+    "__init__.py": "1544ce673c09f29ac95e3e723bcfa9c3a5d821b5e96ca28ad9ff55df8ccf29cf",
+    "__main__.py": "0cfa78a7fb27ba302ff2f5583553a95989d7ed0d41287e9290f85a7826a445ff",
+    "analysis.py": "b51ba01ae1d69e00ee2f83390363b41f911aa8e8cbafe01962ee389dbc8a37af",
+    "baseline_reference.json": "6f0b046fb7683fa36ec64ba501b334393b2ca63bb6c90b714c3090a44ba9beec",
+    "protocol.json": "1503fa190757be3f85a57da5a69d080336bb80578b0141b390f263e71c6d6c6e",
+    "replication_reference.json": "bebd6b686b834518931144923ee219cc05e1fbb879900be4c3316fedcb0aee63",
+    "runner.py": "ba5d778a6421e0b58763b49a30832a22b96cd48684944d3b14911f3caf796ec2",
+    "tests/test_cohort.py": "e252565bcb8fe334fdfff8333e522999a9769ef896e171d4e7df31c3e3f72220"
+  },
+  "phase_code_hashes": {
+    "__init__.py": "027bed878b1c2799f764d29f69355cc57ffcdb0fbd10d1e71c0ffc2877209140",
+    "__main__.py": "75cfb74cef3d987578be6ade83837001c9a9f4875d3027b5f26d807f8ffe9063",
+    "baseline_reference.json": "601ff2f3e0b3965d904d9898c105bc8947fd06cbdc9b54e39846e06c2c99fede",
+    "protocol.json": "e4479cc2f1fbb74f40a94b15d33e529bf6099133ee88cc1a4cf99edb39ba8408",
+    "runner.py": "706e440fa3e44df9402dd417a5261c07d17221f1c5da32852d7db824620247b5",
+    "tests/test_phases.py": "be355f406d9deb2f32406802aab8981ccf5131485be57ebb9a90ba33e7b424e0"
+  },
+  "pool_sha256": "79b61544a8314f2d4632aa248f1efdcc25e2f278a89832125a95b671930f3811",
+  "protocol": {
+    "cohorts": {
+      "all": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "replication": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "screening": [
+        0,
+        1,
+        2
+      ]
+    },
+    "comparisons": [
+      "DS minus SS",
+      "DS minus DD",
+      "PA minus P paired by learner seed for each mode"
+    ],
+    "expected_combined_episodes": 174720,
+    "expected_new_episodes": 122304,
+    "expected_reused_episodes": 52416,
+    "final_pool": "No final-pool access; a separate held-out protocol is required.",
+    "intervals": {
+      "confidence": 0.95,
+      "interpretation": "Conditional on the fixed development layouts and acting-seed labels. Resample independent learner pairs, not attack rows. Screening n=3 intervals omitted; all n=10 includes the development-selection cohort. Descriptive, unadjusted for multiple comparisons.",
+      "method": "paired learner bootstrap percentile",
+      "metric": "mean destruction difference in percentage points",
+      "minimum_learner_pairs": 5,
+      "resamples": 20000,
+      "seed": 43001
+    },
+    "kind": "version2-cohort-development",
+    "modes": [
+      "DS",
+      "SS",
+      "DD"
+    ],
+    "primary_mode": "DS",
+    "rng": "Reuse version2.evaluation.episode_seed. Reset Python, NumPy and Torch RNGs once per attack; no reseed at the purchasing/deployment boundary.",
+    "sample_seeds": [
+      31001,
+      31002,
+      31003
+    ],
+    "scope": "Development evaluation of a prospectively specified learner-seed replication. DS/SS/DD and final-checkpoint selection were recorded before seeds 3\u20139 training; this runner and interval details were specified after training and before full-development results for the new cohort. Not a final test.",
+    "scopes": [
+      "all_dev",
+      "outside_monitor_panel"
+    ],
+    "specified_date": "2026-09-30",
+    "training": "No training or model mutation. Original simulator including movement remains unchanged.",
+    "transitions": 4194304,
+    "views": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "replication_reference": {
+    "models": [
+      {
+        "condition": "P",
+        "learner_seed": 3,
+        "path": "runs/version2-seed-replication/P-3/model.zip",
+        "run": "P-3",
+        "sha256": "4cb82b667790e50bbdf51adacdf68c338eccf8ca8ba4b03346caa08b7f8586d9",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 4,
+        "path": "runs/version2-seed-replication/P-4/model.zip",
+        "run": "P-4",
+        "sha256": "0d6a84de73c9791dd10a2d112fca1b81947ceb17ad5d07e54c5ab603b90c0364",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 5,
+        "path": "runs/version2-seed-replication/P-5/model.zip",
+        "run": "P-5",
+        "sha256": "d2242aaeb9dc9fad247b3bd91f7ac4ae0a6e08aa879e89b240e59becab9279fc",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 6,
+        "path": "runs/version2-seed-replication/P-6/model.zip",
+        "run": "P-6",
+        "sha256": "c40fdc02f3586eaba17bd9c2de59c13944ece842f08af699b8c692d75fa4fe85",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 7,
+        "path": "runs/version2-seed-replication/P-7/model.zip",
+        "run": "P-7",
+        "sha256": "ee5267404a8a52af6fc4bb4e676ec02ee7fef152bdc8a85810a282a28aff38a9",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 8,
+        "path": "runs/version2-seed-replication/P-8/model.zip",
+        "run": "P-8",
+        "sha256": "38229cfc43e9f07ef1f41b5be4edefb8ed16fe160ef0b0b4b4ed61b482b62f2b",
+        "transitions": 4194304
+      },
+      {
+        "condition": "P",
+        "learner_seed": 9,
+        "path": "runs/version2-seed-replication/P-9/model.zip",
+        "run": "P-9",
+        "sha256": "e7a658ce4349ddf18e09f2f2f25551d53a31faf84f1926020957622614e6fcb0",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 3,
+        "path": "runs/version2-seed-replication/PA-3/model.zip",
+        "run": "PA-3",
+        "sha256": "0424a4fa6b17dd4d5f783f7e761bffd15b1248fb7687adaa835fa95275191289",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 4,
+        "path": "runs/version2-seed-replication/PA-4/model.zip",
+        "run": "PA-4",
+        "sha256": "1353a701529bf8952a96b759e23e17ad5160a6ae27d3e9c171b2c1c69c595be2",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 5,
+        "path": "runs/version2-seed-replication/PA-5/model.zip",
+        "run": "PA-5",
+        "sha256": "eaf21d07bd873a2fe81d61a3ef856326c21ab5a0fc9b00a4a7d84cd37bd2f7f3",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 6,
+        "path": "runs/version2-seed-replication/PA-6/model.zip",
+        "run": "PA-6",
+        "sha256": "b66f8522c7882ae17e7a09e97bccb17b11275c2e0857705bebe1bb226112e6b6",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 7,
+        "path": "runs/version2-seed-replication/PA-7/model.zip",
+        "run": "PA-7",
+        "sha256": "1cf565ec7b77b3a3be4bc351f357e1a0f99aa9002f69b24bf58ba08aae171e26",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 8,
+        "path": "runs/version2-seed-replication/PA-8/model.zip",
+        "run": "PA-8",
+        "sha256": "ee5eb685eab549cb87e49b5fda5218dfca25fb51b7b44a000810065c8e010fae",
+        "transitions": 4194304
+      },
+      {
+        "condition": "PA",
+        "learner_seed": 9,
+        "path": "runs/version2-seed-replication/PA-9/model.zip",
+        "run": "PA-9",
+        "sha256": "aa061b8b9ce31e5b9a2802caa157a796adfee5deab403f26c7d87cfd1fbd435b",
+        "transitions": 4194304
+      }
+    ],
+    "registration_path": "version2-records/seed-replication/registration.json",
+    "registration_sha256": "30267612659932eccf2a5332708b7b4ddafe64a225339408033828d619f8547f",
+    "replication_source_hashes": {
+      "v2_replication/__init__.py": "4647920ceba48fd8779ee59e61375a12797fb2621419cd323e5ab8ab9a3beffc",
+      "v2_replication/__main__.py": "8b33b482533729db20052df70a0e67c4617fc3116fd1d37392d989d22f9819ff",
+      "v2_replication/decision.json": "a9d07c61d611c40f97db46f21c6d00643b87094cf4a345fe08549b81a3d0f60f",
+      "v2_replication/plan.json": "b6608742714909a05a2e417af4341cabbddf55f867ea71a47fef9045bfda3666",
+      "v2_replication/protocol.py": "71ba3cbaf1b06ea7b1e1383c9b2be78ba0993a22665e4940cd4c6f188f7a3104",
+      "v2_replication/retention.py": "517606bb6b835a8a5ffaea668be5d79860d5c1c400337c61d7d06ca379136371",
+      "v2_replication/runner.py": "d869d3ba39fe0edfd30c2622dff10bb531d9e646c71226922f0ea849006ed76c",
+      "v2_replication/screen_reference.json": "912d03cc36958aa46aff5865eb1019fb1c6e4af5c3dfda83a36591bcb753fbf6",
+      "v2_replication/tests/test_extension.py": "516aff2eafbb63b516d53d143da7197552b7e17c57311546b425bac0052aa601",
+      "v2_replication/tests/test_recovery.py": "5ad411a4cb6829d7572419e4175b9445e01fe8b7cf40485adca15e3b38aa3154",
+      "v2_replication/workflow.py": "255ba38b6f758ce9eeaa8e1b4a1db6ec15ea31e61dca6d9b30063b822a84f47f"
+    },
+    "runs": {
+      "P-3": {
+        "contract_sha256": "9377ea747ff6ee668945e1bb6d381966ee15b9ecebdf6be36ee4d450d019c315",
+        "final_metadata_sha256": "16d4444e0d8a4e7a8d90934d480baaf960577598b5792e3998f1f9bf1d5b2a52",
+        "manifest_sha256": "8dab6f49e5f4017b4b8c0392e989d4ca90ea1a22dc180f810e7731d50b0c539a",
+        "path": "runs/version2-seed-replication/P-3"
+      },
+      "P-4": {
+        "contract_sha256": "f4f1d5825caaa8c1906d707d29467ad2f843d3050f754621a047c18e55aea9b9",
+        "final_metadata_sha256": "1d6b1ed716a7ff24b9c8bb589dc4e8ce8ce7516dd7c3d7fb11ccec14dfbbecf8",
+        "manifest_sha256": "c903f6311aa3ba6b59218e1e272ca96b2f1b0e2411405dc48e8454aa2f55f4ca",
+        "path": "runs/version2-seed-replication/P-4"
+      },
+      "P-5": {
+        "contract_sha256": "32e80ccb7f352325403e96cfc52b572e6bab4182db79f26b1af1114e61750dad",
+        "final_metadata_sha256": "0d4e66e7bb61287c19627f67985fa06c66cbd1333dad191a6874128aac482949",
+        "manifest_sha256": "1a10ff6d9ab29926ba36923aafd84fcb3f6814ecda40bba334b6e29592ccb6fe",
+        "path": "runs/version2-seed-replication/P-5"
+      },
+      "P-6": {
+        "contract_sha256": "94b400d2f5084cdd2036dbfd0761b8c445d8e4b29f7b6a05cb0a10cbf642453b",
+        "final_metadata_sha256": "c8b51160d028536da21e79da4dbad5fb3a85a6e4797224af52b516e6d6a6d26d",
+        "manifest_sha256": "2ac57a32d11ef353e3ca108fab1e700c360161da27b8a6aabd6cfdb969e24bd4",
+        "path": "runs/version2-seed-replication/P-6"
+      },
+      "P-7": {
+        "contract_sha256": "5c21563b0f947604efbcae4de5a958273a361b5eea6a7a96f8f34ee25462edb2",
+        "final_metadata_sha256": "b1ba4942661619682261ccac7964a3987639d6ca78b42c61a8a1347134233020",
+        "manifest_sha256": "21335935b9105d45d292ed82c7195a0259c21e4c4f5909aef66f6a1bfd552ad8",
+        "path": "runs/version2-seed-replication/P-7"
+      },
+      "P-8": {
+        "contract_sha256": "8f1286d2033a0c54c25ab98f07bb99354f263ad7380e39ec85ca18f821c232e0",
+        "final_metadata_sha256": "a25f1dd1802cfd57011767d42111f755a925b908cc23adae081a5cc1f92dd4b6",
+        "manifest_sha256": "3e5217ac2f95f4544df7b8f03f00c2d5c9ac01804edaa9bd4482f5b738f3b9d3",
+        "path": "runs/version2-seed-replication/P-8"
+      },
+      "P-9": {
+        "contract_sha256": "9c3191e1bb5630a6b596c1ea8cffe19225f5cd5623e7cfca1d806f4a1e0e5c11",
+        "final_metadata_sha256": "69540d55558002ceaf1f58072d2cc18ca913cd09a680db10f2c19bce78d0df3b",
+        "manifest_sha256": "b419237d8ac9b6a2f41c41f684fb0d9a350adfb488e3e654bb3797cfb91f50d2",
+        "path": "runs/version2-seed-replication/P-9"
+      },
+      "PA-3": {
+        "contract_sha256": "bc93afe4ef900aec08a9adb0f4793a5778f1eec42d9562bbf01f84021d7fdef0",
+        "final_metadata_sha256": "d03c1d4392294bb4a463fdb82d035fa94754c133742a8c0a77587348d9bfe253",
+        "manifest_sha256": "8293b1ceb93fe133407719569d088551141169b378f360028ad07c5e88c3de3c",
+        "path": "runs/version2-seed-replication/PA-3"
+      },
+      "PA-4": {
+        "contract_sha256": "1c485dc9e4f858055d0d414890fe05a195fac8f550553d6e0069292ae1a8cfc3",
+        "final_metadata_sha256": "1f9f0c21e8868e440f1a674b905e95befe59eb124f47afc3649ccc708868828e",
+        "manifest_sha256": "28c64c8cd7a7a9a5c7ac4af21dbbce09738cab8c69c2aef82315de460476b91d",
+        "path": "runs/version2-seed-replication/PA-4"
+      },
+      "PA-5": {
+        "contract_sha256": "acac70e875fc9f400575a4cfde061f306de61cb50c7602bd53e012b7a8fab12f",
+        "final_metadata_sha256": "f432407f8d962546807499bb57328d945ec7005dda082077aef78b3002abef3b",
+        "manifest_sha256": "303100124d5d51a8a1dd3e07e8ba7cc137e1de2e96d5c93530c1396f701970ef",
+        "path": "runs/version2-seed-replication/PA-5"
+      },
+      "PA-6": {
+        "contract_sha256": "5f92fa9e2ad0bc97da73c0a59368a7f4b4b39795bb7f1e65b7b9a06c61aa546c",
+        "final_metadata_sha256": "039c5861ac6b33e3fcd5578f3f4e0ed649ff2c5b88b502d291c885308e450ccc",
+        "manifest_sha256": "61e5ac8aa0391129d9ae54a587fe57cd259d4909f670f89fe51ebb0a2033cfd4",
+        "path": "runs/version2-seed-replication/PA-6"
+      },
+      "PA-7": {
+        "contract_sha256": "5cf387a7b5ee7c3bdede559a199490ee89a52fc47ce9806131799d8065651745",
+        "final_metadata_sha256": "b04aa12e5aa25cdde3b310d3dc3af5da4a11628ba02ebbbed9857de53692f61c",
+        "manifest_sha256": "9eb5b6990bfdac8a4c1aa0caa05e291424cf4dc36f322949b471652313a8729f",
+        "path": "runs/version2-seed-replication/PA-7"
+      },
+      "PA-8": {
+        "contract_sha256": "b4ecf175cbc56d63b09a7f2a98e72f36f9d79e23d45a5e24892815a74b7a859e",
+        "final_metadata_sha256": "9f33bf5cd5da46c19c0fd2e4af9e2a1fbbc9dc5b1d4e7d84392f17e6299fba28",
+        "manifest_sha256": "06eb92072734772c80a9499f1c7418d7ca65d1633804726831c67894c68c4be1",
+        "path": "runs/version2-seed-replication/PA-8"
+      },
+      "PA-9": {
+        "contract_sha256": "b91943bf18ded033076c1eeeb1c37513b82138f82e100ce7c68cf93735803ab6",
+        "final_metadata_sha256": "f18aaab617b076c142bd1463dca88a8703b0f88fa71b870ef91d9dc52184c8c4",
+        "manifest_sha256": "4e41e90c322e116f435a6fa9ed83094009c7573adacb67e24d40b6909c4db391",
+        "path": "runs/version2-seed-replication/PA-9"
+      }
+    },
+    "source_archive": "Base_Siege_V2_Replication_Review_20260930_012951_255215.zip"
+  },
+  "sample_seeds": [
+    31001,
+    31002,
+    31003
+  ],
+  "schema": 1,
+  "scientific_runtime": {
+    "config": {
+      "ACTION_BUY_FIRST": 0,
+      "ACTION_BUY_LAST": 3,
+      "ACTION_DEPLOY_FIRST": 5,
+      "ACTION_DEPLOY_LAST": 244,
+      "ACTION_FINISH_SHOPPING": 4,
+      "ACTION_WAIT": 245,
+      "BATTLE_TICK_LIMIT": 300,
+      "BUILDABLE_MAX": 14,
+      "BUILDABLE_MIN": 1,
+      "BUILDINGS_BLOCK_LINE_OF_SIGHT": false,
+      "BUILDING_COUNTS": {
+        "cannon": 3,
+        "mortar": 2,
+        "storage": 4,
+        "town_hall": 1
+      },
+      "BUILDING_STATS": {
+        "cannon": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 5,
+          "hp": 600,
+          "min_range": 0,
+          "range": 3,
+          "splash_radius": 0.0,
+          "value": 15
+        },
+        "mortar": {
+          "attack_cooldown": 5,
+          "damage_per_shot": 45,
+          "hp": 500,
+          "min_range": 2,
+          "range": 5.0,
+          "splash_radius": 1.5,
+          "value": 20
+        },
+        "storage": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 800,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 10
+        },
+        "town_hall": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 1500,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 30
+        },
+        "wall": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 300,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 0
+        }
+      },
+      "BUILDING_TYPES": [
+        "town_hall",
+        "cannon",
+        "mortar",
+        "storage",
+        "wall"
+      ],
+      "CENTRED_RING_BOX": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "CHEAPEST_TROOP_COST": 8,
+      "CHECKPOINT_A_LIMIT_MS": 200,
+      "CHECKPOINT_A_TARGET_MS": 50,
+      "COST_PENALTY_WEIGHT": 0.3,
+      "CURRICULUM_JOINT_TIMESTEPS": 229376,
+      "CURRICULUM_PLACEMENT_TIMESTEPS": 32768,
+      "DEFENCE_TYPES": [
+        "cannon",
+        "mortar"
+      ],
+      "DEPLOY_TILES": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "DEV_BASES_PER_MOTIF": 4,
+      "DEV_DIAGNOSTIC_VIEWS": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "DEV_EVAL_INTERVAL_TIMESTEPS": 25000,
+      "DEV_MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates"
+      ],
+      "DEV_SEED_RANGE": [
+        10200,
+        10399
+      ],
+      "DIFFICULTY_MAX": 0.85,
+      "DIFFICULTY_MIN": 0.25,
+      "DISTANCE_METRIC_COMBAT": "euclidean",
+      "FEATURE_CNN_CHANNELS": [
+        32,
+        64
+      ],
+      "FEATURE_FUSION_DIM": 256,
+      "FINAL_SEED_RANGE": [
+        11000,
+        11999
+      ],
+      "FINAL_STUDY_SEED_RANGE": [
+        11000,
+        11199
+      ],
+      "GATE_WIDTH": 2,
+      "GRID_LAYER_BUILDING_HEALTH": 5,
+      "GRID_LAYER_CANNON": 1,
+      "GRID_LAYER_DEFENCE_COVERAGE": 6,
+      "GRID_LAYER_MORTAR": 2,
+      "GRID_LAYER_STORAGE": 3,
+      "GRID_LAYER_TOWN_HALL": 0,
+      "GRID_LAYER_TROOP_DENSITY": 7,
+      "GRID_LAYER_WALL": 4,
+      "GRID_SIZE": 16,
+      "HALF_DESTRUCTION_THRESHOLD": 0.5,
+      "HEURISTIC_ARMY": {
+        "breaker": 3,
+        "melee": 6,
+        "ranged": 4,
+        "tank": 3
+      },
+      "HEURISTIC_ARMY_COST": 199,
+      "HEURISTIC_DEPLOY_ORDER": [
+        "breaker",
+        "tank",
+        "ranged",
+        "melee"
+      ],
+      "HEURISTIC_VALIDATION_SIDES": 4,
+      "LAYERED_CORE_BOX": [
+        6,
+        6,
+        10,
+        10
+      ],
+      "LAYERED_CORE_CONTENTS": [
+        "town_hall",
+        "mortar",
+        "storage"
+      ],
+      "LAYERED_OUTER_BOX": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "LAYERED_OUTER_SIDES": [
+        "north",
+        "west"
+      ],
+      "MAX_ARMY_SIZE": 25,
+      "MAX_BATTLE_DECISIONS": 30,
+      "MAX_DECISIONS_PER_EPISODE": 70,
+      "MAX_DEFENCE_COVERAGE": 5,
+      "MAX_TROOP_DENSITY_PER_TILE": 8,
+      "MILESTONE_FULL_CLEAR": 0.25,
+      "MILESTONE_HALF_DESTRUCTION": 0.25,
+      "MILESTONE_TOWN_HALL": 0.25,
+      "MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates",
+        "layered_core"
+      ],
+      "N_ACTIONS": 246,
+      "N_DEFENCES": 5,
+      "N_DEPLOY_TILES": 60,
+      "N_GRID_LAYERS": 8,
+      "N_SCORING_BUILDINGS": 10,
+      "N_TRAINING_ENVS": 4,
+      "PATHFINDING_NEIGHBOURS": 4,
+      "PHASE_BATTLE": 1,
+      "PHASE_SHOPPING": 0,
+      "PILOT_JOINT_TIMESTEPS": 24576,
+      "PILOT_LEARNER_SEED": 100,
+      "PILOT_PLACEMENT_TIMESTEPS": 32768,
+      "POLICY_HEAD_DIM": 128,
+      "POOL_DEV_PATH": "bases/pool_dev.json",
+      "POOL_FINAL_PATH": "bases/pool_final.json",
+      "POOL_TRAIN_PATH": "bases/pool_train.json",
+      "PPO_BATCH_SIZE": 256,
+      "PPO_ENT_COEF": 0.01,
+      "PPO_GAE_LAMBDA": 0.95,
+      "PPO_GAMMA": 1.0,
+      "PPO_LEARNING_RATE": 0.0003,
+      "PPO_N_EPOCHS": 10,
+      "PPO_N_STEPS": 2048,
+      "RANDOM_AGENT_ACTION_SEEDS": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "RESOURCE_BUDGET": 200,
+      "REWARD_COMPONENT_KEYS": [
+        "destruction",
+        "milestone",
+        "cost_penalty",
+        "wall_shaping"
+      ],
+      "ROTATION_INDEX_SHIFT": 15,
+      "SPEED_SCALE": 100,
+      "SPLASH_FALLOFF": 0.4,
+      "STUDY_LEARNER_SEEDS": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "TARGET_RULE_FALLBACK": {
+        "nearest_building": null,
+        "nearest_defence": "nearest_building",
+        "nearest_wall": null
+      },
+      "TICKS_PER_DECISION": 10,
+      "TOTAL_BASE_VALUE": 155,
+      "TOTAL_TRAINING_TIMESTEPS": 262144,
+      "TRAIN_MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates"
+      ],
+      "TRAIN_SEED_RANGE": [
+        0,
+        9999
+      ],
+      "TRANSFER_MOTIF": "layered_core",
+      "TROOP_COSTS": {
+        "breaker": 12,
+        "melee": 8,
+        "ranged": 10,
+        "tank": 25
+      },
+      "TROOP_STATS": {
+        "breaker": {
+          "cost": 12,
+          "damage_per_tick": 350,
+          "dies_after_attack": true,
+          "hp": 60,
+          "range": 1,
+          "speed": 0.22,
+          "target_rule": "nearest_wall",
+          "walls_only": true
+        },
+        "melee": {
+          "cost": 8,
+          "damage_per_tick": 15,
+          "dies_after_attack": false,
+          "hp": 120,
+          "range": 1,
+          "speed": 0.16,
+          "target_rule": "nearest_building",
+          "walls_only": false
+        },
+        "ranged": {
+          "cost": 10,
+          "damage_per_tick": 12,
+          "dies_after_attack": false,
+          "hp": 90,
+          "range": 4,
+          "speed": 0.14,
+          "target_rule": "nearest_building",
+          "walls_only": false
+        },
+        "tank": {
+          "cost": 25,
+          "damage_per_tick": 8,
+          "dies_after_attack": false,
+          "hp": 900,
+          "range": 1,
+          "speed": 0.1,
+          "target_rule": "nearest_defence",
+          "walls_only": false
+        }
+      },
+      "TROOP_TYPES": [
+        "tank",
+        "melee",
+        "ranged",
+        "breaker"
+      ],
+      "VALUE_HEAD_DIM": 128,
+      "VECTOR_DIM": 9,
+      "WALL": "wall",
+      "WALLS_BLOCK_LINE_OF_SIGHT": false,
+      "WALL_CROSSING_TROOPS": [
+        "ranged"
+      ],
+      "WALL_SHAPING_BONUS": 0.0,
+      "_PERIMETER_BOTTOM": [
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          0
+        ]
+      ],
+      "_PERIMETER_LEFT": [
+        [
+          14,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "_PERIMETER_RIGHT": [
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ]
+      ],
+      "_PERIMETER_TOP": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ]
+      ]
+    },
+    "packages": {
+      "gymnasium": "1.3.0",
+      "numpy": "2.5.2",
+      "sb3-contrib": "2.9.0",
+      "stable-baselines3": "2.9.0",
+      "streamlit": "1.63.0",
+      "torch": "2.13.0"
+    },
+    "platform": "Linux-6.12.103-127.188.amzn2023.x86_64-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "source_hashes": {
+      "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+      "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+      "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+      "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+      "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+      "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+      "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+      "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+      "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+      "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+      "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+      "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+      "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+      "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+      "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+      "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+      "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+      "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+      "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+      "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+      "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+      "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+      "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+      "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+      "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+      "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+    }
+  },
+  "scope": "Development evaluation of a prospectively specified learner-seed replication. DS/SS/DD and final-checkpoint selection were recorded before seeds 3\u20139 training; this runner and interval details were specified after training and before full-development results for the new cohort. Not a final test.",
+  "screen_models": [
+    {
+      "condition": "P",
+      "learner_seed": 0,
+      "path": "runs/version2-longer-control/P-0/milestones/step-000004194304.zip",
+      "run": "P-0",
+      "sha256": "a3c96421b66b43f31999d19a2da68d4a4744796f49556468b54f3f8f0f22f35a",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 1,
+      "path": "runs/version2-longer-control/P-1/milestones/step-000004194304.zip",
+      "run": "P-1",
+      "sha256": "f90991b1830fa600bbbc70ee85557ff6820bd390742c808dfb51dc92de0bdc2e",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 2,
+      "path": "runs/version2-longer-control/P-2/milestones/step-000004194304.zip",
+      "run": "P-2",
+      "sha256": "092c21466a0e5677a866202a126d7b3e69961d9091205b40d77df47c88681b5b",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 0,
+      "path": "runs/version2-longer-control/PA-0/milestones/step-000004194304.zip",
+      "run": "PA-0",
+      "sha256": "419fd728f1a61d0f8decc9dc92ae23899ead3dc4402ad9ddbfdfab12600ade43",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 1,
+      "path": "runs/version2-longer-control/PA-1/milestones/step-000004194304.zip",
+      "run": "PA-1",
+      "sha256": "127659b56baef2c6c442d593754f9f24a6bbbee8275b86607a0d6e8978b6dc74",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 2,
+      "path": "runs/version2-longer-control/PA-2/milestones/step-000004194304.zip",
+      "run": "PA-2",
+      "sha256": "8a85f9355e20c1cc65aca06e12fabbfa998fb1af7e71e4f9a66b96343b5887b8",
+      "transitions": 4194304
+    }
+  ],
+  "torch_threads": 1,
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

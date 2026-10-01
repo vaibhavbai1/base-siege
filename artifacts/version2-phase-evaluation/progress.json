@@ -1,0 +1,10 @@
+{
+  "attempt_wall_seconds": 3797.612199752999,
+  "completed_episodes": 44928,
+  "current_target": "PA-2 / SD",
+  "expected_episodes": 44928,
+  "new_episodes_this_attempt": 43928,
+  "rough_remaining_seconds": 0.0,
+  "status": "completed",
+  "updated_utc": "2026-09-28T12:50:23.316043+00:00"
+}

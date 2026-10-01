@@ -1,0 +1,9 @@
+{
+  "directory": "artifacts/version2-phase-evaluation",
+  "files": {
+    "combined_episodes.csv": "e74c201f8918eb16716ccda3e2036e714fcec0786ccb10fa322f3e2d8c194647",
+    "complete.json": "3ce257c8eed50e5a54ff036d6b3a6fbb23acb636a835cd1e69ce98053f26efb8",
+    "evaluation_contract.json": "b18284dc911e010a68b619c892f1acd689812c2d24f832f823e6aeafb1d487f1"
+  },
+  "source_archive": "Base_Siege_V2_Phase_Results_20260928_125120_734496.zip"
+}

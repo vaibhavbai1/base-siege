@@ -1,0 +1,218 @@
+{
+  "models": [
+    {
+      "condition": "P",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/P-3/model.zip",
+      "run": "P-3",
+      "sha256": "4cb82b667790e50bbdf51adacdf68c338eccf8ca8ba4b03346caa08b7f8586d9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/P-4/model.zip",
+      "run": "P-4",
+      "sha256": "0d6a84de73c9791dd10a2d112fca1b81947ceb17ad5d07e54c5ab603b90c0364",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/P-5/model.zip",
+      "run": "P-5",
+      "sha256": "d2242aaeb9dc9fad247b3bd91f7ac4ae0a6e08aa879e89b240e59becab9279fc",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/P-6/model.zip",
+      "run": "P-6",
+      "sha256": "c40fdc02f3586eaba17bd9c2de59c13944ece842f08af699b8c692d75fa4fe85",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/P-7/model.zip",
+      "run": "P-7",
+      "sha256": "ee5267404a8a52af6fc4bb4e676ec02ee7fef152bdc8a85810a282a28aff38a9",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/P-8/model.zip",
+      "run": "P-8",
+      "sha256": "38229cfc43e9f07ef1f41b5be4edefb8ed16fe160ef0b0b4b4ed61b482b62f2b",
+      "transitions": 4194304
+    },
+    {
+      "condition": "P",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/P-9/model.zip",
+      "run": "P-9",
+      "sha256": "e7a658ce4349ddf18e09f2f2f25551d53a31faf84f1926020957622614e6fcb0",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 3,
+      "path": "runs/version2-seed-replication/PA-3/model.zip",
+      "run": "PA-3",
+      "sha256": "0424a4fa6b17dd4d5f783f7e761bffd15b1248fb7687adaa835fa95275191289",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 4,
+      "path": "runs/version2-seed-replication/PA-4/model.zip",
+      "run": "PA-4",
+      "sha256": "1353a701529bf8952a96b759e23e17ad5160a6ae27d3e9c171b2c1c69c595be2",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 5,
+      "path": "runs/version2-seed-replication/PA-5/model.zip",
+      "run": "PA-5",
+      "sha256": "eaf21d07bd873a2fe81d61a3ef856326c21ab5a0fc9b00a4a7d84cd37bd2f7f3",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 6,
+      "path": "runs/version2-seed-replication/PA-6/model.zip",
+      "run": "PA-6",
+      "sha256": "b66f8522c7882ae17e7a09e97bccb17b11275c2e0857705bebe1bb226112e6b6",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 7,
+      "path": "runs/version2-seed-replication/PA-7/model.zip",
+      "run": "PA-7",
+      "sha256": "1cf565ec7b77b3a3be4bc351f357e1a0f99aa9002f69b24bf58ba08aae171e26",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 8,
+      "path": "runs/version2-seed-replication/PA-8/model.zip",
+      "run": "PA-8",
+      "sha256": "ee5eb685eab549cb87e49b5fda5218dfca25fb51b7b44a000810065c8e010fae",
+      "transitions": 4194304
+    },
+    {
+      "condition": "PA",
+      "learner_seed": 9,
+      "path": "runs/version2-seed-replication/PA-9/model.zip",
+      "run": "PA-9",
+      "sha256": "aa061b8b9ce31e5b9a2802caa157a796adfee5deab403f26c7d87cfd1fbd435b",
+      "transitions": 4194304
+    }
+  ],
+  "registration_path": "version2-records/seed-replication/registration.json",
+  "registration_sha256": "30267612659932eccf2a5332708b7b4ddafe64a225339408033828d619f8547f",
+  "replication_source_hashes": {
+    "v2_replication/__init__.py": "4647920ceba48fd8779ee59e61375a12797fb2621419cd323e5ab8ab9a3beffc",
+    "v2_replication/__main__.py": "8b33b482533729db20052df70a0e67c4617fc3116fd1d37392d989d22f9819ff",
+    "v2_replication/decision.json": "a9d07c61d611c40f97db46f21c6d00643b87094cf4a345fe08549b81a3d0f60f",
+    "v2_replication/plan.json": "b6608742714909a05a2e417af4341cabbddf55f867ea71a47fef9045bfda3666",
+    "v2_replication/protocol.py": "71ba3cbaf1b06ea7b1e1383c9b2be78ba0993a22665e4940cd4c6f188f7a3104",
+    "v2_replication/retention.py": "517606bb6b835a8a5ffaea668be5d79860d5c1c400337c61d7d06ca379136371",
+    "v2_replication/runner.py": "d869d3ba39fe0edfd30c2622dff10bb531d9e646c71226922f0ea849006ed76c",
+    "v2_replication/screen_reference.json": "912d03cc36958aa46aff5865eb1019fb1c6e4af5c3dfda83a36591bcb753fbf6",
+    "v2_replication/tests/test_extension.py": "516aff2eafbb63b516d53d143da7197552b7e17c57311546b425bac0052aa601",
+    "v2_replication/tests/test_recovery.py": "5ad411a4cb6829d7572419e4175b9445e01fe8b7cf40485adca15e3b38aa3154",
+    "v2_replication/workflow.py": "255ba38b6f758ce9eeaa8e1b4a1db6ec15ea31e61dca6d9b30063b822a84f47f"
+  },
+  "runs": {
+    "P-3": {
+      "contract_sha256": "9377ea747ff6ee668945e1bb6d381966ee15b9ecebdf6be36ee4d450d019c315",
+      "final_metadata_sha256": "16d4444e0d8a4e7a8d90934d480baaf960577598b5792e3998f1f9bf1d5b2a52",
+      "manifest_sha256": "8dab6f49e5f4017b4b8c0392e989d4ca90ea1a22dc180f810e7731d50b0c539a",
+      "path": "runs/version2-seed-replication/P-3"
+    },
+    "P-4": {
+      "contract_sha256": "f4f1d5825caaa8c1906d707d29467ad2f843d3050f754621a047c18e55aea9b9",
+      "final_metadata_sha256": "1d6b1ed716a7ff24b9c8bb589dc4e8ce8ce7516dd7c3d7fb11ccec14dfbbecf8",
+      "manifest_sha256": "c903f6311aa3ba6b59218e1e272ca96b2f1b0e2411405dc48e8454aa2f55f4ca",
+      "path": "runs/version2-seed-replication/P-4"
+    },
+    "P-5": {
+      "contract_sha256": "32e80ccb7f352325403e96cfc52b572e6bab4182db79f26b1af1114e61750dad",
+      "final_metadata_sha256": "0d4e66e7bb61287c19627f67985fa06c66cbd1333dad191a6874128aac482949",
+      "manifest_sha256": "1a10ff6d9ab29926ba36923aafd84fcb3f6814ecda40bba334b6e29592ccb6fe",
+      "path": "runs/version2-seed-replication/P-5"
+    },
+    "P-6": {
+      "contract_sha256": "94b400d2f5084cdd2036dbfd0761b8c445d8e4b29f7b6a05cb0a10cbf642453b",
+      "final_metadata_sha256": "c8b51160d028536da21e79da4dbad5fb3a85a6e4797224af52b516e6d6a6d26d",
+      "manifest_sha256": "2ac57a32d11ef353e3ca108fab1e700c360161da27b8a6aabd6cfdb969e24bd4",
+      "path": "runs/version2-seed-replication/P-6"
+    },
+    "P-7": {
+      "contract_sha256": "5c21563b0f947604efbcae4de5a958273a361b5eea6a7a96f8f34ee25462edb2",
+      "final_metadata_sha256": "b1ba4942661619682261ccac7964a3987639d6ca78b42c61a8a1347134233020",
+      "manifest_sha256": "21335935b9105d45d292ed82c7195a0259c21e4c4f5909aef66f6a1bfd552ad8",
+      "path": "runs/version2-seed-replication/P-7"
+    },
+    "P-8": {
+      "contract_sha256": "8f1286d2033a0c54c25ab98f07bb99354f263ad7380e39ec85ca18f821c232e0",
+      "final_metadata_sha256": "a25f1dd1802cfd57011767d42111f755a925b908cc23adae081a5cc1f92dd4b6",
+      "manifest_sha256": "3e5217ac2f95f4544df7b8f03f00c2d5c9ac01804edaa9bd4482f5b738f3b9d3",
+      "path": "runs/version2-seed-replication/P-8"
+    },
+    "P-9": {
+      "contract_sha256": "9c3191e1bb5630a6b596c1ea8cffe19225f5cd5623e7cfca1d806f4a1e0e5c11",
+      "final_metadata_sha256": "69540d55558002ceaf1f58072d2cc18ca913cd09a680db10f2c19bce78d0df3b",
+      "manifest_sha256": "b419237d8ac9b6a2f41c41f684fb0d9a350adfb488e3e654bb3797cfb91f50d2",
+      "path": "runs/version2-seed-replication/P-9"
+    },
+    "PA-3": {
+      "contract_sha256": "bc93afe4ef900aec08a9adb0f4793a5778f1eec42d9562bbf01f84021d7fdef0",
+      "final_metadata_sha256": "d03c1d4392294bb4a463fdb82d035fa94754c133742a8c0a77587348d9bfe253",
+      "manifest_sha256": "8293b1ceb93fe133407719569d088551141169b378f360028ad07c5e88c3de3c",
+      "path": "runs/version2-seed-replication/PA-3"
+    },
+    "PA-4": {
+      "contract_sha256": "1c485dc9e4f858055d0d414890fe05a195fac8f550553d6e0069292ae1a8cfc3",
+      "final_metadata_sha256": "1f9f0c21e8868e440f1a674b905e95befe59eb124f47afc3649ccc708868828e",
+      "manifest_sha256": "28c64c8cd7a7a9a5c7ac4af21dbbce09738cab8c69c2aef82315de460476b91d",
+      "path": "runs/version2-seed-replication/PA-4"
+    },
+    "PA-5": {
+      "contract_sha256": "acac70e875fc9f400575a4cfde061f306de61cb50c7602bd53e012b7a8fab12f",
+      "final_metadata_sha256": "f432407f8d962546807499bb57328d945ec7005dda082077aef78b3002abef3b",
+      "manifest_sha256": "303100124d5d51a8a1dd3e07e8ba7cc137e1de2e96d5c93530c1396f701970ef",
+      "path": "runs/version2-seed-replication/PA-5"
+    },
+    "PA-6": {
+      "contract_sha256": "5f92fa9e2ad0bc97da73c0a59368a7f4b4b39795bb7f1e65b7b9a06c61aa546c",
+      "final_metadata_sha256": "039c5861ac6b33e3fcd5578f3f4e0ed649ff2c5b88b502d291c885308e450ccc",
+      "manifest_sha256": "61e5ac8aa0391129d9ae54a587fe57cd259d4909f670f89fe51ebb0a2033cfd4",
+      "path": "runs/version2-seed-replication/PA-6"
+    },
+    "PA-7": {
+      "contract_sha256": "5cf387a7b5ee7c3bdede559a199490ee89a52fc47ce9806131799d8065651745",
+      "final_metadata_sha256": "b04aa12e5aa25cdde3b310d3dc3af5da4a11628ba02ebbbed9857de53692f61c",
+      "manifest_sha256": "9eb5b6990bfdac8a4c1aa0caa05e291424cf4dc36f322949b471652313a8729f",
+      "path": "runs/version2-seed-replication/PA-7"
+    },
+    "PA-8": {
+      "contract_sha256": "b4ecf175cbc56d63b09a7f2a98e72f36f9d79e23d45a5e24892815a74b7a859e",
+      "final_metadata_sha256": "9f33bf5cd5da46c19c0fd2e4af9e2a1fbbc9dc5b1d4e7d84392f17e6299fba28",
+      "manifest_sha256": "06eb92072734772c80a9499f1c7418d7ca65d1633804726831c67894c68c4be1",
+      "path": "runs/version2-seed-replication/PA-8"
+    },
+    "PA-9": {
+      "contract_sha256": "b91943bf18ded033076c1eeeb1c37513b82138f82e100ce7c68cf93735803ab6",
+      "final_metadata_sha256": "f18aaab617b076c142bd1463dca88a8703b0f88fa71b870ef91d9dc52184c8c4",
+      "manifest_sha256": "4e41e90c322e116f435a6fa9ed83094009c7573adacb67e24d40b6909c4db391",
+      "path": "runs/version2-seed-replication/PA-9"
+    }
+  },
+  "source_archive": "Base_Siege_V2_Replication_Review_20260930_012951_255215.zip"
+}

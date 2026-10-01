@@ -1,0 +1,31 @@
+{
+  "decision": "DS: deterministic purchases, sampled deployment",
+  "selection_date": "2026-09-28",
+  "package_prepared_date": "2026-09-29",
+  "source_archive": "Base_Siege_V2_Phase_Results_20260928_125120_734496.zip",
+  "source_directory": "artifacts/version2-phase-evaluation",
+  "source_files": {
+    "evaluation_contract.json": "b18284dc911e010a68b619c892f1acd689812c2d24f832f823e6aeafb1d487f1",
+    "combined_episodes.csv": "e74c201f8918eb16716ccda3e2036e714fcec0786ccb10fa322f3e2d8c194647",
+    "comparisons_by_learner.csv": "24fe76a6e83168cfd2afc15f01c1655b541bfb4f73c18323d608e26099b9046c",
+    "condition_comparisons.csv": "2971b6625ffd07101888191c1877a3eccc6623d0842d045a4a5724c355660bcb",
+    "condition_summary.csv": "726b76755d1e78eed7c7abb91e3402e3285c79d0ad346f337d39268f4cb9c921",
+    "mixed_episodes.csv": "0ea17233412b6516e6a179088136df9621ce78fa8214092b9cbb7fa0a2f2fee1",
+    "model_summary.csv": "4b1dd3d6ffd3e14d315f26c1c3d66a75e6bdf8c7c881d5c685fa0234ef745f7d"
+  },
+  "required_completion": {
+    "status": "completed",
+    "combined_episodes": 74880,
+    "new_episodes": 44928,
+    "reused_baseline_episodes": 29952,
+    "contract_sha256": "b18284dc911e010a68b619c892f1acd689812c2d24f832f823e6aeafb1d487f1"
+  },
+  "mean_destruction_percent": {
+    "P_DS": 93.33356309162761,
+    "PA_DS": 93.43121036669424,
+    "P_SS": 92.86858974358974,
+    "PA_SS": 92.99610559691205
+  },
+  "interpretation": "Modest improvement on all six existing learners; exploratory selection, not final generalization evidence. Random streams are not reset at the phase boundary; this compares complete acting strategies.",
+  "training_effect": "No PPO action-sampling or optimization change. The existing SS/DD monitor stays unchanged."
+}

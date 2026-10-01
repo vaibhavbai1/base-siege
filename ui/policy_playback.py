@@ -20,11 +20,15 @@ from experiments.rollout import play_episode
 EPISODE_LOCK = threading.RLock()
 
 
-def action_rng_seed(base, view, action_seed):
-    text = f'base-siege-action-v1:{base.seed}:{base.motif}:{view}:{action_seed}'
+def action_rng_seed(base, view, action_seed, scheme='legacy'):
+    if scheme not in ('legacy','v2-final-ds-v1'):
+        raise ValueError('Unknown replay seed scheme.')
+    text = (f'v2-final-ds-v1:{action_seed}:{base.motif}:{base.seed}:{view}' if scheme=='v2-final-ds-v1'
+            else f'base-siege-action-v1:{base.seed}:{base.motif}:{view}:{action_seed}')
     if base.motif == 'custom':
         text += ':' + hashlib.sha256(base.to_json().encode()).hexdigest()
-    return int.from_bytes(hashlib.sha256(text.encode()).digest()[:4], 'big') % (2**31)
+    value = int.from_bytes(hashlib.sha256(text.encode()).digest()[:4], 'big')
+    return value if scheme=='v2-final-ds-v1' else value % (2**31)
 
 
 @contextmanager
@@ -57,7 +61,28 @@ class ActingPolicy:
         return int(action)
 
 
-def record_policy(policy, *, base_seed, motif, view=0, action_seed=0, deterministic=False, spec=None):
+class PhaseActingPolicy:
+    """Same phase decision as the frozen V2 evaluator; no extra RNG draws."""
+    def __init__(self, model, mode):
+        if mode not in ('DS','SS','DD'):
+            raise ValueError('Choose DS, SS or DD.')
+        self.model, self.mode = model, mode
+
+    def act(self, observation, mask):
+        phase = float(observation['vector'][6])
+        if phase not in (0.0,1.0) or bool(mask[C.ACTION_FINISH_SHOPPING]) != (phase==0.0):
+            raise ValueError('Phase and legal actions disagree.')
+        deterministic = {'DS':(True,False),'SS':(False,False),'DD':(True,True)}[self.mode][int(phase)]
+        action,_ = self.model.predict(observation, action_masks=mask, deterministic=deterministic)
+        action = int(action)
+        if not 0 <= action < len(mask) or not mask[action]:
+            raise ValueError('Policy selected an illegal action.')
+        return action
+
+
+def record_policy(policy, *, base_seed, motif, view=0, action_seed=0, deterministic=False, spec=None,
+                  acting_mode=None, seed_scheme='legacy'):
+    selected_mode = acting_mode or ('DD' if deterministic else 'SS')
     if motif not in (*C.MOTIFS, 'custom') or view not in range(8) or not 0 <= action_seed <= 2**31-1:
         raise ValueError('Choose a supported demo structure, view and nonnegative action seed.')
     if motif == 'custom' and spec is None:
@@ -69,13 +94,16 @@ def record_policy(policy, *, base_seed, motif, view=0, action_seed=0, determinis
         raise ValueError('The selected base does not match its seed and structure.')
     # SiegeEnv retains its normal protected-final-seed check.
     env = SymmetryWrapper(SiegeEnv(motifs=C.MOTIFS, record=True, record_ticks=True), transform=view)
-    rng_seed = action_rng_seed(base, view, -1 if deterministic else action_seed)
+    label = -1 if seed_scheme=='legacy' and selected_mode=='DD' else action_seed
+    rng_seed = action_rng_seed(base, view, label, seed_scheme)
     try:
         with isolated_rng(rng_seed):
-            replay = play_episode(env, ActingPolicy(policy, deterministic), seed=0, options={'spec':base})
+            replay = play_episode(env, PhaseActingPolicy(policy, selected_mode), seed=0, options={'spec':base})
     finally:
         env.close()
-    replay['acting'] = {'mode':'deterministic' if deterministic else 'sampled', 'action_seed':action_seed,
+    replay['acting'] = {'mode':acting_mode or ('deterministic' if deterministic else 'sampled'), 'action_seed':action_seed,
+                        'purchasing':'sampled' if selected_mode=='SS' else 'deterministic',
+                        'deployment':'deterministic' if selected_mode=='DD' else 'sampled', 'seed_scheme':seed_scheme,
                         'view':view, 'rng_seed':rng_seed, 'display_coordinates':'original base orientation'}
     return replay
 
@@ -100,6 +128,16 @@ def validate_compatibility(manifest):
     config = {k:v for k,v in vars(C).items() if k.isupper()}
     if 'config' in manifest and manifest['config'] != json.loads(json.dumps(config)):
         raise ValueError('This model was trained with a different game configuration. Open its matching project version.')
+    if manifest.get('application_version') == 'V2':
+        root = Path(__file__).resolve().parents[1]
+        required = {name:digest for name,digest in manifest.get('source_hashes',{}).items()
+                    if name.startswith(('env/','agents/')) or name in ('train/features.py','experiments/rollout.py')}
+        if 'env/combat.py' not in required:
+            raise ValueError('V2 inference provenance is missing.')
+        for name,digest in required.items():
+            path = root/name
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+                raise ValueError('Scientific source differs from the frozen V2 simulator: '+name)
 
 
 def html_bytes(replay):

@@ -1,0 +1,401 @@
+{
+  "acting_seed": 1785327233,
+  "alive_at_end": 0,
+  "annotation_limit": "Post-tick observations only. A missing approach goal is a diagnostic flag, not proof that it caused failure. No path search, retargeting or fallback was added.",
+  "base_seed": 10265,
+  "case_id": "case-034",
+  "condition": "PA",
+  "decisions": 38,
+  "deployed_army": {
+    "breaker": 0,
+    "melee": 12,
+    "ranged": 0,
+    "tank": 4
+  },
+  "destruction": 0.22580645161290322,
+  "episode_return": -0.06819354838709676,
+  "finish_reason": "army_eliminated",
+  "first_deployment_tick": 0,
+  "full_clear": false,
+  "last_deployment_tick": 150,
+  "learner_seed": 1,
+  "metrics_match": true,
+  "mode": "deterministic",
+  "monitor_layout": false,
+  "motif": "closed_ring",
+  "post_tick_troop_observations_no_approach_goal": 0,
+  "purchased_army": {
+    "breaker": 0,
+    "melee": 12,
+    "ranged": 0,
+    "tank": 4
+  },
+  "remaining_nonwall_buildings": {
+    "cannon": 2,
+    "mortar": 2,
+    "storage": 2,
+    "town_hall": 1
+  },
+  "reserve_at_end": {
+    "breaker": 0,
+    "melee": 0,
+    "ranged": 0,
+    "tank": 0
+  },
+  "roles": [
+    "deterministic counterpart on the same layout and view"
+  ],
+  "sample_seed": 0,
+  "spent": 196,
+  "tick": 210,
+  "ticks_with_no_approach_goal_observation": 0,
+  "timeline": [
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 1,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 2,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 3,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 4,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 5,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 6,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 7,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 8,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 9,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 10,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 11,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 12,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 13,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 14,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 15,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Buy melee",
+      "base_action": 1,
+      "decision": 16,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 1
+    },
+    {
+      "action": "Finish shopping",
+      "base_action": 4,
+      "decision": 17,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 4
+    },
+    {
+      "action": "Deploy tank at (11, 0)",
+      "base_action": 54,
+      "decision": 18,
+      "destruction_percent_after": 0.0,
+      "tick_after": 10,
+      "tick_before": 0,
+      "view_action": 39
+    },
+    {
+      "action": "Deploy tank at (0, 14)",
+      "base_action": 19,
+      "decision": 19,
+      "destruction_percent_after": 0.0,
+      "tick_after": 20,
+      "tick_before": 10,
+      "view_action": 64
+    },
+    {
+      "action": "Deploy tank at (6, 0)",
+      "base_action": 59,
+      "decision": 20,
+      "destruction_percent_after": 0.0,
+      "tick_after": 30,
+      "tick_before": 20,
+      "view_action": 44
+    },
+    {
+      "action": "Deploy tank at (6, 0)",
+      "base_action": 59,
+      "decision": 21,
+      "destruction_percent_after": 0.0,
+      "tick_after": 40,
+      "tick_before": 30,
+      "view_action": 44
+    },
+    {
+      "action": "Deploy melee at (1, 0)",
+      "base_action": 124,
+      "decision": 22,
+      "destruction_percent_after": 0.0,
+      "tick_after": 50,
+      "tick_before": 40,
+      "view_action": 109
+    },
+    {
+      "action": "Deploy melee at (15, 11)",
+      "base_action": 99,
+      "decision": 23,
+      "destruction_percent_after": 0.0,
+      "tick_after": 60,
+      "tick_before": 50,
+      "view_action": 84
+    },
+    {
+      "action": "Deploy melee at (15, 11)",
+      "base_action": 99,
+      "decision": 24,
+      "destruction_percent_after": 0.0,
+      "tick_after": 70,
+      "tick_before": 60,
+      "view_action": 84
+    },
+    {
+      "action": "Deploy melee at (15, 11)",
+      "base_action": 99,
+      "decision": 25,
+      "destruction_percent_after": 0.0,
+      "tick_after": 80,
+      "tick_before": 70,
+      "view_action": 84
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 26,
+      "destruction_percent_after": 0.0,
+      "tick_after": 90,
+      "tick_before": 80,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 27,
+      "destruction_percent_after": 0.0,
+      "tick_after": 100,
+      "tick_before": 90,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 28,
+      "destruction_percent_after": 0.0,
+      "tick_after": 110,
+      "tick_before": 100,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 29,
+      "destruction_percent_after": 0.0,
+      "tick_after": 120,
+      "tick_before": 110,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 30,
+      "destruction_percent_after": 6.451612903225806,
+      "tick_after": 130,
+      "tick_before": 120,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 31,
+      "destruction_percent_after": 6.451612903225806,
+      "tick_after": 140,
+      "tick_before": 130,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 32,
+      "destruction_percent_after": 12.903225806451612,
+      "tick_after": 150,
+      "tick_before": 140,
+      "view_action": 110
+    },
+    {
+      "action": "Deploy melee at (0, 0)",
+      "base_action": 65,
+      "decision": 33,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 160,
+      "tick_before": 150,
+      "view_action": 110
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 34,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 170,
+      "tick_before": 160,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 35,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 180,
+      "tick_before": 170,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 36,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 190,
+      "tick_before": 180,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 37,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 200,
+      "tick_before": 190,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 38,
+      "destruction_percent_after": 22.58064516129032,
+      "tick_after": 210,
+      "tick_before": 200,
+      "view_action": 245
+    }
+  ],
+  "town_hall": false,
+  "transitions": 4194304,
+  "troops_with_no_approach_goal_observation": 0,
+  "view": 3,
+  "zero_destruction": 0.0
+}

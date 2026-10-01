@@ -1,0 +1,6 @@
+P-0: paused; 2,097,152 committed transitions; 53,206 completed episodes; 3570.0s recorded wall time
+P-1: paused; 2,097,152 committed transitions; 53,370 completed episodes; 3582.7s recorded wall time
+P-2: paused; 2,097,152 committed transitions; 53,599 completed episodes; 3592.3s recorded wall time
+PA-0: paused; 2,097,152 committed transitions; 53,207 completed episodes; 3630.0s recorded wall time
+PA-1: paused; 2,097,152 committed transitions; 53,243 completed episodes; 3639.8s recorded wall time
+PA-2: paused; 2,097,152 committed transitions; 53,116 completed episodes; 3627.1s recorded wall time

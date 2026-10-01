@@ -1,0 +1,4 @@
+{"attempt_id": "458161fe642e48beb56a326ea9950ea5", "event": "started", "utc": "2026-09-30T13:02:13.704077+00:00"}
+{"attempt_id": "458161fe642e48beb56a326ea9950ea5", "event": "finished", "utc": "2026-09-30T13:04:51.148430+00:00", "status": "paused", "stage": "evaluation", "wall_seconds": 157.44501727399984, "new_attacks": 1000, "new_pool_candidates": 800}
+{"attempt_id": "e1d5cffcfaf044e4abda0d0db7cd01c4", "event": "started", "utc": "2026-09-30T13:05:05.419202+00:00"}
+{"attempt_id": "e1d5cffcfaf044e4abda0d0db7cd01c4", "event": "finished", "utc": "2026-09-30T15:24:04.905147+00:00", "status": "completed", "stage": "export", "wall_seconds": 8339.486641735999, "new_attacks": 113680, "new_pool_candidates": 0}

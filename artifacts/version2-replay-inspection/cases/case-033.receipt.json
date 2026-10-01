@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 2113230778,
+      "base_seed": 10265,
+      "condition": "PA",
+      "decisions": 37,
+      "destruction": 0.0,
+      "episode_return": -0.291,
+      "finish_reason": "army_eliminated",
+      "full_clear": false,
+      "learner_seed": 1,
+      "mode": "sampled",
+      "monitor_layout": false,
+      "motif": "closed_ring",
+      "sample_seed": 31001,
+      "spent": 194,
+      "tick": 209,
+      "town_hall": false,
+      "transitions": 4194304,
+      "view": 3,
+      "zero_destruction": 1.0
+    },
+    "id": "case-033",
+    "roles": [
+      "lowest army-eliminated attack"
+    ]
+  },
+  "files": {
+    "case-033.details.html": "fbb2af934db39c5b00e6fee448be4d0bab42ffb6589a199bfe5016b24110a4f1",
+    "case-033.diagnostic.json": "f4fcfa725614e8527bb6a43fb44779f537dbae7af65e85a19d4b32a938a84389",
+    "case-033.html": "056864b7eddeee6b86ed45796b14ed532732c60ab389b623b18cc57fd2fc36a7",
+    "case-033.json": "8b06c8d735e414f20185079238f3503d53438f3b0f17c7c3d546b5a831b97856"
+  }
+}

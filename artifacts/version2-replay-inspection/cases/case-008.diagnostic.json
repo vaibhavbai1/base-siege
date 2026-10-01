@@ -1,0 +1,450 @@
+{
+  "acting_seed": 1401989241,
+  "alive_at_end": 5,
+  "annotation_limit": "Post-tick observations only. A missing approach goal is a diagnostic flag, not proof that it caused failure. No path search, retargeting or fallback was added.",
+  "base_seed": 10219,
+  "case_id": "case-008",
+  "condition": "P",
+  "decisions": 44,
+  "deployed_army": {
+    "breaker": 0,
+    "melee": 0,
+    "ranged": 10,
+    "tank": 4
+  },
+  "destruction": 1.0,
+  "episode_return": 1.4499999999999997,
+  "finish_reason": "full_clear",
+  "first_deployment_tick": 0,
+  "full_clear": true,
+  "last_deployment_tick": 130,
+  "learner_seed": 0,
+  "metrics_match": true,
+  "mode": "deterministic",
+  "monitor_layout": false,
+  "motif": "closed_ring",
+  "post_tick_troop_observations_no_approach_goal": 0,
+  "purchased_army": {
+    "breaker": 0,
+    "melee": 0,
+    "ranged": 10,
+    "tank": 4
+  },
+  "remaining_nonwall_buildings": {},
+  "reserve_at_end": {
+    "breaker": 0,
+    "melee": 0,
+    "ranged": 0,
+    "tank": 0
+  },
+  "roles": [
+    "deterministic counterpart on the same layout and view"
+  ],
+  "sample_seed": 0,
+  "spent": 200,
+  "tick": 285,
+  "ticks_with_no_approach_goal_observation": 0,
+  "timeline": [
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 1,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 2,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 3,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 4,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 5,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 6,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 7,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 8,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 9,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 10,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 11,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 12,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy tank",
+      "base_action": 0,
+      "decision": 13,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 0
+    },
+    {
+      "action": "Buy ranged",
+      "base_action": 2,
+      "decision": 14,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 2
+    },
+    {
+      "action": "Finish shopping",
+      "base_action": 4,
+      "decision": 15,
+      "destruction_percent_after": 0.0,
+      "tick_after": 0,
+      "tick_before": 0,
+      "view_action": 4
+    },
+    {
+      "action": "Deploy tank at (3, 15)",
+      "base_action": 23,
+      "decision": 16,
+      "destruction_percent_after": 0.0,
+      "tick_after": 10,
+      "tick_before": 0,
+      "view_action": 47
+    },
+    {
+      "action": "Deploy tank at (3, 15)",
+      "base_action": 23,
+      "decision": 17,
+      "destruction_percent_after": 0.0,
+      "tick_after": 20,
+      "tick_before": 10,
+      "view_action": 47
+    },
+    {
+      "action": "Deploy tank at (3, 15)",
+      "base_action": 23,
+      "decision": 18,
+      "destruction_percent_after": 0.0,
+      "tick_after": 30,
+      "tick_before": 20,
+      "view_action": 47
+    },
+    {
+      "action": "Deploy tank at (5, 0)",
+      "base_action": 60,
+      "decision": 19,
+      "destruction_percent_after": 0.0,
+      "tick_after": 40,
+      "tick_before": 30,
+      "view_action": 10
+    },
+    {
+      "action": "Deploy ranged at (5, 15)",
+      "base_action": 145,
+      "decision": 20,
+      "destruction_percent_after": 0.0,
+      "tick_after": 50,
+      "tick_before": 40,
+      "view_action": 165
+    },
+    {
+      "action": "Deploy ranged at (13, 15)",
+      "base_action": 153,
+      "decision": 21,
+      "destruction_percent_after": 0.0,
+      "tick_after": 60,
+      "tick_before": 50,
+      "view_action": 157
+    },
+    {
+      "action": "Deploy ranged at (13, 15)",
+      "base_action": 153,
+      "decision": 22,
+      "destruction_percent_after": 0.0,
+      "tick_after": 70,
+      "tick_before": 60,
+      "view_action": 157
+    },
+    {
+      "action": "Deploy ranged at (5, 15)",
+      "base_action": 145,
+      "decision": 23,
+      "destruction_percent_after": 0.0,
+      "tick_after": 80,
+      "tick_before": 70,
+      "view_action": 165
+    },
+    {
+      "action": "Deploy ranged at (0, 13)",
+      "base_action": 138,
+      "decision": 24,
+      "destruction_percent_after": 0.0,
+      "tick_after": 90,
+      "tick_before": 80,
+      "view_action": 172
+    },
+    {
+      "action": "Deploy ranged at (5, 15)",
+      "base_action": 145,
+      "decision": 25,
+      "destruction_percent_after": 0.0,
+      "tick_after": 100,
+      "tick_before": 90,
+      "view_action": 165
+    },
+    {
+      "action": "Deploy ranged at (5, 15)",
+      "base_action": 145,
+      "decision": 26,
+      "destruction_percent_after": 19.35483870967742,
+      "tick_after": 110,
+      "tick_before": 100,
+      "view_action": 165
+    },
+    {
+      "action": "Deploy ranged at (15, 11)",
+      "base_action": 159,
+      "decision": 27,
+      "destruction_percent_after": 29.03225806451613,
+      "tick_after": 120,
+      "tick_before": 110,
+      "view_action": 151
+    },
+    {
+      "action": "Deploy ranged at (2, 15)",
+      "base_action": 142,
+      "decision": 28,
+      "destruction_percent_after": 29.03225806451613,
+      "tick_after": 130,
+      "tick_before": 120,
+      "view_action": 168
+    },
+    {
+      "action": "Deploy ranged at (2, 15)",
+      "base_action": 142,
+      "decision": 29,
+      "destruction_percent_after": 29.03225806451613,
+      "tick_after": 140,
+      "tick_before": 130,
+      "view_action": 168
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 30,
+      "destruction_percent_after": 29.03225806451613,
+      "tick_after": 150,
+      "tick_before": 140,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 31,
+      "destruction_percent_after": 29.03225806451613,
+      "tick_after": 160,
+      "tick_before": 150,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 32,
+      "destruction_percent_after": 35.483870967741936,
+      "tick_after": 170,
+      "tick_before": 160,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 33,
+      "destruction_percent_after": 35.483870967741936,
+      "tick_after": 180,
+      "tick_before": 170,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 34,
+      "destruction_percent_after": 48.38709677419355,
+      "tick_after": 190,
+      "tick_before": 180,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 35,
+      "destruction_percent_after": 58.06451612903226,
+      "tick_after": 200,
+      "tick_before": 190,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 36,
+      "destruction_percent_after": 77.41935483870968,
+      "tick_after": 210,
+      "tick_before": 200,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 37,
+      "destruction_percent_after": 77.41935483870968,
+      "tick_after": 220,
+      "tick_before": 210,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 38,
+      "destruction_percent_after": 77.41935483870968,
+      "tick_after": 230,
+      "tick_before": 220,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 39,
+      "destruction_percent_after": 77.41935483870968,
+      "tick_after": 240,
+      "tick_before": 230,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 40,
+      "destruction_percent_after": 77.41935483870968,
+      "tick_after": 250,
+      "tick_before": 240,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 41,
+      "destruction_percent_after": 83.87096774193549,
+      "tick_after": 260,
+      "tick_before": 250,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 42,
+      "destruction_percent_after": 90.32258064516128,
+      "tick_after": 270,
+      "tick_before": 260,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 43,
+      "destruction_percent_after": 90.32258064516128,
+      "tick_after": 280,
+      "tick_before": 270,
+      "view_action": 245
+    },
+    {
+      "action": "Wait 10 ticks",
+      "base_action": 245,
+      "decision": 44,
+      "destruction_percent_after": 100.0,
+      "tick_after": 285,
+      "tick_before": 280,
+      "view_action": 245
+    }
+  ],
+  "town_hall": true,
+  "transitions": 4194304,
+  "troops_with_no_approach_goal_observation": 0,
+  "view": 7,
+  "zero_destruction": 0.0
+}

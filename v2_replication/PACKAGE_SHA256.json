@@ -1,0 +1,15 @@
+{
+  "v2_replication/README.md": "e7f5a2975a5c4fc64c0a0cc3d39929105fb2116211ca4e054dc67d5e2bebcfe9",
+  "v2_replication/VALIDATION.md": "e5021d3440eaadc412677629405bd3826924601d0f39e2e9a30b5f8b0e47b5b5",
+  "v2_replication/__init__.py": "4647920ceba48fd8779ee59e61375a12797fb2621419cd323e5ab8ab9a3beffc",
+  "v2_replication/__main__.py": "8b33b482533729db20052df70a0e67c4617fc3116fd1d37392d989d22f9819ff",
+  "v2_replication/decision.json": "a9d07c61d611c40f97db46f21c6d00643b87094cf4a345fe08549b81a3d0f60f",
+  "v2_replication/plan.json": "b6608742714909a05a2e417af4341cabbddf55f867ea71a47fef9045bfda3666",
+  "v2_replication/protocol.py": "71ba3cbaf1b06ea7b1e1383c9b2be78ba0993a22665e4940cd4c6f188f7a3104",
+  "v2_replication/retention.py": "517606bb6b835a8a5ffaea668be5d79860d5c1c400337c61d7d06ca379136371",
+  "v2_replication/runner.py": "d869d3ba39fe0edfd30c2622dff10bb531d9e646c71226922f0ea849006ed76c",
+  "v2_replication/screen_reference.json": "912d03cc36958aa46aff5865eb1019fb1c6e4af5c3dfda83a36591bcb753fbf6",
+  "v2_replication/tests/test_extension.py": "516aff2eafbb63b516d53d143da7197552b7e17c57311546b425bac0052aa601",
+  "v2_replication/tests/test_recovery.py": "5ad411a4cb6829d7572419e4175b9445e01fe8b7cf40485adca15e3b38aa3154",
+  "v2_replication/workflow.py": "255ba38b6f758ce9eeaa8e1b4a1db6ec15ea31e61dca6d9b30063b822a84f47f"
+}

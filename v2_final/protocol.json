@@ -1,0 +1,94 @@
+{
+  "action_seed_rule": "first four bytes of SHA256(v2-final-ds-v1:{label}:{motif}:{base_seed}:{view}), unsigned big endian; reset Python NumPy Torch once per attack, never at phase boundary",
+  "aggregation": "Equal views and action repeats within each layout; equal accepted layouts within scope; equal weight to each learner. Overall is accepted-layout weighted, not motif balanced.",
+  "baseline": "HeuristicCommander() once per accepted layout/view; observed-coverage side, not best-side oracle",
+  "candidate_layouts": 800,
+  "candidate_seed_interval": [
+    11200,
+    11399
+  ],
+  "conditions": [
+    "P",
+    "PA"
+  ],
+  "familiar_motifs": [
+    "closed_ring",
+    "ns_gates",
+    "ew_gates"
+  ],
+  "filter": "unchanged experiments.pools.validate_base: structure plus best-of-four-side heuristic destruction in [0.25,0.85]",
+  "history": "Specified after V2 cohort development results, before generating or evaluating this fresh final pool. Not preregistered before training. V1 used 11000-11199; layered_core has previously been examined, but is excluded from V2 training and development.",
+  "intervals": {
+    "confidence": 0.95,
+    "method": "percentile bootstrap across paired learner seeds",
+    "resamples": 20000,
+    "scope": "conditional on fixed accepted layouts, eight views and three action labels; unadjusted secondary intervals",
+    "seed": 53001
+  },
+  "kind": "version2-fresh-final-evaluation",
+  "learner_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "limitations": [
+    "Frozen simulator including inaccessible-target movement limitation; no reachable-target fallback.",
+    "Heuristic-filtered candidate distribution; final results do not represent arbitrary custom bases.",
+    "Fresh seeds are not proof of completely novel geometry. The preflight checks recorded pools and evaluation contracts for seed reuse.",
+    "Do not attribute a V2-final versus V1-final difference solely to longer training: test layouts and acting recipe differ."
+  ],
+  "mode": "DS",
+  "motifs": [
+    "closed_ring",
+    "ns_gates",
+    "ew_gates",
+    "layered_core"
+  ],
+  "primary_comparison": "PA minus P across ten matched learner seeds on all accepted layouts",
+  "primary_metric": "mean fraction of total building value destroyed",
+  "replacement_candidates": false,
+  "report_scopes": [
+    "all_final",
+    "familiar",
+    "transfer",
+    "motif:closed_ring",
+    "motif:ns_gates",
+    "motif:ew_gates",
+    "motif:layered_core"
+  ],
+  "runtime": {
+    "deterministic_algorithms": true,
+    "device": "cpu",
+    "torch_threads": 1
+  },
+  "sample_seeds": [
+    41001,
+    41002,
+    41003
+  ],
+  "schema": 1,
+  "secondary_comparisons": [
+    "P minus heuristic",
+    "PA minus heuristic"
+  ],
+  "selection": "All twenty approved final checkpoints; no best checkpoint or learner selection. No tuning after final results.",
+  "transfer_motif": "layered_core",
+  "transitions": 4194304,
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

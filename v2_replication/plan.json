@@ -1,0 +1,88 @@
+{
+  "experiment": "version2-seed-replication",
+  "evidence_scope": "Prospective learner-seed replication after development-based selection; not a new final test",
+  "conditions": [
+    "P",
+    "PA"
+  ],
+  "learner_seeds": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "placement_steps": 32768,
+  "total_steps": 4194304,
+  "screen_steps": 1048576,
+  "n_envs": 4,
+  "rollout_steps": 2048,
+  "batch_size": 256,
+  "epochs": 10,
+  "checkpoint_every_rollouts": 8,
+  "keep_checkpoints": 3,
+  "development_interval": 262144,
+  "sample_seeds": [
+    31001,
+    31002,
+    31003
+  ],
+  "milestones": [
+    32768,
+    262144,
+    524288,
+    1048576,
+    2097152,
+    4194304
+  ],
+  "initialization": "independent from scratch; no original checkpoint loaded",
+  "changes": [
+    "New independently initialized learner seeds 3\u20139; same training recipe as the completed six-model screen"
+  ],
+  "unchanged": [
+    "simulator and movement including inaccessible-target behaviour",
+    "observation",
+    "reward",
+    "action masks",
+    "network",
+    "PPO hyperparameters",
+    "train/dev pools",
+    "placement-only duration"
+  ],
+  "final_evaluation": "Not run by this package. Freeze a new held-out evaluation protocol before accessing its results.",
+  "selected_evaluation_mode": "DS",
+  "selection_timing": "Selected after the completed full-development, replay and four-mode phase diagnostic, before this new cohort is trained.",
+  "post_training_development": {
+    "pool": "existing frozen 156-layout development pool",
+    "views": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "modes": [
+      "DS",
+      "SS",
+      "DD"
+    ],
+    "sample_seeds": [
+      31001,
+      31002,
+      31003
+    ],
+    "DD_repeats": 1,
+    "selection": "Final 4194304 checkpoint of every learner; no best-seed or best-milestone selection",
+    "primary_reporting": "Report seeds 3\u20139 separately as the prospective cohort; also show seeds 0\u20139 with screening versus new-cohort labels. Equal weight per independent learner.",
+    "comparisons": [
+      "DS minus SS within each learner",
+      "PA minus P paired by learner seed under DS"
+    ],
+    "status": "Planned follow-on evaluation; not executed by training commands."
+  }
+}

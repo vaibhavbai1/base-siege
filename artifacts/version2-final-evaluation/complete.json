@@ -1,0 +1,17 @@
+{
+  "accepted_layouts": 235,
+  "candidate_layouts": 800,
+  "episodes": 114680,
+  "freeze_sha256": "0e0ec9f5040f18516cb7c9893da1b1e83e66d9f03cc2b317ae80c6cdf1fa7bae",
+  "outputs": {
+    "comparisons.csv": "25d1fb03f89e22d98af2612196fb4cc939fdb5448aafb357bf24c9806ef4ab55",
+    "comparisons_by_learner.csv": "ca3618fd3fb57ad6ff6baf9574d3c1b154ecb7c24e76f4e96a26909c088d0b0e",
+    "condition_summary.csv": "41007cc576d3a2c30028b0daef8580e64b066fff101eb45849846c928e416d62",
+    "episodes.csv": "76b061de3b587618fbf1522a650871ad0acb7ffcb0a66398cade75f1f9fcefd4",
+    "evaluation_contract.json": "45327d4e161adf70f268be5b65baf961082556f47a077e1cbb3e1ec70db710d8",
+    "final_pool.json": "913d34393c32aafd9ea5b0035969c84f7951dfb78deb213e1f7d1db8a8318f20",
+    "freeze.json": "0e0ec9f5040f18516cb7c9893da1b1e83e66d9f03cc2b317ae80c6cdf1fa7bae",
+    "model_summary.csv": "82dbb3468e37ff74724695862a217d55e1f03d7da9f5e41a52fc3644c6f0668d"
+  },
+  "status": "completed"
+}

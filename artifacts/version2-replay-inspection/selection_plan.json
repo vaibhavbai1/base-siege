@@ -1,0 +1,1473 @@
+{
+  "cases": [
+    {
+      "expected": {
+        "acting_seed": 1016213404,
+        "base_seed": 10227,
+        "condition": "P",
+        "decisions": 43,
+        "destruction": 0.1935483870967742,
+        "episode_return": -0.09745161290322579,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31002,
+        "spent": 194,
+        "tick": 273,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-001",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3409010194,
+        "base_seed": 10227,
+        "condition": "P",
+        "decisions": 36,
+        "destruction": 0.41935483870967744,
+        "episode_return": 0.12835483870967743,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 194,
+        "tick": 206,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-002",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 564837801,
+        "base_seed": 10204,
+        "condition": "P",
+        "decisions": 48,
+        "destruction": 0.22580645161290322,
+        "episode_return": -0.07269354838709677,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": true,
+        "motif": "ns_gates",
+        "sample_seed": 31002,
+        "spent": 199,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-003",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1862833972,
+        "base_seed": 10204,
+        "condition": "P",
+        "decisions": 44,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": true,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 275,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-004",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1505419108,
+        "base_seed": 10263,
+        "condition": "P",
+        "decisions": 43,
+        "destruction": 0.7741935483870968,
+        "episode_return": 0.9741935483870967,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": true,
+        "motif": "ew_gates",
+        "sample_seed": 31003,
+        "spent": 200,
+        "tick": 273,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 4,
+        "zero_destruction": 0.0
+      },
+      "id": "case-005",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 108144923,
+        "base_seed": 10263,
+        "condition": "P",
+        "decisions": 35,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": true,
+        "motif": "ew_gates",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 192,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 4,
+        "zero_destruction": 0.0
+      },
+      "id": "case-006",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1655611981,
+        "base_seed": 10219,
+        "condition": "P",
+        "decisions": 38,
+        "destruction": 1.0,
+        "episode_return": 1.453,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 198,
+        "tick": 229,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-007",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1401989241,
+        "base_seed": 10219,
+        "condition": "P",
+        "decisions": 44,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 285,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-008",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2096582135,
+        "base_seed": 10383,
+        "condition": "P",
+        "decisions": 34,
+        "destruction": 0.12903225806451613,
+        "episode_return": -0.16796774193548386,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 198,
+        "tick": 215,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-009",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3540659688,
+        "base_seed": 10383,
+        "condition": "P",
+        "decisions": 36,
+        "destruction": 0.2903225806451613,
+        "episode_return": -0.008177419354838705,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 199,
+        "tick": 215,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-010",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1522362536,
+        "base_seed": 10262,
+        "condition": "P",
+        "decisions": 46,
+        "destruction": 0.22580645161290322,
+        "episode_return": -0.06669354838709676,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31003,
+        "spent": 195,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-011",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3730118186,
+        "base_seed": 10262,
+        "condition": "P",
+        "decisions": 46,
+        "destruction": 0.5483870967741935,
+        "episode_return": 0.5058870967741935,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 195,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-012",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 4078141681,
+        "base_seed": 10236,
+        "condition": "P",
+        "decisions": 43,
+        "destruction": 0.7741935483870968,
+        "episode_return": 1.0041935483870967,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31003,
+        "spent": 180,
+        "tick": 300,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-013",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3459427706,
+        "base_seed": 10236,
+        "condition": "P",
+        "decisions": 45,
+        "destruction": 0.7419354838709677,
+        "episode_return": 0.6919354838709677,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-014",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 820912791,
+        "base_seed": 10393,
+        "condition": "P",
+        "decisions": 36,
+        "destruction": 1.0,
+        "episode_return": 1.4575,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31002,
+        "spent": 195,
+        "tick": 230,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 6,
+        "zero_destruction": 0.0
+      },
+      "id": "case-015",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 4183067431,
+        "base_seed": 10393,
+        "condition": "P",
+        "decisions": 37,
+        "destruction": 1.0,
+        "episode_return": 1.4575,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 195,
+        "tick": 236,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 6,
+        "zero_destruction": 0.0
+      },
+      "id": "case-016",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3594505475,
+        "base_seed": 10261,
+        "condition": "P",
+        "decisions": 32,
+        "destruction": 0.0967741935483871,
+        "episode_return": -0.2032258064516129,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 200,
+        "tick": 195,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-017",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 56566448,
+        "base_seed": 10261,
+        "condition": "P",
+        "decisions": 30,
+        "destruction": 0.3870967741935484,
+        "episode_return": 0.3370967741935484,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 179,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-018",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 465657534,
+        "base_seed": 10224,
+        "condition": "P",
+        "decisions": 45,
+        "destruction": 0.12903225806451613,
+        "episode_return": -0.16796774193548386,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 198,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 4,
+        "zero_destruction": 0.0
+      },
+      "id": "case-019",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 506568429,
+        "base_seed": 10224,
+        "condition": "P",
+        "decisions": 41,
+        "destruction": 0.2903225806451613,
+        "episode_return": -0.009677419354838707,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 249,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 4,
+        "zero_destruction": 0.0
+      },
+      "id": "case-020",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1092616829,
+        "base_seed": 10381,
+        "condition": "P",
+        "decisions": 43,
+        "destruction": 0.7419354838709677,
+        "episode_return": 0.6994354838709678,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31001,
+        "spent": 195,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-021",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 121626100,
+        "base_seed": 10381,
+        "condition": "P",
+        "decisions": 45,
+        "destruction": 0.8064516129032258,
+        "episode_return": 0.7564516129032259,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-022",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2526566845,
+        "base_seed": 10272,
+        "condition": "P",
+        "decisions": 39,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 200,
+        "tick": 231,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 0,
+        "zero_destruction": 0.0
+      },
+      "id": "case-023",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1161387608,
+        "base_seed": 10272,
+        "condition": "P",
+        "decisions": 38,
+        "destruction": 1.0,
+        "episode_return": 1.4575,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 195,
+        "tick": 211,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 0,
+        "zero_destruction": 0.0
+      },
+      "id": "case-024",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 4048077058,
+        "base_seed": 10306,
+        "condition": "PA",
+        "decisions": 35,
+        "destruction": 0.16129032258064516,
+        "episode_return": -0.13120967741935483,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 195,
+        "tick": 182,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-025",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1672575145,
+        "base_seed": 10306,
+        "condition": "PA",
+        "decisions": 36,
+        "destruction": 0.12903225806451613,
+        "episode_return": -0.16346774193548386,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 195,
+        "tick": 200,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-026",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2276055297,
+        "base_seed": 10224,
+        "condition": "PA",
+        "decisions": 45,
+        "destruction": 0.2903225806451613,
+        "episode_return": -0.006677419354838676,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 198,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 5,
+        "zero_destruction": 0.0
+      },
+      "id": "case-027",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3650870952,
+        "base_seed": 10224,
+        "condition": "PA",
+        "decisions": 36,
+        "destruction": 1.0,
+        "episode_return": 1.45,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 207,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 5,
+        "zero_destruction": 0.0
+      },
+      "id": "case-028",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1259043800,
+        "base_seed": 10357,
+        "condition": "PA",
+        "decisions": 45,
+        "destruction": 0.7419354838709677,
+        "episode_return": 0.9449354838709678,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 198,
+        "tick": 300,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-029",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3678533423,
+        "base_seed": 10357,
+        "condition": "PA",
+        "decisions": 36,
+        "destruction": 1.0,
+        "episode_return": 1.45,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 204,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-030",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 344185445,
+        "base_seed": 10318,
+        "condition": "PA",
+        "decisions": 39,
+        "destruction": 1.0,
+        "episode_return": 1.4529999999999998,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31002,
+        "spent": 198,
+        "tick": 231,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-031",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3641685591,
+        "base_seed": 10318,
+        "condition": "PA",
+        "decisions": 37,
+        "destruction": 1.0,
+        "episode_return": 1.456,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 0,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 196,
+        "tick": 220,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 7,
+        "zero_destruction": 0.0
+      },
+      "id": "case-032",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2113230778,
+        "base_seed": 10265,
+        "condition": "PA",
+        "decisions": 37,
+        "destruction": 0.0,
+        "episode_return": -0.291,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 194,
+        "tick": 209,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 1.0
+      },
+      "id": "case-033",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1785327233,
+        "base_seed": 10265,
+        "condition": "PA",
+        "decisions": 38,
+        "destruction": 0.22580645161290322,
+        "episode_return": -0.06819354838709676,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 196,
+        "tick": 210,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 0.0
+      },
+      "id": "case-034",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 811417141,
+        "base_seed": 10394,
+        "condition": "PA",
+        "decisions": 48,
+        "destruction": 0.2903225806451613,
+        "episode_return": -0.0006774193548386986,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": true,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 194,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 0.0
+      },
+      "id": "case-035",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3249899654,
+        "base_seed": 10394,
+        "condition": "PA",
+        "decisions": 40,
+        "destruction": 0.6451612903225806,
+        "episode_return": 0.8466612903225805,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": true,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 199,
+        "tick": 226,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 0.0
+      },
+      "id": "case-036",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2867994627,
+        "base_seed": 10329,
+        "condition": "PA",
+        "decisions": 46,
+        "destruction": 0.7419354838709677,
+        "episode_return": 0.9479354838709678,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31002,
+        "spent": 196,
+        "tick": 300,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-037",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3932889468,
+        "base_seed": 10329,
+        "condition": "PA",
+        "decisions": 44,
+        "destruction": 1.0,
+        "episode_return": 1.456,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 196,
+        "tick": 280,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 2,
+        "zero_destruction": 0.0
+      },
+      "id": "case-038",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 359105259,
+        "base_seed": 10253,
+        "condition": "PA",
+        "decisions": 40,
+        "destruction": 1.0,
+        "episode_return": 1.4605,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 1,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 31001,
+        "spent": 193,
+        "tick": 232,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 6,
+        "zero_destruction": 0.0
+      },
+      "id": "case-039",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3401030840,
+        "base_seed": 10253,
+        "condition": "PA",
+        "decisions": 38,
+        "destruction": 1.0,
+        "episode_return": 1.456,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 1,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ns_gates",
+        "sample_seed": 0,
+        "spent": 196,
+        "tick": 198,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 6,
+        "zero_destruction": 0.0
+      },
+      "id": "case-040",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1210738649,
+        "base_seed": 10298,
+        "condition": "PA",
+        "decisions": 37,
+        "destruction": 0.16129032258064516,
+        "episode_return": -0.10870967741935486,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31001,
+        "spent": 180,
+        "tick": 232,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 0.0
+      },
+      "id": "case-041",
+      "roles": [
+        "lowest army-eliminated attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1864206716,
+        "base_seed": 10298,
+        "condition": "PA",
+        "decisions": 37,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 213,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 3,
+        "zero_destruction": 0.0
+      },
+      "id": "case-042",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 1928097321,
+        "base_seed": 10217,
+        "condition": "PA",
+        "decisions": 43,
+        "destruction": 0.2903225806451613,
+        "episode_return": 0.0008225806451613027,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "ew_gates",
+        "sample_seed": 31001,
+        "spent": 193,
+        "tick": 300,
+        "town_hall": false,
+        "transitions": 4194304,
+        "view": 0,
+        "zero_destruction": 0.0
+      },
+      "id": "case-043",
+      "roles": [
+        "lowest time-limit attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2642406153,
+        "base_seed": 10217,
+        "condition": "PA",
+        "decisions": 42,
+        "destruction": 0.8709677419354839,
+        "episode_return": 1.0784677419354838,
+        "finish_reason": "army_eliminated",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "ew_gates",
+        "sample_seed": 0,
+        "spent": 195,
+        "tick": 288,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 0,
+        "zero_destruction": 0.0
+      },
+      "id": "case-044",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 3200688064,
+        "base_seed": 10352,
+        "condition": "PA",
+        "decisions": 43,
+        "destruction": 0.7741935483870968,
+        "episode_return": 0.9816935483870967,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31002,
+        "spent": 195,
+        "tick": 300,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-045",
+      "roles": [
+        "middle-ranked non-clear attack"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 239846936,
+        "base_seed": 10352,
+        "condition": "PA",
+        "decisions": 45,
+        "destruction": 0.8064516129032258,
+        "episode_return": 1.006451612903226,
+        "finish_reason": "tick_limit",
+        "full_clear": false,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 300,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-046",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 2673900777,
+        "base_seed": 10393,
+        "condition": "PA",
+        "decisions": 39,
+        "destruction": 1.0,
+        "episode_return": 1.4529999999999998,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 2,
+        "mode": "sampled",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 31003,
+        "spent": 198,
+        "tick": 232,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-047",
+      "roles": [
+        "full clear with middle-ranked finish time"
+      ]
+    },
+    {
+      "expected": {
+        "acting_seed": 280062979,
+        "base_seed": 10393,
+        "condition": "PA",
+        "decisions": 38,
+        "destruction": 1.0,
+        "episode_return": 1.4499999999999997,
+        "finish_reason": "full_clear",
+        "full_clear": true,
+        "learner_seed": 2,
+        "mode": "deterministic",
+        "monitor_layout": false,
+        "motif": "closed_ring",
+        "sample_seed": 0,
+        "spent": 200,
+        "tick": 226,
+        "town_hall": true,
+        "transitions": 4194304,
+        "view": 1,
+        "zero_destruction": 0.0
+      },
+      "id": "case-048",
+      "roles": [
+        "deterministic counterpart on the same layout and view"
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "condition": "P",
+      "deterministic_id": "case-002",
+      "learner_seed": 0,
+      "sampled_id": "case-001",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-004",
+      "learner_seed": 0,
+      "sampled_id": "case-003",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-006",
+      "learner_seed": 0,
+      "sampled_id": "case-005",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-008",
+      "learner_seed": 0,
+      "sampled_id": "case-007",
+      "selection_role": "full clear with middle-ranked finish time"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-010",
+      "learner_seed": 1,
+      "sampled_id": "case-009",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-012",
+      "learner_seed": 1,
+      "sampled_id": "case-011",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-014",
+      "learner_seed": 1,
+      "sampled_id": "case-013",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-016",
+      "learner_seed": 1,
+      "sampled_id": "case-015",
+      "selection_role": "full clear with middle-ranked finish time"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-018",
+      "learner_seed": 2,
+      "sampled_id": "case-017",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-020",
+      "learner_seed": 2,
+      "sampled_id": "case-019",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-022",
+      "learner_seed": 2,
+      "sampled_id": "case-021",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "P",
+      "deterministic_id": "case-024",
+      "learner_seed": 2,
+      "sampled_id": "case-023",
+      "selection_role": "full clear with middle-ranked finish time"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-026",
+      "learner_seed": 0,
+      "sampled_id": "case-025",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-028",
+      "learner_seed": 0,
+      "sampled_id": "case-027",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-030",
+      "learner_seed": 0,
+      "sampled_id": "case-029",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-032",
+      "learner_seed": 0,
+      "sampled_id": "case-031",
+      "selection_role": "full clear with middle-ranked finish time"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-034",
+      "learner_seed": 1,
+      "sampled_id": "case-033",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-036",
+      "learner_seed": 1,
+      "sampled_id": "case-035",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-038",
+      "learner_seed": 1,
+      "sampled_id": "case-037",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-040",
+      "learner_seed": 1,
+      "sampled_id": "case-039",
+      "selection_role": "full clear with middle-ranked finish time"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-042",
+      "learner_seed": 2,
+      "sampled_id": "case-041",
+      "selection_role": "lowest army-eliminated attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-044",
+      "learner_seed": 2,
+      "sampled_id": "case-043",
+      "selection_role": "lowest time-limit attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-046",
+      "learner_seed": 2,
+      "sampled_id": "case-045",
+      "selection_role": "middle-ranked non-clear attack"
+    },
+    {
+      "condition": "PA",
+      "deterministic_id": "case-048",
+      "learner_seed": 2,
+      "sampled_id": "case-047",
+      "selection_role": "full clear with middle-ranked finish time"
+    }
+  ],
+  "schema": 1,
+  "scope": "Outcome-selected development cases for qualitative inspection; not an unbiased performance estimate",
+  "selection_rule": "Per learner: lowest army-eliminated, lowest time-limit, lower median non-clear by destruction, lower median full-clear by tick; ties use the full evaluation key. Pair each with deterministic actions on the same layout/view."
+}

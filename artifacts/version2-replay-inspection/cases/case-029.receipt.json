@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 1259043800,
+      "base_seed": 10357,
+      "condition": "PA",
+      "decisions": 45,
+      "destruction": 0.7419354838709677,
+      "episode_return": 0.9449354838709678,
+      "finish_reason": "tick_limit",
+      "full_clear": false,
+      "learner_seed": 0,
+      "mode": "sampled",
+      "monitor_layout": false,
+      "motif": "closed_ring",
+      "sample_seed": 31001,
+      "spent": 198,
+      "tick": 300,
+      "town_hall": true,
+      "transitions": 4194304,
+      "view": 7,
+      "zero_destruction": 0.0
+    },
+    "id": "case-029",
+    "roles": [
+      "middle-ranked non-clear attack"
+    ]
+  },
+  "files": {
+    "case-029.details.html": "09cd3f2399f6f17c741f2586ec41e88e39ec9f416de60027cf9da9bcee1200a7",
+    "case-029.diagnostic.json": "c269308a15f60ff2a3039c433417207a3051664f38c0e33af64d628d2faad274",
+    "case-029.html": "2200500f681e0c7395995d81234ad5fb99a38e81681ec0f0b03740bce425ffdf",
+    "case-029.json": "23e05e8a3f68fedc22eb456bac3806352203bf2303f8837a7444a6c147648968"
+  }
+}

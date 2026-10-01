@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 506568429,
+      "base_seed": 10224,
+      "condition": "P",
+      "decisions": 41,
+      "destruction": 0.2903225806451613,
+      "episode_return": -0.009677419354838707,
+      "finish_reason": "army_eliminated",
+      "full_clear": false,
+      "learner_seed": 2,
+      "mode": "deterministic",
+      "monitor_layout": false,
+      "motif": "closed_ring",
+      "sample_seed": 0,
+      "spent": 200,
+      "tick": 249,
+      "town_hall": false,
+      "transitions": 4194304,
+      "view": 4,
+      "zero_destruction": 0.0
+    },
+    "id": "case-020",
+    "roles": [
+      "deterministic counterpart on the same layout and view"
+    ]
+  },
+  "files": {
+    "case-020.details.html": "566269bc9910b91d8a2ce0be3f2e7e3ec2b8ba1bcc64021f404bcc0a0f68616c",
+    "case-020.diagnostic.json": "32aea02cf1e67555716efafa0a3a639d2bea873f74f9442f4eb4613fdc3f5e0f",
+    "case-020.html": "a74d83741b1339882f641cdbcd9b5d8ee74d0593aeb267d30f2faaa711c8df53",
+    "case-020.json": "87dcfe91a28cae029da55eae07d4c7f78d96762167a0b66ea3f42edd300db75d"
+  }
+}

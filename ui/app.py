@@ -3,7 +3,6 @@ from pathlib import Path
 import hashlib
 import json
 import sys
-import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -20,17 +19,16 @@ from agents.random_agent import RandomAgent
 from experiments.rollout import play_episode, load_replay
 from ui.deployment import asset_paths, load_cpu_policy
 from ui.policy_playback import model_catalog, validate_compatibility, record_policy, html_bytes
+from ui.v2_models import application_catalog
 
 PUBLIC_DEMO = globals().get("PUBLIC_DEMO", False)
 
-st.set_page_config(page_title="Base Siege | Project 12", page_icon="🏰", layout="wide")
+st.set_page_config(page_title="Base Siege", page_icon="🏰", layout="wide")
 st.markdown("""<style>.stApp{background:#eeeae0;color:#1d2530} .block-container{max-width:1140px;padding-top:1.7rem}
 h1{font-size:1.6rem!important} [data-testid=stSidebar]{background:#fbfaf7} .stButton button{border-radius:8px}
+#MainMenu, [data-testid="stMainMenu"], [data-testid="stToolbarActions"]{display:none!important}
 </style>""", unsafe_allow_html=True)
 st.title("Base Siege")
-st.caption("Project 12 · Dihedrals · Army selection and troop deployment")
-if PUBLIC_DEMO:
-    st.caption("Interactive demo · CPU inference only · Sessions reset when the app restarts")
 component = components.declare_component("siege_board", path=str(ROOT / "ui/frontend"))
 
 
@@ -46,9 +44,12 @@ if 'next_mode' in st.session_state:
     st.session_state.mode = st.session_state.pop('next_mode')
     st.session_state.base_source = 'My custom base'
 
+if st.session_state.get("mode") == "Experiment results":
+    st.session_state.mode = "Manual play"
+
 with st.sidebar:
     st.header("Session")
-    mode = st.selectbox("Mode", ["Manual play", "Policy replay", "Base editor", "Saved replay", "Experiment results"], key='mode')
+    mode = st.selectbox("Mode", ["Manual play", "Policy replay", "Base editor", "Saved replay"], key='mode')
     custom = False
     base_spec = None
     if mode in ('Manual play', 'Policy replay'):
@@ -60,7 +61,6 @@ with st.sidebar:
         base_spec = custom_spec(st.session_state.custom_layout)
         seed, motif = base_spec.seed, base_spec.motif
         st.caption(st.session_state.custom_layout['name'])
-        st.caption('Custom demo layout. Agent performance may differ from the evaluated layouts.')
     else:
         motif = st.selectbox("Base structure", C.MOTIFS)
         pool_path = ROOT / "bases/dev-v2.json"
@@ -84,7 +84,6 @@ with st.sidebar:
         if 10000 <= seed < 10200:
             st.error("Use training seeds 0–9999 or development seeds 10200–10399.")
             st.stop()
-        st.caption("All four structures are available for illustrative demo play. Final evaluation seeds remain protected.")
     st.divider()
     st.markdown("**Game rules**\n\n200 resources · 25 troops maximum · 300 ticks\n\nWalls have no score. Troops move and target automatically after deployment.")
 
@@ -144,56 +143,25 @@ if st.session_state.get("layout_key") != key:
 env = st.session_state.game
 error = ""
 
-if mode == "Experiment results":
-    st.subheader("Saved experiment evidence")
-    paths = asset_paths(ROOT, "manifest", public=PUBLIC_DEMO)
-    if not paths:
-        st.info("No experiment results have been published yet. The game and baseline agents are available in the other modes."
-                if PUBLIC_DEMO else "No experiment manifests have been saved. Use the training notebook or command line to run a software smoke check.")
-    else:
-        labels = [str(p.relative_to(ROOT)) for p in paths]
-        chosen = st.selectbox("Run manifest", labels)
-        manifest = json.loads((ROOT / chosen).read_text())
-        if manifest["settings"]["mode"] == "smoke":
-            st.warning("Software smoke check only. This checkpoint does not establish a learned strategy or a research result.")
-        cols = st.columns(4)
-        for col, label, value in zip(cols, ["Condition", "Learner seed", "Actual steps", "Status"],
-                [manifest["settings"]["condition"], manifest["settings"]["seed"], f"{manifest.get('actual_steps', 0):,}", manifest["status"]]):
-            col.metric(label, value)
-        episodes_path = (ROOT / chosen).parent / "episodes.jsonl"
-        if episodes_path.exists() and episodes_path.stat().st_size:
-            episodes = pd.read_json(episodes_path, lines=True)
-            st.caption("Training episodes. These curves are not held-out evaluation scores.")
-            st.line_chart(episodes.groupby("timesteps")[["destruction", "return"]].mean())
-        with st.expander("Configuration and provenance"):
-            st.json(manifest)
-    evaluation_paths = asset_paths(ROOT, "evaluation", public=PUBLIC_DEMO)
-    if evaluation_paths:
-        st.subheader("Recorded evaluation")
-        chosen_eval = st.selectbox("Evaluation table", [str(p.relative_to(ROOT)) for p in evaluation_paths])
-        frame = pd.read_csv(ROOT / chosen_eval)
-        st.caption("Evidence scope: " + ", ".join(sorted(frame.evidence_scope.unique())))
-        motifs = st.multiselect("Structures", sorted(frame.motif.unique()), default=sorted(frame.motif.unique()))
-        filtered = frame[frame.motif.isin(motifs)]
-        st.dataframe(filtered.groupby("condition")[["destruction", "town_hall", "full_clear", "return"]].mean(), width="stretch")
-        st.caption("Means above are descriptive. For P versus PA uncertainty, use the learner-paired summary from notebook 04.")
-        with st.expander("Individual episodes"):
-            st.dataframe(filtered, width="stretch")
-    st.stop()
-
 readonly = mode != "Manual play"
 if mode == "Policy replay":
     model_paths = asset_paths(ROOT, "model", public=PUBLIC_DEMO)
-    catalog = model_catalog(model_paths)
+    catalog, catalog_issues = application_catalog(ROOT, model_paths, public=PUBLIC_DEMO)
+    for issue in catalog_issues:
+        st.warning("Checkpoint unavailable: " + issue)
     policy_name = st.selectbox("Policy", ["Heuristic", "Valid random", "Saved Maskable PPO"], index=2 if catalog else 0)
     chosen_model = None
     details = {}
     deterministic, action_seed, view = False, 0, 0
+    selected_mode, seed_scheme, model_version = None, 'legacy', 'Earlier models'
     if policy_name == "Saved Maskable PPO":
         if not catalog:
             st.info("No trained policy has been published yet. Try the Heuristic or Valid random policy."
                     if PUBLIC_DEMO else "No saved model is available. Run a smoke check or a planned training experiment first.")
         else:
+            versions = sorted({m.get('application_version','Earlier models') for _,m in catalog}, key=lambda v:v!='V2')
+            model_version = st.selectbox('Model version', versions)
+            catalog = [(p,m) for p,m in catalog if m.get('application_version','Earlier models')==model_version]
             conditions = sorted({m['settings']['condition'] for _,m in catalog})
             condition = st.selectbox("Condition", conditions)
             seeds = sorted({m['settings']['seed'] for _,m in catalog if m['settings']['condition']==condition})
@@ -201,22 +169,18 @@ if mode == "Policy replay":
             matching = [(p,m) for p,m in catalog if m['settings']['condition']==condition and m['settings']['seed']==learner_seed]
             chosen_model = st.selectbox("Published model" if PUBLIC_DEMO else "Local model",
                                         [str(p.relative_to(ROOT)) for p,m in matching])
-            st.caption("Team-selected policy. No model uploads are accepted." if PUBLIC_DEMO
-                       else "Load only your own trusted model files.")
-            manifest_path = (ROOT / chosen_model).parent / "manifest.json"
-            if manifest_path.exists():
-                details = json.loads(manifest_path.read_text())
-                st.caption(f"{details['evidence_scope']} · {details.get('actual_steps', 0):,} training steps")
-                if details.get("settings", {}).get("mode") == "smoke":
-                    st.warning("Software smoke check only. This checkpoint does not establish a learned strategy or a research result.")
-            acting_mode = st.selectbox("Action selection", ["Sampled", "Deterministic"])
+            details = next(m for p,m in matching if str(p.relative_to(ROOT)) == chosen_model)
+            if details.get("settings", {}).get("mode") == "smoke":
+                st.warning("Software smoke check only. This checkpoint does not establish a learned strategy or a research result.")
+            choices = ['DS — deterministic purchasing, sampled deployment','Sampled','Deterministic'] if model_version=='V2' else ['Sampled','Deterministic','DS — deterministic purchasing, sampled deployment']
+            acting_mode = st.selectbox("Action selection", choices, key='acting_mode_'+model_version)
             deterministic = acting_mode == "Deterministic"
-            action_seed = int(st.number_input("Action seed", min_value=0, max_value=2147483647, value=0, step=1,
-                                             disabled=deterministic))
+            selected_mode = 'DS' if acting_mode.startswith('DS') else ('DD' if deterministic else 'SS')
+            seed_scheme = 'v2-final-ds-v1' if model_version=='V2' else 'legacy'
+            action_seed = int(st.number_input("Action seed", min_value=0, max_value=2147483647, value=41001 if model_version=='V2' else 0, step=1,
+                                             disabled=deterministic, key='action_seed_'+model_version))
             view = st.selectbox("Agent view", list(range(8)))
-            st.caption("Sampled uses the learned action probabilities. The same model, base, view and action seed reproduce the same attack.")
-            st.caption("Agent view changes the coordinates seen by the policy. Playback shows the original base orientation.")
-    settings_key = (key, policy_name, chosen_model, details.get('model_sha256'), deterministic, action_seed, view)
+    settings_key = (key, policy_name, chosen_model, details.get('model_sha256'), selected_mode, seed_scheme, action_seed, view)
     if st.session_state.get('replay_settings') != settings_key:
         st.session_state.pop('replay', None)
         st.session_state.replay_settings = settings_key
@@ -235,7 +199,7 @@ if mode == "Policy replay":
                     validate_compatibility(details)
                     stamp = model_path.stat()
                     policy = load_cpu_policy(str(model_path), stamp.st_mtime_ns, stamp.st_size,
-                                             details.get("model_sha256"))
+                                             details.get("model_sha256"), expected_steps=details.get('actual_steps'))
                 except Exception as exc:
                     st.error("The saved policy could not be loaded. Check its model and manifest files." if PUBLIC_DEMO
                              else f"Could not load model: {exc}")
@@ -243,7 +207,9 @@ if mode == "Policy replay":
             try:
                 if policy_name == "Saved Maskable PPO":
                     generated = record_policy(policy, base_seed=int(seed), motif=motif, spec=base_spec,
-                                              view=view, action_seed=action_seed, deterministic=deterministic)
+                                              view=view, action_seed=action_seed, deterministic=deterministic,
+                                              acting_mode=selected_mode if model_version=='V2' or selected_mode=='DS' else None,
+                                              seed_scheme=seed_scheme)
                 else:
                     replay_env = new_game(int(seed), motif, base_spec, manual=False)
                     try:
@@ -257,9 +223,13 @@ if mode == "Policy replay":
             st.session_state.replay = generated
             replay_name = (f"{details['settings']['condition']} PPO · learner {details['settings']['seed']} · {acting_mode.lower()}"
                            if policy_name == "Saved Maskable PPO" else policy_name)
+            if policy_name == 'Saved Maskable PPO' and model_version=='V2':
+                replay_name = 'V2 ' + replay_name
             st.session_state.replay["policy"] = {"name": replay_name,
                 "model": chosen_model if policy_name == "Saved Maskable PPO" else None,
                 "model_sha256": details.get('model_sha256'), "acting": generated.get('acting'),
+                "model_version": model_version if policy_name=='Saved Maskable PPO' else None,
+                "training_transitions": details.get('actual_steps'),
                 "evidence_scope": "Illustrative custom-base replay" if custom else "Illustrative generated-base replay",
                 "custom_base": st.session_state.custom_layout if custom else None,
                 "custom_base_sha256": layout_id(st.session_state.custom_layout) if custom else None}
@@ -285,12 +255,11 @@ if readonly:
     frames = replay["snapshots"]
     custom_label = replay.get('policy', {}).get('custom_base')
     if isinstance(custom_label, dict):
-        st.caption('Custom base: ' + custom_label.get('name', 'My custom base') + ' · Use Play below to watch the attack.')
+        st.caption('Custom base: ' + custom_label.get('name', 'My custom base'))
     else:
-        st.caption(f"Recorded base {replay['summary']['base_seed']} · {replay['summary']['motif']} · Use Play below to watch the attack.")
+        st.caption(f"Recorded base {replay['summary']['base_seed']} · {replay['summary']['motif']}")
     recorded_policy = replay.get("policy", {})
-    st.caption("Recorded policy: " + recorded_policy.get("name", "not specified in this replay") +
-               (" · " + recorded_policy["model"] if recorded_policy.get("model") else ""))
+    st.caption("Policy: " + recorded_policy.get("name", "Recorded attack"))
     snapshot = frames[0]
     log = [f"Decision {f['decisions']}: {describe_action(f['last_action'])} → {f['destruction']:.1%}"
            for f in frames if f["last_action"] is not None][-40:]
@@ -305,10 +274,8 @@ if readonly:
             [f"{result['destruction']:.2%}","Destroyed" if result['town_hall'] else "Standing",
              "Yes" if result['full_clear'] else "No",f"{result['spent']} / {C.RESOURCE_BUDGET}"]):
             col.metric(label,value)
-        st.caption("One illustrative episode; aggregate evaluation scores are reported separately.")
 else:
     snapshot, log = env.snapshot(), st.session_state.game_log
-    st.caption("Smooth manual play · Click to buy, Shift-click to refund. Deploy without advancing time; Space runs or pauses the clock. Agent replays retain 10-tick decisions.")
 
 payload = {"snapshot": snapshot, "troop_types": C.TROOP_TYPES, "troops": C.TROOP_STATS,
            "buildings": C.BUILDING_STATS, "readonly": readonly, "log": log,

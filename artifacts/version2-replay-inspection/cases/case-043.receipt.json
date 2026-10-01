@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 1928097321,
+      "base_seed": 10217,
+      "condition": "PA",
+      "decisions": 43,
+      "destruction": 0.2903225806451613,
+      "episode_return": 0.0008225806451613027,
+      "finish_reason": "tick_limit",
+      "full_clear": false,
+      "learner_seed": 2,
+      "mode": "sampled",
+      "monitor_layout": false,
+      "motif": "ew_gates",
+      "sample_seed": 31001,
+      "spent": 193,
+      "tick": 300,
+      "town_hall": false,
+      "transitions": 4194304,
+      "view": 0,
+      "zero_destruction": 0.0
+    },
+    "id": "case-043",
+    "roles": [
+      "lowest time-limit attack"
+    ]
+  },
+  "files": {
+    "case-043.details.html": "973036acf987d3367d6efd1f28fdda061b5ab8c3f496d3cb97f268f0da112540",
+    "case-043.diagnostic.json": "87ff818f6865cde1bbb9b3ed2766b5d4b47a23496db2b831437be45a2becd082",
+    "case-043.html": "169f1f85ea8504327dbff1f447f38562b69df3fa94a5dfd2f69e84a5c51db69d",
+    "case-043.json": "1b8d6b0bb033724ee30d059d869b765b4a6368314e58cf8bec1cf74017201092"
+  }
+}

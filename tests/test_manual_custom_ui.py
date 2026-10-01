@@ -104,7 +104,10 @@ def test_layered_and_custom_app_flow():
     select('Base structure','layered_core')
     assert app.session_state['game'].spec.motif=='layered_core'
     select('Mode','Policy replay')
+    # Exercise base/editor behavior independently of available checkpoints.
+    select('Policy','Heuristic')
     next(b for b in app.button if b.label=='Generate replay').click().run(timeout=30)
+    assert not app.error, [error.value for error in app.error]
     assert not app.exception and app.session_state['replay']['summary']['motif']=='layered_core'
     select('Mode','Base editor')
     assert app.get('component_instance')
@@ -116,7 +119,9 @@ def test_layered_and_custom_app_flow():
     assert app.session_state['mode']=='Manual play'
     assert app.session_state['game'].spec==custom_spec(draft)
     select('Mode','Policy replay')
+    select('Policy','Heuristic')
     next(b for b in app.button if b.label=='Generate replay').click().run(timeout=30)
     assert not app.exception
+    assert not app.error, [error.value for error in app.error]
     assert app.session_state['replay']['summary']['motif']=='custom'
     assert app.session_state['replay']['policy']['custom_base_sha256']==layout_id(draft)

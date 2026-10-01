@@ -235,7 +235,7 @@ window.addEventListener('message',event=>{
   payload=incoming;
   document.body.classList.toggle('is-replay',!!payload.readonly);
   $('playback').hidden=!payload.readonly;$('manual-controls').hidden=payload.readonly;
-  $('recording-note').textContent=payload.readonly?(payload.replay.tick_recorded?'Recorded battle · speed changes playback only.':'Older replay: decision frames only. Generate a new replay for smooth movement.'):'Smooth manual play · Runs in your browser. Pause every decision stops after 10 ticks.';
+  $('recording-note').textContent='';
   $('replay-label').textContent=payload.replay?.label||'Recorded attack';
   if(payload.readonly){
     running=false;draining=false;manual=null;

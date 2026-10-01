@@ -1,0 +1,18 @@
+{
+  "combined_episodes": 174720,
+  "contract_sha256": "66552a44d389afcd6573d8606ef04a017e9de1a17f8c98a58a6ab49058dd4985",
+  "new_episodes": 122304,
+  "outputs": {
+    "augmentation_by_seed.csv": "da916245b7bef5ff20022c457d635b60db3420b65e73664b4aa025ab66be5f22",
+    "augmentation_comparisons.csv": "354c60f106d01f236d8f3e1bdebec3f73518093cee4797d4064b02782f0f4973",
+    "combined_episodes.csv": "3f75e380429159b6f127999fb6cb40fcd51a8de9ece5e437fa6c5e5344dd5315",
+    "condition_summary.csv": "d9b924fd8caebbfd237eca5a91cf29b58abad0d1d34c7ad0fb68b3976235e9a9",
+    "mode_comparisons.csv": "e42b8707c6a17e0461f4bf645fd3006dd5faa0489a65245b45b1053ffcc5b698",
+    "mode_comparisons_by_learner.csv": "f66a63f0b0d1b90c7ffcbf105694f73d7f05ff10fbb9258bd6dc3ed03286e3ac",
+    "model_summary.csv": "cae020c440f7df90c88b8f8b94a33095462a6a9f1f90fcebb3c6d2989a4d6c1d",
+    "new_episodes.csv": "cf19a615383e8966cd4bf71360d1d7328a0a80af05545f6d655502501aa9daff"
+  },
+  "reused_baseline_episodes": 52416,
+  "scope": "Development evaluation of a prospectively specified learner-seed replication. DS/SS/DD and final-checkpoint selection were recorded before seeds 3\u20139 training; this runner and interval details were specified after training and before full-development results for the new cohort. Not a final test.",
+  "status": "completed"
+}

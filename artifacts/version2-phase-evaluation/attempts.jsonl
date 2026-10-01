@@ -1,0 +1,4 @@
+{"event": "started", "utc": "2026-09-28T11:43:13.312373+00:00", "already_committed": 0}
+{"event": "finished", "utc": "2026-09-28T11:44:38.318258+00:00", "status": "paused", "new_episodes": 1000, "completed_episodes": 1000, "wall_seconds": 85.0199325440044}
+{"event": "started", "utc": "2026-09-28T11:47:05.707724+00:00", "already_committed": 1000}
+{"event": "finished", "utc": "2026-09-28T12:50:23.318454+00:00", "status": "completed", "new_episodes": 43928, "completed_episodes": 44928, "wall_seconds": 3797.614632056}

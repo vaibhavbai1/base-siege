@@ -20,8 +20,11 @@ def test_manual_app_initial_state():
 def test_heuristic_replay_is_labelled_and_complete():
     app = AppTest.from_file(str(APP)).run(timeout=20)
     select(app, "Mode", "Policy replay")
+    # Saved models change the UI default; this test exercises the baseline.
+    select(app, "Policy", "Heuristic")
     next(button for button in app.button if button.label == "Generate replay").click().run(timeout=20)
     assert not app.exception
+    assert not app.error, [error.value for error in app.error]
     replay = app.session_state["replay"]
     assert replay["policy"]["name"] == "Heuristic"
     assert replay["summary"]["finish_reason"]

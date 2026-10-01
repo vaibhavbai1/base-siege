@@ -13,11 +13,13 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE_FILES = (
     ".streamlit/config.toml", "ui/streamlit_app.py", "ui/app.py", "ui/deployment.py",
     "ui/policy_playback.py", "ui/manual_game.py", "ui/custom_bases.py",
+    "ui/v2_models.py", "ui/v2_checkpoints.json", "ui/evaluation_tables.py",
     "ui/editor/index.html", "ui/editor/editor.js", "ui/editor/editor.css", "ui/editor/glyphs.js", "tools/export_replay_html.py", "env/symmetry.py",
     "ui/requirements.txt", "ui/frontend/index.html", "ui/frontend/app.js", "ui/frontend/manual_engine.js",
     "ui/frontend/theme.css", "ui/frontend/playback.css", "ui/frontend/glyphs.js", "env/__init__.py",
     "env/access.py", "env/config.py", "env/entities.py", "env/pathfinding.py",
     "env/generator.py", "env/combat.py", "env/siege_env.py", "agents/__init__.py",
+    "env/render.py",
     "agents/heuristic.py", "agents/random_agent.py", "experiments/__init__.py",
     "experiments/rollout.py", "train/__init__.py", "train/features.py",
     "demo_assets/README.md", "docs/DEPLOYMENT.md",

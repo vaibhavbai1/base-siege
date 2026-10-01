@@ -1,0 +1,6 @@
+P-0: completed; 4,194,304 committed transitions; 107,248 completed episodes; 7126.1s recorded wall time
+P-1: completed; 4,194,304 committed transitions; 106,856 completed episodes; 7234.7s recorded wall time
+P-2: completed; 4,194,304 committed transitions; 107,461 completed episodes; 7143.1s recorded wall time
+PA-0: completed; 4,194,304 committed transitions; 106,690 completed episodes; 7233.8s recorded wall time
+PA-1: completed; 4,194,304 committed transitions; 106,085 completed episodes; 4210.1s recorded wall time
+PA-2: completed; 4,194,304 committed transitions; 106,467 completed episodes; 7058.3s recorded wall time

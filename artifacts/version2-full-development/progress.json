@@ -1,0 +1,10 @@
+{
+  "attempt_wall_seconds": 11266.235148217998,
+  "completed_episodes": 121056,
+  "current_target": "heuristic / 0",
+  "expected_episodes": 121056,
+  "new_episodes_this_attempt": 120056,
+  "rough_remaining_seconds": 0.0,
+  "status": "completed",
+  "updated_utc": "2026-09-28T09:12:47.901584+00:00"
+}

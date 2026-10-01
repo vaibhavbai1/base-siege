@@ -1,0 +1,10 @@
+{
+  "attempt_wall_seconds": 10618.311056858001,
+  "completed_episodes": 122304,
+  "current_target": "PA-9 / DD",
+  "expected_episodes": 122304,
+  "new_episodes_this_attempt": 121304,
+  "rough_remaining_seconds": 0.0,
+  "status": "completed",
+  "updated_utc": "2026-09-30T05:09:41.264453+00:00"
+}

@@ -1,0 +1,79 @@
+{
+  "kind": "version2-cohort-development",
+  "specified_date": "2026-09-30",
+  "scope": "Development evaluation of a prospectively specified learner-seed replication. DS/SS/DD and final-checkpoint selection were recorded before seeds 3\u20139 training; this runner and interval details were specified after training and before full-development results for the new cohort. Not a final test.",
+  "modes": [
+    "DS",
+    "SS",
+    "DD"
+  ],
+  "transitions": 4194304,
+  "sample_seeds": [
+    31001,
+    31002,
+    31003
+  ],
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "expected_new_episodes": 122304,
+  "expected_reused_episodes": 52416,
+  "expected_combined_episodes": 174720,
+  "cohorts": {
+    "screening": [
+      0,
+      1,
+      2
+    ],
+    "replication": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "all": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "scopes": [
+    "all_dev",
+    "outside_monitor_panel"
+  ],
+  "primary_mode": "DS",
+  "comparisons": [
+    "DS minus SS",
+    "DS minus DD",
+    "PA minus P paired by learner seed for each mode"
+  ],
+  "intervals": {
+    "method": "paired learner bootstrap percentile",
+    "confidence": 0.95,
+    "resamples": 20000,
+    "seed": 43001,
+    "metric": "mean destruction difference in percentage points",
+    "minimum_learner_pairs": 5,
+    "interpretation": "Conditional on the fixed development layouts and acting-seed labels. Resample independent learner pairs, not attack rows. Screening n=3 intervals omitted; all n=10 includes the development-selection cohort. Descriptive, unadjusted for multiple comparisons."
+  },
+  "rng": "Reuse version2.evaluation.episode_seed. Reset Python, NumPy and Torch RNGs once per attack; no reseed at the purchasing/deployment boundary.",
+  "training": "No training or model mutation. Original simulator including movement remains unchanged.",
+  "final_pool": "No final-pool access; a separate held-out protocol is required."
+}

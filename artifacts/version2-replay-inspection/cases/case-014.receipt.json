@@ -1,0 +1,35 @@
+{
+  "case": {
+    "expected": {
+      "acting_seed": 3459427706,
+      "base_seed": 10236,
+      "condition": "P",
+      "decisions": 45,
+      "destruction": 0.7419354838709677,
+      "episode_return": 0.6919354838709677,
+      "finish_reason": "tick_limit",
+      "full_clear": false,
+      "learner_seed": 1,
+      "mode": "deterministic",
+      "monitor_layout": false,
+      "motif": "ns_gates",
+      "sample_seed": 0,
+      "spent": 200,
+      "tick": 300,
+      "town_hall": false,
+      "transitions": 4194304,
+      "view": 2,
+      "zero_destruction": 0.0
+    },
+    "id": "case-014",
+    "roles": [
+      "deterministic counterpart on the same layout and view"
+    ]
+  },
+  "files": {
+    "case-014.details.html": "81c068b8ad7ae058b9ad32114d291736c7f26b21fedbff5ebd1a2cad355eabc5",
+    "case-014.diagnostic.json": "71908e948696359b828d380cfa932791dce02b22395184c8f641bb66600a72a6",
+    "case-014.html": "d595078ec8ec24a0ce664874b24ed98783842b94a42c4b3daf6a27d3a3d327a9",
+    "case-014.json": "d07dc467f973281a884abbcf27cbe482640bbc2b899b2bef9093eb456425cb73"
+  }
+}
