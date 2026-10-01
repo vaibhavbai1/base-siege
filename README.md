@@ -6,7 +6,9 @@ University of Technology Sydney · 43008 Reinforcement Learning · Assignment 3 
 
 Base Siege asks a learning agent to assemble an army within a fixed budget and deploy it against a defended base. Troop movement, target selection and defensive combat follow programmed rules. The agent learns the purchasing and deployment strategy through interaction with the simulator.
 
-The completed study compares **MaskablePPO without symmetry augmentation (P)** with **the same learner trained using rotated and reflected coordinate views (PA)**. Twenty main models were trained independently. With sampled action selection, the saved policies achieved approximately **86% mean destruction** on the final evaluation layouts. Symmetry augmentation did not demonstrate a clear additional mean benefit under the tested settings.
+The project compares **MaskablePPO without symmetry augmentation (P)** with **the same learner trained using rotated and reflected coordinate views (PA)**. The latest Version 2 evaluation covers twenty independent models trained to **4,194,304 transitions each**. Using deterministic purchasing and sampled deployment (DS), P achieved **92.96% mean destruction** and PA achieved **93.53%**, compared with **56.90%** for the heuristic baseline.
+
+**Updated 1 October 2026.** This README separates the original short-budget study from the later Version 2 study. The original directory name `runs/study-v2/` belongs to the earlier 262,144-transition study; it is not the latest Version 2 model cohort.
 
 This is a custom educational simulator inspired by base-attack strategy games. It is not connected to the commercial Clash of Clans game.
 
@@ -95,20 +97,35 @@ These localhost instructions are for a local computer or WSL. If you launch the 
 
 ## Watch a trained agent
 
+With the V2 application integration installed, verify the model catalogue from the project root:
+
+```bash
+uv run --frozen python -m ui.v2_models check
+```
+
+A complete local V2 setup reports `"status": "ready"` and `"verified_v2_models": 20`. This checks the approved weights, manifests, identities and source compatibility. Missing model files should be restored from the project backup.
+
 In the application:
 
-1. Select **Mode → Policy replay**.
-2. Select **Generated base**, structure **closed_ring**, and **Development pool**.
-3. Choose development base seed **10200**.
-4. Set **Policy → Saved Maskable PPO**.
-5. Choose condition **P** and learner seed **0**.
-6. Select **`runs/study-v2/P-0/model.zip`** as the local model.
-7. Choose **Sampled**, action seed **0**, and agent view **0**.
-8. Click **Generate replay**, then **Play**.
+1. Select **Policy replay** and **Saved Maskable PPO**.
+2. Select model version **V2**, condition **P** or **PA**, and learner seed **0–9**.
+3. Keep **DS — deterministic purchasing, sampled deployment** selected.
+4. Choose a training/development or custom base, coordinate view and action seed. The V2 default action seed is **41001**.
+5. Click **Generate replay**, then **Play**.
 
-These are fixed demonstration choices, not a selection of the best-performing learner. Other smoke-test or recovery-test models may also appear in the selector; use the `study-v2` path for a main research model.
+P-0 is a fixed initial choice, not a model chosen for the best final-test score. Each attack uses one learner. Generating a replay loads existing weights and does not train a model. Use the HTML replay download control to save a portable recorded battle.
 
-Generating a replay uses saved weights and does not train the agent. Sampling chooses actions according to learned probabilities. The action seed controls that sampling; matching outcomes also depends on a compatible numerical runtime.
+| Acting mode | Purchasing | Deployment and waiting |
+| --- | --- | --- |
+| DS, used for the V2 final study | Highest-probability legal action | Sample from legal action probabilities |
+| SS, labelled Sampled | Sample | Sample |
+| DD, labelled Deterministic | Highest-probability legal action | Highest-probability legal action |
+
+These modes are separate from P versus PA: P/PA describes training augmentation; DS/SS/DD describes how a trained policy acts. Deterministic purchasing also applies to the finish-shopping action. A fixed seed supports reproducible sampling with compatible runtime and source files.
+
+For the earlier study, select **Earlier** models, choose `runs/study-v2/P-0/model.zip`, and use **Sampled** with action seed **0**. Those weights have 262,144 transitions, not 4,194,304. If the V2 selector or `ui.v2_models` is absent, the checkout predates V2 integration.
+
+Custom bases can be created in **Base editor**, saved, and used for manual or agent play. All four motifs are supported: `closed_ring`, `ns_gates`, `ew_gates`, and `layered_core`. Custom-base outcomes are demonstrations outside the registered evaluation pool.
 
 ### Watch without installing Python dependencies
 
@@ -122,7 +139,38 @@ It contains an already-recorded sampled P-0 attack. The accompanying replay reco
 
 The top-level `demo_preview.html` is a separate **heuristic baseline** demonstration.
 
-## Final results
+## Latest Version 2 results
+
+The completed evaluation used **235 accepted layouts** from 800 candidates, with fresh candidate seeds **11200–11399**, four motifs, eight views, and three action-seed labels (**41001, 41002, 41003**). It evaluated all twenty approved checkpoints at **4,194,304 transitions** using **DS**.
+
+| Policy | Mean destruction | Full-clear rate | Town Hall destruction rate |
+| --- | ---: | ---: | ---: |
+| P, DS | **92.96%** | 74.26% | 89.68% |
+| PA, DS | **93.53%** | 76.72% | 90.54% |
+| Heuristic | 56.90% | 2.29% | 60.00% |
+
+The total was **114,680 evaluation attacks**: 56,400 for P, 56,400 for PA, and 1,880 heuristic attacks. These are evaluation attacks, not training episodes.
+
+The primary matched-learner comparison, **PA minus P**, was **+0.57 percentage points**, with a **95% bootstrap interval of +0.11 to +1.06 points**. This supports a small positive mean augmentation effect under this particular V2 protocol. The interval resamples ten paired learner seeds and is conditional on the fixed accepted layouts, views and action labels; it is not an uncertainty estimate over every possible base.
+
+On the **58 layered-core layouts**, mean destruction was **91.63% for P**, **91.99% for PA**, and **51.12% for the heuristic**. The transfer-only PA-minus-P interval includes zero. Layered core was excluded from V2 training and development, but had been examined earlier in the project; it is not an entirely unseen structure in the project's history.
+
+The final protocol was specified after cohort development analysis and before generation/evaluation of the fresh final pool. It was **not preregistered before training**. All twenty approved checkpoints were included; no learner was selected using final-test performance.
+
+Measured completed-attempt time was **8,496.93 seconds**, approximately **2 hours 21 minutes 37 seconds**, covering pool generation, attack execution and export. It excludes preflight and pauses and is not training time.
+
+Saved evidence under `artifacts/version2-final-evaluation/`:
+
+- `condition_summary.csv` and `model_summary.csv`: condition and learner results.
+- `comparisons.csv` and `comparisons_by_learner.csv`: differences and uncertainty.
+- `episodes.csv`: individual attacks.
+- `freeze.json`, `evaluation_contract.json`, and `final_pool.json`: models, settings and pool identities.
+- `complete.json`: completion status and output checksums.
+- `timing_summary.json`: timing scope and measured duration.
+
+**Do not attribute the difference between the original and V2 final scores solely to longer training.** The final layouts and action-selection procedure also differ. The original results below remain a separate historical experiment.
+
+## Original study results
 
 The final evaluation used **213 accepted layouts** from 800 candidates, with eight coordinate views per layout. The sampled extension used three action seeds per model/layout/view combination.
 
@@ -188,7 +236,7 @@ PA uses the eight symmetries of a square, with observations, masks and deploymen
 
 There are **ten independently trained models per condition**: `P-0` through `P-9` and `PA-0` through `PA-9`. Learner seeds `0–9` control training randomness. These are repeated runs of the same two conditions, not twenty different algorithms or an ensemble. Layout seeds generate bases; action seeds control sampled inference.
 
-### Training settings
+### Original study training settings
 
 | Setting | Recorded value |
 | --- | ---: |
@@ -211,7 +259,7 @@ Separate pilot models `P-100` and `PA-100` each used **57,344 transitions**: 32,
 
 Training and development used the first three layout structures with separate seed partitions. Layered core was excluded from the main training and development pools and included in final transfer analysis; earlier historical development exposure is disclosed in the study documentation. Final evaluation used the accepted layouts from a protected seed partition. Comparisons quantify variability across independent learners, rather than treating every attack as an independent training run.
 
-## Completed experiments and saved evidence
+## Original experiments and saved evidence
 
 | Stage | Saved location | Evaluation episodes |
 | --- | --- | ---: |
@@ -235,6 +283,21 @@ Important evidence files include:
 
 The detailed **Base Siege Complete Experiment Handbook** accompanies the project handover and explains the mechanics, experiments, results, timing evidence and professor questions. When included in the repository, it is stored under `docs/` as `Base_Siege_Complete_Experiment_Handbook.docx`.
 
+## Version 2 model locations and training budget
+
+The V2 final cohort contains **ten P models and ten PA models**, with learner seeds **0–9**. Each checkpoint records **4,194,304 transitions**. The summed endpoint budgets are **83,886,080 transitions** across the cohort. This is not a count of episodes, and does not include every exploratory run in the project.
+
+| Learners in each condition | Approved checkpoint location |
+| --- | --- |
+| Seeds 0–2 | `runs/version2-longer-control/<condition>-<seed>/milestones/step-000004194304.zip` |
+| Seeds 3–9 | `runs/version2-seed-replication/<condition>-<seed>/model.zip` |
+
+Preserve each run's `manifest.json` and other configuration/provenance records alongside its weights. `ui/v2_checkpoints.json` and the final freeze identify the approved files and hashes. For seeds 0–2, an arbitrary later `model.zip` is not a substitute for the approved milestone.
+
+The original study's episode total and training time above apply only to its twenty short runs. They must not be reused as V2 totals. Refer to V2 run records for its training episode counts, curriculum, settings and measured training durations.
+
+V2 evidence is grouped under `artifacts/version2-cohort-development/` and `artifacts/version2-final-evaluation/`, with earlier phase and replay diagnostics retained separately. The 55-page `Base_Siege_Complete_Experiment_Handbook.docx` documents the original study; it predates the longer Version 2 results summarised here.
+
 ## Repository map
 
 | Path | Purpose |
@@ -244,17 +307,41 @@ The detailed **Base Siege Complete Experiment Handbook** accompanies the project
 | `train/` | Feature extractor, PPO training, model loading, checkpoints and evaluation |
 | `experiments/` | Study design, registration, base pools, journals and final protocol |
 | `ui/` | Streamlit application, browser manual engine, replay player and base editor |
-| `runs/` | Saved model runs and training/recovery records |
+| `runs/` | Original and V2 model runs, approved milestone weights and training/recovery records |
 | `artifacts/` | Evaluation outputs, diagnostics, saved replays and verification evidence |
 | `bases/` | Saved training/development pools and pool-construction records |
 | `notebooks/` | Setup, environment, baseline, training, recovery, analysis and replay notebooks |
 | `tests/` | Simulator, interface, provenance, recovery and application checks |
 | `tools/` | Replay export, diagnostics, notebook tools and deployment helpers |
-| `final_evaluation_bundle/` | Final evaluation and sampled-inference extension scripts |
+| `final_evaluation_bundle/` | Original final evaluation and sampled-inference extension scripts |
 | `docs/` | Architecture, experiment plan, runbook, deployment and verification notes |
 | `demo_assets/` | Selected exports for public-demo mode, when prepared |
 | `base_siege_app_update/` | Packaged application update and its verification material |
 | `prototype/`, `reference/` | Earlier prototype and historical handoff material |
+
+## Sharing an essentials ZIP with teammates
+
+Extract the ZIP into a new directory and enter the project root containing `pyproject.toml`, `uv.lock` and `ui/`. Install dependencies and launch the app using the quick-start commands. Git and Git LFS are unnecessary for an extracted bundle that already contains the actual model bytes.
+
+Keep the source and app assets, dependency files, base pools, scientific contracts, run manifests, final weights, training logs, evaluation tables, and relevant documentation. Preserve relative paths so model verification and results discovery work.
+
+**A filter that keeps only files named `model.zip` is insufficient for V2.** It omits the six approved milestone ZIPs for P-0 through P-2 and PA-0 through PA-2. Keep those exact `step-000004194304.zip` files under their original paths, along with the fourteen approved `model.zip` files for seeds 3–9. Run `python -m ui.v2_models check` through uv after extraction to verify all twenty.
+
+Installed environments, caches, duplicate ZIP archives, and unneeded intermediate recovery snapshots can be omitted. Keep the source directory **`env/`**: it contains the simulator and is not a virtual environment. Do not include credentials or local secrets. If results exist only inside a ZIP that the filter excludes, extract those results into the appropriate artifact directory before packaging.
+
+An essentials ZIP supports inference and inspection when the required files are included. It is not a complete recovery backup if it omits checkpoint state or SQLite journals. Retain the original project and full backup separately.
+
+### SageMaker launch
+
+Run in a JupyterLab terminal inside the project folder:
+
+```bash
+cd ~/Base_Siege_Smooth_Demo/base-siege-assignment3
+uv run --frozen python -m ui.v2_models check
+uv run --frozen streamlit run ui/app.py --server.address 0.0.0.0 --server.port 8501
+```
+
+Open port 8501 through your workspace's application preview/proxy route. In workspaces using the JupyterLab `/proxy/8501/` route, replace the final `/lab` portion and its query string with `/proxy/8501/`. The exact access URL depends on the SageMaker workspace. Keep the instance and terminal process running. Press Ctrl+C in the server terminal to stop the app.
 
 ## Notebooks and verification
 
@@ -302,7 +389,7 @@ For future experiments, preserve this completed study and assign a new version t
 - **Partial observations:** the policy does not see every internal troop variable, and the network is feed-forward.
 - **Selected task distribution:** evaluation uses difficulty-filtered procedural layouts. Results do not guarantee the same performance on arbitrary custom bases.
 - **Manual play differs from RL:** browser players can deploy with different timing, so casual manual scores are not a controlled human-versus-agent benchmark.
-- **No demonstrated augmentation advantage:** the sampled P–PA interval includes zero. This does not prove equivalence or rule out benefits at other budgets.
+- **Augmentation findings depend on the experiment:** the original sampled interval includes zero; V2 shows a small positive overall difference. The V2 transfer-only interval still includes zero.
 - **Timing evidence has limits:** training timers were measured; some evaluation durations are archive-timestamp estimates, and other durations were not preserved.
 
-Some earlier documents, including `TEAM_START_HERE.md` and `DEMO_START_HERE.md`, describe the project before the full experiments or latest manual-play update. Their pending-training statements and older manual-timing descriptions are historical. Use this README for the current overview and the saved source, manifests, results and complete handbook for detailed evidence.
+Some earlier documents, including `TEAM_START_HERE.md` and `DEMO_START_HERE.md`, describe the project before the full experiments or latest manual-play update. Their pending-training statements and older manual-timing descriptions are historical. Use this README for the current overview and the saved source, manifests and result contracts for detailed evidence. The handbook remains the detailed explanation of the original experiment.
