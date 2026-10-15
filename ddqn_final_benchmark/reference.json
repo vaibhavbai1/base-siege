@@ -1,0 +1,18 @@
+{
+  "benchmark_files": {
+    "complete.json": "acf8720d20269700ee8de6d386932649a3d042c882af93ee2a72bae1d3cc4f57",
+    "episodes.csv": "76b061de3b587618fbf1522a650871ad0acb7ffcb0a66398cade75f1f9fcefd4",
+    "evaluation_contract.json": "45327d4e161adf70f268be5b65baf961082556f47a077e1cbb3e1ec70db710d8",
+    "final_pool.json": "913d34393c32aafd9ea5b0035969c84f7951dfb78deb213e1f7d1db8a8318f20",
+    "freeze.json": "0e0ec9f5040f18516cb7c9893da1b1e83e66d9f03cc2b317ae80c6cdf1fa7bae"
+  },
+  "motif_counts": {
+    "closed_ring": 72,
+    "ew_gates": 54,
+    "layered_core": 58,
+    "ns_gates": 51
+  },
+  "policy_sha256": "c76232fc77ca43bf2cab616d2546324d9026d7a870df28f17ba4388b458fbdc9",
+  "reviewed_github_commit": "878bc6f4c1e187af992527f86ebfb706bc84ae1a",
+  "training_contract_sha256": "da9cbc73ab732fb98f2b9c0ce35b2da58601cf6f789b04f99949d9dcd433bf86"
+}

@@ -143,11 +143,8 @@ def test_v2_controls_default_ds_stale_replay_and_results(monkeypatch):
         assert app.session_state['replay']['acting']['mode']=='SS'
         assert app.session_state['replay']['policy']['name'].startswith('V2 PA PPO')
         assert len(app.get('download_button'))==2
-        # V2 episode table has episode_return and no evidence_scope.
-        table=Path(temp)/'episodes.csv'
-        table.write_text('condition,learner_seed,mode,motif,destruction,full_clear,town_hall,episode_return\nP,0,DS,closed_ring,0.5,False,True,0.4\n')
-        monkeypatch.setattr(D,'asset_paths',lambda root,kind,public:[table] if kind=='evaluation' else [] if kind in ('model','manifest') else original(root,kind,public=public))
-        select('Mode','Experiment results');assert app.dataframe
+        # The reviewed application removed Experiment results; keep it removed.
+        assert 'Experiment results' not in next(w for w in app.selectbox if w.label=='Mode').options
 
 
 def test_result_summary_handles_v2_modes_equal_learners_and_legacy():

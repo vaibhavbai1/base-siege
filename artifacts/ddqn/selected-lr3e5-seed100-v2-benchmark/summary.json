@@ -1,0 +1,43 @@
+{
+  "episodes": 1880,
+  "full_clear_percent": 21.70212765957447,
+  "full_clears": 408,
+  "layouts": 235,
+  "limitations": [
+    "One development-selected DDQN pilot learner (seed 100); no across-DDQN-learner interval.",
+    "Existing V2 benchmark and PPO outcomes were known before this comparison; not a newly unseen final set.",
+    "DDQN greedy legal acting; PPO DS deterministic buying and sampled deployment/waiting.",
+    "DDQN selected checkpoint 2097152 transitions; PPO fixed endpoints 4194304. Not equal checkpoint budgets.",
+    "Two DDQN tuning runs each consumed 4194304 transitions (8388608 total), including later discarded checkpoints.",
+    "P and PA each represent ten learners; DDQN represents one selected pilot, not an algorithm-wide estimate.",
+    "Filtered layouts and fixed simulator including inaccessible-target limitation; not arbitrary custom bases.",
+    "No tuning or checkpoint replacement based on these benchmark outcomes; preserve this result if later work is proposed."
+  ],
+  "mean_destruction_percent": 54.41489361702128,
+  "mean_return": 0.6289470744680851,
+  "measured_episode_seconds_sum": 97.84456745208445,
+  "policy": {
+    "acting": "greedy-legal-lowest-index-tie",
+    "algorithm": "masked-double-dqn",
+    "condition": "no-augmentation",
+    "learner_seed": 100,
+    "policy_sha256": "c76232fc77ca43bf2cab616d2546324d9026d7a870df28f17ba4388b458fbdc9",
+    "training_contract_sha256": "da9cbc73ab732fb98f2b9c0ce35b2da58601cf6f789b04f99949d9dcd433bf86",
+    "training_mode": "pilot",
+    "training_steps": 2097152
+  },
+  "scope": "selected DDQN on existing V2 final benchmark",
+  "timing_scope": "Episode loops only; excludes preflight, checkpoint loading, comparison and export.",
+  "town_hall_percent": 57.49999999999999,
+  "views": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "zero_destruction_attacks": 307
+}

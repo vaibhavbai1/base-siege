@@ -1,0 +1,28 @@
+{
+  "episodes": 624,
+  "full_clear_percent": 11.217948717948719,
+  "layouts": 156,
+  "limitation": "one learner; no across-learner uncertainty estimate",
+  "mean_destruction_percent": 59.33105872622002,
+  "mean_return": 0.6678802988006617,
+  "mean_spent": 193.87660256410257,
+  "measured_episode_seconds_sum": 37.10926557397761,
+  "policy": {
+    "acting": "greedy-legal-lowest-index-tie",
+    "algorithm": "masked-double-dqn",
+    "condition": "no-augmentation",
+    "learner_seed": 100,
+    "policy_sha256": "ffd83c92748a73276033d11722f05ae233e41ce346df686833ffc2edccd7ea05",
+    "training_contract_sha256": "87977562457f16c4e919124d5a58e6cb97c454babcc271ff30d92f6d1e38e0bb",
+    "training_mode": "pilot",
+    "training_steps": 2097152
+  },
+  "scope": "development only",
+  "town_hall_percent": 69.87179487179486,
+  "views": [
+    0,
+    1,
+    4,
+    5
+  ]
+}

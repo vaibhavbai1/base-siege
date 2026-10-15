@@ -1,0 +1,4 @@
+{"started_utc": "2026-10-12T13:54:17.597881+00:00", "resume": false, "from_step": 0, "until": 262144}
+{"started_utc": "2026-10-12T14:41:01.973354+00:00", "resume": true, "from_step": 262144, "until": 1048576}
+{"started_utc": "2026-10-12T16:27:11.952411+00:00", "resume": true, "from_step": 1048576, "until": 4194304}
+{"started_utc": "2026-10-13T01:01:54.897489+00:00", "resume": true, "from_step": 4194304, "until": 4194304}

@@ -22,6 +22,8 @@ from ui.policy_playback import model_catalog, validate_compatibility, record_pol
 from ui.v2_models import application_catalog
 
 PUBLIC_DEMO = globals().get("PUBLIC_DEMO", False)
+if not PUBLIC_DEMO:
+    from ui.ddqn_models import selected_checkpoint, load_selected_policy
 
 st.set_page_config(page_title="Base Siege", page_icon="🏰", layout="wide")
 st.markdown("""<style>.stApp{background:#eeeae0;color:#1d2530} .block-container{max-width:1140px;padding-top:1.7rem}
@@ -149,7 +151,10 @@ if mode == "Policy replay":
     catalog, catalog_issues = application_catalog(ROOT, model_paths, public=PUBLIC_DEMO)
     for issue in catalog_issues:
         st.warning("Checkpoint unavailable: " + issue)
-    policy_name = st.selectbox("Policy", ["Heuristic", "Valid random", "Saved Maskable PPO"], index=2 if catalog else 0)
+    policy_choices = ["Heuristic", "Valid random", "Saved Maskable PPO"]
+    if not PUBLIC_DEMO:
+        policy_choices.append("Saved Masked DDQN")
+    policy_name = st.selectbox("Policy", policy_choices, index=2 if catalog else 0)
     chosen_model = None
     details = {}
     deterministic, action_seed, view = False, 0, 0
@@ -180,16 +185,32 @@ if mode == "Policy replay":
             action_seed = int(st.number_input("Action seed", min_value=0, max_value=2147483647, value=41001 if model_version=='V2' else 0, step=1,
                                              disabled=deterministic, key='action_seed_'+model_version))
             view = st.selectbox("Agent view", list(range(8)))
+    elif policy_name == "Saved Masked DDQN":
+        ddqn_path, details = selected_checkpoint(ROOT)
+        if ddqn_path is None:
+            st.info("The selected DDQN checkpoint is unavailable. Keep its original run or frozen selected_model folder in this project.")
+        else:
+            chosen_model = str(ddqn_path.relative_to(ROOT))
+            model_version, selected_mode, deterministic = 'DDQN', 'DD', True
+            st.caption("DDQN · learner seed 100 · 2,097,152 training transitions · no augmentation")
+            st.caption("Action selection: highest-valued legal action for purchasing and deployment.")
+            view = st.selectbox("Agent view", list(range(8)))
     settings_key = (key, policy_name, chosen_model, details.get('model_sha256'), selected_mode, seed_scheme, action_seed, view)
     if st.session_state.get('replay_settings') != settings_key:
         st.session_state.pop('replay', None)
         st.session_state.replay_settings = settings_key
-    if st.button("Generate replay", disabled=policy_name == "Saved Maskable PPO" and not chosen_model):
+    if st.button("Generate replay", disabled=policy_name in ("Saved Maskable PPO", "Saved Masked DDQN") and not chosen_model):
         with st.spinner("Running one episode in Python"):
             if policy_name == "Heuristic":
                 policy = HeuristicCommander()
             elif policy_name == "Valid random":
                 policy = RandomAgent(0)
+            elif policy_name == "Saved Masked DDQN":
+                try:
+                    policy = load_selected_policy(ROOT / chosen_model)
+                except Exception as exc:
+                    st.error(f"Could not load selected DDQN checkpoint: {exc}")
+                    st.stop()
             else:
                 model_path = ROOT / chosen_model
                 if PUBLIC_DEMO and not details.get("model_sha256"):
@@ -205,7 +226,7 @@ if mode == "Policy replay":
                              else f"Could not load model: {exc}")
                     st.stop()
             try:
-                if policy_name == "Saved Maskable PPO":
+                if policy_name in ("Saved Maskable PPO", "Saved Masked DDQN"):
                     generated = record_policy(policy, base_seed=int(seed), motif=motif, spec=base_spec,
                                               view=view, action_seed=action_seed, deterministic=deterministic,
                                               acting_mode=selected_mode if model_version=='V2' or selected_mode=='DS' else None,
@@ -223,16 +244,23 @@ if mode == "Policy replay":
             st.session_state.replay = generated
             replay_name = (f"{details['settings']['condition']} PPO · learner {details['settings']['seed']} · {acting_mode.lower()}"
                            if policy_name == "Saved Maskable PPO" else policy_name)
+            if policy_name == 'Saved Masked DDQN':
+                replay_name = 'Masked DDQN · learner 100 · 2,097,152 transitions · greedy legal'
+                generated['acting'].update(mode='greedy-legal', algorithm='masked-double-dqn', action_seed=None,
+                                           rng_seed=None, seed_scheme='not used by greedy DDQN')
             if policy_name == 'Saved Maskable PPO' and model_version=='V2':
                 replay_name = 'V2 ' + replay_name
             st.session_state.replay["policy"] = {"name": replay_name,
-                "model": chosen_model if policy_name == "Saved Maskable PPO" else None,
+                "model": chosen_model if policy_name in ("Saved Maskable PPO", "Saved Masked DDQN") else None,
                 "model_sha256": details.get('model_sha256'), "acting": generated.get('acting'),
-                "model_version": model_version if policy_name=='Saved Maskable PPO' else None,
+                "model_version": model_version if policy_name in ("Saved Maskable PPO", "Saved Masked DDQN") else None,
                 "training_transitions": details.get('actual_steps'),
                 "evidence_scope": "Illustrative custom-base replay" if custom else "Illustrative generated-base replay",
                 "custom_base": st.session_state.custom_layout if custom else None,
                 "custom_base_sha256": layout_id(st.session_state.custom_layout) if custom else None}
+            if policy_name == 'Saved Masked DDQN':
+                st.session_state.replay['policy'].update(algorithm='masked-double-dqn',
+                    learner_seed=100, training_contract_sha256=details['training_contract_sha256'])
             st.session_state.replay_policy = policy_name
     if "replay" not in st.session_state:
         st.info("Choose a policy and generate one recorded episode.")

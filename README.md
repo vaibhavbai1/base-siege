@@ -232,3 +232,35 @@ Some older documents and package READMEs describe plans at the time they were wr
 The PPO implementation is provided by [Stable-Baselines3 Contrib MaskablePPO](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_mask.html). The project also uses [Gymnasium](https://gymnasium.farama.org/), [PyTorch](https://pytorch.org/) and [Streamlit](https://streamlit.io/).
 
 Our contribution is the custom task and simulator integration, representations, symmetry augmentation, experiment and recovery workflows, analysis, and interactive application. We do not claim to have invented PPO.
+
+<!-- BASE_SIEGE_DDQN_START -->
+## Masked Double DQN extension
+
+A custom masked Double DQN implementation now complements the MaskablePPO studies.
+It reuses the simulator and CNN feature extractor, with legal-action masks for
+exploration, greedy acting and Double DQN targets. It is not an SB3 MaskableDQN class.
+
+Two pilot training runs used learner seed 100 with learning rates 0.0001 and 0.00003.
+Each reached 4,194,304 transitions. Development results selected the lower-rate
+checkpoint at 2,097,152 transitions. These are two settings tested with one learner
+seed, not an independent multi-seed DDQN cohort.
+
+On the existing V2 benchmark (235 layouts, eight views, 1,880 deterministic attacks),
+the selected checkpoint achieved **54.41% mean building-value destruction**
+and **21.70% full clears**. This was an existing-benchmark extension after PPO
+outcomes were known. DDQN used greedy legal actions; PPO V2 used DS at 4,194,304
+transitions. Different checkpoint budgets, acting procedures and learner counts
+limit algorithm-wide conclusions. Full details are in
+`artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/`.
+
+The local/SageMaker app supports **Policy replay → Saved Masked DDQN**, including
+agent views, custom bases, smooth playback and JSON/HTML replay downloads. Launch
+`uv run --frozen streamlit run ui/app.py`. This does not publish DDQN to the separate
+public demo. Run `uv run --frozen python -m ui.ddqn_models check` to verify the selected
+checkpoint. Checkpoint files require Git LFS; run `git lfs pull` after cloning.
+
+Only the selected compact DDQN checkpoint and compact evidence are included by this
+update. Full recovery buffers and raw training episode logs remain on SageMaker;
+this subset is not sufficient to resume training. No simulator mechanics or frozen
+PPO results were changed. Additional DDQN learner training was not part of this update.
+<!-- BASE_SIEGE_DDQN_END -->

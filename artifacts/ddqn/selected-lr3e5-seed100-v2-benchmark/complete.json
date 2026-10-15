@@ -1,0 +1,13 @@
+{
+  "episodes": 1880,
+  "outputs": {
+    "comparisons.csv": "a9d1de852eb1ef8a91bd47f0de89f50bcc73ccb0d08de0a91d219914825304ec",
+    "condition_summary.csv": "d12a93d34c68ab9daccb07bff336d3445ca710732e433c4ca996d3063a5f0bae",
+    "episodes.csv": "1e6ed8fc3cad31794e78f18d9d35571f12bfaf658f5a1829d0760cb609789083",
+    "final_pool.json": "913d34393c32aafd9ea5b0035969c84f7951dfb78deb213e1f7d1db8a8318f20",
+    "freeze.json": "7c2824d1d289b21b30c27c1714a53056090fecb9678774a42b45f5984100acc2",
+    "model_summary.csv": "d574025189cd75fbfcc425f317e769a57bf2e0ac383add1f261eaecceb9cc99b",
+    "summary.json": "4c3fc8cbcedd1dea26b7678b5491df47e1a6c52faa3c79de31b75311c5dc15c2"
+  },
+  "status": "completed"
+}
