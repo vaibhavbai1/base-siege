@@ -1,6 +1,6 @@
 # Base Siege
 
-**A reinforcement-learning commander for army selection and troop deployment.**
+**A custom reinforcement-learning environment for army selection and troop deployment, with MaskablePPO and masked Double DQN agents.**
 
 Developed as a capstone project for **43008 Reinforcement Learning**, Master of Artificial Intelligence, **University of Technology Sydney (UTS)**. Project contact: **Vaibhav Bairathi**.
 
@@ -12,7 +12,8 @@ The project includes the simulator, training and evaluation workflows, trained c
 
 - Version 1 (V1): pilot, twenty main training runs, development diagnostics, and final evaluations completed.
 - Version 2 (V2): twenty independent training runs at **4,194,304 transitions per model**, followed by development analysis and a fresh final evaluation, completed.
-- Application: V2 replay integration, smooth manual combat, custom-base editing, and interface cleanup implemented.
+- Masked Double DQN (DDQN): two seed-100 pilot runs, development checkpoint selection, and evaluation on the existing V2 benchmark completed. No multi-seed DDQN cohort was run.
+- Application: V1/V2 PPO and selected DDQN replay, smooth manual combat, custom-base editing, and saved replay supported in the local/SageMaker app.
 - Current application modes: **Manual play**, **Policy replay**, **Base editor**, and **Saved replay**.
 - Experiment results are stored in files; the application no longer has an Experiment Results mode.
 
@@ -59,12 +60,12 @@ The values above come from the completed evaluation records:
 - [Individual attacks](artifacts/version2-final-evaluation/episodes.csv)
 - [Frozen evaluation decision](artifacts/version2-final-evaluation/freeze.json)
 - [Completion record and output hashes](artifacts/version2-final-evaluation/complete.json)
-- [Measured execution timing](artifacts/version2-final-evaluation/timing_summary.json)
+- [Measured execution attempt records](artifacts/version2-final-evaluation/attempts.jsonl)
 - [Final evaluation protocol](v2_final/protocol.json)
 
-## Algorithm and training
+## PPO algorithm and training
 
-We use **Stable-Baselines3 Contrib MaskablePPO**, with a custom convolutional feature extractor and legal-action masks. The network receives a spatial grid and a short summary vector. The mask prevents invalid purchases and deployments.
+The V1 and V2 studies use **Stable-Baselines3 Contrib MaskablePPO**, with a custom convolutional feature extractor and legal-action masks. The network receives a spatial grid and a short summary vector. The mask prevents invalid purchases and deployments.
 
 | Condition | Meaning |
 |---|---|
@@ -83,15 +84,15 @@ V2 contains **83,886,080 training transitions** across its twenty models. A tran
 
 V2 models started independently from scratch. Seeds 0–2 formed the six-model screening cohort; seeds 3–9 formed the fourteen-model replication cohort. V2 retained the frozen simulator, reward, observation, action masks, network and PPO hyperparameters, while extending training and investigating action selection.
 
-### Action-selection modes
+### PPO action-selection modes
 
-| Mode | Purchasing | Deployment |
+| Mode | Purchasing | Deployment and waiting |
 |---|---|---|
 | **DS** — V2 application default | Highest-probability legal action | Sample from legal-action probabilities |
 | **Sampled / SS** | Sample | Sample |
 | **Deterministic / DD** | Highest-probability legal action | Highest-probability legal action |
 
-DS was selected using development evidence. The final evaluation then used the frozen DS procedure.
+DS was selected using development evidence. The final evaluation then used the frozen DS procedure. The four-way development diagnostic also tested **SD** (sampled purchasing, deterministic deployment/waiting). DD, DS, SD and SS are ways of using an existing PPO checkpoint, not separately trained algorithms; the application offers DD, DS and SS.
 
 ### V1 results are a separate experiment
 
@@ -100,6 +101,63 @@ V1 final mean destruction was **85.95% for sampled P**, **85.45% for sampled PA*
 V1's sampled PA–P difference was approximately **−0.50 percentage points**, with a 95% interval of **−2.06 to +1.06**; that study did not establish an additional mean augmentation benefit. The sampled extension used existing checkpoints and was documented after development diagnostics, before its final evaluation.
 
 V1 and V2 used different final layouts and acting procedures. Their headline scores are not a controlled estimate of the effect of longer training alone.
+
+## Masked Double DQN experiment
+
+**DDQN means Double Deep Q-Network.** This is a custom PyTorch implementation, not an SB3 DQN or SB3 Contrib MaskableDQN class. It reuses the existing simulator, observation, reward, legal-action masks and CNN feature extractor, and trains new network weights from scratch. It does not convert or continue a PPO checkpoint.
+
+PPO learns probabilities for choosing actions. DDQN learns a value for each action: how much future reward it expects from taking that action. Its online network chooses the next legal action for the learning target, and a separate target-network copy evaluates that choice. These two networks belong to one learner; they are not two independent training runs.
+
+Masks are applied to random exploration, greedy action selection and next-state selection in the Double DQN target. The DDQN condition has **no symmetry augmentation**. Selecting a rotated/reflected view during replay does not mean the model was trained with augmentation.
+
+### Development and checkpoint selection
+
+Two pilot runs used **the same learner seed, 100**, with different learning rates. Both trained for **4,194,304 transitions**, consuming **8,388,608 transitions in total**. Full development checks used 156 layouts and four views (0, 1, 4, 5): 624 attacks per checkpoint.
+
+| Checkpoint transitions | Learning rate 0.0001: mean destruction | Learning rate 0.00003: mean destruction |
+|---|---:|---:|
+| 1,048,576 | 61.87% | 58.48% |
+| 2,097,152 | 59.33% | **68.41% — selected** |
+| 4,194,304 | 48.14% | 51.85% |
+
+Development evidence selected the **0.00003 learning-rate checkpoint at 2,097,152 transitions**. Longer training did not improve these recorded development scores. The selected checkpoint contains about two million transitions of learning, but finding it involved both complete pilot runs; its checkpoint budget is not the total tuning cost.
+
+Sources: original-rate full-development summaries at [1,048,576](artifacts/ddqn/pilot-seed100-full-dev-1048576/summary.json), [2,097,152](artifacts/ddqn/pilot-seed100-full-dev-2097152/summary.json) and [4,194,304](artifacts/ddqn/pilot-seed100-full-dev-4194304/summary.json); [lower-rate development records](artifacts/ddqn/pilot-lr3e5-seed100/).
+
+### Selected DDQN on the existing V2 benchmark
+
+The selected checkpoint was frozen before this evaluation. It completed **1,880 deterministic attacks: 235 layouts × eight views**, using the highest-valued legal action for purchasing, deployment and waiting. Equal Q values are resolved by the lowest action ID.
+
+| Agent | Independent learners represented | Evaluated checkpoint transitions | Acting procedure | Mean destruction | Full-clear rate |
+|---|---:|---:|---|---:|---:|
+| V2 P | 10 | 4,194,304 each | PPO DS | 92.96% | 74.26% |
+| V2 PA | 10 | 4,194,304 each | PPO DS | 93.53% | 76.72% |
+| Selected DDQN pilot | 1 | 2,097,152 | Greedy legal actions | 54.41% | 21.70% |
+| Heuristic | No trained learner | Not applicable | Programmed rules | 56.90% | 2.29% |
+
+PPO and heuristic values are reused from the completed V2 evaluation on the same layouts and views. PPO includes three action-seed repetitions for each learner/layout/view; deterministic DDQN needs one attack per layout/view.
+
+This selected DDQN policy had lower mean destruction than the heuristic but more full clears. Its performance differed sharply by layout group:
+
+| Layout group | Layouts | DDQN attacks | Mean destruction | Full-clear rate |
+|---|---:|---:|---:|---:|
+| Familiar structure families | 177 | 1,416 | 68.57% | 28.74% |
+| `layered_core` transfer family | 58 | 464 | 11.23% | 0.22% |
+
+**Comparison limits:** this is one development-selected pilot, not a ten-learner DDQN study. No across-DDQN-learner confidence interval can be estimated from it. The V2 benchmark and PPO outcomes were already known before the DDQN comparison, so this is an extension on an existing benchmark, not a newly unseen final test. Different checkpoint budgets, inference procedures, tuning histories and learner counts prevent attributing the entire performance gap to the algorithm alone. The checkpoint was not replaced based on these benchmark outcomes.
+
+### DDQN evidence
+
+- [Benchmark summary and limitations](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/summary.json)
+- [Condition and layout-group results](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/condition_summary.csv)
+- [Individual attacks](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/episodes.csv)
+- [Comparisons with existing PPO and heuristic records](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/comparisons.csv)
+- [Frozen checkpoint and evaluation decision](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/freeze.json)
+- [Completion receipt and output hashes](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/complete.json)
+- [Selected model, training contract and checksum sidecar](artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/selected_model/)
+- [Original pilot settings and progress](runs/ddqn/pilot-seed100/) and [lower-rate pilot settings and progress](runs/ddqn/pilot-lr3e5-seed100/)
+
+The benchmark's measured episode loops total **97.84 seconds**. This excludes preflight checks, checkpoint loading, comparison and export; it is not an end-to-end evaluation time or a controlled speed comparison with PPO.
 
 ## Environment
 
@@ -116,7 +174,7 @@ V1 and V2 used different final layouts and acting procedures. Their headline sco
 | Battle limit | 300 ticks |
 | Base structures | `closed_ring`, `ns_gates`, `ew_gates`, `layered_core` |
 
-Purchasing decisions do not advance battle time. The commander learns army composition and deployment; individual troops do not have their own learned policies.
+Purchasing decisions do not advance battle time. The 246 actions comprise four purchases, one finish-shopping action, 240 deployment choices (four troop types × 60 positions), and one wait action. Each deployment action places **one troop**, then advances combat by up to ten ticks; already deployed troops act together during those ticks. The commander learns army composition and deployment; individual troops do not have their own learned policies.
 
 ## Installation and launch
 
@@ -151,6 +209,18 @@ Expected output includes `"status": "ready"` and `"verified_v2_models": 20`. Thi
 
 If files are missing, run `git lfs pull` again and repeat the check. For a checksum or source mismatch, keep the error and investigate the changed file rather than changing the expected hashes.
 
+### Verify the selected DDQN checkpoint
+
+From the same project root:
+
+```bash
+uv run --frozen python -m ui.ddqn_models check
+```
+
+Expected output begins with `DDQN ready: seed 100, 2,097,152 transitions, greedy legal acting.` The check verifies the selected policy, training contract, checksum sidecar, scientific source and runtime compatibility. It does not train or evaluate a batch of attacks.
+
+The app prefers the frozen copy under `artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/selected_model/`. It can also use the identical selected checkpoint in the original lower-rate run. The original run's other checkpoints are not required to demonstrate DDQN.
+
 ### Launch on your computer
 
 ```bash
@@ -173,9 +243,12 @@ Open port 8501 through your SageMaker environment's application preview or proxy
 ## Using the application
 
 - **Manual play:** purchase troops, start the battle, select a troop type and deploy around the green perimeter. Use the pause, speed and view controls during combat.
-- **Policy replay:** select `Saved Maskable PPO`, model version `V2`, condition `P` or `PA`, and learner seed 0–9. Leave action selection on DS for the evaluated V2 procedure. Click **Generate replay**, then **Play**.
+- **PPO policy replay:** select `Saved Maskable PPO`, model version `V2`, condition `P` or `PA`, and learner seed 0–9. Leave action selection on DS for the evaluated V2 procedure. Click **Generate replay**, then **Play**. Earlier PPO models remain available through the model-version selector.
+- **DDQN policy replay:** select `Saved Masked DDQN`, choose a base and agent view, then click **Generate replay** and **Play**. The app loads the selected seed-100, 2,097,152-transition checkpoint automatically. It always uses greedy legal actions, so there is no action-sampling seed or learner selection.
 - **Base editor:** edit a layout, save it, and use it for manual play or policy replay. Custom bases can be exported/imported as JSON.
 - **Saved replay:** inspect saved attacks. Generated policy replays can also be downloaded as JSON or standalone HTML.
+
+DDQN supports custom bases, smooth playback, and JSON/standalone HTML replay downloads through the existing replay interface. This integration is for the local/SageMaker application; the separate public-demo configuration does not offer DDQN.
 
 ### The different seeds and views
 
@@ -186,7 +259,7 @@ Open port 8501 through your SageMaker environment's application preview or proxy
 | Action seed | Random choices during sampled action selection; it does not retrain the agent |
 | Agent view | One of eight rotated/reflected coordinate views presented to the policy |
 
-The V2 action-seed default is 41001. The same model, base, view, action seed and software reproduce the same attack. Playback shows the original base orientation. Because the view is included in the acting-seed calculation, changing the view in a sampled replay changes both the observed orientation and the random sequence.
+For PPO, the V2 action-seed default is 41001. The same model, base, view, action seed and software reproduce the same attack. Playback shows the original base orientation. Because the view is included in the acting-seed calculation, changing the view in a sampled replay changes both the observed orientation and the random sequence.
 
 Manual combat runs smoothly in the browser. Training and learned-policy evaluation use the Python simulator. Manual deployment timing differs from the RL interface, so manual play is not a controlled human-versus-agent benchmark.
 
@@ -202,13 +275,18 @@ Manual combat runs smoothly in the browser. Training and learned-policy evaluati
 | `v2_replication/` | Fourteen-model replication workflow, seeds 3–9 |
 | `v2_development/`, `v2_phases/`, `v2_replays/` | Development evaluation and action/behaviour diagnostics |
 | `v2_cohort_evaluation/` | Combined twenty-model development evaluation |
-| `v2_final/` | Fresh final evaluation code and frozen protocol |
+| `v2_final/` | Fresh final PPO evaluation code and frozen protocol |
+| `ddqn_experiment/` | Custom masked Double DQN training, development evaluation and replay |
+| `ddqn_final_benchmark/` | Selected DDQN evaluation on the existing V2 benchmark |
+| `runs/ddqn/` | Compact pilot training contracts, status, progress and attempt records |
+| `artifacts/ddqn/` | Development results, completed benchmark evidence and selected inference checkpoint |
 | `version2-records/` | V2 workflow records |
 | `runs/version2-longer-control/` | Screening checkpoints, manifests and training logs |
 | `runs/version2-seed-replication/` | Replication checkpoints, manifests and training logs |
 | `artifacts/version2-*/` | Saved development and final evaluation evidence |
 | `ui/` | Streamlit application, manual combat, editor and policy replay |
 | `ui/v2_checkpoints.json` | Exact approved V2 checkpoint paths and hashes |
+| `ui/ddqn_models.py` | Selected DDQN checkpoint identity, validation and replay adapter |
 | `notebooks/` | Original teaching and experiment notebooks |
 | `tests/` | Simulator, workflow and application checks |
 | `tools/` | Validation and deployment utilities |
@@ -216,7 +294,11 @@ Manual combat runs smoothly in the browser. Training and learned-policy evaluati
 
 Approved V2 application checkpoints are the 4,194,304-step milestone ZIPs for screening seeds 0–2 and the final `model.zip` files for replication seeds 3–9. The registry supplies their exact paths; do not rename them or substitute a different milestone.
 
-Some older documents and package READMEs describe plans at the time they were written. For completed V2 outcomes, use the saved completion records, frozen protocols and result tables linked above.
+### What the DDQN upload contains
+
+GitHub contains the DDQN source, compact training/evaluation evidence, and the selected inference checkpoint managed through Git LFS. Full DDQN recovery buffers and raw training episode logs remain on SageMaker. This compact GitHub subset supports replay and result inspection; it is **not sufficient to resume those training runs**. Preserve the complete SageMaker run folders for recovery.
+
+Some older documents and package READMEs describe plans at the time they were written. In particular, the [original DDQN runbook](ddqn_experiment/README.md) predates the completed benchmark and UI selector: its proposed ten-learner study was not performed, and its statement that no DDQN selector exists is historical. Use this README and the linked completion records for current status. Training commands in historical runbooks are not required to launch the application.
 
 ## Limitations and future work
 
@@ -224,6 +306,7 @@ Some older documents and package READMEs describe plans at the time they were wr
 - The compact observation does not expose every internal simulator variable.
 - Final results apply to the accepted, heuristic-filtered layouts and the recorded evaluation procedure; arbitrary custom bases may be harder.
 - `layered_core` was excluded from V2 training and development, but had been examined in the earlier project.
+- DDQN results represent one selected learner and showed weak transfer to `layered_core`; more attacks from that same checkpoint do not replace independent training seeds.
 - An individual replay is an illustration, not an aggregate performance estimate.
 - The application and checkpoints support demonstration without new training. Further training or changes to rewards, observations, movement or network design should be recorded as a new experiment version, preserving the completed V1/V2 evidence.
 
@@ -231,36 +314,4 @@ Some older documents and package READMEs describe plans at the time they were wr
 
 The PPO implementation is provided by [Stable-Baselines3 Contrib MaskablePPO](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_mask.html). The project also uses [Gymnasium](https://gymnasium.farama.org/), [PyTorch](https://pytorch.org/) and [Streamlit](https://streamlit.io/).
 
-Our contribution is the custom task and simulator integration, representations, symmetry augmentation, experiment and recovery workflows, analysis, and interactive application. We do not claim to have invented PPO.
-
-<!-- BASE_SIEGE_DDQN_START -->
-## Masked Double DQN extension
-
-A custom masked Double DQN implementation now complements the MaskablePPO studies.
-It reuses the simulator and CNN feature extractor, with legal-action masks for
-exploration, greedy acting and Double DQN targets. It is not an SB3 MaskableDQN class.
-
-Two pilot training runs used learner seed 100 with learning rates 0.0001 and 0.00003.
-Each reached 4,194,304 transitions. Development results selected the lower-rate
-checkpoint at 2,097,152 transitions. These are two settings tested with one learner
-seed, not an independent multi-seed DDQN cohort.
-
-On the existing V2 benchmark (235 layouts, eight views, 1,880 deterministic attacks),
-the selected checkpoint achieved **54.41% mean building-value destruction**
-and **21.70% full clears**. This was an existing-benchmark extension after PPO
-outcomes were known. DDQN used greedy legal actions; PPO V2 used DS at 4,194,304
-transitions. Different checkpoint budgets, acting procedures and learner counts
-limit algorithm-wide conclusions. Full details are in
-`artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/`.
-
-The local/SageMaker app supports **Policy replay → Saved Masked DDQN**, including
-agent views, custom bases, smooth playback and JSON/HTML replay downloads. Launch
-`uv run --frozen streamlit run ui/app.py`. This does not publish DDQN to the separate
-public demo. Run `uv run --frozen python -m ui.ddqn_models check` to verify the selected
-checkpoint. Checkpoint files require Git LFS; run `git lfs pull` after cloning.
-
-Only the selected compact DDQN checkpoint and compact evidence are included by this
-update. Full recovery buffers and raw training episode logs remain on SageMaker;
-this subset is not sufficient to resume training. No simulator mechanics or frozen
-PPO results were changed. Additional DDQN learner training was not part of this update.
-<!-- BASE_SIEGE_DDQN_END -->
+Our contribution is the custom task and simulator integration, representations, symmetry augmentation, masked Double DQN implementation, experiment and recovery workflows, analysis, and interactive application. PPO and Double DQN are established algorithms; we do not claim to have invented them.
