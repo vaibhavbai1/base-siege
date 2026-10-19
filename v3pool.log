@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/sagemaker-user/base-siege/v3_final/__main__.py", line 31, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/sagemaker-user/base-siege/v3_final/__main__.py", line 23, in main
+    runner.build_pool(resume=args.resume)
+  File "/home/sagemaker-user/base-siege/v3_final/runner.py", line 257, in build_pool
+    publish_json(output / "final_pool.json", payload)
+  File "/home/sagemaker-user/base-siege/experiments/storage.py", line 49, in publish_json
+    publish_bytes(path, json_bytes(value))
+  File "/home/sagemaker-user/base-siege/experiments/storage.py", line 56, in publish_bytes
+    raise ValueError(f"Existing output differs from committed progress: {path}")
+ValueError: Existing output differs from committed progress: /home/sagemaker-user/base-siege/artifacts/version3-final-evaluation/final_pool.json

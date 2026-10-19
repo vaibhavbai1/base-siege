@@ -21,6 +21,19 @@ from v2_phases.runner import PhasePolicy
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def test_legacy_v3_entrypoint_preserves_current_catalog():
+    from ui import v2_models
+
+    original_catalog = v2_models.application_catalog
+    app = AppTest.from_file(str(ROOT / 'ui/app_v3.py')).run(timeout=30)
+    assert not app.exception
+    assert v2_models.application_catalog is original_catalog
+    next(widget for widget in app.selectbox if widget.label == 'Mode').set_value('Policy replay').run(timeout=30)
+    assert not app.exception
+    options = next(widget for widget in app.selectbox if widget.label == 'Policy').options
+    assert options == ['Heuristic', 'Valid random', 'Saved Maskable PPO', 'Saved Masked DDQN', 'Saved Maskable TRPO']
+
+
 @pytest.fixture(scope='module')
 def policy():
     path, _ = T.selected_checkpoint(ROOT)

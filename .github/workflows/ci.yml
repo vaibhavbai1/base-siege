@@ -18,8 +18,13 @@ jobs:
       OPENBLAS_NUM_THREADS: "1"
       MPLBACKEND: Agg
     steps:
+      - name: Select inference checkpoints for LFS checkout
+        run: >-
+          git config --global lfs.fetchinclude
+          'runs/study-v2/*/model.zip,runs/version2-longer-control/*/model.zip,runs/version2-longer-control/*/milestones/step-000004194304.zip,runs/version2-seed-replication/*/model.zip,runs/study-v3/*/model.zip,artifacts/trpo/selected-T1/model.zip,artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/selected_model/policies/*.pt'
       - uses: actions/checkout@v7
         with:
+          lfs: true
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
@@ -32,7 +37,7 @@ jobs:
       - run: python -m pip install -r ui/requirements.txt -r deployment/requirements-project-test.txt
       - run: python -m pip check
       - name: Run regressions and short recovery tests
-        run: python -m pytest -q --junitxml=artifacts/ci-tests.xml
+        run: python -m pytest -q tests trpo/tests v3_final/tests v3_probe/tests --junitxml=artifacts/ci-tests.xml
       - name: Build standalone deployment source
         run: python tools/build_deploy_bundle.py --out artifacts/streamlit-deploy
       - name: Check standalone public app

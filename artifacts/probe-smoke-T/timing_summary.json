@@ -1,0 +1,11 @@
+{
+  "segments": [
+    {
+      "measured_utc": "2026-10-16T01:28:46+00:00",
+      "new_attacks": 240,
+      "seconds": 27.70310663400005
+    }
+  ],
+  "total_attacks": 240,
+  "total_seconds": 27.70310663400005
+}
