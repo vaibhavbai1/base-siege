@@ -1,0 +1,12 @@
+{
+  "attacks": 115680,
+  "baseline_mode": "DS",
+  "completed_utc": "2026-10-17T14:27:04+00:00",
+  "outputs": {
+    "episodes.csv": "009aaf60be3c75b8bd5c1a1dd04472cc62030f13aaa92f28cc43a31b7769e957",
+    "mode_by_learner.csv": "86d0d5b3eb42e582b3f1c958971aaec9c04a867ab2ed5915d5463cad43dea483",
+    "mode_summary.csv": "34fa08dd73ebfc91d2bddc2d83aaa5cee1e73cc1371b2aac539b85de24aade59"
+  },
+  "probe_mode": "SS",
+  "status": "exploratory probe; outside the frozen V3 protocol"
+}

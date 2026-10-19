@@ -6,3 +6,8 @@
 *.sqlite3 filter=lfs diff=lfs merge=lfs -text
 *.sqlite3-* filter=lfs diff=lfs merge=lfs -text
 *.tfevents.* filter=lfs diff=lfs merge=lfs -text
+# Preserve byte-for-byte hashes in the supplied TRPO evidence and inference source.
+artifacts/version3-final-evaluation/** -text
+artifacts/version3-mode-probe/** -text
+artifacts/trpo/selected-T1/*.json -text
+trpo/maskable_trpo.py -text

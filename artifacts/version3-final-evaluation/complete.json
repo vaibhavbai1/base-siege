@@ -1,0 +1,17 @@
+{
+  "accepted_layouts": 241,
+  "attacks": 175448,
+  "completed_utc": "2026-10-15T10:50:07+00:00",
+  "conditions": [
+    "P",
+    "PA",
+    "T"
+  ],
+  "outputs": {
+    "comparisons.csv": "2f3be752344587b4c95aab2c4d39c3697e45a31a3568485ceb63594bcf0422c1",
+    "comparisons_by_learner.csv": "8e8a05855e8f61935625ee031eb91d20b29cefc4b691c72e36cfb40ca4d5a630",
+    "condition_summary.csv": "3037783fefd0adc6488239f8b9ee0bc6bc6e43c6233b3738fb9699606cb31b75",
+    "episodes.csv": "9ab9aadc58d1f0929383ca77b265dd281de9737aecb3eff9cc0bc1ee4dfcfd6d",
+    "model_summary.csv": "045cc2bfdebb0dc81b3f78bbcba99ce878602aad1047b097ef277d75217db219"
+  }
+}

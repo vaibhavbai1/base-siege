@@ -21,14 +21,14 @@ EPISODE_LOCK = threading.RLock()
 
 
 def action_rng_seed(base, view, action_seed, scheme='legacy'):
-    if scheme not in ('legacy','v2-final-ds-v1'):
+    if scheme not in ('legacy','v2-final-ds-v1','v3-final-ds-v1'):
         raise ValueError('Unknown replay seed scheme.')
-    text = (f'v2-final-ds-v1:{action_seed}:{base.motif}:{base.seed}:{view}' if scheme=='v2-final-ds-v1'
+    text = (f'{scheme}:{action_seed}:{base.motif}:{base.seed}:{view}' if scheme!='legacy'
             else f'base-siege-action-v1:{base.seed}:{base.motif}:{view}:{action_seed}')
     if base.motif == 'custom':
         text += ':' + hashlib.sha256(base.to_json().encode()).hexdigest()
     value = int.from_bytes(hashlib.sha256(text.encode()).digest()[:4], 'big')
-    return value if scheme=='v2-final-ds-v1' else value % (2**31)
+    return value if scheme!='legacy' else value % (2**31)
 
 
 @contextmanager

@@ -1,0 +1,12 @@
+{
+  "note": "execution only; excludes pauses and preflight checks",
+  "segments": [
+    {
+      "measured_utc": "2026-10-14T19:21:29+00:00",
+      "new_attacks": 175448,
+      "seconds": 14886.523440843
+    }
+  ],
+  "total_attacks": 175448,
+  "total_seconds": 14886.523440843
+}

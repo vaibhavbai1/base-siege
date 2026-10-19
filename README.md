@@ -1,6 +1,6 @@
 # Base Siege
 
-**A custom reinforcement-learning environment for army selection and troop deployment, with MaskablePPO and masked Double DQN agents.**
+**A custom reinforcement-learning environment for army selection and troop deployment, with MaskablePPO, masked Double DQN and MaskableTRPO agents.**
 
 Developed as a capstone project for **43008 Reinforcement Learning**, Master of Artificial Intelligence, **University of Technology Sydney (UTS)**. Project contact: **Vaibhav Bairathi**.
 
@@ -13,11 +13,22 @@ The project includes the simulator, training and evaluation workflows, trained c
 - Version 1 (V1): pilot, twenty main training runs, development diagnostics, and final evaluations completed.
 - Version 2 (V2): twenty independent training runs at **4,194,304 transitions per model**, followed by development analysis and a fresh final evaluation, completed.
 - Masked Double DQN (DDQN): two seed-100 pilot runs, development checkpoint selection, and evaluation on the existing V2 benchmark completed. No multi-seed DDQN cohort was run.
-- Application: V1/V2 PPO and selected DDQN replay, smooth manual combat, custom-base editing, and saved replay supported in the local/SageMaker app.
+- MaskableTRPO: a seed-100 pilot and ten main learners (seeds 0–9), each main learner trained from scratch for **4,194,304 transitions**, completed. The frozen V3 DS evaluation and a separate, completed SS acting-mode probe are described below.
+- Application: V1/V2 PPO, selected DDQN and selected TRPO replay, smooth manual combat, custom-base editing, and saved replay supported in the local/SageMaker app.
 - Current application modes: **Manual play**, **Policy replay**, **Base editor**, and **Saved replay**.
 - Experiment results are stored in files; the application no longer has an Experiment Results mode.
 
 The setup commands below load existing checkpoints. They do not start training or rerun the final evaluation.
+
+### The three learning methods
+
+| Algorithm | Simple explanation | Project implementation |
+|---|---|---|
+| PPO — Proximal Policy Optimisation | Learns action probabilities and limits how strongly an update changes them using a clipped objective. | SB3 Contrib MaskablePPO; conditions P and PA. |
+| DDQN — Double Deep Q-Network | Learns an expected future-reward value for each action. One network selects the next action and a target-network copy evaluates it. | Custom PyTorch masked Double DQN; one seed, two learning-rate trials. |
+| TRPO — Trust Region Policy Optimisation | Learns action probabilities and checks candidate updates against a limit on how much the policy distribution changes. | Custom mask-aware subclass of SB3 Contrib TRPO; condition T, without augmentation. |
+
+All three use legal-action masks. Masks identify which actions are allowed; they do not identify the best action. An independent learner seed produces a separate trained model. The three algorithms are not combined into an ensemble.
 
 ## V2 final results
 
@@ -159,6 +170,53 @@ This selected DDQN policy had lower mean destruction than the heuristic but more
 
 The benchmark's measured episode loops total **97.84 seconds**. This excludes preflight checks, checkpoint loading, comparison and export; it is not an end-to-end evaluation time or a controlled speed comparison with PPO.
 
+## MaskableTRPO experiment and V3 results
+
+The supplied TRPO study trained **ten independent learners, seeds 0–9**, without symmetry augmentation. Each main learner started from scratch and completed **4,194,304 transitions**: 32,768 placement-only transitions followed by 4,161,536 joint purchasing/deployment transitions. A separate seed-100 pilot used 262,144 transitions.
+
+SB3 Contrib provides TRPO but not a built-in maskable TRPO class. The supplied [MaskableTRPO implementation](trpo/maskable_trpo.py) carries action masks through the rollout buffer and applies them to action selection and the distributions used by the policy update, including its trust-region calculation and line search. Illegal actions are not sampled and then replaced.
+
+The main runs used four environments, 2,048 transitions per environment per rollout, a KL target of 0.01 and the same shared observation/CNN representation. This is not a perfectly isolated algorithm substitution: for example, PPO used an entropy coefficient of 0.01 while this TRPO implementation has no entropy bonus. See the [DDQN/TRPO handbook](docs/Base_Siege_DDQN_TRPO_Complete_Experiment_Handbook.docx) for settings, evidence and limitations.
+
+### Frozen V3 evaluation: DS
+
+V3 generated a **fresh pool of 241 accepted layouts**, using candidate seeds 21200–21399. All P, PA and T learners faced the same accepted layouts, eight coordinate views and three action-seed labels. There were **5,784 attacks per learner**, or **175,448 attacks** including the heuristic baseline. The primary protocol used **DS: deterministic purchasing, sampled deployment/waiting**.
+
+| Condition | Mean destruction | Full-clear rate |
+|---|---:|---:|
+| P — PPO without augmentation | 92.95% | 74.25% |
+| PA — PPO with augmentation | 93.63% | 77.07% |
+| T — TRPO without augmentation | 56.11% | 7.54% |
+| Heuristic | 55.09% | 3.53% |
+
+The primary **T minus P** difference was **−36.84 percentage points**, with a **95% paired learner-bootstrap interval of −41.96 to −30.38 points**. None of the ten paired learners favoured TRPO under DS. This interval is conditional on the fixed evaluation pool, views and action labels.
+
+These are **V3 results**, not replacements for the published V2 numbers above. V3 uses a different layout pool, so directly subtracting V2 and V3 headlines does not establish an improvement or decline. The protocol was frozen after training and before the fresh final pool was generated; it was not preregistered before training.
+
+### Completed exploratory probe: sampled purchasing matters
+
+After observing the DS result, a separate probe evaluated the same P and T checkpoints on the same V3 scenarios using **SS: sampled purchasing and sampled deployment/waiting**. It completed **115,680 additional attacks across all ten learners per condition**. This follow-up is explicitly exploratory and does not replace the frozen DS result.
+
+| Condition | DS mean destruction | SS mean destruction | Change in percentage points |
+|---|---:|---:|---:|
+| P | 92.95% | 92.40% | −0.55 |
+| T | 56.11% | 90.85% | +34.74 |
+
+All ten TRPO learners improved with sampled purchasing. Under SS, TRPO's full-clear rate was **66.42%**, compared with **72.82%** for P. TRPO therefore remained below P on these aggregate SS measures, despite the large improvement over its own DS result. The completed probe supersedes the earlier 240-attack preliminary check.
+
+The evidence shows strong sensitivity to the purchasing procedure for these TRPO checkpoints. It does not prove that the KL setting caused the gap or that every TRPO configuration behaves this way. Matching initial action seeds also does not mean every deployment uses the same random draw: sampled purchasing consumes additional random numbers.
+
+### TRPO evidence and application checkpoint
+
+- [Frozen V3 condition summaries](artifacts/version3-final-evaluation/condition_summary.csv), [paired comparisons](artifacts/version3-final-evaluation/comparisons.csv) and [per-attack results](artifacts/version3-final-evaluation/episodes.csv).
+- [Frozen checkpoint identities and protocol](artifacts/version3-final-evaluation/freeze.json), [exact layouts](artifacts/version3-final-evaluation/final_pool.json) and [completion hashes](artifacts/version3-final-evaluation/complete.json).
+- [Completed mode summary](artifacts/version3-mode-probe/mode_summary.csv), [paired learner results](artifacts/version3-mode-probe/mode_by_learner.csv), [SS attacks](artifacts/version3-mode-probe/episodes.csv), [exploratory contract](artifacts/version3-mode-probe/probe_contract.json) and [completion receipt](artifacts/version3-mode-probe/complete.json).
+- [Selected T-1 checkpoint and its records](artifacts/trpo/selected-T1/), [interface guide](docs/TRPO_INTERFACE.md) and [detailed DDQN/TRPO handbook](docs/Base_Siege_DDQN_TRPO_Complete_Experiment_Handbook.docx).
+
+The application uses **T-1, learner seed 1**, selected using sampled development performance, with **SS as its default**. DS and DD remain available for inspection. One selected demonstration model is not the ten-learner average. The compact integration includes the inference implementation, selected checkpoint and completed evaluation evidence; it does not include all ten TRPO model binaries or a complete training-recovery archive.
+
+The DDQN benchmark uses V2 layouts, whereas TRPO's final study uses V3 layouts. Their headline scores are not a direct matched DDQN-versus-TRPO comparison.
+
 ## Environment
 
 | Setting | Value |
@@ -221,6 +279,16 @@ Expected output begins with `DDQN ready: seed 100, 2,097,152 transitions, greedy
 
 The app prefers the frozen copy under `artifacts/ddqn/selected-lr3e5-seed100-v2-benchmark/selected_model/`. It can also use the identical selected checkpoint in the original lower-rate run. The original run's other checkpoints are not required to demonstrate DDQN.
 
+### Verify the selected TRPO checkpoint
+
+From the same project root:
+
+```bash
+uv run --frozen python -m ui.trpo_models check
+```
+
+Expected output includes `TRPO ready: T-1, 4,194,304 transitions, CPU inference. Default acting mode: SS.` The adapter verifies the checkpoint, manifest, training contract and frozen inference source, then loads the model on CPU. No observation-normalisation statistics are required.
+
 ### Launch on your computer
 
 ```bash
@@ -245,10 +313,11 @@ Open port 8501 through your SageMaker environment's application preview or proxy
 - **Manual play:** purchase troops, start the battle, select a troop type and deploy around the green perimeter. Use the pause, speed and view controls during combat.
 - **PPO policy replay:** select `Saved Maskable PPO`, model version `V2`, condition `P` or `PA`, and learner seed 0–9. Leave action selection on DS for the evaluated V2 procedure. Click **Generate replay**, then **Play**. Earlier PPO models remain available through the model-version selector.
 - **DDQN policy replay:** select `Saved Masked DDQN`, choose a base and agent view, then click **Generate replay** and **Play**. The app loads the selected seed-100, 2,097,152-transition checkpoint automatically. It always uses greedy legal actions, so there is no action-sampling seed or learner selection.
+- **TRPO policy replay:** select `Saved Maskable TRPO`, choose a base and agent view, and leave action selection on SS for the sampled procedure. Click **Generate replay**, then **Play**. The app loads T-1 automatically; DS and DD are also available, and sampled modes offer an action-seed control.
 - **Base editor:** edit a layout, save it, and use it for manual play or policy replay. Custom bases can be exported/imported as JSON.
 - **Saved replay:** inspect saved attacks. Generated policy replays can also be downloaded as JSON or standalone HTML.
 
-DDQN supports custom bases, smooth playback, and JSON/standalone HTML replay downloads through the existing replay interface. This integration is for the local/SageMaker application; the separate public-demo configuration does not offer DDQN.
+DDQN and TRPO support custom bases, smooth playback, and JSON/standalone HTML replay downloads through the existing replay interface. These integrations are for the local/SageMaker application launched with `ui/app.py`; the separate public-demo entrypoint `ui/streamlit_app.py` does not offer DDQN or TRPO.
 
 ### The different seeds and views
 
@@ -287,6 +356,11 @@ Manual combat runs smoothly in the browser. Training and learned-policy evaluati
 | `ui/` | Streamlit application, manual combat, editor and policy replay |
 | `ui/v2_checkpoints.json` | Exact approved V2 checkpoint paths and hashes |
 | `ui/ddqn_models.py` | Selected DDQN checkpoint identity, validation and replay adapter |
+| `trpo/` | Supplied mask-aware TRPO algorithm and settings used by inference |
+| `ui/trpo_models.py` | Selected T-1 checkpoint identity, validation and replay adapter |
+| `artifacts/trpo/selected-T1/` | Selected TRPO model, manifest and training contract |
+| `artifacts/version3-final-evaluation/` | Frozen V3 DS results, layouts and checkpoint identities |
+| `artifacts/version3-mode-probe/` | Completed exploratory SS probe and paired learner summaries |
 | `notebooks/` | Original teaching and experiment notebooks |
 | `tests/` | Simulator, workflow and application checks |
 | `tools/` | Validation and deployment utilities |
@@ -307,11 +381,12 @@ Some older documents and package READMEs describe plans at the time they were wr
 - Final results apply to the accepted, heuristic-filtered layouts and the recorded evaluation procedure; arbitrary custom bases may be harder.
 - `layered_core` was excluded from V2 training and development, but had been examined in the earlier project.
 - DDQN results represent one selected learner and showed weak transfer to `layered_core`; more attacks from that same checkpoint do not replace independent training seeds.
+- TRPO results depend strongly on the acting mode. Keep its frozen DS result and exploratory SS result clearly labelled, and do not present the selected interface checkpoint as the entire cohort.
 - An individual replay is an illustration, not an aggregate performance estimate.
 - The application and checkpoints support demonstration without new training. Further training or changes to rewards, observations, movement or network design should be recorded as a new experiment version, preserving the completed V1/V2 evidence.
 
 ## Acknowledgements
 
-The PPO implementation is provided by [Stable-Baselines3 Contrib MaskablePPO](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_mask.html). The project also uses [Gymnasium](https://gymnasium.farama.org/), [PyTorch](https://pytorch.org/) and [Streamlit](https://streamlit.io/).
+The PPO implementation is provided by [Stable-Baselines3 Contrib MaskablePPO](https://sb3-contrib.readthedocs.io/en/master/modules/ppo_mask.html). The custom mask-aware TRPO implementation extends [SB3 Contrib TRPO](https://sb3-contrib.readthedocs.io/en/master/modules/trpo.html). The project also uses [Gymnasium](https://gymnasium.farama.org/), [PyTorch](https://pytorch.org/) and [Streamlit](https://streamlit.io/).
 
-Our contribution is the custom task and simulator integration, representations, symmetry augmentation, masked Double DQN implementation, experiment and recovery workflows, analysis, and interactive application. PPO and Double DQN are established algorithms; we do not claim to have invented them.
+Our contribution is the custom task and simulator integration, representations, symmetry augmentation, masked Double DQN and mask-aware TRPO implementations, experiment and recovery workflows, analysis, and interactive application. PPO, Double DQN and TRPO are established algorithms; we do not claim to have invented them.
