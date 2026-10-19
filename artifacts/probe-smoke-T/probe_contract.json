@@ -1,0 +1,1083 @@
+{
+  "baseline_mode": "DS",
+  "conditions": [
+    "T"
+  ],
+  "created_utc": "2026-10-16T01:27:53+00:00",
+  "freeze_sha256": "19a635d6e79475821680237fa57b43314894705a88b05163ca592e45e69ff3a4",
+  "models": [
+    {
+      "condition": "T",
+      "learner_seed": 0,
+      "path": "runs/study-v3/T-0/model.zip",
+      "run": "T-0",
+      "sha256": "7001e259b60ecc5035e01ce075b27f3fc2150011b8e41e740c68757f37850850",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 1,
+      "path": "runs/study-v3/T-1/model.zip",
+      "run": "T-1",
+      "sha256": "277567ab4491aa3dda8b55d2b52545edc487761573f532103596d2fc0385f876",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 2,
+      "path": "runs/study-v3/T-2/model.zip",
+      "run": "T-2",
+      "sha256": "d837b3729e873208210b72ceeccaf3775b02ddb537ca616898d05c03aa6b5123",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 3,
+      "path": "runs/study-v3/T-3/model.zip",
+      "run": "T-3",
+      "sha256": "e91796600b557ab34c66ece6b117333b26aed20a175b2f4cc6bc1e3c7bc8148c",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 4,
+      "path": "runs/study-v3/T-4/model.zip",
+      "run": "T-4",
+      "sha256": "7781b5b85c3eb05896c516dbf7fcec0f0f4768aa93a99870b85103b16ea573de",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 5,
+      "path": "runs/study-v3/T-5/model.zip",
+      "run": "T-5",
+      "sha256": "a6b5a3fa6bd3a35c293239fdce7d14bb54cfd2caa4ffc688e957e5b3422ea9fb",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 6,
+      "path": "runs/study-v3/T-6/model.zip",
+      "run": "T-6",
+      "sha256": "884ff9b9cf06ae6aa3a8d8e87382948e04ef3728a636583be7a55e450ec7a66d",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 7,
+      "path": "runs/study-v3/T-7/model.zip",
+      "run": "T-7",
+      "sha256": "62e4593145301a0d0a31ca9ac2242ffa7ac878f9f291ae7c9e308b81b29a6441",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 8,
+      "path": "runs/study-v3/T-8/model.zip",
+      "run": "T-8",
+      "sha256": "dc27ebdd735369d991fb813ab28e33760c731d76aff51f33bbcc68f464fbef29",
+      "transitions": 4194304
+    },
+    {
+      "condition": "T",
+      "learner_seed": 9,
+      "path": "runs/study-v3/T-9/model.zip",
+      "run": "T-9",
+      "sha256": "253aa25d3929d5d2d13029e8e60ce96dc2ad9e21a35682be43ed7dee7a8c04f8",
+      "transitions": 4194304
+    }
+  ],
+  "pool_sha256": "3afa8ba7c05f6469198aacbf0c53edcc74a9d4b311775d91b892a6c0cb7e59d4",
+  "probe": "acting-mode",
+  "probe_mode": "SS",
+  "protocol": {
+    "action_seed_rule": "first four bytes of SHA256(v3-final-ds-v1:{label}:{motif}:{base_seed}:{view}), unsigned big endian; reset Python NumPy Torch once per attack, never across attacks",
+    "aggregation": "Equal views and action repeats within each layout; equal accepted layouts within scope; equal weight to each learner. Overall is accepted-layout weighted.",
+    "algorithms": {
+      "P": "MaskablePPO, no symmetry augmentation",
+      "PA": "MaskablePPO, symmetry augmentation",
+      "T": "MaskableTRPO, no symmetry augmentation"
+    },
+    "baseline": "HeuristicCommander() once per accepted layout/view; observed-coverage side, not best-side oracle",
+    "candidate_layouts": 800,
+    "candidate_seed_interval": [
+      21200,
+      21399
+    ],
+    "comparison_pairs": [
+      {
+        "left": "T",
+        "primary": true,
+        "right": "P"
+      },
+      {
+        "left": "PA",
+        "primary": false,
+        "right": "P"
+      },
+      {
+        "left": "T",
+        "primary": false,
+        "right": "PA"
+      },
+      {
+        "left": "P",
+        "primary": false,
+        "right": "heuristic"
+      },
+      {
+        "left": "PA",
+        "primary": false,
+        "right": "heuristic"
+      },
+      {
+        "left": "T",
+        "primary": false,
+        "right": "heuristic"
+      }
+    ],
+    "conditions": [
+      "P",
+      "PA",
+      "T"
+    ],
+    "familiar_motifs": [
+      "closed_ring",
+      "ns_gates",
+      "ew_gates"
+    ],
+    "filter": "unchanged experiments.pools.validate_base: structure plus best-of-four-side heuristic destruction in [0.25,0.85]",
+    "history": "Specified after the V2 study completed and before generating or evaluating the V3 pool. Adds MaskableTRPO (condition T) as a third algorithm alongside the frozen V2 PPO conditions. The V2 final pool is spent and is not reused; this is a fresh pool on a disjoint seed interval. Not preregistered before training.",
+    "intervals": {
+      "confidence": 0.95,
+      "method": "percentile bootstrap across paired learner seeds",
+      "resamples": 20000,
+      "scope": "conditional on fixed accepted layouts, eight views and three action labels; unadjusted secondary intervals",
+      "seed": 63001
+    },
+    "kind": "version3-fresh-final-evaluation",
+    "learner_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "limitations": [
+      "TRPO trains without an entropy bonus because SB3's TRPO hard-codes ent_coef=0.0, while both PPO conditions trained at 0.01. The comparison is between the algorithms as configured, not between matched exploration pressure.",
+      "TRPO's critic update zeroes gradients on actor parameters, so the shared SiegeFeatures trunk is updated only by the trust-region step; under PPO both losses reach it.",
+      "Intervals resample independent learner seeds and are conditional on the fixed layouts, views and action labels. They do not measure uncertainty over every possible custom base.",
+      "V2 and V3 use different final layout pools, so V3 numbers are not directly comparable with the published V2 headline figures. Only within-V3 comparisons are controlled.",
+      "An individual replay is an illustration, not an aggregate performance estimate."
+    ],
+    "mode": "DS",
+    "motifs": [
+      "closed_ring",
+      "ns_gates",
+      "ew_gates",
+      "layered_core"
+    ],
+    "primary_comparison": "T minus P across ten matched learner seeds on all accepted layouts",
+    "primary_metric": "mean fraction of total building value destroyed",
+    "replacement_candidates": false,
+    "report_scopes": [
+      "all_final",
+      "familiar",
+      "transfer",
+      "motif:closed_ring",
+      "motif:ns_gates",
+      "motif:ew_gates",
+      "motif:layered_core"
+    ],
+    "runtime": {
+      "deterministic_algorithms": true,
+      "device": "cpu",
+      "torch_threads": 1
+    },
+    "sample_seeds": [
+      41001,
+      41002,
+      41003
+    ],
+    "schema": 1,
+    "secondary_comparisons": [
+      "PA minus P",
+      "T minus PA",
+      "P minus heuristic",
+      "PA minus heuristic",
+      "T minus heuristic"
+    ],
+    "selection": "All approved final checkpoints for every condition; no best checkpoint or learner selection. No tuning after final results.",
+    "transfer_motif": "layered_core",
+    "transitions": 4194304,
+    "views": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "runtime": {
+    "config": {
+      "ACTION_BUY_FIRST": 0,
+      "ACTION_BUY_LAST": 3,
+      "ACTION_DEPLOY_FIRST": 5,
+      "ACTION_DEPLOY_LAST": 244,
+      "ACTION_FINISH_SHOPPING": 4,
+      "ACTION_WAIT": 245,
+      "BATTLE_TICK_LIMIT": 300,
+      "BUILDABLE_MAX": 14,
+      "BUILDABLE_MIN": 1,
+      "BUILDINGS_BLOCK_LINE_OF_SIGHT": false,
+      "BUILDING_COUNTS": {
+        "cannon": 3,
+        "mortar": 2,
+        "storage": 4,
+        "town_hall": 1
+      },
+      "BUILDING_STATS": {
+        "cannon": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 5,
+          "hp": 600,
+          "min_range": 0,
+          "range": 3,
+          "splash_radius": 0.0,
+          "value": 15
+        },
+        "mortar": {
+          "attack_cooldown": 5,
+          "damage_per_shot": 45,
+          "hp": 500,
+          "min_range": 2,
+          "range": 5.0,
+          "splash_radius": 1.5,
+          "value": 20
+        },
+        "storage": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 800,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 10
+        },
+        "town_hall": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 1500,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 30
+        },
+        "wall": {
+          "attack_cooldown": 1,
+          "damage_per_shot": 0,
+          "hp": 300,
+          "min_range": 0,
+          "range": 0,
+          "splash_radius": 0.0,
+          "value": 0
+        }
+      },
+      "BUILDING_TYPES": [
+        "town_hall",
+        "cannon",
+        "mortar",
+        "storage",
+        "wall"
+      ],
+      "CENTRED_RING_BOX": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "CHEAPEST_TROOP_COST": 8,
+      "CHECKPOINT_A_LIMIT_MS": 200,
+      "CHECKPOINT_A_TARGET_MS": 50,
+      "COST_PENALTY_WEIGHT": 0.3,
+      "CURRICULUM_JOINT_TIMESTEPS": 229376,
+      "CURRICULUM_PLACEMENT_TIMESTEPS": 32768,
+      "DEFENCE_TYPES": [
+        "cannon",
+        "mortar"
+      ],
+      "DEPLOY_TILES": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          0
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "DEV_BASES_PER_MOTIF": 4,
+      "DEV_DIAGNOSTIC_VIEWS": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "DEV_EVAL_INTERVAL_TIMESTEPS": 25000,
+      "DEV_MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates"
+      ],
+      "DEV_SEED_RANGE": [
+        10200,
+        10399
+      ],
+      "DIFFICULTY_MAX": 0.85,
+      "DIFFICULTY_MIN": 0.25,
+      "DISTANCE_METRIC_COMBAT": "euclidean",
+      "FEATURE_CNN_CHANNELS": [
+        32,
+        64
+      ],
+      "FEATURE_FUSION_DIM": 256,
+      "FINAL_SEED_RANGE": [
+        11000,
+        11999
+      ],
+      "FINAL_STUDY_SEED_RANGE": [
+        11000,
+        11199
+      ],
+      "GATE_WIDTH": 2,
+      "GRID_LAYER_BUILDING_HEALTH": 5,
+      "GRID_LAYER_CANNON": 1,
+      "GRID_LAYER_DEFENCE_COVERAGE": 6,
+      "GRID_LAYER_MORTAR": 2,
+      "GRID_LAYER_STORAGE": 3,
+      "GRID_LAYER_TOWN_HALL": 0,
+      "GRID_LAYER_TROOP_DENSITY": 7,
+      "GRID_LAYER_WALL": 4,
+      "GRID_SIZE": 16,
+      "HALF_DESTRUCTION_THRESHOLD": 0.5,
+      "HEURISTIC_ARMY": {
+        "breaker": 3,
+        "melee": 6,
+        "ranged": 4,
+        "tank": 3
+      },
+      "HEURISTIC_ARMY_COST": 199,
+      "HEURISTIC_DEPLOY_ORDER": [
+        "breaker",
+        "tank",
+        "ranged",
+        "melee"
+      ],
+      "HEURISTIC_VALIDATION_SIDES": 4,
+      "LAYERED_CORE_BOX": [
+        6,
+        6,
+        10,
+        10
+      ],
+      "LAYERED_CORE_CONTENTS": [
+        "town_hall",
+        "mortar",
+        "storage"
+      ],
+      "LAYERED_OUTER_BOX": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "LAYERED_OUTER_SIDES": [
+        "north",
+        "west"
+      ],
+      "MAX_ARMY_SIZE": 25,
+      "MAX_BATTLE_DECISIONS": 30,
+      "MAX_DECISIONS_PER_EPISODE": 70,
+      "MAX_DEFENCE_COVERAGE": 5,
+      "MAX_TROOP_DENSITY_PER_TILE": 8,
+      "MILESTONE_FULL_CLEAR": 0.25,
+      "MILESTONE_HALF_DESTRUCTION": 0.25,
+      "MILESTONE_TOWN_HALL": 0.25,
+      "MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates",
+        "layered_core"
+      ],
+      "N_ACTIONS": 246,
+      "N_DEFENCES": 5,
+      "N_DEPLOY_TILES": 60,
+      "N_GRID_LAYERS": 8,
+      "N_SCORING_BUILDINGS": 10,
+      "N_TRAINING_ENVS": 4,
+      "PATHFINDING_NEIGHBOURS": 4,
+      "PHASE_BATTLE": 1,
+      "PHASE_SHOPPING": 0,
+      "PILOT_JOINT_TIMESTEPS": 24576,
+      "PILOT_LEARNER_SEED": 100,
+      "PILOT_PLACEMENT_TIMESTEPS": 32768,
+      "POLICY_HEAD_DIM": 128,
+      "POOL_DEV_PATH": "bases/pool_dev.json",
+      "POOL_FINAL_PATH": "bases/pool_final.json",
+      "POOL_TRAIN_PATH": "bases/pool_train.json",
+      "PPO_BATCH_SIZE": 256,
+      "PPO_ENT_COEF": 0.01,
+      "PPO_GAE_LAMBDA": 0.95,
+      "PPO_GAMMA": 1.0,
+      "PPO_LEARNING_RATE": 0.0003,
+      "PPO_N_EPOCHS": 10,
+      "PPO_N_STEPS": 2048,
+      "RANDOM_AGENT_ACTION_SEEDS": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "RESOURCE_BUDGET": 200,
+      "REWARD_COMPONENT_KEYS": [
+        "destruction",
+        "milestone",
+        "cost_penalty",
+        "wall_shaping"
+      ],
+      "ROTATION_INDEX_SHIFT": 15,
+      "SPEED_SCALE": 100,
+      "SPLASH_FALLOFF": 0.4,
+      "STUDY_LEARNER_SEEDS": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "TARGET_RULE_FALLBACK": {
+        "nearest_building": null,
+        "nearest_defence": "nearest_building",
+        "nearest_wall": null
+      },
+      "TICKS_PER_DECISION": 10,
+      "TOTAL_BASE_VALUE": 155,
+      "TOTAL_TRAINING_TIMESTEPS": 262144,
+      "TRAIN_MOTIFS": [
+        "closed_ring",
+        "ns_gates",
+        "ew_gates"
+      ],
+      "TRAIN_SEED_RANGE": [
+        0,
+        9999
+      ],
+      "TRANSFER_MOTIF": "layered_core",
+      "TROOP_COSTS": {
+        "breaker": 12,
+        "melee": 8,
+        "ranged": 10,
+        "tank": 25
+      },
+      "TROOP_STATS": {
+        "breaker": {
+          "cost": 12,
+          "damage_per_tick": 350,
+          "dies_after_attack": true,
+          "hp": 60,
+          "range": 1,
+          "speed": 0.22,
+          "target_rule": "nearest_wall",
+          "walls_only": true
+        },
+        "melee": {
+          "cost": 8,
+          "damage_per_tick": 15,
+          "dies_after_attack": false,
+          "hp": 120,
+          "range": 1,
+          "speed": 0.16,
+          "target_rule": "nearest_building",
+          "walls_only": false
+        },
+        "ranged": {
+          "cost": 10,
+          "damage_per_tick": 12,
+          "dies_after_attack": false,
+          "hp": 90,
+          "range": 4,
+          "speed": 0.14,
+          "target_rule": "nearest_building",
+          "walls_only": false
+        },
+        "tank": {
+          "cost": 25,
+          "damage_per_tick": 8,
+          "dies_after_attack": false,
+          "hp": 900,
+          "range": 1,
+          "speed": 0.1,
+          "target_rule": "nearest_defence",
+          "walls_only": false
+        }
+      },
+      "TROOP_TYPES": [
+        "tank",
+        "melee",
+        "ranged",
+        "breaker"
+      ],
+      "VALUE_HEAD_DIM": 128,
+      "VECTOR_DIM": 9,
+      "WALL": "wall",
+      "WALLS_BLOCK_LINE_OF_SIGHT": false,
+      "WALL_CROSSING_TROOPS": [
+        "ranged"
+      ],
+      "WALL_SHAPING_BONUS": 0.0,
+      "_PERIMETER_BOTTOM": [
+        [
+          15,
+          14
+        ],
+        [
+          15,
+          13
+        ],
+        [
+          15,
+          12
+        ],
+        [
+          15,
+          11
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          15,
+          9
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          15,
+          0
+        ]
+      ],
+      "_PERIMETER_LEFT": [
+        [
+          14,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "_PERIMETER_RIGHT": [
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          10,
+          15
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          15
+        ]
+      ],
+      "_PERIMETER_TOP": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ],
+        [
+          0,
+          15
+        ]
+      ]
+    },
+    "packages": {
+      "gymnasium": "1.3.0",
+      "numpy": "2.5.2",
+      "sb3-contrib": "2.9.0",
+      "stable-baselines3": "2.9.0",
+      "streamlit": "1.63.0",
+      "torch": "2.13.0"
+    },
+    "platform": "Linux-6.12.103-129.197.amzn2023.x86_64-x86_64-with-glibc2.39",
+    "python": "3.12.14",
+    "source_hashes": {
+      "agents/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "agents/heuristic.py": "932d9202d3b063ded37bbb4b86b43a45f88205059443db90e4fff5321c464ace",
+      "agents/random_agent.py": "86047f72ebc513ff857ddf90770a9358631412d497e46e2c2c87815f0b94c447",
+      "env/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "env/access.py": "794157695a73fe8a355d8b2db4751e794aa5fa126a717f519d75eaab4a8ab77e",
+      "env/combat.py": "2bf73fe3d2a5789f2817c25dadab1018994d46a07de30fe7754d2ddc129aa711",
+      "env/config.py": "57c4cf0c7ea14d2d192dac2aafc4d582dd0e48c987ecb7cccf5b5b8d61d5e4ce",
+      "env/entities.py": "a3076b5a65dca0ce0cb81276c2392d2bae5258e900d276f64f8fbf6064248aed",
+      "env/generator.py": "190beda431286c394eeb5c6ad20d95b9a05ba4564f6a36cd24e125fc9c2ccab9",
+      "env/pathfinding.py": "f0a375ec20e2727b8131c9862fb7ea37363d80ad477cbb90e7b330e1f20d016e",
+      "env/render.py": "2aa74fc376175824b123c9fbbcecf172e030eabd4d5010cc65d8ee686b40bfb1",
+      "env/siege_env.py": "d0d9172465b434d55e9b141e15eda4077b4d10b5111d37a423e1d97d1951fdf6",
+      "env/symmetry.py": "5bdb56e396afcde63035b7ff28f391c7fe87d510e1eace240607c5c0de95192d",
+      "experiments/__init__.py": "a2d1601abc2a4b3a12ed73e8e1fe44e0791ba95cbbf755308c43da1c49cbbfc8",
+      "experiments/design.py": "c74d1d177ec4b196cbad5552acc8431b6f111e8b82b7e25ac875451939aa828a",
+      "experiments/journal.py": "e132076a678cb1fb52b59a9cec53f9c269e406813b9740e9f336cadf5ceff037",
+      "experiments/pilot.py": "8410d23b0fff2db48b2fec02f08bae84d41efef0b05fe36c539133dd3cab700c",
+      "experiments/pools.py": "f56b0d8f6b655eab7788e02265f73548c3bc29b9be8746878e9927177ab7bd9b",
+      "experiments/protocol.py": "8580719d10b4907728921aa946729f6a61311af45376ebd1a2788273d6334917",
+      "experiments/provenance.py": "0a4d47b10dc480294c089ba4297c2b6f4351323a5d38c6123e2a6e3f8ac589b7",
+      "experiments/rollout.py": "91f706e59212e86e141a5c91e9586f03cad5a281dbf1e862335a8b59f48c46cc",
+      "experiments/storage.py": "f71f31fa85c1055d29e3f83fb2f64867615546513f3e2a57f112d97318893a4a",
+      "experiments/study.py": "67392847f85d530cc42bd6e751c887216d5febd2f7ed1e9c31a431a3360e1160",
+      "train/__init__.py": "32bbc59deb3a5284744af89c8c962b7aec9663a4e7aabd80601496af3e02be85",
+      "train/checkpoints.py": "70d56b2ac707fabdce2134677cb06157ec8455de21ed30cf4c5fa30873001591",
+      "train/evaluate.py": "588182bae455ae9407511bd0d6768e38e14624c4360f1b91847bc12a1028565f",
+      "train/features.py": "dfb271e9ef389724aee7d3d649614e2d8715492b8518e667360a134b19dbacba",
+      "train/train_ppo.py": "56ce5e1feadff16b8d2dbd0c3b80e7387e0e633cd7c31cbb14efd700626b946a"
+    }
+  },
+  "source_evaluation": "artifacts/version3-final-evaluation",
+  "status": "exploratory; declared outside the frozen V3 protocol",
+  "torch_threads": 1,
+  "varies": "purchasing phase only (deployment is sampled in both modes)"
+}

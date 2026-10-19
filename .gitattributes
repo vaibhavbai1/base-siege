@@ -11,3 +11,6 @@ artifacts/version3-final-evaluation/** -text
 artifacts/version3-mode-probe/** -text
 artifacts/trpo/selected-T1/*.json -text
 trpo/maskable_trpo.py -text
+# Complete TRPO training histories and cumulative recovery episode snapshots.
+runs/study-v3/**/*.jsonl filter=lfs diff=lfs merge=lfs -text
+runs/trpo-*/**/*.jsonl filter=lfs diff=lfs merge=lfs -text

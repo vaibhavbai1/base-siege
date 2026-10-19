@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "kind": "version3-fresh-final-evaluation",
+  "history": "Specified after the V2 study completed and before generating or evaluating the V3 pool. Adds MaskableTRPO (condition T) as a third algorithm alongside the frozen V2 PPO conditions. The V2 final pool is spent and is not reused; this is a fresh pool on a disjoint seed interval. Not preregistered before training.",
+  "conditions": ["P", "PA", "T"],
+  "algorithms": {
+    "P": "MaskablePPO, no symmetry augmentation",
+    "PA": "MaskablePPO, symmetry augmentation",
+    "T": "MaskableTRPO, no symmetry augmentation"
+  },
+  "learner_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "transitions": 4194304,
+  "mode": "DS",
+  "candidate_layouts": 800,
+  "candidate_seed_interval": [21200, 21399],
+  "replacement_candidates": false,
+  "motifs": ["closed_ring", "ns_gates", "ew_gates", "layered_core"],
+  "familiar_motifs": ["closed_ring", "ns_gates", "ew_gates"],
+  "transfer_motif": "layered_core",
+  "views": [0, 1, 2, 3, 4, 5, 6, 7],
+  "sample_seeds": [41001, 41002, 41003],
+  "filter": "unchanged experiments.pools.validate_base: structure plus best-of-four-side heuristic destruction in [0.25,0.85]",
+  "baseline": "HeuristicCommander() once per accepted layout/view; observed-coverage side, not best-side oracle",
+  "action_seed_rule": "first four bytes of SHA256(v3-final-ds-v1:{label}:{motif}:{base_seed}:{view}), unsigned big endian; reset Python NumPy Torch once per attack, never across attacks",
+  "primary_metric": "mean fraction of total building value destroyed",
+  "primary_comparison": "T minus P across ten matched learner seeds on all accepted layouts",
+  "secondary_comparisons": [
+    "PA minus P",
+    "T minus PA",
+    "P minus heuristic",
+    "PA minus heuristic",
+    "T minus heuristic"
+  ],
+  "comparison_pairs": [
+    {"left": "T", "right": "P", "primary": true},
+    {"left": "PA", "right": "P", "primary": false},
+    {"left": "T", "right": "PA", "primary": false},
+    {"left": "P", "right": "heuristic", "primary": false},
+    {"left": "PA", "right": "heuristic", "primary": false},
+    {"left": "T", "right": "heuristic", "primary": false}
+  ],
+  "aggregation": "Equal views and action repeats within each layout; equal accepted layouts within scope; equal weight to each learner. Overall is accepted-layout weighted.",
+  "intervals": {
+    "method": "percentile bootstrap across paired learner seeds",
+    "resamples": 20000,
+    "confidence": 0.95,
+    "seed": 63001,
+    "scope": "conditional on fixed accepted layouts, eight views and three action labels; unadjusted secondary intervals"
+  },
+  "report_scopes": ["all_final", "familiar", "transfer", "motif:closed_ring", "motif:ns_gates", "motif:ew_gates", "motif:layered_core"],
+  "selection": "All approved final checkpoints for every condition; no best checkpoint or learner selection. No tuning after final results.",
+  "runtime": {
+    "device": "cpu",
+    "torch_threads": 1,
+    "deterministic_algorithms": true
+  },
+  "limitations": [
+    "TRPO trains without an entropy bonus because SB3's TRPO hard-codes ent_coef=0.0, while both PPO conditions trained at 0.01. The comparison is between the algorithms as configured, not between matched exploration pressure.",
+    "TRPO's critic update zeroes gradients on actor parameters, so the shared SiegeFeatures trunk is updated only by the trust-region step; under PPO both losses reach it.",
+    "Intervals resample independent learner seeds and are conditional on the fixed layouts, views and action labels. They do not measure uncertainty over every possible custom base.",
+    "V2 and V3 use different final layout pools, so V3 numbers are not directly comparable with the published V2 headline figures. Only within-V3 comparisons are controlled.",
+    "An individual replay is an illustration, not an aggregate performance estimate."
+  ]
+}

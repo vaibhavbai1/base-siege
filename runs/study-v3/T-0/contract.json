@@ -1,0 +1,63 @@
+{
+  "algorithm": "MaskableTRPO",
+  "checkpoint_every_rollouts": 1,
+  "condition": "T",
+  "created_utc": "2026-10-14T06:14:27.324955+00:00",
+  "development_interval": 262144,
+  "hardware": {
+    "cuda_available": true,
+    "gpus": [
+      "Tesla T4"
+    ],
+    "torch_cuda_build": "13.0"
+  },
+  "hyperparameters": {
+    "batch_size": 256,
+    "cg_damping": 0.1,
+    "cg_max_steps": 15,
+    "device": "cuda",
+    "gae_lambda": 0.95,
+    "gamma": 1.0,
+    "learning_rate": 0.0003,
+    "line_search_max_iter": 10,
+    "line_search_shrinking_factor": 0.8,
+    "n_critic_updates": 10,
+    "n_steps": 2048,
+    "normalize_advantage": true,
+    "seed": 0,
+    "sub_sampling_factor": 1,
+    "target_kl": 0.01,
+    "verbose": 0
+  },
+  "inputs": {
+    "dev_pool": "bases/dev-v2.json",
+    "dev_pool_sha256": "79b61544a8314f2d4632aa248f1efdcc25e2f278a89832125a95b671930f3811",
+    "train_pool": "bases/train-v2.json",
+    "train_pool_sha256": "25ee12964e79c757239b6833f4b0405f5af9cee0f70cccadaee32319b2aee7b0"
+  },
+  "packages": {
+    "gymnasium": "1.3.0",
+    "numpy": "2.5.2",
+    "sb3-contrib": "2.9.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.13.0"
+  },
+  "platform": "Linux-6.12.103-127.188.amzn2023.x86_64-x86_64-with-glibc2.39",
+  "python": "3.12.14",
+  "sample_seeds": [
+    31001,
+    31002,
+    31003
+  ],
+  "settings": {
+    "device": "cuda",
+    "n_envs": 4,
+    "seed": 0,
+    "total_steps": 4194304
+  },
+  "source_hashes": {
+    "config.py": "048bc42a0d5392714bb3f8f20f12be0899e91ff27130281cd489b2398caafaea",
+    "maskable_trpo.py": "7a52c920642e4327517f9afb2601dab199e80e42a982802cf3b553988f4ee6be",
+    "runner.py": "a6a221ba3747707e4ad4e7ab6405fce86f95a3b11bd81700fb11d554f855227d"
+  }
+}

@@ -33,6 +33,7 @@ def test_heuristic_replay_is_labelled_and_complete():
 
 def test_evidence_modes_handle_present_or_absent_artifacts():
     app = AppTest.from_file(str(APP)).run(timeout=20)
-    select(app, "Mode", "Experiment results")
+    mode = next(widget for widget in app.selectbox if widget.label == "Mode")
+    assert "Experiment results" not in mode.options
     select(app, "Mode", "Saved replay")
     select(app, "Mode", "Manual play")

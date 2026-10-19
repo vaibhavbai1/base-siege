@@ -1,0 +1,14 @@
+{
+  "actual_steps": 2899968,
+  "boundary": "after_completed_update",
+  "contract_sha256": "473b0e3c724c37af8b16376961551e1e022c3596de52f5b6912f6977511bd556",
+  "created_utc": "2026-10-14T09:58:34.570445+00:00",
+  "files": {
+    "episodes.jsonl": "df1cfec7935d780bf0693bbc93c082810617b6a310b58dcda2dbb5989888f185",
+    "model.zip": "32099309af1df896ac7ceaab78c8bb6cdb2ce239544a8a327508d2e16df5e00b",
+    "state.pt": "785cbec8f52d727e00f034708816365cb6855cd96627a252d8361e5fa3a1c7aa"
+  },
+  "optimizer_updates": 354,
+  "phase": "joint",
+  "schema_version": 3
+}

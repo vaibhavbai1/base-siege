@@ -1,0 +1,6 @@
+{
+  "actual_steps": 8192,
+  "checkpoint": "checkpoint-000000008192-placement-0feb316c3f",
+  "checkpoint_sha256": "a787ebf7de68a8d3af8ed1cd37571f68ab773fdb551853010a30ca272c403c3f",
+  "schema_version": 3
+}
